@@ -9,9 +9,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-?>
 
-<script>
+// This file should only contain the modal-specific JavaScript
+// All button positioning and styling should be handled separately
+?>
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('munchmakers-modal');
     if (!modal) return;
@@ -178,15 +179,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         window.noUiSlider.create(slider, {
             start: [parseInt(quantityInput.value)],
-            connect: 'lower', tooltips: true, step: interval,
+            connect: 'lower', 
+            tooltips: true, 
+            step: interval,
             range: { 'min': minQty, 'max': maxQty },
             format: { to: v => Math.round(v), from: v => Number(v) }
         });
+        
         slider.noUiSlider.on('update', values => {
             const qty = parseInt(values[0], 10);
             quantityInput.value = qty;
             updateModalPricing(qty);
         });
+        
         quantityInput.addEventListener('change', () => {
             let newValue = Math.max(minQty, parseInt(quantityInput.value) || minQty);
             if(newValue % interval !== 0) {
@@ -195,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
             quantityInput.value = newValue;
             slider.noUiSlider.set(newValue);
         });
+        
         updateModalPricing(parseInt(quantityInput.value));
     }
 
@@ -202,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const basePrice = currentPricingData.base_price || 0;
         const rules = currentPricingData.rules || {};
         let unitPrice = basePrice;
+        
         if (rules && Object.keys(rules).length > 0) {
             let matchedPrice = basePrice;
             Object.keys(rules).sort((a,b) => a-b).forEach(ruleQty => {
@@ -209,11 +216,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             unitPrice = matchedPrice;
         }
+        
         const subtotal = unitPrice * qty;
         const savings = (basePrice * qty) - subtotal;
         modal.querySelector('#modal-unit-price').value = formatPrice(unitPrice);
         modal.querySelector('#modal-subtotal').textContent = formatPrice(subtotal);
         const savingsEl = modal.querySelector('.savings');
+        
         if (savings > 0.01) {
             modal.querySelector('#modal-savings').textContent = formatPrice(savings);
             savingsEl.style.display = 'block';
@@ -258,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // File Upload Logic - Fixed for single click
+    // File Upload Logic
     const dropZone = document.getElementById('munch-drop-zone');
     const fileInput = document.getElementById('artwork-file-input');
     const fileListContainer = document.getElementById('file-preview-list');
@@ -338,18 +347,15 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send(formData);
     }
 
-    // Fixed file input handling - single click only
+    // File input handling
     if (dropZone && fileInput) {
-        // Handle click on drop zone area (but not on label)
         dropZone.addEventListener('click', function(e) {
-            // Only trigger if clicking the drop zone itself, not the label
             if (e.target === dropZone || e.target.classList.contains('munch-drop-zone-text')) {
                 e.preventDefault();
                 fileInput.click();
             }
         });
         
-        // Handle label click directly
         const fileLabel = dropZone.querySelector('.file-upload');
         if (fileLabel) {
             fileLabel.addEventListener('click', function(e) {
@@ -359,19 +365,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Drag and drop handlers
         dropZone.addEventListener('dragover', e => {
             e.preventDefault();
             dropZone.classList.add('dragover');
         });
+        
         dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        
         dropZone.addEventListener('drop', e => {
             e.preventDefault();
             dropZone.classList.remove('dragover');
             handleFiles(e.dataTransfer.files);
         });
         
-        // File input change handler
         fileInput.addEventListener('change', function() {
             if (this.files && this.files.length > 0) {
                 handleFiles(this.files);
@@ -425,7 +431,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tooltip.style.left = Math.max(10, rect.left - 50) + 'px';
             tooltip.style.top = (rect.bottom + scrollTop + 10) + 'px';
             
-            // Adjust if tooltip goes off screen
             setTimeout(() => {
                 const tooltipRect = tooltip.getBoundingClientRect();
                 if (tooltipRect.right > window.innerWidth - 10) {
@@ -442,19 +447,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Click event for longer duration
         trigger.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             showTooltip();
             tooltip.classList.add('stay-open');
             
-            // Clear any existing timer
             if (tooltipTimer) {
                 clearTimeout(tooltipTimer);
             }
             
-            // Auto-hide after 8 seconds unless hovered
             tooltipTimer = setTimeout(() => {
                 if (!isTooltipHovered) {
                     tooltip.classList.remove('visible', 'stay-open');
@@ -462,7 +464,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 8000);
         });
 
-        // Hover events for immediate response
         trigger.addEventListener('mouseenter', () => {
             isTriggerHovered = true;
             showTooltip();
@@ -470,10 +471,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         trigger.addEventListener('mouseleave', () => {
             isTriggerHovered = false;
-            setTimeout(hideTooltip, 300); // Small delay before hiding
+            setTimeout(hideTooltip, 300);
         });
 
-        // Tooltip hover events to keep it open
         tooltip.addEventListener('mouseenter', () => {
             isTooltipHovered = true;
         });
@@ -483,7 +483,6 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(hideTooltip, 300);
         });
 
-        // Close tooltip when clicking elsewhere
         document.addEventListener('click', (e) => {
             if (!tooltip.contains(e.target) && !trigger.contains(e.target)) {
                 tooltip.classList.remove('visible', 'stay-open');
@@ -503,7 +502,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners
     modal.querySelector('.modal-close').addEventListener('click', closeModal);
     modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+    document.addEventListener('keydown', e => { 
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(); 
+    });
 
     document.addEventListener('munchmakersModalOpen', () => {
         updateAllPricingTooltips();
@@ -526,6 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initQuantitySlider();
         showStep('quantity');
     });
+    
     modal.querySelector('#back-to-variations')?.addEventListener('click', () => showStep('variations'));
     modal.querySelector('#next-to-artwork')?.addEventListener('click', () => showStep('artwork'));
     modal.querySelector('#back-to-quantity')?.addEventListener('click', () => showStep('quantity'));
@@ -538,8 +540,6 @@ document.addEventListener('DOMContentLoaded', function() {
         artworkNowOptions.style.display = this.value === 'add_now' ? 'block' : 'none';
         artworkLaterOptions.style.display = this.value === 'add_now' ? 'none' : 'block';
         updateArtworkOption();
-        
-        // Hide/show add to cart button based on selection and active tab
         updateAddToCartVisibility();
     }));
     
@@ -550,25 +550,19 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
         modal.querySelector('#tab-' + this.dataset.tab).classList.add('active');
         updateArtworkOption();
-        
-        // Update button visibility when tab changes
         updateAddToCartVisibility();
     }));
 
-    // Function to show/hide add to cart button based on current state
     function updateAddToCartVisibility() {
         const addToCartBtn = modal.querySelector('#add-to-cart');
         const checkedRadio = modal.querySelector('input[name="modal_artwork_choice"]:checked');
         const activeTab = modal.querySelector('.tab-btn.active');
         
         if (checkedRadio && checkedRadio.value === 'send_later') {
-            // Always show add to cart for "send later"
             addToCartBtn.style.display = 'block';
         } else if (activeTab && activeTab.dataset.tab === 'designer') {
-            // Hide add to cart button on designer tab
             addToCartBtn.style.display = 'none';
         } else {
-            // Show for upload and contact tabs
             addToCartBtn.style.display = 'block';
         }
     }
@@ -593,6 +587,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.disabled = false;
                 }
             };
+            
             setTimeout(resetLoadingState, 10000);
 
             try {
@@ -648,7 +643,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         if (wasHidden) defaultAddToCartButton.style.display = 'none';
                         resetLoadingState();
-                        // Close modal after design tool launches
                         closeModal();
                     }, 2000);
                 }, 300);
@@ -709,4 +703,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize button visibility
     updateAddToCartVisibility();
 });
-</script>

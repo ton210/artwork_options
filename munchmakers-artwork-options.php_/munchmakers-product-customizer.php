@@ -2,7 +2,7 @@
 /**
  * Plugin Name:         MunchMakers Product Page Customizer
  * Description:         Integrates a multi-step variation, quantity, and artwork selection module on WooCommerce product pages, compatible with Zakeke.
- * Version:             4.4
+ * Version:             4.5
  * Author:              Gemini for MunchMakers
  * Author URI:          https://munchmakers.com
  * Text Domain:         munchmakers-product-customizer
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'MUNCHMAKERS_PLUGIN_VERSION', '4.4' );
+define( 'MUNCHMAKERS_PLUGIN_VERSION', '4.5' );
 define( 'MUNCHMAKERS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MUNCHMAKERS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MUNCHMAKERS_PLUGIN_FILE', __FILE__ );
