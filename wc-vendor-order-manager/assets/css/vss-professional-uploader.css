@@ -1,0 +1,1141 @@
+/**
+ * VSS Professional Product Uploader Styles
+ * Modern, clean, and professional styling for the enhanced product upload interface
+ * 
+ * @package VendorOrderManager
+ * @since 8.0.0
+ */
+
+/* ==========================================================================
+   GLOBAL STYLES & VARIABLES
+   ========================================================================== */
+
+:root {
+    --vss-primary: #2563eb;
+    --vss-primary-dark: #1d4ed8;
+    --vss-secondary: #64748b;
+    --vss-success: #10b981;
+    --vss-warning: #f59e0b;
+    --vss-error: #ef4444;
+    --vss-info: #06b6d4;
+    
+    --vss-gray-50: #f8fafc;
+    --vss-gray-100: #f1f5f9;
+    --vss-gray-200: #e2e8f0;
+    --vss-gray-300: #cbd5e1;
+    --vss-gray-400: #94a3b8;
+    --vss-gray-500: #64748b;
+    --vss-gray-600: #475569;
+    --vss-gray-700: #334155;
+    --vss-gray-800: #1e293b;
+    --vss-gray-900: #0f172a;
+    
+    --vss-border-radius: 8px;
+    --vss-border-radius-lg: 12px;
+    --vss-border-radius-xl: 16px;
+    --vss-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --vss-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --vss-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --vss-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    --vss-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   CONTAINER & LAYOUT
+   ========================================================================== */
+
+.vss-pro-uploader-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--vss-gray-50);
+    min-height: 100vh;
+}
+
+.vss-pro-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.vss-pro-main-content {
+    min-width: 0;
+}
+
+.vss-pro-sidebar {
+    position: sticky;
+    top: 24px;
+    height: fit-content;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.vss-pro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 32px;
+    background: linear-gradient(135deg, var(--vss-primary) 0%, var(--vss-primary-dark) 100%);
+    border-radius: var(--vss-border-radius-xl);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.vss-pro-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: translate(50%, -50%);
+}
+
+.vss-pro-header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.vss-pro-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.vss-pro-subtitle {
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.vss-pro-header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   PROGRESS BAR
+   ========================================================================== */
+
+.vss-pro-progress-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: white;
+    border-radius: var(--vss-border-radius-lg);
+    box-shadow: var(--vss-shadow);
+}
+
+.vss-pro-progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--vss-gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.vss-pro-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--vss-primary) 0%, var(--vss-info) 100%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.vss-pro-progress-text {
+    font-weight: 600;
+    color: var(--vss-gray-700);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+.vss-pro-card {
+    background: white;
+    border-radius: var(--vss-border-radius-lg);
+    box-shadow: var(--vss-shadow);
+    margin-bottom: 24px;
+    border: 1px solid var(--vss-gray-200);
+    transition: var(--vss-transition);
+}
+
+.vss-pro-card:hover {
+    box-shadow: var(--vss-shadow-lg);
+}
+
+.vss-pro-card-compact {
+    margin-bottom: 16px;
+}
+
+.vss-pro-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--vss-gray-200);
+    background: var(--vss-gray-50);
+    border-radius: var(--vss-border-radius-lg) var(--vss-border-radius-lg) 0 0;
+}
+
+.vss-pro-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--vss-gray-800);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vss-pro-card-title .dashicons {
+    color: var(--vss-primary);
+    font-size: 20px;
+}
+
+.vss-pro-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.vss-pro-card-body {
+    padding: 24px;
+}
+
+.vss-pro-card-compact .vss-pro-card-header {
+    padding: 16px;
+}
+
+.vss-pro-card-compact .vss-pro-card-body {
+    padding: 16px;
+}
+
+.vss-pro-card-status {
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+
+.vss-form-group {
+    margin-bottom: 24px;
+}
+
+.vss-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.vss-label {
+    display: block;
+    font-weight: 600;
+    color: var(--vss-gray-700);
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.vss-input,
+.vss-select,
+.vss-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--vss-gray-300);
+    border-radius: var(--vss-border-radius);
+    font-size: 16px;
+    line-height: 1.4;
+    transition: var(--vss-transition);
+    background: white;
+    color: var(--vss-gray-800);
+}
+
+.vss-input:focus,
+.vss-select:focus,
+.vss-textarea:focus {
+    outline: none;
+    border-color: var(--vss-primary);
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+}
+
+.vss-input-lg {
+    padding: 16px 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.vss-input-sm {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.vss-input-group {
+    display: flex;
+    align-items: stretch;
+}
+
+.vss-input-group .vss-input {
+    border-radius: 0 var(--vss-border-radius) var(--vss-border-radius) 0;
+    border-left: none;
+    flex: 1;
+}
+
+.vss-input-addon {
+    background: var(--vss-gray-100);
+    border: 2px solid var(--vss-gray-300);
+    border-right: none;
+    border-radius: var(--vss-border-radius) 0 0 var(--vss-border-radius);
+    padding: 12px 16px;
+    color: var(--vss-gray-600);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.vss-textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.vss-char-counter {
+    text-align: right;
+    font-size: 12px;
+    color: var(--vss-gray-500);
+    margin-top: 4px;
+}
+
+.vss-field-feedback {
+    margin-top: 4px;
+    font-size: 12px;
+    min-height: 16px;
+}
+
+.vss-field-feedback.error {
+    color: var(--vss-error);
+}
+
+.vss-field-feedback.success {
+    color: var(--vss-success);
+}
+
+.vss-tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: var(--vss-info);
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: help;
+    margin-left: 4px;
+    position: relative;
+}
+
+.vss-tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--vss-gray-800);
+    color: white;
+    padding: 8px 12px;
+    border-radius: var(--vss-border-radius);
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: var(--vss-shadow-lg);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.vss-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: var(--vss-border-radius);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--vss-transition);
+    line-height: 1;
+    white-space: nowrap;
+    background: transparent;
+}
+
+.vss-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 0.2);
+}
+
+.vss-btn-primary {
+    background: var(--vss-primary);
+    color: white;
+    border-color: var(--vss-primary);
+}
+
+.vss-btn-primary:hover {
+    background: var(--vss-primary-dark);
+    border-color: var(--vss-primary-dark);
+    color: white;
+}
+
+.vss-btn-secondary {
+    background: var(--vss-secondary);
+    color: white;
+    border-color: var(--vss-secondary);
+}
+
+.vss-btn-secondary:hover {
+    background: var(--vss-gray-600);
+    border-color: var(--vss-gray-600);
+    color: white;
+}
+
+.vss-btn-outline {
+    background: white;
+    color: var(--vss-primary);
+    border-color: var(--vss-primary);
+}
+
+.vss-btn-outline:hover {
+    background: var(--vss-primary);
+    color: white;
+}
+
+.vss-btn-danger {
+    border-color: var(--vss-error);
+    color: var(--vss-error);
+}
+
+.vss-btn-danger:hover {
+    background: var(--vss-error);
+    color: white;
+}
+
+.vss-btn-sm {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.vss-btn-lg {
+    padding: 16px 24px;
+    font-size: 16px;
+}
+
+.vss-btn-block {
+    width: 100%;
+}
+
+.vss-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.vss-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================================================
+   IMAGE UPLOAD SECTIONS
+   ========================================================================== */
+
+.vss-image-upload-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.vss-image-section {
+    border: 1px solid var(--vss-gray-200);
+    border-radius: var(--vss-border-radius-lg);
+    padding: 24px;
+    background: var(--vss-gray-50);
+}
+
+.vss-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--vss-gray-800);
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vss-section-description {
+    color: var(--vss-gray-600);
+    font-size: 14px;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+}
+
+.vss-dropzone {
+    border: 3px dashed var(--vss-gray-300);
+    border-radius: var(--vss-border-radius-lg);
+    padding: 40px 24px;
+    text-align: center;
+    transition: var(--vss-transition);
+    cursor: pointer;
+    position: relative;
+    background: white;
+    margin-bottom: 16px;
+}
+
+.vss-dropzone:hover,
+.vss-dropzone.dragover {
+    border-color: var(--vss-primary);
+    background: rgb(37 99 235 / 0.02);
+}
+
+.vss-dropzone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.vss-dropzone .dashicons {
+    font-size: 48px;
+    color: var(--vss-gray-400);
+    margin-bottom: 8px;
+}
+
+.vss-dropzone:hover .dashicons,
+.vss-dropzone.dragover .dashicons {
+    color: var(--vss-primary);
+}
+
+.vss-dropzone p {
+    margin: 0;
+    color: var(--vss-gray-700);
+    font-size: 16px;
+}
+
+.vss-dropzone small {
+    color: var(--vss-gray-500);
+    font-size: 14px;
+}
+
+.vss-upload-link {
+    color: var(--vss-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.vss-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   UPLOADED IMAGES GRID
+   ========================================================================== */
+
+.vss-uploaded-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.vss-image-item {
+    position: relative;
+    border-radius: var(--vss-border-radius);
+    overflow: hidden;
+    box-shadow: var(--vss-shadow);
+    background: white;
+    border: 2px solid var(--vss-gray-200);
+    transition: var(--vss-transition);
+}
+
+.vss-image-item:hover {
+    box-shadow: var(--vss-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.vss-image-preview {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.vss-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+    opacity: 0;
+    transition: var(--vss-transition);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+}
+
+.vss-image-item:hover .vss-image-overlay {
+    opacity: 1;
+}
+
+.vss-image-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.vss-image-action {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    color: var(--vss-gray-700);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--vss-transition);
+}
+
+.vss-image-action:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.vss-image-action.delete:hover {
+    background: var(--vss-error);
+    color: white;
+}
+
+.vss-image-meta {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.vss-primary-badge {
+    background: var(--vss-primary);
+}
+
+/* ==========================================================================
+   DIMENSIONS GRID
+   ========================================================================== */
+
+.vss-dimensions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   PRICING CALCULATOR
+   ========================================================================== */
+
+.vss-pricing-calculator {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--vss-gray-50);
+    border-radius: var(--vss-border-radius);
+    border: 1px solid var(--vss-gray-200);
+}
+
+.vss-calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.vss-calc-row:not(:last-child) {
+    border-bottom: 1px solid var(--vss-gray-200);
+}
+
+.vss-calc-total {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--vss-gray-800);
+    background: white;
+    margin: 8px -16px -16px;
+    padding: 16px;
+    border-radius: 0 0 var(--vss-border-radius) var(--vss-border-radius);
+}
+
+/* ==========================================================================
+   QUALITY SCORE
+   ========================================================================== */
+
+.vss-quality-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.vss-score-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.vss-progress-ring {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg);
+}
+
+.vss-progress-ring-circle {
+    fill: none;
+    stroke: var(--vss-gray-200);
+    stroke-width: 8;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.vss-progress-ring-circle.filled {
+    stroke: var(--vss-primary);
+}
+
+.vss-score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.vss-score-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--vss-gray-800);
+}
+
+.vss-score-label {
+    font-size: 14px;
+    color: var(--vss-gray-500);
+}
+
+.vss-score-breakdown {
+    width: 100%;
+}
+
+.vss-score-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.vss-score-category {
+    font-size: 12px;
+    color: var(--vss-gray-600);
+    width: 60px;
+}
+
+.vss-score-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--vss-gray-200);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.vss-score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--vss-primary) 0%, var(--vss-info) 100%);
+    border-radius: 3px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* ==========================================================================
+   STATUS INDICATORS
+   ========================================================================== */
+
+.vss-status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--vss-gray-300);
+    position: relative;
+}
+
+.vss-status-indicator.complete {
+    background: var(--vss-success);
+}
+
+.vss-status-indicator.incomplete {
+    background: var(--vss-warning);
+}
+
+.vss-status-indicator.error {
+    background: var(--vss-error);
+}
+
+.vss-status-indicator::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    animation: pulse 2s infinite;
+    opacity: 0.3;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 0.3; }
+}
+
+/* ==========================================================================
+   MODALS
+   ========================================================================== */
+
+.vss-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.vss-modal.active {
+    display: flex;
+}
+
+.vss-modal-content {
+    background: white;
+    border-radius: var(--vss-border-radius-xl);
+    box-shadow: var(--vss-shadow-xl);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.vss-modal-large {
+    max-width: 900px;
+}
+
+.vss-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--vss-gray-200);
+    background: var(--vss-gray-50);
+}
+
+.vss-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--vss-gray-800);
+}
+
+.vss-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: var(--vss-gray-500);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--vss-transition);
+}
+
+.vss-modal-close:hover {
+    background: var(--vss-gray-200);
+    color: var(--vss-gray-700);
+}
+
+.vss-modal-body {
+    padding: 24px;
+    max-height: calc(90vh - 140px);
+    overflow-y: auto;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   LOADING STATES
+   ========================================================================== */
+
+.vss-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 40px 20px;
+    color: var(--vss-gray-600);
+    font-size: 14px;
+}
+
+.vss-loading::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--vss-gray-300);
+    border-top-color: var(--vss-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   TAG INPUT
+   ========================================================================== */
+
+.vss-tag-input {
+    position: relative;
+}
+
+.vss-tag-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid var(--vss-gray-300);
+    border-top: none;
+    border-radius: 0 0 var(--vss-border-radius) var(--vss-border-radius);
+    box-shadow: var(--vss-shadow-lg);
+    z-index: 100;
+    display: none;
+}
+
+.vss-tag-suggestion {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--vss-gray-200);
+    transition: var(--vss-transition);
+}
+
+.vss-tag-suggestion:hover {
+    background: var(--vss-gray-50);
+}
+
+.vss-tag-suggestion:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   SORTABLE
+   ========================================================================== */
+
+.vss-sortable .vss-image-item {
+    cursor: grab;
+}
+
+.vss-sortable .vss-image-item:active {
+    cursor: grabbing;
+}
+
+.vss-sortable .vss-image-item.ui-sortable-helper {
+    transform: rotate(5deg);
+    box-shadow: var(--vss-shadow-xl);
+    z-index: 1000;
+}
+
+.vss-sortable .vss-image-item.ui-sortable-placeholder {
+    background: var(--vss-gray-100);
+    border: 2px dashed var(--vss-gray-300);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .vss-pro-form-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .vss-pro-sidebar {
+        position: static;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .vss-pro-uploader-container {
+        padding: 16px;
+    }
+    
+    .vss-pro-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 24px;
+    }
+    
+    .vss-pro-header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .vss-form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .vss-pro-card-header {
+        padding: 16px;
+    }
+    
+    .vss-pro-card-body {
+        padding: 16px;
+    }
+    
+    .vss-dimensions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vss-uploaded-images {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vss-pro-progress-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .vss-pro-header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .vss-btn {
+        width: 100%;
+    }
+    
+    .vss-modal {
+        padding: 16px;
+    }
+    
+    .vss-modal-content {
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+.vss-hidden {
+    display: none !important;
+}
+
+.vss-fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.vss-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+
+@media print {
+    .vss-pro-uploader-container {
+        box-shadow: none;
+        background: white;
+    }
+    
+    .vss-pro-header-actions,
+    .vss-btn,
+    .vss-image-overlay,
+    .vss-modal {
+        display: none !important;
+    }
+}

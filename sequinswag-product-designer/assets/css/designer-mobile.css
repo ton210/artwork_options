@@ -1,0 +1,154 @@
+/* ========================================
+   SEQUINSWAG MOBILE DESIGN IMPROVEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Simplified mobile header with logo */
+    .designer-header {
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        flex: 0 0 auto;
+        margin-right: 12px;
+    }
+
+    .header-logo img {
+        height: 32px !important;
+        width: auto;
+    }
+
+    .designer-header h2 {
+        font-size: 1.1rem;
+        flex: 1;
+    }
+
+    /* Better mobile modal */
+    .designer-modal {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    /* Improved mobile tools */
+    .mobile-quick-actions {
+        background: white;
+        border-top: 2px solid var(--swpd-primary);
+        padding: 12px;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-action-btn {
+        padding: 12px 20px;
+        background: white;
+        color: var(--swpd-primary);
+        border: 2px solid var(--swpd-primary);
+        border-radius: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-action-btn:active {
+        background: var(--swpd-primary);
+        color: white;
+        transform: scale(0.95);
+    }
+
+    .mobile-action-btn.upload {
+        background: linear-gradient(135deg, var(--swpd-secondary) 0%, #4fc3b6 100%);
+        color: white;
+        border: none;
+    }
+
+    /* Canvas optimizations for mobile */
+    .designer-canvas-area {
+        padding: 8px;
+        background: #f5f6fa;
+    }
+
+    .canvas-container {
+        padding: 16px;
+        background-size: 16px 16px;
+    }
+
+    /* Mobile-friendly notifications */
+    .designer-notification {
+        bottom: 80px;
+        left: 16px;
+        right: 16px;
+        max-width: none;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Improved touch targets */
+    .tool-btn {
+        min-height: 48px;
+        font-size: 0.95rem;
+    }
+
+    /* Better mobile drawer */
+    .mobile-tools-drawer {
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobile-tools-drawer.active {
+        animation: slideUpSmooth 0.3s ease-out;
+    }
+
+    @keyframes slideUpSmooth {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Mobile upload zone */
+    .mobile-upload-zone {
+        padding: 40px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(155, 89, 255, 0.05) 0%, rgba(123, 63, 210, 0.05) 100%);
+        border-radius: 16px;
+        margin: 20px;
+    }
+
+    .mobile-upload-zone h3 {
+        color: var(--swpd-primary);
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .mobile-upload-zone svg {
+        opacity: 0.3;
+        margin-top: 20px;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .designer-modal {
+        width: 90vw;
+        max-width: 900px;
+    }
+
+    .designer-sidebar {
+        width: 220px;
+    }
+
+    .tool-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}

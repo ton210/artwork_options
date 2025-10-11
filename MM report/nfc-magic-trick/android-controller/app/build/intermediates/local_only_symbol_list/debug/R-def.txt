@@ -1,0 +1,19 @@
+R_DEF: Internal format may change without notice
+local
+id autoModeSwitch
+id btnCrash
+id btnFlicker
+id btnGlitch
+id btnMatrix
+id btnReset
+id btnShake
+id btnStatic
+id connectButton
+id effectsGrid
+id effectsLabel
+id nfcLabel
+id nfcStatus
+id serverUrlInput
+id statusText
+id titleText
+layout activity_main

@@ -1,0 +1,117 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7
+    container_name: shopify-mobile-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: shopify-mobile-app-builder
+    networks:
+      - shopify-mobile-network
+
+  # Redis for caching and queues
+  redis:
+    image: redis:7-alpine
+    container_name: shopify-mobile-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - shopify-mobile-network
+
+  # Main Shopify App Backend
+  shopify-app:
+    build:
+      context: ./shopify-app-backend
+      dockerfile: Dockerfile
+    container_name: shopify-mobile-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongodb:27017/shopify-mobile-app-builder
+      - REDIS_URL=redis://redis:6379
+      - APK_GENERATOR_URL=http://apk-generator:3001
+    volumes:
+      - app_uploads:/app/uploads
+    networks:
+      - shopify-mobile-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # APK Generator Service
+  apk-generator:
+    build:
+      context: ./apk-generator
+      dockerfile: Dockerfile
+    container_name: shopify-mobile-apk-generator
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - ANDROID_HOME=/opt/android-sdk
+    volumes:
+      - apk_builds:/app/builds
+      - apk_downloads:/app/downloads
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - shopify-mobile-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: shopify-mobile-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - shopify-app
+      - apk-generator
+    networks:
+      - shopify-mobile-network
+
+volumes:
+  mongodb_data:
+    driver: local
+  redis_data:
+    driver: local
+  app_uploads:
+    driver: local
+  apk_builds:
+    driver: local
+  apk_downloads:
+    driver: local
+  nginx_logs:
+    driver: local
+
+networks:
+  shopify-mobile-network:
+    driver: bridge

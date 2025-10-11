@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.magictrick.spectator.app-merged_res-39:/layout_activity_main.xml.flat",
+        "source": "com.magictrick.spectator.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.magictrick.spectator.app-merged_res-39:/layout_item_photo.xml.flat",
+        "source": "com.magictrick.spectator.app-main-41:/layout/item_photo.xml"
+    }
+]

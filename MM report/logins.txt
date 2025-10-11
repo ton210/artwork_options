@@ -1,0 +1,15 @@
+Bigcommerce
+
+bc_store_hash = 'tqjrceegho'
+bc_access_token = 'lmg7prm3b0fxypwwaja27rtlvqejic0'
+base_domain = 'www.munchmakers.com'
+
+Klaviyo
+
+API_KEY = "pk_4168739985882153c9855917afa491667a"
+
+Woo commerce
+
+website: www.multidash.io
+username = "info@munchmakers.com"
+app_password = "XnqV 2oHQ CeZD LsZm oEPU YQ7M"

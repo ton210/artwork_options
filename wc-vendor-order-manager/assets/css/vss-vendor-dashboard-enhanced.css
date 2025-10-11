@@ -1,0 +1,1122 @@
+/**
+ * VSS Enhanced Vendor Dashboard Styles
+ * Modern, professional dashboard design with improved UX
+ */
+
+/* Dashboard Container */
+.vss-vendor-dashboard {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1f2937;
+    background: #f9fafb;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Enhanced Page Header */
+.vss-page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.vss-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.vss-header-left h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.vss-header-left p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 1.1em;
+}
+
+.vss-date-range-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.vss-date-range-select {
+    padding: 10px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-date-range-select:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.vss-export-dashboard {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.vss-export-dashboard:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Stats Boxes */
+.vss-stat-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.vss-stat-box-fe {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vss-stat-box-fe:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.vss-stat-box-fe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.vss-stat-box-fe .stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.vss-stat-box-fe .stat-icon .dashicons {
+    font-size: 24px;
+    color: white;
+}
+
+.stat-number-fe {
+    display: block;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-label-fe {
+    display: block;
+    color: #6b7280;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.stat-change {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.stat-change.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.stat-change.negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.stat-subtitle {
+    display: block;
+    margin-top: 5px;
+    color: #9ca3af;
+    font-size: 0.9em;
+}
+
+.stat-warning {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Performance Metrics */
+.vss-performance-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.vss-metric-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.metric-title {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-info {
+    color: #9ca3af;
+    cursor: help;
+}
+
+.metric-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metric-score-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.circular-chart {
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e5e7eb;
+    stroke-width: 3;
+}
+
+.circle {
+    fill: none;
+    stroke: #10b981;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 1s ease;
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.metric-bar {
+    flex: 1;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.metric-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+.metric-value {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.metric-big-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.metric-unit {
+    color: #6b7280;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+/* Charts Section */
+.vss-charts-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.vss-chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vss-chart-container h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.2em;
+    color: #1f2937;
+}
+
+.vss-chart-container canvas {
+    max-height: 300px;
+}
+
+.vss-chart-small canvas {
+    max-height: 250px;
+}
+
+/* Data Tables */
+.vss-data-tables-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.vss-data-table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vss-data-table-container h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.2em;
+    color: #1f2937;
+}
+
+.vss-compact-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vss-compact-table thead th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vss-compact-table tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+}
+
+.vss-compact-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* Orders Controls and Pagination */
+.vss-orders-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.vss-orders-info {
+    font-size: 0.95em;
+    color: #4b5563;
+}
+
+.vss-orders-info strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.vss-per-page-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vss-per-page-selector label {
+    font-size: 0.9em;
+    color: #6b7280;
+}
+
+.vss-per-page-select {
+    padding: 6px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9em;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-per-page-select:hover,
+.vss-per-page-select:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* Orders Header with Bulk Actions */
+.vss-orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.vss-orders-header h2 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 1.8em;
+}
+
+.vss-bulk-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.vss-select-all {
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-select-all:hover {
+    border-color: #667eea;
+    background: #f3f4f6;
+}
+
+.vss-bulk-action-select {
+    padding: 8px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9em;
+    background: white;
+}
+
+.vss-bulk-action-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.vss-apply-bulk {
+    padding: 8px 20px;
+}
+
+.vss-apply-bulk:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.vss-export-all {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.vss-export-all:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* No Orders Message */
+.vss-no-orders-message {
+    padding: 40px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.1em;
+}
+
+.vss-no-orders-message a {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.vss-no-orders-message a:hover {
+    color: #764ba2;
+}
+
+/* Lifetime Summary Widget */
+.vss-lifetime-summary {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 2px solid #d1d5db;
+}
+
+.vss-lifetime-summary h3 {
+    margin: 0 0 20px 0;
+    color: #1f2937;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vss-lifetime-summary h3::before {
+    content: '📊';
+    font-size: 1.2em;
+}
+
+.lifetime-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.lifetime-stats .stat-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.lifetime-stats .stat-label {
+    display: block;
+    font-size: 0.85em;
+    color: #6b7280;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lifetime-stats .stat-value {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.status-breakdown {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.status-breakdown h4 {
+    margin: 0 0 15px 0;
+    color: #374151;
+    font-size: 1em;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.status-item:last-child {
+    border-bottom: none;
+}
+
+.status-count {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Enhanced Table Checkbox Column */
+.check-column {
+    width: 40px;
+    text-align: center;
+}
+
+.vss-select-all-checkbox,
+.vss-order-checkbox {
+    cursor: pointer;
+}
+
+/* Enhanced Recent Orders */
+.vss-recent-orders.enhanced {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.vss-recent-orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.vss-recent-orders-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #1f2937;
+}
+
+.vss-order-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.vss-filter-btn {
+    padding: 8px 16px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 8px;
+    color: #6b7280;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-filter-btn:hover {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.vss-filter-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.vss-orders-table.enhanced {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.vss-orders-table.enhanced thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.vss-orders-table.enhanced tbody tr {
+    background: #f9fafb;
+    transition: all 0.3s ease;
+}
+
+.vss-orders-table.enhanced tbody tr:hover {
+    background: #f3f4f6;
+    transform: scale(1.01);
+}
+
+.vss-orders-table.enhanced tbody td {
+    padding: 15px 12px;
+    border: none;
+}
+
+.vss-orders-table.enhanced tbody td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.vss-orders-table.enhanced tbody td:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.customer-info strong {
+    display: block;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+.customer-info small {
+    color: #9ca3af;
+    font-size: 0.85em;
+}
+
+.products-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.product-tag {
+    background: #ede9fe;
+    color: #5b21b6;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85em;
+}
+
+.product-more {
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85em;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.status-processing {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.status-shipped {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.status-completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.late-badge {
+    display: inline-block;
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.priority-badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.ship-date {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.ship-date.overdue {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-buttons .button-small {
+    padding: 6px 10px;
+    font-size: 0.85em;
+    border-radius: 6px;
+}
+
+/* Quick Actions */
+.vss-quick-actions {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.vss-quick-actions h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.2em;
+    color: #1f2937;
+}
+
+.vss-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.vss-action-buttons .button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vss-action-buttons .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Reports Page */
+.vss-reports-page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.vss-reports-header {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.vss-reports-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.vss-select {
+    padding: 10px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-select:hover,
+.vss-select:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.vss-custom-dates {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vss-custom-dates input[type="date"] {
+    padding: 10px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.vss-export-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.vss-export-buttons .button {
+    padding: 10px 15px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.vss-export-buttons .button:hover {
+    border-color: #667eea;
+    color: #667eea;
+    background: #f3f4f6;
+}
+
+.vss-report-content {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vss-report-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric-box {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.metric-box h4 {
+    margin: 0 0 10px 0;
+    color: #6b7280;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-box .metric-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.vss-report-section {
+    margin-bottom: 40px;
+}
+
+.vss-report-section h3 {
+    margin: 0 0 20px 0;
+    color: #1f2937;
+    font-size: 1.3em;
+}
+
+.vss-report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vss-report-table thead th {
+    text-align: left;
+    padding: 12px;
+    background: #f3f4f6;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.vss-report-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #4b5563;
+}
+
+.vss-report-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Empty States */
+.vss-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.vss-empty-state-icon {
+    margin-bottom: 20px;
+}
+
+.vss-empty-state-icon .dashicons {
+    font-size: 64px;
+    color: #d1d5db;
+}
+
+.vss-empty-state h3 {
+    margin: 0 0 10px 0;
+    color: #6b7280;
+    font-size: 1.3em;
+}
+
+.vss-empty-state p {
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .vss-charts-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .vss-data-tables-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .vss-page-header {
+        padding: 25px;
+    }
+    
+    .vss-header-left h1 {
+        font-size: 1.8em;
+    }
+    
+    .vss-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .vss-stat-boxes {
+        grid-template-columns: 1fr;
+    }
+    
+    .vss-performance-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .vss-recent-orders-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .vss-reports-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .vss-export-buttons {
+        margin-left: 0;
+        justify-content: stretch;
+    }
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vss-stat-box-fe,
+.vss-metric-card,
+.vss-chart-container,
+.vss-data-table-container {
+    animation: slideInUp 0.5s ease;
+}
+
+/* Print Styles */
+@media print {
+    .vss-page-header,
+    .vss-quick-actions,
+    .vss-export-buttons,
+    .vss-filter-btn,
+    .action-buttons,
+    .no-print {
+        display: none !important;
+    }
+    
+    .vss-report-content {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .vss-report-table {
+        page-break-inside: avoid;
+    }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF5E6"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_over"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#D32F2F"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:id="@+id/tv_difficulty_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EASY MODE"
+        android:textSize="18sp"
+        android:textColor="#666"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tv_final_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Score: 8/10"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tv_performance_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Master of Your Domain!"
+        android:textSize="20sp"
+        android:textColor="#333"
+        android:layout_marginBottom="48dp"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/btn_play_again"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/play_again"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/main_menu"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FF6200EE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\"Not that there's anything wrong with that!\""
+        android:textSize="14sp"
+        android:textStyle="italic"
+        android:textColor="#666"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+</LinearLayout>

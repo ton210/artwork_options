@@ -1,0 +1,1100 @@
+/* =========================================================
+   Vendor Order Manager - Improved Frontend Styles
+   Version: 7.1.0
+   Description: Enhanced layout improvements for vendor portal
+   ========================================================= */
+
+/* ==========================================================================
+   Layout Structure Improvements
+   ========================================================================== */
+
+/* Remove default padding from portal wrapper */
+.vss-frontend-portal {
+    padding: 0;
+    max-width: none;
+    background: #f0f2f5;
+    min-height: 100vh;
+}
+
+/* Content wrapper for proper spacing */
+.vss-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* ==========================================================================
+   Enhanced Navigation Bar
+   ========================================================================== */
+
+.vss-vendor-navigation {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.vss-vendor-navigation-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.vss-vendor-navigation a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 24px;
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.vss-vendor-navigation a:hover {
+    color: #1f2937;
+    background-color: #f9fafb;
+}
+
+.vss-vendor-navigation a.active {
+    color: #2271b1;
+    border-bottom-color: #2271b1;
+    background-color: rgba(34, 113, 177, 0.05);
+}
+
+.vss-vendor-navigation a .dashicons {
+    font-size: 18px;
+}
+
+.vss-vendor-navigation a.logout {
+    margin-left: auto;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 24px;
+    margin: 10px 0;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.vss-vendor-navigation a.logout:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* ==========================================================================
+   Page Header Section
+   ========================================================================== */
+
+.vss-page-header {
+    margin-bottom: 32px;
+}
+
+.vss-page-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+}
+
+.vss-page-header p {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Enhanced Dashboard Stats
+   ========================================================================== */
+
+.vss-stat-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.vss-stat-box-fe {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.vss-stat-box-fe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #2271b1 0%, #60a5fa 100%);
+}
+
+.vss-stat-box-fe:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.vss-stat-box-fe.is-critical::before {
+    background: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
+}
+
+/* Stat icon */
+.vss-stat-box-fe .stat-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4f46e5;
+}
+
+.vss-stat-box-fe.is-critical .stat-icon {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #dc2626;
+}
+
+.vss-stat-box-fe .stat-number-fe {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1;
+    margin: 0 0 8px 0;
+    display: block;
+}
+
+.vss-stat-box-fe.is-critical .stat-number-fe {
+    color: #dc2626;
+}
+
+.vss-stat-box-fe .stat-label-fe {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+/* Trend indicator */
+.vss-stat-box-fe .stat-trend {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.vss-stat-box-fe .stat-trend.positive {
+    color: #10b981;
+}
+
+.vss-stat-box-fe .stat-trend.negative {
+    color: #ef4444;
+}
+
+/* ==========================================================================
+   Enhanced Quick Actions
+   ========================================================================== */
+
+.vss-quick-actions {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.vss-quick-actions h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+    color: #1f2937;
+}
+
+.vss-action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.vss-action-buttons .button {
+    padding: 16px 24px;
+    background: #f9fafb;
+    color: #374151;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.vss-action-buttons .button:hover {
+    background: linear-gradient(135deg, #2271b1 0%, #1e5e96 100%);
+    color: white;
+    border-color: #2271b1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(34, 113, 177, 0.2);
+}
+
+.vss-action-buttons .button .dashicons {
+    font-size: 18px;
+}
+
+/* ==========================================================================
+   Enhanced Recent Orders Section
+   ========================================================================== */
+
+.vss-recent-orders {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.vss-recent-orders-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vss-recent-orders-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.vss-recent-orders .vss-view-all {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.vss-recent-orders .vss-view-all:hover {
+    color: #1e5e96;
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Enhanced Orders Table
+   ========================================================================== */
+
+.vss-orders-table {
+    width: 100%;
+    background: white;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.vss-orders-table thead {
+    background: #f9fafb;
+}
+
+.vss-orders-table th {
+    padding: 16px 24px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.vss-orders-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.vss-orders-table tbody tr {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: white;
+}
+
+.vss-orders-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.vss-orders-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Order link styling */
+.vss-orders-table a {
+    color: #2271b1;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.vss-orders-table a:hover {
+    color: #1e5e96;
+    text-decoration: underline;
+}
+
+/* Status badges */
+.vss-orders-table .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Late indicator */
+.vss-order-late-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 8px;
+    text-transform: uppercase;
+}
+
+/* Action buttons */
+.vss-order-actions a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: #2271b1;
+    color: white !important;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.vss-order-actions a:hover {
+    background: #1e5e96;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(34, 113, 177, 0.2);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Order Details Page Improvements
+   ========================================================================== */
+
+.vss-order-details-wrapper {
+    background: white;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.vss-order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 32px;
+    border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+.vss-order-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.vss-order-header .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.vss-order-header .button:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    transform: translateX(-4px);
+}
+
+/* Enhanced Order Status Bar */
+.vss-order-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 32px;
+    background: #f9fafb;
+    border-radius: 0;
+    position: relative;
+}
+
+.vss-order-status-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    right: 32px;
+    height: 2px;
+    background: #e5e7eb;
+    z-index: 0;
+}
+
+.vss-order-status-bar .status-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.vss-order-status-bar .status-dot {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px;
+    background: white;
+    border: 3px solid #e5e7eb;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.vss-order-status-bar .status-item.active .status-dot,
+.vss-order-status-bar .status-item.completed .status-dot {
+    background: #10b981;
+    border-color: #10b981;
+    transform: scale(1.1);
+}
+
+.vss-order-status-bar .status-item.active .status-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.vss-order-status-bar .status-label {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.vss-order-status-bar .status-item.active .status-label,
+.vss-order-status-bar .status-item.completed .status-label {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.vss-order-status-bar .status-late {
+    display: block;
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Order Sections Layout
+   ========================================================================== */
+
+.vss-order-sections {
+    padding: 32px;
+}
+
+.vss-order-section {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.vss-order-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vss-section-header {
+    background: #f9fafb;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: default;
+    position: relative;
+    padding-right: 24px;
+}
+
+.vss-section-header::after {
+    display: none;
+}
+
+.vss-section-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.vss-section-content {
+    padding: 24px;
+    max-height: none;
+}
+
+/* Two Column Layout */
+.vss-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.vss-two-column .vss-column {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 !important;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.overview-section {
+    background: #f9fafb;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.overview-section h4 {
+    margin: 0 0 16px 0;
+    color: #374151;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.overview-section p {
+    margin: 8px 0;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.overview-section strong {
+    color: #1f2937;
+}
+
+/* ==========================================================================
+   Forms and Inputs
+   ========================================================================== */
+
+.vss-form-group {
+    margin-bottom: 24px;
+}
+
+.vss-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.vss-form-group input[type="text"],
+.vss-form-group input[type="email"],
+.vss-form-group input[type="number"],
+.vss-form-group input[type="date"],
+.vss-form-group input[type="search"],
+.vss-form-group select,
+.vss-form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.vss-form-group input:focus,
+.vss-form-group select:focus,
+.vss-form-group textarea:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+}
+
+/* ==========================================================================
+   Responsive Improvements
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .vss-content-wrapper {
+        padding: 24px 16px;
+    }
+
+    .vss-vendor-navigation-inner {
+        flex-wrap: wrap;
+        padding: 0 16px;
+    }
+
+    .vss-vendor-navigation a {
+        padding: 16px 12px;
+        font-size: 14px;
+    }
+
+    .vss-vendor-navigation a.logout {
+        width: 100%;
+        text-align: center;
+        margin: 8px 0;
+    }
+
+    .vss-stat-boxes {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .vss-action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .vss-two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .vss-two-column .vss-column {
+        margin: 0 !important;
+    }
+
+    .vss-order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .vss-order-status-bar {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 16px;
+    }
+
+    .vss-order-status-bar::before {
+        display: none;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide less important columns on mobile */
+    .vss-orders-table th:nth-child(4),
+    .vss-orders-table td:nth-child(4),
+    .vss-orders-table th:nth-child(5),
+    .vss-orders-table td:nth-child(5) {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+/* Loading overlay */
+.vss-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.vss-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e5e7eb;
+    border-top-color: #2271b1;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Empty state */
+.vss-empty-state {
+    text-align: center;
+    padding: 64px 24px;
+}
+
+.vss-empty-state-icon {
+    width: 80px;
+    height: 80px;
+    background: #f3f4f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 36px;
+    color: #9ca3af;
+}
+
+.vss-empty-state h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.vss-empty-state p {
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .vss-vendor-navigation,
+    .vss-action-buttons,
+    .vss-form-actions,
+    .vss-pagination,
+    .vss-search-form,
+    .vss-status-filters,
+    .button,
+    .vss-order-actions {
+        display: none !important;
+    }
+
+    .vss-frontend-portal {
+        background: white;
+    }
+
+    .vss-content-wrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .vss-orders-table {
+        border: 1px solid #000;
+    }
+
+    .vss-orders-table th,
+    .vss-orders-table td {
+        border: 1px solid #000;
+    }
+}
+
+/* ==========================================================================
+   Priority Indicators
+   ========================================================================== */
+
+.vss-high-priority {
+    background-color: #f3e5ff !important;
+    border-left: 4px solid #9b59b6 !important;
+}
+
+.vss-urgent-priority {
+    background-color: #ffe5e5 !important;
+    border-left: 4px solid #e74c3c !important;
+}
+
+.vss-priority-indicator {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.vss-priority-high .dashicons {
+    color: #9b59b6;
+}
+
+.vss-priority-urgent .dashicons {
+    color: #e74c3c;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Admin styles for priority selector */
+.vss-priority-selector select {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.vss-priority-selector select option[value="high"] {
+    background-color: #f3e5ff;
+    color: #9b59b6;
+}
+
+.vss-priority-selector select option[value="urgent"] {
+    background-color: #ffe5e5;
+    color: #e74c3c;
+}
+
+
+/* ==========================================================================
+   Advanced Search Styles
+   ========================================================================== */
+
+.vss-advanced-search {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.vss-advanced-search .search-fields {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.vss-search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.vss-search-input:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.1);
+}
+
+.vss-search-type {
+    padding: 10px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 16px;
+    min-width: 150px;
+}
+
+@media (max-width: 768px) {
+    .vss-advanced-search .search-fields {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .vss-search-input,
+    .vss-search-type {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   Filter Panel Styles
+   ========================================================================== */
+
+.vss-filters-section {
+    margin-bottom: 20px;
+}
+
+.vss-toggle-filters {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.vss-toggle-filters.active {
+    background: #2271b1;
+    color: white;
+    border-color: #2271b1;
+}
+
+.vss-filter-panel {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.vss-filter-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.filter-group h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.date-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-range-inputs input[type="date"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.date-separator {
+    color: #9ca3af;
+}
+
+.location-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.location-inputs select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.filter-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .vss-filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .date-range-inputs,
+    .location-inputs {
+        flex-direction: column;
+    }
+
+    .date-range-inputs input[type="date"],
+    .location-inputs select {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   Vendor Logo Styles
+   ========================================================================== */
+
+.vss-vendor-logo-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.vss-vendor-logo-header .vendor-logo {
+    max-width: 250px;
+    max-height: 120px;
+    height: auto;
+    display: inline-block;
+}
+
+/* Profile page logo upload */
+.vss-logo-upload {
+    max-width: 400px;
+}
+
+.vss-logo-upload .logo-preview {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.vss-logo-upload .button {
+    margin-right: 10px;
+    margin-top: 10px;
+}

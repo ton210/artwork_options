@@ -1,0 +1,423 @@
+/**
+ * Event handling and user interactions
+ * Part of Enhanced Product Designer
+ * 
+ * @module eventMethods
+ */
+
+export const eventMethods = {
+
+setupEventListeners() {
+  const setupListeners = () => {
+    const closeBtn = document.querySelector('.designer-close');
+    if (!closeBtn) {
+      setTimeout(setupListeners, 100);
+      return;
+    }
+
+    closeBtn.addEventListener('click', () => this.closeLightbox());
+    document.querySelector('.cancel-design')?.addEventListener('click', () => this.closeLightbox());
+    document.querySelector('.apply-design')?.addEventListener('click', () => this.applyDesign());
+    document.querySelector('.add-to-cart-design')?.addEventListener('click', () => this.addToCart());
+
+    document.getElementById('undo-btn')?.addEventListener('click', () => this.undo());
+    document.getElementById('redo-btn')?.addEventListener('click', () => this.redo());
+
+    document.querySelectorAll('.image-upload-input').forEach(input => {
+      input.addEventListener('change', (e) => this.handleImageUpload(e));
+    });
+
+    // Simplified upload button setup
+    document.querySelectorAll('.image-upload-input').forEach((input, index) => {
+      console.log(`Setting up file input ${index + 1} with ID:`, input.id);
+      input.addEventListener('change', (e) => {
+        console.log(`File input ${index + 1} changed, files:`, e.target.files.length);
+        this.handleImageUpload(e);
+      });
+    });
+
+    // Additional setup for main file input
+    const mainFileInput = document.getElementById('main-file-input');
+    if (mainFileInput) {
+      console.log('Main file input found and set up');
+      mainFileInput.addEventListener('change', (e) => {
+        console.log('Main file input changed, files:', e.target.files.length);
+        this.handleImageUpload(e);
+      });
+    } else {
+      console.warn('Main file input not found');
+    }
+
+    // Debug upload button
+    const uploadBtn = document.querySelector('.upload-image-btn');
+    if (uploadBtn) {
+      console.log('Upload button found');
+      uploadBtn.addEventListener('click', function() {
+        console.log('Upload button clicked');
+      });
+    } else {
+      console.warn('Upload button not found');
+    }
+
+    document.querySelector('.add-text-btn')?.addEventListener('click', () => this.showTextEditor());
+    document.getElementById('add-text-confirm')?.addEventListener('click', () => this.addText());
+    document.getElementById('cancel-text')?.addEventListener('click', () => this.hideTextEditor());
+    document.querySelector('.modal-close')?.addEventListener('click', () => this.hideTextEditor());
+
+    document.getElementById('text-size')?.addEventListener('input', (e) => {
+      const sizeValue = document.getElementById('text-size-value');
+      if (sizeValue) sizeValue.textContent = e.target.value + 'px';
+    });
+
+    // Add event listener for text input to enable/disable the add button
+    document.getElementById('text-input')?.addEventListener('input', () => {
+      this.updateTextPreview();
+    });
+
+    // Also listen for paste events
+    document.getElementById('text-input')?.addEventListener('paste', () => {
+      setTimeout(() => this.updateTextPreview(), 10);
+    });
+
+    document.getElementById('crop-btn')?.addEventListener('click', () => this.startCrop());
+    document.querySelector('.apply-crop-btn')?.addEventListener('click', () => this.applyCrop());
+    document.querySelector('.cancel-crop-btn')?.addEventListener('click', () => this.cancelCrop());
+
+    document.querySelector('.save-design-btn')?.addEventListener('click', () => this.saveDesign());
+    document.querySelector('.load-design-btn')?.addEventListener('click', () => this.showSavedDesigns());
+
+    // Add help button listener
+    document.querySelector('.help-btn')?.addEventListener('click', () => this.showHelp());
+
+    const setupCanvasListeners = () => {
+      if (this.canvas) {
+        this.canvas.on('selection:created', (e) => {
+          this.showProperties(e.selected[0]);
+          const cropBtn = document.getElementById('crop-btn');
+          const editTools = document.getElementById('edit-tools');
+          if (cropBtn && e.selected[0].type === 'image' && e.selected[0].selectable !== false) {
+            cropBtn.style.display = 'flex';
+            if (editTools) editTools.style.display = 'block';
+          }
+        });
+        this.canvas.on('selection:updated', (e) => {
+          this.showProperties(e.selected[0]);
+          const cropBtn = document.getElementById('crop-btn');
+          const editTools = document.getElementById('edit-tools');
+          if (cropBtn) {
+            cropBtn.style.display = (e.selected[0].type === 'image' && e.selected[0].selectable !== false) ? 'flex' : 'none';
+            if (editTools) editTools.style.display = (e.selected[0].type === 'image' && e.selected[0].selectable !== false) ? 'block' : 'none';
+          }
+        });
+        this.canvas.on('selection:cleared', () => {
+          this.hideProperties();
+          const cropBtn = document.getElementById('crop-btn');
+          const editTools = document.getElementById('edit-tools');
+          if (cropBtn) cropBtn.style.display = 'none';
+          if (editTools) editTools.style.display = 'none';
+          if (this.isCropping) {
+            this.cancelCrop();
+          }
+          const propsPanel = document.querySelector('.properties-panel');
+          if (propsPanel && window.innerWidth <= 768) {
+            propsPanel.classList.remove('mobile-visible');
+          }
+        });
+        this.canvas.on('object:scaling', (e) => {
+          if (e.target.type === 'image' && e.target.selectable !== false) {
+            this.checkImageResolution(e.target._element, e.target);
+          }
+        });
+        this.canvas.on('object:moved', (e) => {
+          if (e.target.type === 'image' && e.target.selectable !== false) {
+            this.checkImageResolution(e.target._element, e.target);
+          }
+        });
+        this.canvas.on('object:modified', () => {
+          if (!this.isReordering && !this.isLoadingDesign) {
+            this.saveHistory();
+          }
+        });
+        this.canvas.on('object:added', (e) => {
+          if (!this.isRedoing && !this.isReordering && !this.isLoadingDesign && e.target && e.target.selectable !== false) {
+            this.saveHistory();
+            this.ensureProperLayering();
+          }
+        });
+        this.canvas.on('object:removed', (e) => {
+          if (!this.isReordering && !this.isLoadingDesign && e.target && e.target.selectable !== false) {
+            this.saveHistory();
+          }
+        });
+        this.canvas.on('path:created', (e) => {
+          if (e.path) {
+            this.canvas.remove(e.path);
+          }
+        });
+        this.canvas.on('mouse:down', () => {
+          if (this.canvas.isDrawingMode) {
+            this.canvas.isDrawingMode = false;
+          }
+        });
+      } else {
+        setTimeout(setupCanvasListeners, 100);
+      }
+    };
+
+    setupCanvasListeners();
+
+    document.getElementById('designer-lightbox')?.addEventListener('click', (e) => {
+      if (e.target.id === 'designer-lightbox') {
+        this.closeLightbox();
+      }
+    });
+  };
+  setupListeners();
+},
+
+
+setupKeyboardShortcuts() {
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+
+    // Existing shortcuts
+    if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+      e.preventDefault();
+      this.undo();
+    }
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) {
+      e.preventDefault();
+      this.redo();
+    }
+    if (e.key === 'Delete' || e.key === 'Backspace') {
+      const activeObject = this.canvas?.getActiveObject();
+      if (activeObject && activeObject !== this.backgroundImage && activeObject !== this.maskImage && activeObject !== this.unclippedMaskImage) {
+        this.canvas.remove(activeObject);
+        this.ensureProperLayering();
+        this.saveHistory();
+        this.showNotification('Item deleted');
+      }
+    }
+
+    // New shortcuts
+    if ((e.ctrlKey || e.metaKey) && e.key === 'g') {
+      e.preventDefault();
+      this.groupSelectedObjects();
+    }
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'G') {
+      e.preventDefault();
+      this.ungroupSelectedObject();
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+      e.preventDefault();
+      this.selectAll();
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+      e.preventDefault();
+      this.duplicateSelection();
+    }
+
+    // Arrow key nudging
+    const activeObject = this.canvas?.getActiveObject();
+    if (activeObject && activeObject.selectable) {
+      const nudgeAmount = e.shiftKey ? 10 : 1;
+
+      switch(e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          activeObject.left -= nudgeAmount;
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          activeObject.left += nudgeAmount;
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          activeObject.top -= nudgeAmount;
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          activeObject.top += nudgeAmount;
+          break;
+      }
+
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
+        activeObject.setCoords();
+        this.canvas.renderAll();
+        this.saveHistory();
+      }
+    }
+  });
+},
+
+
+
+showProperties(object) {
+  if (!object || object === this.backgroundImage || object === this.maskImage || object === this.unclippedMaskImage) return;
+
+  const cropBtn = document.getElementById('crop-btn');
+  const editTools = document.getElementById('edit-tools');
+  if (cropBtn && object.type === 'image') {
+    cropBtn.style.display = 'flex';
+    if (editTools) editTools.style.display = 'block';
+  }
+
+  // Only show properties panel on mobile devices
+  if (window.innerWidth <= 768) {
+    const propsPanel = document.querySelector('.properties-panel');
+    if (propsPanel) {
+      propsPanel.style.display = 'block';
+      propsPanel.classList.add('mobile-visible');
+    }
+  }
+},
+
+
+
+hideProperties() {
+  const cropBtn = document.getElementById('crop-btn');
+  const editTools = document.getElementById('edit-tools');
+  if (cropBtn) cropBtn.style.display = 'none';
+  if (editTools) editTools.style.display = 'none';
+
+  // Hide properties panel on mobile
+  if (window.innerWidth <= 768) {
+    const propsPanel = document.querySelector('.properties-panel');
+    if (propsPanel) {
+      propsPanel.classList.remove('mobile-visible');
+    }
+  }
+},
+
+
+showHelp() {
+  const modal = document.createElement('div');
+  modal.className = 'help-modal';
+  modal.innerHTML = `
+    <div class="help-content">
+      <h3>Keyboard Shortcuts</h3>
+      <div class="help-sections">
+        <div class="help-section">
+          <div class="shortcuts-list">
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Ctrl/Cmd + Z</span>
+              <span class="shortcut-desc">Undo</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Ctrl/Cmd + Y</span>
+              <span class="shortcut-desc">Redo</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Delete</span>
+              <span class="shortcut-desc">Delete selected</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Ctrl/Cmd + A</span>
+              <span class="shortcut-desc">Select all</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Ctrl/Cmd + D</span>
+              <span class="shortcut-desc">Duplicate</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Ctrl/Cmd + G</span>
+              <span class="shortcut-desc">Group</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Arrow Keys</span>
+              <span class="shortcut-desc">Nudge 1px</span>
+            </div>
+            <div class="shortcut-item">
+              <span class="shortcut-keys">Shift + Arrow</span>
+              <span class="shortcut-desc">Nudge 10px</span>
+            </div>
+          </div>
+        </div>
+        <div class="help-section">
+          <h4>Tips:</h4>
+          <ul>
+            <li>Click on the canvas background to deselect all items</li>
+            <li>Hold Shift while resizing to maintain aspect ratio</li>
+            <li>Use the layers panel to reorder elements</li>
+            <li>Double-click text to edit it inline</li>
+            <li>Scroll to zoom in/out when hovering over the canvas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary close-help">Got it!</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  modal.style.display = 'flex';
+
+  modal.querySelector('.close-help').addEventListener('click', () => {
+    modal.style.display = 'none';
+    setTimeout(() => document.body.removeChild(modal), 300);
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      setTimeout(() => document.body.removeChild(modal), 300);
+    }
+  });
+},
+
+
+
+showNotification(message, type = 'success') {
+  const notification = document.createElement('div');
+  notification.className = 'designer-notification';
+  if (type === 'error') {
+    notification.classList.add('error');
+  } else if (type === 'info') {
+    notification.classList.add('info');
+  } else if (type === 'warning') {
+    notification.classList.add('warning');
+  }
+
+  const icon = type === 'error' ? '❌' : type === 'warning' ? '⚠️' : type === 'info' ? 'ℹ️' : '✅';
+  notification.innerHTML = `<span>${icon}</span> ${message}`;
+
+  document.body.appendChild(notification);
+  setTimeout(() => notification.classList.add('show'), 10);
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => {
+      if (document.body.contains(notification)) {
+        document.body.removeChild(notification);
+      }
+    }, 300);
+  }, 3000);
+},
+
+
+
+showConfirmationModal(message, onConfirm) {
+  const confirmModal = document.createElement('div');
+  confirmModal.className = 'text-editor-modal';
+  confirmModal.innerHTML = `
+    <div class="modal-content">
+      <h3>Confirmation</h3>
+      <p>${message}</p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="cancel-confirm">Cancel</button>
+        <button class="btn btn-primary" id="confirm-action">Confirm</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(confirmModal);
+  confirmModal.style.display = 'flex';
+
+  document.getElementById('confirm-action')?.addEventListener('click', () => {
+    onConfirm();
+    document.body.removeChild(confirmModal);
+  });
+  document.getElementById('cancel-confirm')?.addEventListener('click', () => {
+    document.body.removeChild(confirmModal);
+  });
+}
+};

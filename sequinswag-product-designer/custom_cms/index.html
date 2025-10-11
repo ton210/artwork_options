@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SequinSwag Custom Product Designer</title>
+
+    <!-- External Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>SequinSwag Product Designer</h1>
+                <nav>
+                    <a href="#" class="nav-link">Products</a>
+                    <a href="#" class="nav-link">My Designs</a>
+                    <a href="#" class="nav-link">Cart</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Product Info Section -->
+            <section class="product-section">
+                <div class="product-grid">
+                    <!-- Product Images -->
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img id="main-product-image" src="https://via.placeholder.com/500x500" alt="Product Image">
+                        </div>
+                        <div class="thumbnail-images">
+                            <!-- Thumbnails will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="product-details">
+                        <h1 id="product-title">Sample Sequin Product</h1>
+                        <div class="price">
+                            <span class="current-price" id="product-price">$29.99</span>
+                            <span class="original-price" id="original-price">$39.99</span>
+                        </div>
+
+                        <div class="product-description" id="product-description">
+                            <p>Create stunning custom designs on our premium sequin products. Perfect for events, gifts, or personal style.</p>
+                        </div>
+
+                        <!-- Variants -->
+                        <div class="product-variants">
+                            <div class="variant-group">
+                                <label>Size:</label>
+                                <select id="size-selector">
+                                    <option value="">Select Size</option>
+                                </select>
+                            </div>
+
+                            <div class="variant-group">
+                                <label>Color:</label>
+                                <div class="color-options" id="color-options">
+                                    <!-- Color swatches will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="product-actions">
+                            <button id="customize-design-btn" class="btn btn-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                                </svg>
+                                Start Designing
+                            </button>
+
+                            <div class="quantity-controls">
+                                <button class="qty-btn" id="qty-minus">-</button>
+                                <input type="number" id="quantity" value="1" min="1" max="99">
+                                <button class="qty-btn" id="qty-plus">+</button>
+                            </div>
+
+                            <button id="add-to-cart-btn" class="btn btn-secondary" disabled>
+                                Add to Cart - $<span id="total-price">29.99</span>
+                            </button>
+                        </div>
+
+                        <!-- Design Preview -->
+                        <div class="design-preview" id="design-preview" style="display: none;">
+                            <h3>Your Design Preview</h3>
+                            <img id="design-preview-image" src="" alt="Design Preview">
+                            <div class="design-actions">
+                                <button id="edit-design-btn" class="btn btn-outline">Edit Design</button>
+                                <button id="remove-design-btn" class="btn btn-text">Remove Design</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Design Tool Lightbox -->
+    <div id="designer-lightbox" class="designer-lightbox">
+        <div class="designer-container">
+            <!-- Header -->
+            <div class="designer-header">
+                <h2>Design Your Product</h2>
+                <button id="close-designer" class="close-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Designer Content -->
+            <div class="designer-content">
+                <!-- Toolbar -->
+                <div class="designer-toolbar">
+                    <div class="tool-group">
+                        <button class="tool-btn" id="upload-image-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                            </svg>
+                            Upload Image
+                        </button>
+
+                        <button class="tool-btn" id="add-text-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+                            </svg>
+                            Add Text
+                        </button>
+                    </div>
+
+                    <div class="tool-group">
+                        <button class="tool-btn" id="undo-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 7v6h6M21 17a9 9 0 11-9-9c2.239 0 4.368.901 5.928 2.504L21 7"/>
+                            </svg>
+                            Undo
+                        </button>
+
+                        <button class="tool-btn" id="redo-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 7v6h-6M3 17a9 9 0 019-9c2.239 0 4.368.901 5.928 2.504L3 7"/>
+                            </svg>
+                            Redo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canvas Area -->
+                <div class="canvas-container">
+                    <canvas id="design-canvas" width="400" height="400"></canvas>
+                    <div class="loading-overlay" id="loading-overlay">
+                        <div class="spinner"></div>
+                        <p>Loading designer...</p>
+                    </div>
+                </div>
+
+                <!-- Properties Panel -->
+                <div class="properties-panel">
+                    <h3>Properties</h3>
+
+                    <div class="property-group">
+                        <label>Opacity</label>
+                        <div class="slider-container">
+                            <input type="range" id="opacity-slider" min="0" max="100" value="100">
+                            <span id="opacity-value">100%</span>
+                        </div>
+                    </div>
+
+                    <div class="property-group" id="text-properties" style="display: none;">
+                        <label>Text</label>
+                        <input type="text" id="text-input" placeholder="Enter text">
+
+                        <label>Font Size</label>
+                        <input type="range" id="font-size-slider" min="12" max="120" value="24">
+                        <span id="font-size-value">24px</span>
+
+                        <label>Text Color</label>
+                        <input type="color" id="text-color" value="#000000">
+                    </div>
+
+                    <div class="property-actions">
+                        <button id="delete-object-btn" class="btn btn-danger" style="display: none;">
+                            Delete Selected
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="designer-footer">
+                <button id="cancel-design" class="btn btn-secondary">Cancel</button>
+                <button id="apply-design" class="btn btn-primary">Apply Design</button>
+            </div>
+        </div>
+
+        <!-- Hidden File Input -->
+        <input type="file" id="main-file-input" accept="image/*" style="display: none;">
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/product-manager.js"></script>
+    <script src="js/design-tool.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

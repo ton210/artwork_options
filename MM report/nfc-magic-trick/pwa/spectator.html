@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+
+    <title>Magic Effect</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Normal state -->
+        <div id="normalScreen" class="screen active">
+            <div class="normal-content">
+                <h1>📱</h1>
+                <p>Phone is ready...</p>
+                <p class="connection-status" id="connectionStatus">Connecting...</p>
+            </div>
+        </div>
+
+        <!-- Glitch effect -->
+        <div id="glitchScreen" class="screen">
+            <canvas id="glitchCanvas"></canvas>
+        </div>
+
+        <!-- Crash effect -->
+        <div id="crashScreen" class="screen">
+            <div class="crash-content">
+                <div class="crash-icon">⚠️</div>
+                <h2>System UI has stopped</h2>
+                <p>Android System</p>
+                <p class="crash-details">Unfortunately, System UI has stopped.</p>
+                <button class="crash-button">OK</button>
+                <button class="crash-button">Send feedback</button>
+            </div>
+        </div>
+
+        <!-- Flicker effect -->
+        <div id="flickerScreen" class="screen"></div>
+
+        <!-- Shake effect -->
+        <div id="shakeScreen" class="screen">
+            <div class="shake-content">
+                <h1 class="shake-text">📳</h1>
+                <p class="shake-text">Vibrating...</p>
+            </div>
+        </div>
+
+        <!-- Static/TV noise effect -->
+        <div id="staticScreen" class="screen">
+            <canvas id="staticCanvas"></canvas>
+        </div>
+
+        <!-- Matrix effect -->
+        <div id="matrixScreen" class="screen">
+            <canvas id="matrixCanvas"></canvas>
+        </div>
+
+        <!-- Photo Gallery effect -->
+        <div id="galleryScreen" class="screen">
+            <div class="gallery-content">
+                <div class="gallery-header">
+                    <span>📷 Photos</span>
+                    <span class="gallery-count">127 items</span>
+                </div>
+                <div class="gallery-grid" id="galleryGrid"></div>
+            </div>
+        </div>
+
+        <!-- Apps effect -->
+        <div id="appsScreen" class="screen">
+            <div class="apps-overlay">
+                <div class="app-window" id="appWindow">
+                    <div class="app-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera/Photos effect -->
+        <div id="cameraScreen" class="screen">
+            <div class="camera-content">
+                <video id="cameraPreview" autoplay playsinline></video>
+                <canvas id="cameraCanvas" style="display:none;"></canvas>
+                <div class="camera-overlay">
+                    <div class="camera-header">📷 Camera</div>
+                    <div class="camera-shutter" id="shutterBtn">📸</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location/Maps effect -->
+        <div id="locationScreen" class="screen">
+            <div class="location-content">
+                <div class="location-header">
+                    <span>📍 Maps</span>
+                    <span class="location-close">✕</span>
+                </div>
+                <div id="locationInfo" class="location-info">
+                    <div class="location-spinner">🌍 Finding your location...</div>
+                </div>
+                <div id="locationMap" class="location-map"></div>
+            </div>
+        </div>
+
+        <!-- Notifications effect -->
+        <div id="notificationsScreen" class="screen">
+            <div class="notifications-content" id="notificationsList"></div>
+        </div>
+
+        <!-- System Info effect -->
+        <div id="systeminfoScreen" class="screen">
+            <div class="systeminfo-content">
+                <div class="systeminfo-header">⚙️ System Information</div>
+                <div id="systeminfoData" class="systeminfo-data"></div>
+            </div>
+        </div>
+
+        <!-- Clipboard effect -->
+        <div id="clipboardScreen" class="screen">
+            <div class="clipboard-content">
+                <div class="clipboard-header">📋 Clipboard Access</div>
+                <div id="clipboardData" class="clipboard-data">
+                    <div class="clipboard-spinner">Reading clipboard...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden video element for camera -->
+    <video id="hiddenCamera" style="display:none;" autoplay playsinline></video>
+
+    <!-- Audio elements for effects -->
+    <audio id="glitchSound" preload="auto">
+        <!-- Using data URI for a simple beep -->
+    </audio>
+    <audio id="crashSound" preload="auto">
+        <!-- Error sound -->
+    </audio>
+
+    <script src="/effects.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,885 @@
+/**
+ * VSS Notifications Styles
+ * Real-time notification system styling
+ * 
+ * @package VendorOrderManager
+ * @since 8.0.0
+ */
+
+/* ==========================================================================
+   NOTIFICATION BELL & WRAPPER
+   ========================================================================== */
+
+.vss-notification-wrapper {
+    position: fixed;
+    top: 32px;
+    right: 20px;
+    z-index: 999999;
+}
+
+.vss-notification-bell {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.vss-notification-bell:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.vss-notification-bell .dashicons {
+    color: white;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.vss-notification-bell.has-notifications {
+    animation: bellShake 2s ease-in-out infinite;
+}
+
+@keyframes bellShake {
+    0%, 50%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(-10deg); }
+    20%, 40% { transform: rotate(10deg); }
+}
+
+.vss-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    min-width: 20px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ==========================================================================
+   NOTIFICATION PANEL
+   ========================================================================== */
+
+.vss-notification-panel {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 380px;
+    max-height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.vss-notification-panel.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.vss-notification-panel::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+}
+
+.vss-notification-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vss-notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.vss-notification-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.vss-btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vss-btn-sm:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #475569;
+}
+
+.vss-notification-list {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.vss-notification-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.vss-notification-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.vss-notification-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.vss-notification-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ==========================================================================
+   NOTIFICATION ITEMS
+   ========================================================================== */
+
+.vss-notification-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.vss-notification-item:hover {
+    background: #f8fafc;
+}
+
+.vss-notification-item:last-child {
+    border-bottom: none;
+}
+
+.vss-notification-item.unread {
+    background: #f0f9ff;
+    border-left: 4px solid #2563eb;
+}
+
+.vss-notification-item.unread::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    background: #2563eb;
+    border-radius: 50%;
+}
+
+.vss-notification-item.priority-high {
+    border-left-color: #f59e0b;
+}
+
+.vss-notification-item.priority-urgent {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.vss-notification-item.priority-urgent.unread::before {
+    background: #ef4444;
+    animation: urgentPulse 1s ease-in-out infinite;
+}
+
+@keyframes urgentPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.vss-notification-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.vss-notification-icon .dashicons {
+    color: #64748b;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.vss-notification-item.priority-high .vss-notification-icon {
+    background: #fef3c7;
+}
+
+.vss-notification-item.priority-high .vss-notification-icon .dashicons {
+    color: #d97706;
+}
+
+.vss-notification-item.priority-urgent .vss-notification-icon {
+    background: #fee2e2;
+}
+
+.vss-notification-item.priority-urgent .vss-notification-icon .dashicons {
+    color: #dc2626;
+}
+
+.vss-notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.vss-notification-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.vss-notification-message {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    word-wrap: break-word;
+}
+
+.vss-notification-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.vss-notification-time {
+    color: #94a3b8;
+}
+
+.vss-notification-action {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.vss-notification-close {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0;
+    margin-left: 8px;
+}
+
+.vss-notification-item:hover .vss-notification-close {
+    opacity: 1;
+}
+
+.vss-notification-close:hover {
+    background: #f1f5f9;
+}
+
+.vss-notification-close .dashicons {
+    color: #94a3b8;
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/* ==========================================================================
+   NOTIFICATION FOOTER
+   ========================================================================== */
+
+.vss-notification-footer {
+    padding: 12px 24px;
+    border-top: 1px solid #e2e8f0;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.vss-btn-link {
+    background: transparent;
+    border: none;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.vss-btn-link:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* ==========================================================================
+   EMPTY STATE
+   ========================================================================== */
+
+.vss-no-notifications {
+    text-align: center;
+    padding: 40px 24px;
+    color: #94a3b8;
+}
+
+.vss-no-notifications .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.vss-no-notifications p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   LOADING STATE
+   ========================================================================== */
+
+.vss-notification-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.vss-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 12px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATIONS
+   ========================================================================== */
+
+.vss-toast-container {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 1000000;
+    pointer-events: none;
+}
+
+.vss-toast {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    padding: 16px;
+    margin-bottom: 12px;
+    max-width: 400px;
+    pointer-events: auto;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vss-toast-high {
+    border-left: 4px solid #f59e0b;
+}
+
+.vss-toast-urgent {
+    border-left: 4px solid #ef4444;
+    background: #fef2f2;
+}
+
+.vss-toast-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vss-toast-icon .dashicons {
+    color: #64748b;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.vss-toast-high .vss-toast-icon .dashicons {
+    color: #d97706;
+}
+
+.vss-toast-urgent .vss-toast-icon .dashicons {
+    color: #dc2626;
+}
+
+.vss-toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.vss-toast-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.vss-toast-message {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.vss-toast-close {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-left: 8px;
+}
+
+.vss-toast-close:hover {
+    background: #f1f5f9;
+}
+
+.vss-toast-close .dashicons {
+    color: #94a3b8;
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+}
+
+/* ==========================================================================
+   CONNECTION STATUS
+   ========================================================================== */
+
+.vss-connection-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 999998;
+    border: 1px solid #e2e8f0;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.vss-connection-status.lost {
+    border-color: #fbbf24;
+    background: #fefce8;
+    color: #92400e;
+}
+
+.vss-connection-status.restored {
+    border-color: #10b981;
+    background: #ecfdf5;
+    color: #065f46;
+}
+
+.vss-connection-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/* ==========================================================================
+   PROGRESS OVERLAY
+   ========================================================================== */
+
+.vss-progress-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000001;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.vss-progress-overlay.active {
+    display: flex;
+}
+
+.vss-progress-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.vss-progress-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 20px 0;
+}
+
+.vss-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.vss-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.vss-progress-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.vss-progress-percentage {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.vss-progress-step {
+    font-style: italic;
+}
+
+.vss-progress-step.error {
+    color: #dc2626;
+}
+
+.vss-progress-cancel {
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #6b7280;
+    transition: all 0.2s ease;
+}
+
+.vss-progress-cancel:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+.vss-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+.vss-slide-out {
+    animation: slideOut 0.3s ease-in;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.vss-fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .vss-notification-wrapper {
+        top: 46px;
+        right: 10px;
+    }
+    
+    .vss-notification-panel {
+        width: calc(100vw - 20px);
+        right: -170px;
+        max-width: 350px;
+    }
+    
+    .vss-toast-container {
+        right: 10px;
+        left: 10px;
+    }
+    
+    .vss-toast {
+        max-width: none;
+        width: 100%;
+    }
+    
+    .vss-connection-status {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        justify-content: center;
+    }
+    
+    .vss-progress-content {
+        margin: 20px;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vss-notification-bell {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .vss-notification-panel {
+        width: calc(100vw - 10px);
+        right: -150px;
+    }
+    
+    .vss-notification-item {
+        padding: 12px 16px;
+    }
+    
+    .vss-notification-header {
+        padding: 16px;
+    }
+    
+    .vss-notification-header h3 {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+   HIGH CONTRAST MODE
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .vss-notification-bell {
+        border: 2px solid #000;
+    }
+    
+    .vss-notification-panel {
+        border: 2px solid #000;
+    }
+    
+    .vss-notification-item {
+        border-bottom: 1px solid #000;
+    }
+    
+    .vss-toast {
+        border: 2px solid #000;
+    }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .vss-notification-bell,
+    .vss-notification-panel,
+    .vss-toast,
+    .vss-progress-fill,
+    .vss-spinner {
+        animation: none;
+        transition: none;
+    }
+    
+    .vss-notification-bell.has-notifications {
+        animation: none;
+    }
+    
+    .vss-notification-badge {
+        animation: none;
+    }
+}
+
+/* ==========================================================================
+   DARK MODE SUPPORT
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .vss-notification-panel {
+        background: #1e293b;
+        border-color: #374151;
+        color: #e2e8f0;
+    }
+    
+    .vss-notification-header {
+        background: #0f172a;
+        border-color: #374151;
+    }
+    
+    .vss-notification-header h3 {
+        color: #f1f5f9;
+    }
+    
+    .vss-notification-item {
+        border-color: #374151;
+    }
+    
+    .vss-notification-item:hover {
+        background: #334155;
+    }
+    
+    .vss-notification-item.unread {
+        background: #1e3a8a;
+    }
+    
+    .vss-notification-title {
+        color: #f1f5f9;
+    }
+    
+    .vss-notification-message {
+        color: #cbd5e1;
+    }
+    
+    .vss-notification-time {
+        color: #64748b;
+    }
+    
+    .vss-notification-icon {
+        background: #374151;
+    }
+    
+    .vss-notification-footer {
+        background: #0f172a;
+        border-color: #374151;
+    }
+    
+    .vss-toast {
+        background: #1e293b;
+        border-color: #374151;
+        color: #e2e8f0;
+    }
+    
+    .vss-toast-title {
+        color: #f1f5f9;
+    }
+    
+    .vss-toast-message {
+        color: #cbd5e1;
+    }
+    
+    .vss-progress-content {
+        background: #1e293b;
+        color: #e2e8f0;
+    }
+    
+    .vss-progress-title {
+        color: #f1f5f9;
+    }
+    
+    .vss-progress-bar {
+        background: #374151;
+    }
+}

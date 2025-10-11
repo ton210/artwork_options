@@ -1,0 +1,26 @@
+# Quick cURL Commands to Test Your Shopify Token
+# Copy and paste these commands in your terminal/command prompt
+
+# Test 1: Basic Shop Connection
+curl -X GET "https://qstomize.myshopify.com/admin/api/2023-10/shop.json" \
+  -H "X-Shopify-Access-Token: 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" \
+  -H "Content-Type: application/json" \
+  -v
+
+# If the above works, test orders access:
+curl -X GET "https://qstomize.myshopify.com/admin/api/2023-10/orders.json?limit=1" \
+  -H "X-Shopify-Access-Token: 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" \
+  -H "Content-Type: application/json" \
+  -v
+
+# Windows Command Prompt version (if above doesn't work):
+curl -X GET "https://qstomize.myshopify.com/admin/api/2023-10/shop.json" -H "X-Shopify-Access-Token: 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" -H "Content-Type: application/json"
+
+# PowerShell version:
+Invoke-RestMethod -Uri "https://qstomize.myshopify.com/admin/api/2023-10/shop.json" -Headers @{'X-Shopify-Access-Token'='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'; 'Content-Type'='application/json'}
+
+# Expected results:
+# - 200 status code = Token works ✅
+# - 401 status code = Invalid token ❌  
+# - 403 status code = App disabled or no permissions ❌
+# - 404 status code = Store not found ❌

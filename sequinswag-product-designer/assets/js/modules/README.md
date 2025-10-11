@@ -1,0 +1,49 @@
+# Enhanced Product Designer Modules
+
+Generated on: 2025-07-29 11:57:16
+
+### `core/canvas.js`
+- **Methods**: 4
+- **Includes**: `setupMaskClipping, ensureProperLayering, selectAll, duplicateSelection`...
+### `core/initialization.js`
+- **Methods**: 4
+- **Includes**: `init, setupCanvas, loadFabricJS, setupAnimations`...
+### `features/cart.js`
+- **Methods**: 4
+- **Includes**: `applyDesign, generatePreview, updateUIAfterDesign, loadDesignFromCartData`...
+### `features/cropping.js`
+- **Methods**: 2
+- **Includes**: `applyCrop, cleanupCrop`...
+### `features/designs.js`
+- **Methods**: 7
+- **Includes**: `saveDesign, showSavedDesigns, saveSessionDesign, loadSessionDesign, clearOldSessions`...
+### `features/history.js`
+- **Methods**: 4
+- **Includes**: `saveHistory, undo, redo, updateHistoryButtons`...
+### `features/images.js`
+- **Methods**: 6
+- **Includes**: `fileToBase64, uploadToWordPress, uploadToCloudinary, saveCloudinaryUrlToWordPress, uploadPreviewToWordPress`...
+### `features/text.js`
+- **Methods**: 4
+- **Includes**: `showTextEditor, updateTextPreview, setupTextInputListeners, setupAdvancedTextControls`...
+### `features/variants.js`
+- **Methods**: 4
+- **Includes**: `loadVariantData, loadDesign, regeneratePreviewForVariant, generatePreviewFromTempCanvas`...
+### `handlers/events.js`
+- **Methods**: 5
+- **Includes**: `setupEventListeners, showProperties, hideProperties, showHelp, showConfirmationModal`...
+### `ui/controls.js`
+- **Methods**: 12
+- **Includes**: `updateLayersPanel, setupAlignmentTools, updateAlignmentTools, distributeObjects, setupProductVariantSelector`...
+### `ui/lightbox.js`
+- **Methods**: 4
+- **Includes**: `openLightbox, openLightboxWithVariant, closeLightbox, hideLoading`...
+### `ui/mobile.js`
+- **Methods**: 7
+- **Includes**: `setupMobileUI, setupMobileQuickActions, setupMobileToolsDrawer, setupMobileUploadZone, showMobileEditControls`...
+### `utils/DesignAnalytics.js`
+- **Methods**: 1
+- **Includes**: `DesignAnalytics`...
+### `utils/ImageLoader.js`
+- **Methods**: 1
+- **Includes**: `ImageLoader`...

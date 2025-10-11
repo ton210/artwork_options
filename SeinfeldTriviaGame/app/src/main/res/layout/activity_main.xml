@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF5E6"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/seinfeld_logo"
+        android:contentDescription="Seinfeld Logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#D32F2F"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_subtitle"
+        android:textSize="16sp"
+        android:textColor="#666"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/btn_easy"
+        style="@style/DifficultyButton"
+        android:text="@string/easy_mode"
+        android:backgroundTint="#4CAF50" />
+
+    <Button
+        android:id="@+id/btn_medium"
+        style="@style/DifficultyButton"
+        android:text="@string/medium_mode"
+        android:backgroundTint="#FF9800" />
+
+    <Button
+        android:id="@+id/btn_hard"
+        style="@style/DifficultyButton"
+        android:text="@string/hard_mode"
+        android:backgroundTint="#F44336" />
+
+    <Button
+        android:id="@+id/btn_expert"
+        style="@style/DifficultyButton"
+        android:text="@string/expert_mode"
+        android:backgroundTint="#9C27B0" />
+
+</LinearLayout>

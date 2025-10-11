@@ -1,0 +1,947 @@
+# Chinese (China) translation for Enhanced Vendor Order Manager
+# Copyright (C) 2024 Your Company
+# This file is distributed under the same license as the Vendor Order Manager plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Vendor Order Manager 7.1.0\n"
+"Report-Msgid-Bugs-To: https://example.com/support\n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2024-01-01 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese (China)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# Enhanced Navigation
+msgid "Marketplace Portal"
+msgstr "市场门户"
+
+msgid "Product Manager"
+msgstr "产品管理器"
+
+msgid "Analytics Dashboard"
+msgstr "数据分析面板"
+
+msgid "Vendor Profile"
+msgstr "供应商档案"
+
+msgid "Order Management"
+msgstr "订单管理"
+
+msgid "Customer Support"
+msgstr "客户支持"
+
+msgid "Language Settings"
+msgstr "语言设置"
+
+msgid "Chinese"
+msgstr "中文"
+
+msgid "English"
+msgstr "英文"
+
+# Enhanced Dashboard
+msgid "Welcome back!"
+msgstr "欢迎回来！"
+
+msgid "Here's your comprehensive business overview."
+msgstr "这是您的全面业务概览。"
+
+msgid "Active Vendor"
+msgstr "活跃供应商"
+
+msgid "Total Products"
+msgstr "产品总数"
+
+msgid "Product Views"
+msgstr "产品浏览量"
+
+msgid "Cart Additions"
+msgstr "加入购物车"
+
+msgid "Pending Questions"
+msgstr "待回复咨询"
+
+msgid "Revenue & Orders Trend"
+msgstr "收入和订单趋势"
+
+msgid "Order Status Distribution"
+msgstr "订单状态分布"
+
+msgid "Top Products"
+msgstr "热门产品"
+
+msgid "Top Customers"
+msgstr "重要客户"
+
+msgid "Customer"
+msgstr "客户"
+
+msgid "Orders"
+msgstr "订单数"
+
+msgid "Total Spent"
+msgstr "总消费"
+
+msgid "Quantity"
+msgstr "数量"
+
+msgid "Revenue"
+msgstr "收入"
+
+# Enhanced Product Upload
+msgid "Add New Product"
+msgstr "添加新产品"
+
+msgid "Edit Product"
+msgstr "编辑产品"
+
+msgid "Save Draft"
+msgstr "保存草稿"
+
+msgid "Use Template"
+msgstr "使用模板"
+
+msgid "Preview Product"
+msgstr "预览产品"
+
+msgid "Basic Info"
+msgstr "基本信息"
+
+msgid "Details"
+msgstr "详细信息"
+
+msgid "Images"
+msgstr "图片"
+
+msgid "Pricing"
+msgstr "定价"
+
+msgid "Submit"
+msgstr "提交"
+
+msgid "Basic Product Information"
+msgstr "基本产品信息"
+
+msgid "Product Name (Chinese) *"
+msgstr "产品名称（中文）*"
+
+msgid "Enter a clear, accurate Chinese product name"
+msgstr "请输入清晰、准确的中文产品名称"
+
+msgid "Product Name (English)"
+msgstr "产品名称（英文）"
+
+msgid "Auto Translate"
+msgstr "自动翻译"
+
+msgid "Category *"
+msgstr "分类 *"
+
+msgid "Select Category"
+msgstr "选择分类"
+
+msgid "Subcategory"
+msgstr "子分类"
+
+msgid "Select Subcategory"
+msgstr "选择子分类"
+
+msgid "Product SKU"
+msgstr "产品编码"
+
+msgid "Generate"
+msgstr "生成"
+
+msgid "Product Weight (grams)"
+msgstr "产品重量（克）"
+
+msgid "Product Details"
+msgstr "产品详情"
+
+msgid "Product Description (Chinese) *"
+msgstr "产品描述（中文）*"
+
+msgid "Product Description (English)"
+msgstr "产品描述（英文）"
+
+msgid "Auto Translate Description"
+msgstr "自动翻译描述"
+
+msgid "Production Time (days)"
+msgstr "生产时间（天）"
+
+msgid "Minimum Order Quantity"
+msgstr "最小订购数量"
+
+msgid "Customization Options"
+msgstr "定制选项"
+
+msgid "Option Name"
+msgstr "选项名称"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Color"
+msgstr "颜色"
+
+msgid "Size"
+msgstr "尺寸"
+
+msgid "Dropdown"
+msgstr "下拉菜单"
+
+msgid "Option values (comma separated)"
+msgstr "选项值（逗号分隔）"
+
+msgid "+ Add Customization Option"
+msgstr "+ 添加定制选项"
+
+msgid "Target Sales Channels"
+msgstr "目标销售渠道"
+
+msgid "WooCommerce Store"
+msgstr "WooCommerce商店"
+
+msgid "Taobao"
+msgstr "淘宝"
+
+msgid "Tmall"
+msgstr "天猫"
+
+# Image Upload Categories
+msgid "Product Images Upload"
+msgstr "产品图片上传"
+
+msgid "Main Product Images *"
+msgstr "主要产品图片 *"
+
+msgid "Show main product appearance, recommend 3-5 high quality images"
+msgstr "展示产品主要外观，建议上传3-5张高质量图片"
+
+msgid "Drag images here or click to upload"
+msgstr "拖拽图片到此处或点击上传"
+
+msgid "Support JPG, PNG, GIF formats, max 5MB"
+msgstr "支持JPG、PNG、GIF格式，最大5MB"
+
+msgid "Design Tool Files"
+msgstr "设计工具文件"
+
+msgid "Editable design files like PSD, AI, SVG, etc."
+msgstr "可编辑的设计文件，如PSD、AI、SVG等"
+
+msgid "Upload design source files"
+msgstr "上传设计源文件"
+
+msgid "Support PSD, AI, SVG, PDF formats"
+msgstr "支持PSD、AI、SVG、PDF格式"
+
+msgid "Finished Production Pictures"
+msgstr "成品实拍图"
+
+msgid "Actual photos of finished products"
+msgstr "实际成品照片"
+
+msgid "Upload finished product photos"
+msgstr "上传成品照片"
+
+# Enhanced Pricing
+msgid "Product Pricing"
+msgstr "产品定价"
+
+msgid "Production Cost (¥)"
+msgstr "生产成本（¥）"
+
+msgid "Suggested Selling Price (¥)"
+msgstr "建议售价（¥）"
+
+msgid "Pricing Calculator"
+msgstr "定价计算器"
+
+msgid "Production Cost:"
+msgstr "生产成本："
+
+msgid "Platform Fee (15%):"
+msgstr "平台费用（15%）："
+
+msgid "Suggested Profit Margin:"
+msgstr "建议利润率："
+
+msgid "Custom"
+msgstr "自定义"
+
+msgid "Recommended Price:"
+msgstr "推荐价格："
+
+msgid "Enable Quantity-based Pricing"
+msgstr "启用阶梯定价"
+
+msgid "Quantity Pricing Setup"
+msgstr "阶梯定价设置"
+
+msgid "Min Qty"
+msgstr "最小数量"
+
+msgid "Unit Price"
+msgstr "单价"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "+ Add Tier"
+msgstr "+ 添加阶梯"
+
+# Review & Submit
+msgid "Review & Submit"
+msgstr "检查并提交"
+
+msgid "Product Preview"
+msgstr "产品预览"
+
+msgid "Submission Options"
+msgstr "提交选项"
+
+msgid "Save as template for future use"
+msgstr "保存为模板供将来使用"
+
+msgid "Template name"
+msgstr "模板名称"
+
+msgid "Allow other vendors to use this template"
+msgstr "允许其他供应商使用此模板"
+
+msgid "Submission Notes"
+msgstr "提交备注"
+
+msgid "Any special requirements or notes for admin..."
+msgstr "向管理员说明任何特殊要求或注意事项..."
+
+msgid "Submit for Review"
+msgstr "提交审核"
+
+msgid "Previous"
+msgstr "上一步"
+
+msgid "Next"
+msgstr "下一步"
+
+msgid "Choose Product Template"
+msgstr "选择产品模板"
+
+# Quick Actions Dashboard
+msgid "Quick Product Upload"
+msgstr "快速产品上传"
+
+msgid "Quickly add new products to your store"
+msgstr "快速向您的商店添加新产品"
+
+msgid "Start Upload"
+msgstr "开始上传"
+
+msgid "Bulk Import"
+msgstr "批量导入"
+
+msgid "Upload products in bulk using CSV"
+msgstr "使用CSV批量上传产品"
+
+msgid "Bulk Import"
+msgstr "批量导入"
+
+msgid "View Analytics"
+msgstr "查看分析"
+
+msgid "Understand your product performance"
+msgstr "了解您的产品表现"
+
+msgid "View Details"
+msgstr "查看详情"
+
+msgid "Recent Activity"
+msgstr "最近活动"
+
+msgid "No recent activity"
+msgstr "暂无最近活动"
+
+msgid "uploaded a product"
+msgstr "上传了一个产品"
+
+msgid "product was approved"
+msgstr "产品已获批准"
+
+msgid "received new order"
+msgstr "收到新订单"
+
+# Analytics Dashboard
+msgid "Analytics Dashboard"
+msgstr "分析仪表板"
+
+msgid "Today"
+msgstr "今天"
+
+msgid "Yesterday"
+msgstr "昨天"
+
+msgid "Last 7 Days"
+msgstr "过去7天"
+
+msgid "Last 30 Days"
+msgstr "过去30天"
+
+msgid "Last 90 Days"
+msgstr "过去90天"
+
+msgid "This Month"
+msgstr "本月"
+
+msgid "Last Month"
+msgstr "上月"
+
+msgid "This Year"
+msgstr "今年"
+
+msgid "Export Data"
+msgstr "导出数据"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Total Views"
+msgstr "总浏览量"
+
+msgid "Cart Additions"
+msgstr "购物车添加"
+
+msgid "Sales"
+msgstr "销售量"
+
+msgid "Conversion Rate"
+msgstr "转化率"
+
+msgid "Traffic Trends"
+msgstr "流量趋势"
+
+msgid "Views"
+msgstr "浏览量"
+
+msgid "Cart"
+msgstr "购物车"
+
+msgid "Product Performance"
+msgstr "产品表现"
+
+msgid "Top Products"
+msgstr "热门产品"
+
+msgid "By Views"
+msgstr "按浏览量"
+
+msgid "By Cart Adds"
+msgstr "按购物车添加"
+
+msgid "By Sales"
+msgstr "按销售量"
+
+msgid "By Revenue"
+msgstr "按收入"
+
+msgid "Product"
+msgstr "产品"
+
+msgid "Conversion"
+msgstr "转化率"
+
+msgid "Customer Insights"
+msgstr "客户洞察"
+
+msgid "Metric"
+msgstr "指标"
+
+msgid "Current"
+msgstr "当前"
+
+msgid "Previous"
+msgstr "之前"
+
+msgid "Change"
+msgstr "变化"
+
+msgid "Unique Visitors"
+msgstr "独立访客"
+
+msgid "Returning Customers"
+msgstr "回头客"
+
+msgid "Avg. Session Duration"
+msgstr "平均会话时长"
+
+msgid "Customer Questions"
+msgstr "客户问题"
+
+msgid "View All"
+msgstr "查看全部"
+
+msgid "Question"
+msgstr "问题"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Answer"
+msgstr "回答"
+
+msgid "ago"
+msgstr "前"
+
+# Product Categories
+msgid "Electronics"
+msgstr "电子产品"
+
+msgid "Clothing & Apparel"
+msgstr "服装服饰"
+
+msgid "Home & Garden"
+msgstr "家居园艺"
+
+msgid "Sports & Outdoors"
+msgstr "运动户外"
+
+msgid "Beauty & Personal Care"
+msgstr "美容护理"
+
+msgid "Toys & Games"
+msgstr "玩具游戏"
+
+msgid "Automotive"
+msgstr "汽车用品"
+
+msgid "Books & Media"
+msgstr "图书媒体"
+
+msgid "Health & Wellness"
+msgstr "健康保健"
+
+msgid "Industrial & Scientific"
+msgstr "工业科学"
+
+# Order Management Enhanced
+msgid "Order"
+msgstr "订单"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Customer"
+msgstr "客户"
+
+msgid "Items"
+msgstr "商品"
+
+msgid "Ship Date"
+msgstr "发货日期"
+
+msgid "View Details"
+msgstr "查看详情"
+
+msgid "Quick Ship"
+msgstr "快速发货"
+
+msgid "LATE"
+msgstr "延迟"
+
+msgid "Processing"
+msgstr "处理中"
+
+msgid "All"
+msgstr "全部"
+
+msgid "Late"
+msgstr "延迟"
+
+msgid "Urgent"
+msgstr "紧急"
+
+msgid "View all orders"
+msgstr "查看所有订单"
+
+msgid "No orders yet"
+msgstr "暂无订单"
+
+msgid "Your orders will appear here once you receive them."
+msgstr "您收到订单后将显示在此处。"
+
+msgid "Value"
+msgstr "金额"
+
+# Quick Actions
+msgid "Quick Actions"
+msgstr "快速操作"
+
+msgid "View All Orders"
+msgstr "查看所有订单"
+
+msgid "Upload Files"
+msgstr "上传文件"
+
+msgid "View Reports"
+msgstr "查看报告"
+
+msgid "Contact Support"
+msgstr "联系支持"
+
+# Pending Items & Issues
+msgid "Items Requiring Attention"
+msgstr "需要关注的项目"
+
+msgid "Mockup disapproved"
+msgstr "样品图被拒绝"
+
+msgid "Production file disapproved"
+msgstr "生产文件被拒绝"
+
+# Notifications and Status Messages
+msgid "Loading..."
+msgstr "加载中..."
+
+msgid "An error occurred"
+msgstr "发生错误"
+
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Fetching..."
+msgstr "获取中..."
+
+msgid "Retry Fetch"
+msgstr "重新获取"
+
+msgid "Download"
+msgstr "下载"
+
+msgid "Failed to fetch files. Please try again."
+msgstr "获取文件失败，请重试。"
+
+msgid "No files available"
+msgstr "无可用文件"
+
+# User Statistics Widgets
+msgid "Your Stats"
+msgstr "您的统计"
+
+msgid "Recent Orders"
+msgstr "最近订单"
+
+msgid "Pending Tasks"
+msgstr "待办任务"
+
+msgid "Processing: <strong>%d</strong>"
+msgstr "处理中：<strong>%d</strong>"
+
+msgid "Shipped This Month: <strong>%d</strong>"
+msgstr "本月已发货：<strong>%d</strong>"
+
+msgid "Earnings This Month: <strong>%s</strong>"
+msgstr "本月收入：<strong>%s</strong>"
+
+msgid "Late Orders: <strong>%d</strong>"
+msgstr "延迟订单：<strong>%d</strong>"
+
+msgid "No recent orders."
+msgstr "暂无最近订单。"
+
+msgid "All caught up! No pending tasks."
+msgstr "全部完成！暂无待办任务。"
+
+msgid "%d order needs ship date"
+msgid_plural "%d orders need ship date"
+msgstr[0] "%d个订单需要发货日期"
+
+msgid "%d order needs mockup"
+msgid_plural "%d orders need mockup"
+msgstr[0] "%d个订单需要样品图"
+
+# Enhanced Performance Metrics
+msgid "Performance Score"
+msgstr "绩效评分"
+
+msgid "Based on delivery, quality, and customer satisfaction"
+msgstr "基于交付、质量和客户满意度"
+
+msgid "On-Time Delivery"
+msgstr "准时交付"
+
+msgid "Completion Rate"
+msgstr "完成率"
+
+msgid "Avg Processing"
+msgstr "平均处理"
+
+msgid "days"
+msgstr "天"
+
+# Login and Registration
+msgid "Vendor Login"
+msgstr "供应商登录"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Remember Me"
+msgstr "记住我"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "Become a Vendor"
+msgstr "成为供应商"
+
+msgid "Apply Now"
+msgstr "立即申请"
+
+# Enhanced Error Messages
+msgid "Please fill in all required fields"
+msgstr "请填写所有必填字段"
+
+msgid "Invalid file format"
+msgstr "文件格式无效"
+
+msgid "File too large"
+msgstr "文件过大"
+
+msgid "Upload failed"
+msgstr "上传失败"
+
+msgid "Network error, please try again"
+msgstr "网络错误，请重试"
+
+msgid "Validation failed"
+msgstr "验证失败"
+
+msgid "Access denied"
+msgstr "访问被拒绝"
+
+msgid "Session expired"
+msgstr "会话已过期"
+
+# Enhanced Success Messages
+msgid "Product uploaded successfully"
+msgstr "产品上传成功"
+
+msgid "Draft saved successfully"
+msgstr "草稿保存成功"
+
+msgid "Settings updated"
+msgstr "设置已更新"
+
+msgid "File uploaded successfully"
+msgstr "文件上传成功"
+
+msgid "Language updated"
+msgstr "语言已更新"
+
+msgid "Profile updated successfully"
+msgstr "档案更新成功"
+
+msgid "Template saved successfully"
+msgstr "模板保存成功"
+
+msgid "Data exported successfully"
+msgstr "数据导出成功"
+
+# Action Buttons
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Approve"
+msgstr "批准"
+
+msgid "Reject"
+msgstr "拒绝"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Create"
+msgstr "创建"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Filter"
+msgstr "筛选"
+
+msgid "Sort"
+msgstr "排序"
+
+msgid "Export"
+msgstr "导出"
+
+msgid "Import"
+msgstr "导入"
+
+msgid "Send"
+msgstr "发送"
+
+msgid "Reply"
+msgstr "回复"
+
+msgid "Duplicate"
+msgstr "复制"
+
+msgid "Archive"
+msgstr "存档"
+
+msgid "Restore"
+msgstr "恢复"
+
+# Time and Date Formatting
+msgid "just now"
+msgstr "刚刚"
+
+msgid "1 minute ago"
+msgstr "1分钟前"
+
+msgid "%d minutes ago"
+msgstr "%d分钟前"
+
+msgid "1 hour ago"
+msgstr "1小时前"
+
+msgid "%d hours ago"
+msgstr "%d小时前"
+
+msgid "1 day ago"
+msgstr "1天前"
+
+msgid "%d days ago"
+msgstr "%d天前"
+
+msgid "1 week ago"
+msgstr "1周前"
+
+msgid "%d weeks ago"
+msgstr "%d周前"
+
+msgid "1 month ago"
+msgstr "1个月前"
+
+msgid "%d months ago"
+msgstr "%d个月前"
+
+msgid "1 year ago"
+msgstr "1年前"
+
+msgid "%d years ago"
+msgstr "%d年前"
+
+# Enhanced WooCommerce Integration
+msgid "Vendor MM"
+msgstr "供应商 MM"
+
+msgid "Vendor Order Manager requires WooCommerce to be installed and active."
+msgstr "供应商订单管理器需要安装并激活WooCommerce。"
+
+msgid "Vendor Order Manager has been deactivated because WooCommerce is not active. Please install and activate WooCommerce first."
+msgstr "由于WooCommerce未激活，供应商订单管理器已被停用。请先安装并激活WooCommerce。"
+
+# Enhanced Plugin Information
+msgid "Comprehensive vendor management system for WooCommerce with approval workflows"
+msgstr "带有审批工作流程的WooCommerce综合供应商管理系统"
+
+msgid "Your Company"
+msgstr "您的公司"
+
+msgid "Marketplace"
+msgstr "市场"
+
+msgid "Self-serve vendor marketplace with enhanced functionality"
+msgstr "具有增强功能的自助供应商市场"
+
+# Confirmation Messages
+msgid "Are you sure you want to delete this item?"
+msgstr "您确定要删除此项目吗？"
+
+msgid "This action cannot be undone."
+msgstr "此操作无法撤销。"
+
+msgid "Confirm submission"
+msgstr "确认提交"
+
+msgid "Please review your information before submitting."
+msgstr "请在提交前检查您的信息。"
+
+# File Management
+msgid "Choose File"
+msgstr "选择文件"
+
+msgid "No file chosen"
+msgstr "未选择文件"
+
+msgid "File selected:"
+msgstr "已选择文件："
+
+msgid "Remove file"
+msgstr "移除文件"
+
+msgid "Replace file"
+msgstr "替换文件"
+
+# Form Validation
+msgid "This field is required"
+msgstr "此字段为必填项"
+
+msgid "Please enter a valid email address"
+msgstr "请输入有效的邮箱地址"
+
+msgid "Please enter a valid phone number"
+msgstr "请输入有效的电话号码"
+
+msgid "Password must be at least 8 characters"
+msgstr "密码至少8个字符"
+
+msgid "Passwords do not match"
+msgstr "密码不匹配"
+
+msgid "Please select at least one option"
+msgstr "请至少选择一个选项"
+
+# Marketplace Features
+msgid "Feature Request"
+msgstr "功能请求"
+
+msgid "Bug Report"
+msgstr "错误报告"
+
+msgid "General Inquiry"
+msgstr "一般咨询"
+
+msgid "Technical Support"
+msgstr "技术支持"
+
+msgid "Billing Support"
+msgstr "账单支持"
+
+msgid "Account Issues"
+msgstr "账户问题"

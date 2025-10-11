@@ -1,0 +1,1588 @@
+/* ========================================
+   SEQUINSWAG DESIGNER STYLES - MOBILE ENHANCED
+   Version: 3.1.0
+   ======================================== */
+
+/* CSS Variables matching SequinSwag brand */
+:root {
+    /* Brand colors from your website */
+    --swpd-primary: #9b59ff; /* Your purple */
+    --swpd-primary-dark: #7b3fd2;
+    --swpd-primary-light: #b17cff;
+    --swpd-secondary: #64d8cb; /* Your teal accent */
+    --swpd-accent: #ff6b6b;
+
+    /* Clean, professional colors */
+    --swpd-success: #52c41a;
+    --swpd-danger: #ff4d4f;
+    --swpd-warning: #faad14;
+    --swpd-info: #1890ff;
+
+    /* Light theme - matching your site */
+    --swpd-dark: #1a1a1a;
+    --swpd-dark-lighter: #2d2d2d;
+    --swpd-dark-lightest: #404040;
+
+    /* Clean grays */
+    --swpd-light: #ffffff;
+    --swpd-light-darker: #fafafa;
+    --swpd-light-darkest: #f5f5f5;
+    --swpd-border: #e8e8e8;
+    --swpd-border-light: #f0f0f0;
+
+    /* Subtle shadows */
+    --swpd-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --swpd-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --swpd-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --swpd-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+
+    /* Clean transitions */
+    --swpd-transition: all 0.3s ease;
+    --swpd-transition-fast: all 0.2s ease;
+
+    /* Border radius - subtle */
+    --swpd-radius: 8px;
+    --swpd-radius-sm: 4px;
+    --swpd-radius-lg: 12px;
+
+    /* Typography - clean and professional */
+    --swpd-font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* Spacing */
+    --swpd-spacing-xs: 4px;
+    --swpd-spacing-sm: 8px;
+    --swpd-spacing-md: 16px;
+    --swpd-spacing-lg: 24px;
+    --swpd-spacing-xl: 32px;
+
+    /* Mobile-specific variables */
+    --swpd-mobile-header-height: 56px;
+    --swpd-mobile-footer-height: auto;
+    --swpd-mobile-tools-height: 400px;
+}
+
+/* ========================================
+   BASE STYLES - CLEAN & PROFESSIONAL
+   ======================================== */
+
+.designer-lightbox * {
+    box-sizing: border-box;
+}
+
+.designer-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: var(--swpd-font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.designer-lightbox.active {
+    opacity: 1;
+}
+
+/* ========================================
+   MODAL - CLEAN & MINIMAL
+   ======================================== */
+
+.designer-modal {
+    background-color: #ffffff;
+    border-radius: var(--swpd-radius-lg);
+    box-shadow: var(--swpd-shadow-xl);
+    max-width: 95vw;
+    width: 1400px;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.designer-lightbox.active .designer-modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ========================================
+   HEADER - MATCHING YOUR BRAND
+   ======================================== */
+
+.designer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--swpd-border);
+    flex-shrink: 0;
+}
+
+.designer-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--swpd-dark);
+    letter-spacing: -0.025em;
+}
+
+.designer-close {
+    background: none;
+    border: 1px solid var(--swpd-border);
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+    padding: 8px;
+    border-radius: var(--swpd-radius-sm);
+    transition: var(--swpd-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.designer-close:hover {
+    background-color: var(--swpd-light-darkest);
+    color: var(--swpd-dark);
+    transform: rotate(90deg);
+}
+
+/* Product Variant Selector */
+.product-variant-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 auto;
+}
+
+.product-variant-selector label {
+    font-weight: 500;
+    color: #666;
+}
+
+.variant-preview-select {
+    padding: 8px 36px 8px 12px;
+    border: 1px solid var(--swpd-border);
+    border-radius: var(--swpd-radius-sm);
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--swpd-transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.variant-preview-select:hover {
+    border-color: var(--swpd-primary);
+}
+
+.variant-preview-select:focus {
+    outline: none;
+    border-color: var(--swpd-primary);
+    box-shadow: 0 0 0 2px rgba(155, 89, 255, 0.1);
+}
+
+/* ========================================
+   BODY - CLEAN LAYOUT
+   ======================================== */
+
+.designer-body {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: var(--swpd-light-darkest);
+}
+
+/* Loading State */
+.designer-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    font-size: 1rem;
+    color: #666;
+}
+
+.spinner {
+    border: 3px solid var(--swpd-border);
+    border-top: 3px solid var(--swpd-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Canvas Area - Clean background */
+.designer-canvas-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f8f9fb !important;
+    overflow: auto;
+    position: relative;
+    min-height: 0;
+}
+
+.canvas-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    transform: none !important;
+}
+
+/* ========================================
+   TOOLS PANEL - CLEAN & ORGANIZED
+   ======================================== */
+
+.designer-tools {
+    width: 280px;
+    background-color: #ffffff;
+    border-left: 1px solid var(--swpd-border);
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-shrink: 0;
+}
+
+/* Clean Scrollbar */
+.designer-tools::-webkit-scrollbar,
+.properties-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.designer-tools::-webkit-scrollbar-track,
+.properties-panel::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.designer-tools::-webkit-scrollbar-thumb,
+.properties-panel::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 3px;
+}
+
+.designer-tools::-webkit-scrollbar-thumb:hover,
+.properties-panel::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+
+.tool-section {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--swpd-border-light);
+}
+
+.tool-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.tool-section h4 {
+    margin: 0 0 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tool-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Clean Button Style */
+.tool-btn {
+    background-color: var(--swpd-primary);
+    color: #fff;
+    border: none;
+    padding: 12px 16px;
+    border-radius: var(--swpd-radius-sm);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--swpd-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-btn:hover:not(:disabled) {
+    background-color: var(--swpd-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--swpd-shadow-md);
+}
+
+.tool-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.tool-btn:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.tool-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* Upload Button */
+.upload-image-btn {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--swpd-secondary);
+}
+
+.upload-image-btn:hover {
+    background-color: #4fc3b6;
+}
+
+.upload-image-btn input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* ========================================
+   PROPERTIES PANEL
+   ======================================== */
+
+.properties-panel {
+    background-color: #ffffff;
+    border-left: 1px solid var(--swpd-border);
+    padding: 24px;
+    width: 280px;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.properties-panel h4 {
+    margin: 0 0 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Alignment Buttons */
+.alignment-buttons,
+.distribution-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.alignment-buttons button,
+.distribution-buttons button {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: var(--swpd-radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--swpd-transition);
+}
+
+.alignment-buttons button:hover,
+.distribution-buttons button:hover {
+    background: var(--swpd-primary);
+    border-color: var(--swpd-primary);
+}
+
+.alignment-buttons button:hover svg,
+.distribution-buttons button:hover svg {
+    fill: #fff;
+}
+
+.alignment-buttons button svg,
+.distribution-buttons button svg {
+    width: 16px;
+    height: 16px;
+    fill: #666;
+    transition: fill 0.2s ease;
+}
+
+/* ========================================
+   FOOTER - PROFESSIONAL
+   ======================================== */
+
+.designer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-top: 1px solid var(--swpd-border);
+    background-color: #fafafa;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.designer-pricing-info {
+    margin-right: auto;
+    padding: 10px 16px;
+    background-color: #f0f7ff;
+    border-radius: var(--swpd-radius-sm);
+    color: #1890ff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #d6e4ff;
+}
+
+.pricing-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pricing-details .unit-price {
+    font-size: 0.75rem;
+    color: #69b1ff;
+    font-weight: normal;
+}
+
+.designer-footer .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    border-radius: var(--swpd-radius-sm);
+    cursor: pointer;
+    transition: var(--swpd-transition);
+    font-weight: 600;
+}
+
+.cancel-design {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid var(--swpd-border);
+}
+
+.cancel-design:hover {
+    background-color: #e8e8e8;
+}
+
+.apply-design {
+    background-color: #faad14;
+    color: #fff;
+    border: none;
+}
+
+.apply-design:hover {
+    background-color: #d48806;
+    transform: translateY(-1px);
+    box-shadow: var(--swpd-shadow-md);
+}
+
+.add-to-cart-design {
+    background-color: var(--swpd-success);
+    color: #fff;
+    border: none;
+}
+
+.add-to-cart-design:hover {
+    background-color: #389e0d;
+    transform: translateY(-1px);
+    box-shadow: var(--swpd-shadow-md);
+}
+
+/* ========================================
+    TEXT EDITOR MODAL - INSIDE LIGHTBOX VERSION
+    ======================================== */
+
+.designer-modal .text-editor-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Just above lightbox content */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: var(--swpd-font-primary);
+    border-radius: var(--swpd-radius-lg);
+}
+
+.designer-modal .text-editor-modal.active {
+    opacity: 1;
+}
+
+.designer-modal .text-editor-modal .modal-content {
+    background-color: #ffffff;
+    border-radius: var(--swpd-radius-lg);
+    box-shadow: var(--swpd-shadow-xl);
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.designer-modal .text-editor-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.designer-modal .text-editor-modal h3 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    color: var(--swpd-dark);
+}
+
+.designer-modal .text-editor-modal textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 2px solid var(--swpd-border);
+    border-radius: var(--swpd-radius);
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.designer-modal .text-editor-modal textarea:focus {
+    outline: none;
+    border-color: var(--swpd-primary);
+    box-shadow: 0 0 0 3px rgba(155, 89, 255, 0.1);
+}
+
+.designer-modal .text-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.designer-modal .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.designer-modal .control-group label {
+    font-weight: 600;
+    color: var(--swpd-dark);
+    font-size: 0.9rem;
+}
+
+.designer-modal .control-group select,
+.designer-modal .control-group input[type="color"],
+.designer-modal .control-group input[type="range"] {
+    padding: 8px 12px;
+    border: 1px solid var(--swpd-border);
+    border-radius: var(--swpd-radius-sm);
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.designer-modal .control-group select:focus,
+.designer-modal .control-group input:focus {
+    outline: none;
+    border-color: var(--swpd-primary);
+}
+
+.designer-modal .control-group input[type="range"] {
+    -webkit-appearance: none;
+    height: 6px;
+    background: var(--swpd-border);
+    border-radius: 3px;
+    padding: 0;
+}
+
+.designer-modal .control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--swpd-primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.designer-modal .control-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--swpd-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.designer-modal #text-size-value {
+    font-size: 0.9rem;
+    color: var(--swpd-primary);
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+.designer-modal .modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.designer-modal .modal-actions .btn {
+    padding: 12px 24px;
+    border-radius: var(--swpd-radius);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--swpd-transition);
+    font-size: 0.9rem;
+}
+
+.designer-modal .modal-actions .btn-secondary {
+    background-color: var(--swpd-light-darkest);
+    color: var(--swpd-dark);
+}
+
+.designer-modal .modal-actions .btn-secondary:hover {
+    background-color: var(--swpd-border);
+}
+
+.designer-modal .modal-actions .btn-primary {
+    background-color: var(--swpd-primary);
+    color: #fff;
+}
+
+.designer-modal .modal-actions .btn-primary:hover {
+    background-color: var(--swpd-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--swpd-shadow-md);
+}
+
+/* ========================================
+   MOBILE TOOLS DRAWER - NEW
+   ======================================== */
+
+.mobile-tools-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--swpd-border);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: none;
+}
+
+.mobile-tools-drawer.active {
+    transform: translateY(0);
+}
+
+.mobile-tools-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 16px;
+    border-bottom: 1px solid var(--swpd-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.mobile-tools-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--swpd-dark);
+}
+
+.mobile-tools-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.mobile-tools-content {
+    padding: 16px;
+}
+
+/* Mobile Quick Actions Bar */
+.mobile-quick-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--swpd-border);
+    padding: 8px;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-quick-actions-inner {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.mobile-quick-actions-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-action-btn {
+    background: var(--swpd-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--swpd-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--swpd-transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.mobile-action-btn:active {
+    transform: scale(0.95);
+}
+
+.mobile-action-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile-action-btn.upload {
+    background: var(--swpd-secondary);
+}
+
+.mobile-action-btn.text {
+    background: #4ecdc4;
+}
+
+.mobile-action-btn.templates {
+    background: #ff6b6b;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - ENHANCED MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .designer-modal {
+        max-width: 100%;
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    /* Simplified Mobile Header */
+    .designer-header {
+        padding: 12px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .designer-title {
+        font-size: 1.1rem;
+    }
+
+    .product-variant-selector {
+        display: none; /* Hide on mobile to save space */
+    }
+
+    /* Mobile Body Layout */
+    .designer-body {
+        flex-direction: column;
+        height: calc(100vh - var(--swpd-mobile-header-height));
+    }
+
+    /* Hide desktop tools panels on mobile */
+    .designer-tools,
+    .properties-panel {
+        display: none !important;
+    }
+
+    /* Canvas area takes most of the space */
+    .designer-canvas-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f8f9fb !important;
+    overflow: auto;
+    position: relative;
+    min-height: 0;
+}
+
+    /* Mobile-optimized canvas container */
+    .canvas-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    transform: none !important;
+}
+
+    /* Show mobile tools drawer */
+    .mobile-tools-drawer {
+        display: block;
+    }
+
+    /* Show mobile quick actions */
+    .mobile-quick-actions {
+        display: block;
+    }
+
+    /* Mobile Footer */
+    .designer-footer {
+        display: none; /* Hide desktop footer on mobile */
+    }
+
+    /* Mobile-specific tool buttons */
+    .tool-buttons {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tool-btn {
+        padding: 16px;
+        font-size: 1rem;
+        border-radius: var(--swpd-radius);
+    }
+
+    /* Larger touch targets */
+    .upload-image-btn {
+        padding: 20px;
+        font-size: 1.1rem;
+        background: linear-gradient(135deg, var(--swpd-secondary) 0%, #4fc3b6 100%);
+        box-shadow: 0 4px 15px rgba(100, 216, 203, 0.3);
+    }
+
+    /* Mobile canvas controls */
+    .canvas-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    transform: none !important;
+}
+
+    /* Inline controls mobile optimization */
+    .inline-controls {
+        top: auto;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        max-width: 320px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: var(--swpd-radius-lg);
+        padding: 20px;
+    }
+
+    /* Text editor modal mobile */
+    .text-editor-modal .modal-content {
+        width: calc(100% - 32px);
+        max-width: 100%;
+        margin: 16px;
+        padding: 24px 20px;
+        max-height: calc(100vh - 100px);
+    }
+
+    .text-editor-modal textarea {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+        height: 100px;
+    }
+
+    /* Mobile-friendly modals */
+    .modal-content,
+    .saved-designs-content,
+    .help-content,
+    .templates-content {
+        width: calc(100% - 32px);
+        max-width: 100%;
+        margin: 16px;
+        max-height: calc(100vh - 32px);
+    }
+
+    /* Layer item mobile */
+    .layer-item {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .layer-controls button,
+    .layer-reorder button {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Mobile zoom controls */
+    .zoom-controls {
+        position: fixed;
+        bottom: 80px;
+        right: 16px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: var(--swpd-radius);
+        padding: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .zoom-btn {
+        width: 44px;
+        height: 44px;
+        background: var(--swpd-primary);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--swpd-transition);
+    }
+
+    .zoom-btn:active {
+        transform: scale(0.9);
+    }
+
+    .zoom-level {
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #666;
+        padding: 4px 0;
+    }
+
+    /* Mobile notifications */
+    .designer-notification {
+        bottom: 90px;
+        left: 16px;
+        right: 16px;
+        transform: translateX(0);
+        border-radius: var(--swpd-radius);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Touch-friendly delete control */
+    .upper-canvas {
+        touch-action: none;
+    }
+
+    /* Fabric controls mobile optimization */
+    .canvas-container .upper-canvas {
+        cursor: pointer !important;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+    .designer-header {
+        padding: 10px 12px;
+    }
+
+    .designer-title {
+        font-size: 1rem;
+    }
+
+    .designer-close {
+        width: 36px;
+        height: 36px;
+    }
+
+    .mobile-action-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .mobile-action-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .canvas-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    transform: none !important;
+}
+}
+
+/* ========================================
+   MOBILE-SPECIFIC FEATURES
+   ======================================== */
+
+/* Touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    .tool-btn:active,
+    .mobile-action-btn:active,
+    .btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    /* Disable hover effects on touch devices */
+    .tool-btn:hover,
+    .mobile-action-btn:hover,
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Prevent iOS zoom on form inputs */
+@supports (-webkit-touch-callout: none) {
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+}
+
+/* Mobile canvas gestures indicator */
+.mobile-gesture-hint {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    20%, 80% { opacity: 1; }
+}
+
+/* Mobile upload zone */
+.mobile-upload-zone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--swpd-radius-lg);
+    border: 2px dashed var(--swpd-primary);
+    width: calc(100% - 64px);
+    max-width: 300px;
+    transition: var(--swpd-transition);
+}
+
+.mobile-upload-zone.drag-over {
+    background: rgba(155, 89, 255, 0.1);
+    border-color: var(--swpd-primary-dark);
+}
+
+.mobile-upload-zone h3 {
+    color: var(--swpd-primary);
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+}
+
+.mobile-upload-zone p {
+    color: #666;
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+}
+
+/* Floating action button for mobile */
+.mobile-fab {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    background: var(--swpd-primary);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(155, 89, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--swpd-transition);
+    z-index: 90;
+}
+
+.mobile-fab:active {
+    transform: scale(0.9);
+}
+
+.mobile-fab svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+/* Mobile Upload Button - Critical Fix */
+@media (max-width: 768px) {
+    .mobile-action-btn.upload {
+        position: relative;
+        background: linear-gradient(135deg, var(--swpd-secondary) 0%, #4fc3b6 100%);
+        box-shadow: 0 4px 15px rgba(100, 216, 203, 0.3);
+    }
+
+    .mobile-action-btn.upload input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 10;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Ensure button content is not clickable to prevent interference */
+    .mobile-action-btn svg,
+    .mobile-action-btn span {
+        pointer-events: none;
+    }
+
+    /* Visual feedback on tap */
+    .mobile-action-btn:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* iOS specific fixes */
+    @supports (-webkit-touch-callout: none) {
+        .mobile-action-btn input[type="file"] {
+            width: 100%;
+            height: 100%;
+            -webkit-appearance: none;
+        }
+    }
+}
+
+/* Slide up animation for mobile drawer */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .mobile-tools-drawer {
+        transition: none;
+    }
+}
+
+/* ========================================
+   CRITICAL MOBILE FIXES
+   ======================================== */
+
+/* Ensure mobile action buttons are always visible */
+@media (max-width: 768px) {
+    .mobile-quick-actions {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 999 !important;
+        display: block !important;
+        background: #fff !important;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Hide file input but keep it functional */
+    .mobile-action-btn input[type="file"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    /* Ensure tools section is hidden on mobile */
+    .tool-section {
+        display: none !important;
+    }
+
+    /* Mobile-specific text editor styles */
+    .text-editor-modal.mobile-modal {
+        align-items: flex-end;
+    }
+
+    .text-editor-modal.mobile-modal .modal-content {
+        border-radius: var(--swpd-radius-lg) var(--swpd-radius-lg) 0 0;
+        margin: 0;
+        width: 100%;
+        max-height: 80vh;
+        animation: slideUpModal 0.3s ease-out;
+    }
+
+    @keyframes slideUpModal {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Larger touch targets for mobile */
+    .mobile-action-btn {
+        min-height: 48px;
+        min-width: 80px;
+    }
+
+    /* Fix canvas container on mobile */
+    .designer-canvas-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f8f9fb !important;
+    overflow: auto;
+    position: relative;
+    min-height: 0;
+}
+
+    /* Ensure delete controls are visible on mobile */
+    .deleteControl {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
+.invisible { visibility: hidden !important; }
+
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+.select-none { user-select: none; }
+.select-text { user-select: text; }
+
+.transition-none { transition: none !important; }
+
+/* ========================================
+   CART & CHECKOUT STYLES (Woodmart Fixes)
+   ======================================== */
+
+.product-thumbnail .swpd-custom-design-preview {
+    border: 2px solid var(--wd-primary-color, #9b59ff);
+    border-radius: var(--wd-brd-radius, 4px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.swpd-design-indicator {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: var(--wd-primary-color, #9b59ff);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.swpd-cart-actions {
+    margin-top: 10px;
+}
+
+.swpd-edit-design-button {
+    background-color: var(--wd-primary-color, #9b59ff) !important;
+    color: #fff !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    border-radius: 4px !important;
+}
+
+.swpd-view-design {
+    color: var(--wd-primary-color, #9b59ff);
+    font-weight: 500;
+}
+
+/* ========================================
+   CUSTOMIZE BUTTON STYLES
+   ======================================== */
+#swpd-customize-design-button {
+    background-color: var(--swpd-primary, #9b59ff);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#swpd-customize-design-button:hover {
+    background-color: var(--swpd-primary-dark, #7b3fd2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#swpd-customize-design-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+
+/* ========================================
+   CANVAS DISTORTION FIXES - Applied by fix script
+   ======================================== */
+
+/* Ensure Fabric canvas wrapper is properly styled */
+.canvas-container .canvas-wrap,
+.canvas-container > div:first-child {
+    position: relative !important;
+    display: block !important;
+    margin: 0 auto !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+/* Fix the actual canvas element */
+#designer-canvas {
+    display: block !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Fabric.js canvas wrapper fixes */
+.lower-canvas,
+.upper-canvas {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Override any conflicting theme styles */
+.designer-modal canvas {
+    image-rendering: auto !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+/* Ensure proper body layout */
+.designer-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    opacity: 1 !important;
+    min-height: 0;
+}
+
+/* Desktop layout fix */
+@media (min-width: 769px) {
+    .designer-body {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+    }
+
+    .designer-sidebar {
+        overflow-y: auto;
+        max-height: 100%;
+    }
+}
+
+/* Properties panel should be hidden initially */
+.properties-panel {
+    display: none !important;
+}
+
+/* Loading state fix */
+.designer-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* When loading is complete */
+.designer-body:not(.loading) .designer-loading {
+    display: none !important;
+}
+
+/* Mobile canvas fixes */
+@media (max-width: 768px) {
+    .designer-canvas-area {
+        padding: 10px;
+        min-height: 400px;
+    }
+
+    .canvas-container {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Emergency overrides for canvas distortion */
+.designer-lightbox .canvas-container {
+    transform: none !important;
+    position: relative !important;
+}
+
+.designer-lightbox canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.designer-lightbox .canvas-wrap {
+    position: relative !important;
+    margin: 0 auto !important;
+}

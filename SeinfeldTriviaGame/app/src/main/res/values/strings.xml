@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Seinfeld Trivia Game</string>
+    <string name="welcome_title">Master of Your Domain?</string>
+    <string name="welcome_subtitle">Test your Seinfeld knowledge!</string>
+    <string name="easy_mode">Easy Mode</string>
+    <string name="medium_mode">Medium Mode</string>
+    <string name="hard_mode">Hard Mode</string>
+    <string name="expert_mode">Expert Mode</string>
+    <string name="start_game">Start Game</string>
+    <string name="next_question">Next Question</string>
+    <string name="submit_answer">Submit Answer</string>
+    <string name="game_over">Game Over!</string>
+    <string name="your_score">Your Score: %1$d/%2$d</string>
+    <string name="play_again">Play Again</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="question_progress">Question %1$d of %2$d</string>
+</resources>

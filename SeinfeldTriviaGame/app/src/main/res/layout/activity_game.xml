@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF5E6"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Question 1 of 10"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score: 0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#4CAF50" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EASY MODE"
+        android:textSize="14sp"
+        android:textColor="#666"
+        android:layout_marginBottom="24dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sample question text here..."
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:padding="16dp"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="24dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btn_answer1"
+                style="@style/AnswerButton"
+                android:text="Answer 1"
+                android:backgroundTint="#E3F2FD" />
+
+            <Button
+                android:id="@+id/btn_answer2"
+                style="@style/AnswerButton"
+                android:text="Answer 2"
+                android:backgroundTint="#E3F2FD" />
+
+            <Button
+                android:id="@+id/btn_answer3"
+                style="@style/AnswerButton"
+                android:text="Answer 3"
+                android:backgroundTint="#E3F2FD" />
+
+            <Button
+                android:id="@+id/btn_answer4"
+                style="@style/AnswerButton"
+                android:text="Answer 4"
+                android:backgroundTint="#E3F2FD" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/next_question"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FF6200EE"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+</LinearLayout>

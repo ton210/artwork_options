@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FocusBlock</string>
+    <string name="quick_block">Quick Block</string>
+    <string name="schedules">Schedules</string>
+    <string name="settings">Settings</string>
+    <string name="blocked_apps">Blocked Apps</string>
+    <string name="blocked_websites">Blocked Websites</string>
+    <string name="enable_blocking">Enable Blocking</string>
+    <string name="strict_mode">Strict Mode</string>
+    <string name="add_app">Add App</string>
+    <string name="add_website">Add Website</string>
+    <string name="app_blocked_message">This app is blocked</string>
+    <string name="website_blocked_message">This website is blocked</string>
+    <string name="accessibility_service_description">FocusBlock needs accessibility access to block apps and keep you focused</string>
+    <string name="usage_stats_permission">Usage Stats Permission</string>
+    <string name="vpn_permission">VPN Permission</string>
+    <string name="notification_permission">Notification Permission</string>
+    <string name="location_permission">Location Permission</string>
+    <string name="blocking_active">Blocking Active</string>
+    <string name="notification_channel_name">App Blocking</string>
+    <string name="notification_channel_desc">Shows when app blocking is active</string>
+</resources>

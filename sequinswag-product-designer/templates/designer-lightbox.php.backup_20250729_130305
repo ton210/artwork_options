@@ -1,0 +1,383 @@
+<?php
+/**
+ * Complete Designer Lightbox Template
+ * This file contains the complete HTML structure for the product designer lightbox
+ */
+?>
+
+<!-- Main Designer Lightbox Container -->
+<div id="designer-lightbox" class="designer-lightbox" style="display: none;">
+    <div class="designer-modal">
+
+        <!-- Designer Header -->
+        <div class="designer-header">
+            <div class="header-left">
+                <h2><?php esc_html_e( 'Customize Your Design', 'swpd' ); ?></h2>
+            </div>
+            <div class="header-right">
+                <button class="designer-close" title="<?php esc_attr_e( 'Close Designer', 'swpd' ); ?>" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="designer-loading" style="display: flex;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h3><?php esc_html_e( 'Loading Designer...', 'swpd' ); ?></h3>
+                <p><?php esc_html_e( 'Please wait while we prepare your design canvas.', 'swpd' ); ?></p>
+            </div>
+        </div>
+
+        <!-- Main Designer Body -->
+        <div class="designer-body" style="opacity: 0;">
+
+            <!-- Left Sidebar - Tools and Controls -->
+            <div class="designer-sidebar">
+
+                <!-- Add Elements Section -->
+                <div class="tool-section">
+                    <h3><?php esc_html_e( 'Add Elements', 'swpd' ); ?></h3>
+                    <div class="tool-buttons">
+
+                        <!-- Upload Image Button (Simplified) -->
+                        <button class="upload-image-btn tool-btn" type="button" onclick="document.getElementById('main-file-input').click()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Upload Image', 'swpd' ); ?></span>
+                        </button>
+
+                        <!-- Hidden File Input -->
+                        <input type="file" id="main-file-input" class="image-upload-input" accept="image/*" multiple style="display: none;">
+
+                        <!-- Add Text Button -->
+                        <button class="add-text-btn tool-btn" type="button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.5,4L19.66,8.35L18.7,8.61C18.25,7.74 17.79,6.87 17.26,6.43C16.73,6 16.11,6 15.5,6H13V16.5C13,17 13,17.5 13.5,17.5H14V19H10V17.5H10.5C11,17.5 11,17 11,16.5V6H8.5C7.89,6 7.27,6 6.74,6.43C6.21,6.87 5.75,7.74 5.3,8.61L4.34,8.35L5.5,4H18.5Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Add Text', 'swpd' ); ?></span>
+                        </button>
+
+                        <!-- Templates Button (Mobile) -->
+                        <button class="templates-btn tool-btn" type="button" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Templates', 'swpd' ); ?></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- History Controls Section -->
+                <div class="tool-section">
+                    <h3><?php esc_html_e( 'Actions', 'swpd' ); ?></h3>
+                    <div class="history-controls">
+                        <button id="undo-btn" class="history-btn" disabled title="<?php esc_attr_e( 'Undo (Ctrl+Z)', 'swpd' ); ?>" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.5,8C9.85,8 7.45,9 5.6,10.6L2,7V16H11L7.38,12.38C8.77,11.22 10.54,10.5 12.5,10.5C16.04,10.5 19.05,12.81 20.1,16L22.47,15.22C21.08,11.03 17.15,8 12.5,8Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Undo', 'swpd' ); ?></span>
+                        </button>
+                        <button id="redo-btn" class="history-btn" disabled title="<?php esc_attr_e( 'Redo (Ctrl+Y)', 'swpd' ); ?>" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.4,10.6C16.55,9 14.15,8 11.5,8C6.85,8 2.92,11.03 1.53,15.22L3.9,16C4.95,12.81 7.96,10.5 11.5,10.5C13.46,10.5 15.23,11.22 16.62,12.38L13,16H22V7L18.4,10.6Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Redo', 'swpd' ); ?></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Save/Load Designs Section -->
+                <div class="tool-section">
+                    <h3><?php esc_html_e( 'Saved Designs', 'swpd' ); ?></h3>
+                    <div class="design-controls">
+                        <button class="save-design-btn tool-btn" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Save Design', 'swpd' ); ?></span>
+                        </button>
+                        <button class="load-design-btn tool-btn" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Load Design', 'swpd' ); ?></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Quick Actions (Hidden on Desktop) -->
+                <div class="mobile-quick-actions" style="display: none;">
+                    <h3><?php esc_html_e( 'Quick Actions', 'swpd' ); ?></h3>
+                    <div class="mobile-action-buttons">
+                        <button id="mobile-upload-btn" class="mobile-action-btn" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Upload', 'swpd' ); ?></span>
+                            <input type="file" accept="image/*" multiple>
+                        </button>
+
+                        <button id="mobile-text-btn" class="mobile-action-btn" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.5,4L19.66,8.35L18.7,8.61C18.25,7.74 17.79,6.87 17.26,6.43C16.73,6 16.11,6 15.5,6H13V16.5C13,17 13,17.5 13.5,17.5H14V19H10V17.5H10.5C11,17.5 11,17 11,16.5V6H8.5C7.89,6 7.27,6 6.74,6.43C6.21,6.87 5.75,7.74 5.3,8.61L4.34,8.35L5.5,4H18.5Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Text', 'swpd' ); ?></span>
+                        </button>
+
+                        <button id="mobile-templates-btn" class="mobile-action-btn" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Templates', 'swpd' ); ?></span>
+                        </button>
+
+                        <button id="mobile-save-btn" class="mobile-action-btn" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Save', 'swpd' ); ?></span>
+                        </button>
+
+                        <button id="mobile-apply-btn" class="mobile-action-btn primary" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Done', 'swpd' ); ?></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center - Canvas Area -->
+            <div class="canvas-container">
+                <div class="canvas-wrapper">
+                    <canvas id="designer-canvas" width="800" height="800"></canvas>
+                </div>
+
+                <!-- Crop Controls (Initially Hidden) -->
+                <div id="crop-controls" class="crop-controls" style="display: none;">
+                    <div class="crop-buttons">
+                        <button class="apply-crop-btn btn btn-primary" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                            </svg>
+                            <?php esc_html_e( 'Apply Crop', 'swpd' ); ?>
+                        </button>
+                        <button class="cancel-crop-btn btn btn-secondary" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                            </svg>
+                            <?php esc_html_e( 'Cancel', 'swpd' ); ?>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canvas Loading Overlay -->
+                <div class="canvas-loading-overlay" style="display: none;">
+                    <div class="canvas-loading-content">
+                        <div class="loading-spinner small"></div>
+                        <p><?php esc_html_e( 'Processing...', 'swpd' ); ?></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Properties and Tools (Hidden on Desktop) -->
+            <div class="properties-panel" style="display: none;">
+                <h3><?php esc_html_e( 'Properties', 'swpd' ); ?></h3>
+
+                <!-- Edit Tools (Shows when object is selected) -->
+                <div id="edit-tools" style="display: none;">
+                    <div class="edit-tools-section">
+                        <h4><?php esc_html_e( 'Edit Selected', 'swpd' ); ?></h4>
+
+                        <button id="crop-btn" class="tool-btn" style="display: none;" type="button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7,17V1H5V5H1V7H5V17A2,2 0 0,0 7,19H17V23H19V19H23V17H19V7H7M7,7H17V17H7V7Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Crop Image', 'swpd' ); ?></span>
+                        </button>
+
+                        <button class="duplicate-btn tool-btn" type="button" style="display: none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Duplicate', 'swpd' ); ?></span>
+                        </button>
+
+                        <button class="delete-selected-btn tool-btn danger" type="button" style="display: none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H10V17H8V9M14,9H16V17H14V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z"/>
+                            </svg>
+                            <span><?php esc_html_e( 'Delete', 'swpd' ); ?></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Object Properties (Dynamic content will be added here by JS) -->
+                <div id="object-properties" class="object-properties">
+                    <div class="no-selection-message">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7,13A2,2 0 0,1 9,11A2,2 0 0,1 11,13A2,2 0 0,1 9,15A2,2 0 0,1 7,13M15,13A2,2 0 0,1 17,11A2,2 0 0,1 19,13A2,2 0 0,1 17,15A2,2 0 0,1 15,13Z"/>
+                        </svg>
+                        <p><?php esc_html_e( 'Select an element to view its properties', 'swpd' ); ?></p>
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div class="help-section">
+                    <button class="help-btn tool-btn" type="button">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C7.59,4 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z"/>
+                        </svg>
+                        <span><?php esc_html_e( 'Help & Shortcuts', 'swpd' ); ?></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer with Action Buttons -->
+        <div class="designer-footer">
+            <div class="footer-left">
+                <!-- Pricing Info (Will be populated by JS) -->
+                <div class="designer-pricing-info"></div>
+            </div>
+
+            <div class="footer-right">
+                <button class="cancel-design btn btn-secondary" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                    </svg>
+                    <?php esc_html_e( 'Cancel', 'swpd' ); ?>
+                </button>
+
+                <button class="apply-design btn btn-primary" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                    </svg>
+                    <?php esc_html_e( 'Apply Design', 'swpd' ); ?>
+                </button>
+
+                <button class="add-to-cart-design btn btn-success" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"/>
+                    </svg>
+                    <?php esc_html_e( 'Add to Cart', 'swpd' ); ?>
+                </button>
+            </div>
+        </div>
+
+        <!-- Text Editor Modal (Inside Lightbox) -->
+        <div id="text-editor-modal" class="text-editor-modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><?php esc_html_e( 'Add Text', 'swpd' ); ?></h3>
+                    <button class="modal-close" type="button">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="text-input-section">
+                        <label for="text-input"><?php esc_html_e( 'Text Content:', 'swpd' ); ?></label>
+                        <textarea id="text-input" placeholder="<?php esc_attr_e( 'Enter your text here...', 'swpd' ); ?>" rows="3"></textarea>
+                    </div>
+
+                    <div class="text-controls">
+                        <div class="control-row">
+                            <div class="control-group">
+                                <label for="font-select"><?php esc_html_e( 'Font:', 'swpd' ); ?></label>
+                                <select id="font-select">
+                                    <option value="Arial">Arial</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Verdana">Verdana</option>
+                                    <option value="Courier New">Courier New</option>
+                                    <option value="Impact">Impact</option>
+                                    <option value="Comic Sans MS">Comic Sans MS</option>
+                                    <option value="Trebuchet MS">Trebuchet MS</option>
+                                    <option value="Helvetica">Helvetica</option>
+                                    <option value="Palatino">Palatino</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="text-color"><?php esc_html_e( 'Color:', 'swpd' ); ?></label>
+                                <input type="color" id="text-color" value="#000000">
+                            </div>
+                        </div>
+
+                        <div class="control-row">
+                            <div class="control-group size-control">
+                                <label for="text-size"><?php esc_html_e( 'Size:', 'swpd' ); ?></label>
+                                <input type="range" id="text-size" min="12" max="120" value="30">
+                                <span id="text-size-value">30px</span>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Text Options (Hidden by default) -->
+                        <div class="control-row advanced-text-options" style="display: none;">
+                            <div class="control-group">
+                                <label for="text-path-type"><?php esc_html_e( 'Text Path:', 'swpd' ); ?></label>
+                                <select class="text-path-type">
+                                    <option value="none"><?php esc_html_e( 'None', 'swpd' ); ?></option>
+                                    <option value="arc"><?php esc_html_e( 'Arc', 'swpd' ); ?></option>
+                                    <option value="circle"><?php esc_html_e( 'Circle', 'swpd' ); ?></option>
+                                    <option value="wave"><?php esc_html_e( 'Wave', 'swpd' ); ?></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-row text-curve-controls" style="display: none;">
+                            <div class="control-group">
+                                <label for="text-curve-radius"><?php esc_html_e( 'Curve Radius:', 'swpd' ); ?></label>
+                                <input type="range" class="text-curve-radius" min="50" max="500" value="150">
+                                <span class="curve-radius-value">150px</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="cancel-text" type="button">
+                        <?php esc_html_e( 'Cancel', 'swpd' ); ?>
+                    </button>
+                    <button class="btn btn-primary" id="add-text-confirm" type="button">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                        </svg>
+                        <?php esc_html_e( 'Add Text', 'swpd' ); ?>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Tools Drawer (Hidden by default) -->
+        <div id="mobile-tools-drawer" class="mobile-tools-drawer" style="display: none;">
+            <div class="drawer-header">
+                <h3><?php esc_html_e( 'Design Tools', 'swpd' ); ?></h3>
+                <button id="mobile-tools-close" type="button">&times;</button>
+            </div>
+            <div class="drawer-content">
+                <!-- Mobile tools content will be populated by JS -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden Form Inputs for Design Data -->
+<input type="hidden" id="custom-design-preview" name="custom_design_preview" value="">
+<input type="hidden" id="custom-design-data" name="custom_design_data" value="">
+<input type="hidden" id="custom-canvas-data" name="custom_canvas_data" value="">
+
+<!-- Notification Container -->
+<div id="designer-notification" class="designer-notification"></div>
+
+<?php
+/**
+ * Additional PHP logic can be added here if needed
+ * For example, loading saved designs, user preferences, etc.
+ */
+?>

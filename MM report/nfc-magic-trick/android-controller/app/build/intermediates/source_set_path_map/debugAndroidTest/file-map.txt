@@ -1,0 +1,4 @@
+com.magictrick.nfccontroller.test.app-androidTest-0 /Users/tomernahumi/Documents/Plugins/MM report/nfc-magic-trick/android-controller/app/build/generated/res/resValues/androidTest/debug
+com.magictrick.nfccontroller.test.app-mergeDebugAndroidTestResources-1 /Users/tomernahumi/Documents/Plugins/MM report/nfc-magic-trick/android-controller/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.magictrick.nfccontroller.test.app-mergeDebugAndroidTestResources-2 /Users/tomernahumi/Documents/Plugins/MM report/nfc-magic-trick/android-controller/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.magictrick.nfccontroller.test.app-merged_res-3 /Users/tomernahumi/Documents/Plugins/MM report/nfc-magic-trick/android-controller/app/build/intermediates/merged_res/debugAndroidTest

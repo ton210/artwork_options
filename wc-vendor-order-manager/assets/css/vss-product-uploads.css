@@ -1,0 +1,845 @@
+/**
+ * VSS Product Uploads Styles
+ * Beautiful and modern styling for the product upload interface
+ */
+
+/* =============================================
+   PRODUCT UPLOAD INTERFACE STYLES
+   ============================================= */
+
+.vss-product-uploads-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.vss-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.vss-products-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vss-products-header p {
+    margin: 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.vss-add-product-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    color: white !important;
+    padding: 15px 25px !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+.vss-add-product-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* Navigation Badge */
+.vss-nav-badge {
+    background: #ff6b6b;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.vss-upload-products-nav {
+    position: relative;
+}
+
+/* Toolbar Styling */
+.vss-products-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.vss-csv-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.vss-csv-actions .button {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.vss-csv-actions .button:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+
+/* Product Table Styling */
+.vss-products-table-wrapper {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vss-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.vss-products-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.vss-products-table th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vss-products-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #f1f3f4;
+    vertical-align: middle;
+}
+
+.vss-products-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.vss-products-table tbody tr:hover {
+    background: #f8f9ff;
+    transform: scale(1.01);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Product Image Thumbnail */
+.product-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-no-image {
+    width: 60px;
+    height: 60px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.status-draft {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-badge.status-pending {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-badge.status-approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.status-rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-buttons .button {
+    padding: 8px;
+    min-width: auto;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Empty State */
+.vss-empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vss-empty-state-icon {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 20px;
+}
+
+.vss-empty-state h3 {
+    font-size: 1.5rem;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.vss-empty-state p {
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+/* =============================================
+   PRODUCT FORM STYLES
+   ============================================= */
+
+.vss-product-form-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.vss-form-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vss-form-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.vss-form-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.vss-form-actions .button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.vss-form-actions .button-primary {
+    background: rgba(255, 255, 255, 0.9);
+    color: #667eea;
+}
+
+.vss-form-actions .button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Form Sections */
+.vss-form-section {
+    padding: 40px;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.vss-form-section:last-child {
+    border-bottom: none;
+}
+
+.vss-form-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 30px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.vss-form-section h3 .dashicons {
+    font-size: 24px;
+    color: #667eea;
+}
+
+/* Language Toggle */
+.vss-language-toggle {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vss-lang-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-lang-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.vss-translate-btn {
+    background: #28a745;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-translate-btn:hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+
+.vss-translate-btn.loading {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form Layout */
+.vss-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.vss-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.vss-form-col-1 { flex: 0 0 calc(8.333% - 16.67px); }
+.vss-form-col-2 { flex: 0 0 calc(16.666% - 16.67px); }
+.vss-form-col-3 { flex: 0 0 calc(25% - 15px); }
+.vss-form-col-4 { flex: 0 0 calc(33.333% - 13.33px); }
+.vss-form-col-6 { flex: 0 0 calc(50% - 10px); }
+.vss-form-col-12 { flex: 0 0 100%; }
+
+/* Form Controls */
+.vss-product-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 14px;
+}
+
+.vss-product-form .required {
+    color: #dc3545;
+}
+
+.vss-product-form input[type="text"],
+.vss-product-form input[type="number"],
+.vss-product-form input[type="url"],
+.vss-product-form select,
+.vss-product-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.vss-product-form input[type="text"]:focus,
+.vss-product-form input[type="number"]:focus,
+.vss-product-form input[type="url"]:focus,
+.vss-product-form select:focus,
+.vss-product-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Image Upload Styling */
+.vss-image-upload-area {
+    background: #f8f9ff;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.vss-image-types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.vss-image-type h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.vss-image-type p {
+    margin: 0 0 20px 0;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.vss-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.vss-upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.vss-image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.vss-image-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.vss-image-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vss-image-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.vss-image-actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.vss-image-actions button {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vss-image-actions button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.vss-set-primary.active {
+    background: #ffc107;
+}
+
+/* URL Input Styling */
+.vss-image-urls-section {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px dashed #dee2e6;
+}
+
+.vss-url-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.vss-url-input input {
+    flex: 1;
+}
+
+.vss-url-input select {
+    min-width: 150px;
+}
+
+.vss-remove-url {
+    background: #dc3545;
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Variants Styling */
+.vss-variant-row {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.vss-remove-variant {
+    background: #dc3545;
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Pricing Tiers */
+.vss-pricing-section {
+    background: #f8f9ff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.vss-pricing-tier {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal Styling */
+.vss-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vss-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.vss-modal-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid #f1f3f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.vss-modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.vss-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vss-modal-body {
+    padding: 30px;
+}
+
+.vss-modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid #f1f3f4;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+/* File Upload Styling */
+.vss-file-upload {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.vss-file-upload input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.vss-file-upload label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    justify-content: center;
+}
+
+.vss-file-upload:hover label {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vss-products-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .vss-products-toolbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .vss-form-row {
+        flex-direction: column;
+    }
+    
+    .vss-form-col-1,
+    .vss-form-col-2,
+    .vss-form-col-3,
+    .vss-form-col-4,
+    .vss-form-col-6 {
+        flex: 0 0 100%;
+    }
+    
+    .vss-image-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .vss-variant-row,
+    .vss-pricing-tier {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .vss-remove-variant,
+    .vss-remove-pricing-tier {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+}
+
+/* Loading States */
+.vss-loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.vss-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Success/Error Messages */
+.vss-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.vss-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.vss-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f1b0b7;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vss-product-uploads-wrapper * {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Product Upload Button Highlight */
+.vss-upload-products-nav {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-left: 4px solid #667eea;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.2);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    }
+}
