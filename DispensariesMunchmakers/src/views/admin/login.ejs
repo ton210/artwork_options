@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <h1 class="text-2xl font-bold text-gray-900 mb-6 text-center">Admin Login</h1>
+
+      <% if (error) { %>
+        <div class="bg-red-50 border border-red-200 text-red-800 rounded-lg p-3 mb-4">
+          <%= error %>
+        </div>
+      <% } %>
+
+      <form method="POST" action="/admin/login">
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2">Username</label>
+          <input type="text" name="username" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-gray-700 font-medium mb-2">Password</label>
+          <input type="password" name="password" required
+                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">
+          Login
+        </button>
+      </form>
+
+      <div class="mt-6 text-center">
+        <a href="/" class="text-gray-600 hover:text-green-600">← Back to Site</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

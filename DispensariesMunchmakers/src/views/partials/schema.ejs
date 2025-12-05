@@ -1,0 +1,77 @@
+<% if (typeof schemaType !== 'undefined') { %>
+  <% if (schemaType === 'LocalBusiness' && typeof dispensary !== 'undefined') { %>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "<%= dispensary.name %>",
+      "description": "Cannabis dispensary in <%= dispensary.city %>, <%= dispensary.state_abbr %>",
+      <% if (dispensary.logo_url) { %>
+      "image": "<%= dispensary.logo_url %>",
+      <% } %>
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "<%= dispensary.address_street %>",
+        "addressLocality": "<%= dispensary.city %>",
+        "addressRegion": "<%= dispensary.state_abbr %>",
+        "postalCode": "<%= dispensary.zip %>",
+        "addressCountry": "US"
+      },
+      <% if (dispensary.phone) { %>
+      "telephone": "<%= dispensary.phone %>",
+      <% } %>
+      <% if (dispensary.website) { %>
+      "url": "<%= dispensary.website %>",
+      <% } %>
+      <% if (dispensary.google_rating) { %>
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "<%= dispensary.google_rating %>",
+        "reviewCount": "<%= dispensary.google_review_count %>",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      <% } %>
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "<%= dispensary.lat %>",
+        "longitude": "<%= dispensary.lng %>"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+  <% } else if (schemaType === 'ItemList' && typeof rankings !== 'undefined') { %>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "<%= title %>",
+      "description": "<%= meta.description %>",
+      "numberOfItems": <%= rankings.length %>,
+      "itemListElement": [
+        <% rankings.forEach((item, index) => { %>
+        {
+          "@type": "ListItem",
+          "position": <%= index + 1 %>,
+          "item": {
+            "@type": "LocalBusiness",
+            "name": "<%= item.name %>",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "<%= item.address_street %>",
+              "addressLocality": "<%= item.city %>"
+            }<% if (item.google_rating) { %>,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "<%= item.google_rating %>",
+              "reviewCount": "<%= item.google_review_count %>"
+            }
+            <% } %>
+          }
+        }<%= index < rankings.length - 1 ? ',' : '' %>
+        <% }); %>
+      ]
+    }
+    </script>
+  <% } %>
+<% } %>
