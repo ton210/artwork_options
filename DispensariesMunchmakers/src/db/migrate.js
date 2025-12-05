@@ -63,8 +63,7 @@ async function runMigrations() {
         ip_hash VARCHAR(64) NOT NULL,
         session_id VARCHAR(100),
         is_verified_vote BOOLEAN DEFAULT false,
-        created_at TIMESTAMP DEFAULT NOW(),
-        CONSTRAINT unique_vote_per_ip_per_day UNIQUE (dispensary_id, ip_hash, DATE(created_at))
+        created_at TIMESTAMP DEFAULT NOW()
       );
 
       -- Page views table
@@ -136,6 +135,7 @@ async function runMigrations() {
       CREATE INDEX IF NOT EXISTS idx_votes_dispensary ON votes(dispensary_id);
       CREATE INDEX IF NOT EXISTS idx_votes_created ON votes(created_at);
       CREATE INDEX IF NOT EXISTS idx_votes_ip_hash ON votes(ip_hash);
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_votes_unique_per_day ON votes(dispensary_id, ip_hash, DATE(created_at));
 
       CREATE INDEX IF NOT EXISTS idx_page_views_dispensary ON page_views(dispensary_id);
       CREATE INDEX IF NOT EXISTS idx_page_views_created ON page_views(created_at);
