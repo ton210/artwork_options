@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen">
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-900">Scrape Dispensaries</h1>
+        <div class="flex items-center gap-4">
+          <a href="/admin" class="text-gray-600 hover:text-green-600">← Dashboard</a>
+          <a href="/admin/logout" class="text-red-600 hover:text-red-700">Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+        <div class="flex items-start gap-2">
+          <div class="text-2xl">⚠️</div>
+          <div>
+            <div class="font-semibold text-yellow-900">Warning</div>
+            <div class="text-yellow-800 text-sm">
+              Scraping makes many API calls to Google Places and may take a long time.
+              Make sure you have sufficient API quota before starting.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <h2 class="text-xl font-bold mb-4">Scrape by State</h2>
+        <form id="scrapeForm">
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-2">Select State</label>
+            <select name="stateId" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+              <option value="">-- Select a state --</option>
+              <% states.forEach(state => { %>
+                <option value="<%= state.id %>"><%= state.name %></option>
+              <% }); %>
+            </select>
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700">
+            Start Scraping
+          </button>
+        </form>
+      </div>
+
+      <div id="status" class="hidden bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div class="flex items-start gap-2">
+          <div class="text-2xl">ℹ️</div>
+          <div>
+            <div class="font-semibold text-blue-900">Scraping Started</div>
+            <div class="text-blue-800 text-sm" id="statusMessage">
+              The scraping process has started. Check the server logs for progress.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  document.getElementById('scrapeForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    if (!confirm('Start scraping? This will make many API calls.')) {
+      return;
+    }
+
+    const formData = new FormData(e.target);
+    const stateId = formData.get('stateId');
+
+    try {
+      const response = await fetch('/admin/scrape/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ stateId })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        document.getElementById('status').classList.remove('hidden');
+        document.getElementById('statusMessage').textContent = data.message;
+      } else {
+        alert('Error starting scrape');
+      }
+    } catch (error) {
+      alert('Error: ' + error.message);
+    }
+  });
+  </script>
+</body>
+</html>

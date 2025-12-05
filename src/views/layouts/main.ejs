@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+
+  <% if (typeof meta !== 'undefined') { %>
+  <meta name="description" content="<%= meta.description %>">
+  <meta name="keywords" content="<%= meta.keywords %>">
+  <% } %>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:type" content="website">
+  <% if (typeof meta !== 'undefined') { %>
+  <meta property="og:description" content="<%= meta.description %>">
+  <% } %>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <%- include('../partials/header') %>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <%- include('../partials/footer') %>
+
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

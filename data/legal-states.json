@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Alaska",
+    "abbreviation": "AK",
+    "slug": "alaska"
+  },
+  {
+    "name": "Arizona",
+    "abbreviation": "AZ",
+    "slug": "arizona"
+  },
+  {
+    "name": "California",
+    "abbreviation": "CA",
+    "slug": "california"
+  },
+  {
+    "name": "Colorado",
+    "abbreviation": "CO",
+    "slug": "colorado"
+  },
+  {
+    "name": "Connecticut",
+    "abbreviation": "CT",
+    "slug": "connecticut"
+  },
+  {
+    "name": "Delaware",
+    "abbreviation": "DE",
+    "slug": "delaware"
+  },
+  {
+    "name": "Illinois",
+    "abbreviation": "IL",
+    "slug": "illinois"
+  },
+  {
+    "name": "Maine",
+    "abbreviation": "ME",
+    "slug": "maine"
+  },
+  {
+    "name": "Maryland",
+    "abbreviation": "MD",
+    "slug": "maryland"
+  },
+  {
+    "name": "Massachusetts",
+    "abbreviation": "MA",
+    "slug": "massachusetts"
+  },
+  {
+    "name": "Michigan",
+    "abbreviation": "MI",
+    "slug": "michigan"
+  },
+  {
+    "name": "Minnesota",
+    "abbreviation": "MN",
+    "slug": "minnesota"
+  },
+  {
+    "name": "Missouri",
+    "abbreviation": "MO",
+    "slug": "missouri"
+  },
+  {
+    "name": "Montana",
+    "abbreviation": "MT",
+    "slug": "montana"
+  },
+  {
+    "name": "Nevada",
+    "abbreviation": "NV",
+    "slug": "nevada"
+  },
+  {
+    "name": "New Jersey",
+    "abbreviation": "NJ",
+    "slug": "new-jersey"
+  },
+  {
+    "name": "New Mexico",
+    "abbreviation": "NM",
+    "slug": "new-mexico"
+  },
+  {
+    "name": "New York",
+    "abbreviation": "NY",
+    "slug": "new-york"
+  },
+  {
+    "name": "Ohio",
+    "abbreviation": "OH",
+    "slug": "ohio"
+  },
+  {
+    "name": "Oregon",
+    "abbreviation": "OR",
+    "slug": "oregon"
+  },
+  {
+    "name": "Rhode Island",
+    "abbreviation": "RI",
+    "slug": "rhode-island"
+  },
+  {
+    "name": "Vermont",
+    "abbreviation": "VT",
+    "slug": "vermont"
+  },
+  {
+    "name": "Virginia",
+    "abbreviation": "VA",
+    "slug": "virginia"
+  },
+  {
+    "name": "Washington",
+    "abbreviation": "WA",
+    "slug": "washington"
+  },
+  {
+    "name": "Washington D.C.",
+    "abbreviation": "DC",
+    "slug": "washington-dc"
+  }
+]
