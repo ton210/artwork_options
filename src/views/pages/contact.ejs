@@ -1,0 +1,59 @@
+<%- include('../layouts/main', { content: `
+
+<div class="container mx-auto px-4 py-12 max-w-4xl">
+  <h1 class="text-4xl font-bold mb-6">Contact Us</h1>
+
+  <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+    <p class="text-lg mb-6">
+      Have questions about our rankings? Want to submit feedback? We'd love to hear from you!
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-semibold text-gray-700">General Inquiries</h3>
+            <a href="mailto:info@munchmakers.com" class="text-blue-600 hover:underline">info@munchmakers.com</a>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-700">Business Partnerships</h3>
+            <a href="mailto:partnerships@munchmakers.com" class="text-blue-600 hover:underline">partnerships@munchmakers.com</a>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-700">Advertising</h3>
+            <a href="mailto:advertising@munchmakers.com" class="text-blue-600 hover:underline">advertising@munchmakers.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-4">For Dispensary Owners</h2>
+        <p class="mb-4">
+          Want to claim or update your listing? Need custom branded merchandise?
+        </p>
+        <div class="space-y-3">
+          <a href="/claim" class="block bg-green-600 text-white text-center px-6 py-3 rounded-lg hover:bg-green-700 transition">
+            Claim Your Listing
+          </a>
+          <a href="https://munchmakers.com" target="_blank" class="block bg-gray-800 text-white text-center px-6 py-3 rounded-lg hover:bg-gray-900 transition">
+            Shop Custom Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 rounded-lg p-6">
+    <h2 class="text-xl font-bold mb-3">About MunchMakers</h2>
+    <p class="text-gray-700">
+      Top Dispensaries 2026 is powered by <a href="https://munchmakers.com" target="_blank" class="text-blue-600 hover:underline">MunchMakers</a>,
+      the leading supplier of custom cannabis accessories for dispensaries nationwide. We serve over 500+ dispensaries with
+      no minimum orders, fast turnaround, and wholesale pricing.
+    </p>
+  </div>
+</div>
+
+` }) %>
