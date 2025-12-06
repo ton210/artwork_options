@@ -39,8 +39,9 @@ for state_info in "${STATES[@]}"; do
   COUNT=$(echo $state_info | cut -d: -f2)
   COMPLETED=$((COMPLETED + 1))
 
+  STATE_UPPER=$(echo "$STATE" | tr '[:lower:]' '[:upper:]')
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "[$COMPLETED/$TOTAL_STATES] Importing: ${STATE^^} ($COUNT dispensaries)"
+  echo "[$COMPLETED/$TOTAL_STATES] Importing: $STATE_UPPER ($COUNT dispensaries)"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
   heroku run "node import-$STATE.js" -a $APP_NAME
