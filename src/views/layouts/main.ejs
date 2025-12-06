@@ -5,17 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
 
+  <!-- SEO Meta Tags -->
   <% if (typeof meta !== 'undefined') { %>
   <meta name="description" content="<%= meta.description %>">
   <meta name="keywords" content="<%= meta.keywords %>">
+  <% } else { %>
+  <meta name="description" content="Find the top-rated cannabis dispensaries across legal states in 2026. Community-driven rankings based on Google reviews, ratings, and user votes.">
+  <meta name="keywords" content="cannabis dispensary, marijuana dispensary, weed dispensary, dispensary rankings, best dispensaries">
   <% } %>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="<%= title %>">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="<%= baseUrl %><%= typeof currentPath !== 'undefined' ? currentPath : '' %>">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= baseUrl %><%= typeof currentPath !== 'undefined' ? currentPath : '' %>">
+  <meta property="og:title" content="<%= title %>">
   <% if (typeof meta !== 'undefined') { %>
   <meta property="og:description" content="<%= meta.description %>">
+  <% } else { %>
+  <meta property="og:description" content="Find the top-rated cannabis dispensaries across legal states in 2026.">
   <% } %>
+  <meta property="og:image" content="https://cdn11.bigcommerce.com/s-tqjrceegho/images/stencil/500w/munchmakers-logo_1_1752112946__55141.original.png">
+  <meta property="og:site_name" content="Top Dispensaries 2026">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="<%= baseUrl %><%= typeof currentPath !== 'undefined' ? currentPath : '' %>">
+  <meta name="twitter:title" content="<%= title %>">
+  <% if (typeof meta !== 'undefined') { %>
+  <meta name="twitter:description" content="<%= meta.description %>">
+  <% } %>
+  <meta name="twitter:image" content="https://cdn11.bigcommerce.com/s-tqjrceegho/images/stencil/500w/munchmakers-logo_1_1752112946__55141.original.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn11.bigcommerce.com/s-tqjrceegho/images/stencil/500w/munchmakers-logo_1_1752112946__55141.original.png">
+
+  <!-- Geo Meta -->
+  <meta name="geo.region" content="US">
+  <meta name="geo.placename" content="United States">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>

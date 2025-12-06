@@ -1,0 +1,83 @@
+<%- include('../layouts/main', { content: `
+
+<div class="container mx-auto px-4 py-12 max-w-7xl">
+  <h1 class="text-4xl font-bold mb-6">Sitemap</h1>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- Main Pages -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-4 text-green-600">Main Pages</h2>
+      <ul class="space-y-2">
+        <% pages.forEach(page => { %>
+          <li>
+            <a href="<%= page.path %>" class="text-blue-600 hover:underline">
+              <%= page.name %>
+            </a>
+          </li>
+        <% }); %>
+        <li>
+          <a href="/privacy" class="text-blue-600 hover:underline">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/terms" class="text-blue-600 hover:underline">Terms of Service</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- States -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-4 text-green-600">Browse by State</h2>
+      <p class="text-sm text-gray-600 mb-3"><%= states.length %> legal states</p>
+      <ul class="space-y-2 max-h-96 overflow-y-auto">
+        <% states.forEach(state => { %>
+          <li>
+            <a href="/dispensaries/<%= state.slug %>" class="text-blue-600 hover:underline">
+              <%= state.name %>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <!-- Brands -->
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-2xl font-bold mb-4 text-green-600">Dispensary Brands</h2>
+      <p class="text-sm text-gray-600 mb-3"><%= brands.length %> brands</p>
+      <ul class="space-y-2 max-h-96 overflow-y-auto">
+        <% brands.forEach(brand => { %>
+          <li>
+            <a href="/brands/<%= brand.slug %>" class="text-blue-600 hover:underline flex justify-between">
+              <span><%= brand.name %></span>
+              <span class="text-gray-400 text-sm">(<%= brand.location_count %>)</span>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+  </div>
+
+  <!-- XML Sitemaps for Search Engines -->
+  <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-8">
+    <h2 class="text-xl font-bold mb-4">XML Sitemaps (For Search Engines)</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <h3 class="font-semibold mb-2">Sitemap Index</h3>
+        <a href="/sitemap.xml" class="text-blue-600 hover:underline text-sm font-mono">
+          /sitemap.xml
+        </a>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Individual Sitemaps</h3>
+        <ul class="space-y-1 text-sm font-mono">
+          <li><a href="/sitemap-main.xml" class="text-blue-600 hover:underline">/sitemap-main.xml</a></li>
+          <li><a href="/sitemap-states.xml" class="text-blue-600 hover:underline">/sitemap-states.xml</a></li>
+          <li><a href="/sitemap-counties.xml" class="text-blue-600 hover:underline">/sitemap-counties.xml</a></li>
+          <li><a href="/sitemap-dispensaries.xml" class="text-blue-600 hover:underline">/sitemap-dispensaries.xml</a></li>
+          <li><a href="/sitemap-brands.xml" class="text-blue-600 hover:underline">/sitemap-brands.xml</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+` }) %>

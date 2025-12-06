@@ -93,6 +93,7 @@ const indexRoutes = require('./routes/index');
 const dispensaryRoutes = require('./routes/dispensaries');
 const brandsRoutes = require('./routes/brands');
 const pagesRoutes = require('./routes/pages');
+const sitemapRoutes = require('./routes/sitemap');
 const apiRoutes = require('./routes/api');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
@@ -102,6 +103,7 @@ app.use('/dispensaries', dispensaryRoutes);
 app.use('/dispensary', dispensaryRoutes); // Alternative singular route
 app.use('/brands', brandsRoutes);
 app.use('/', pagesRoutes);
+app.use('/', sitemapRoutes);
 app.use('/api', apiRoutes);
 app.use('/admin', adminRoutes);
 app.use('/leads', leadRoutes);
