@@ -6,9 +6,12 @@ const googleSearch = require('./src/services/googleSearch');
 const slugify = require('slugify');
 
 // Known franchise brands in Massachusetts
-const FRANCHISE_BRANDS = ['NETA', 'Curaleaf', 'Theory Wellness', 'Berkshire Roots', 'Sira Naturals', 'Mission', 'Cultivate', 'Good Chemistry', 'Ayr Wellness', 'INSA', 'Garden Remedies', 'Revolutionary Clinics', 'CommCan', 'Temescal Wellness', 'Mayflower', 'In Good Health', 'Northeast Alternatives', 'ATG', 'Happy Valley', 'Canna Provisions', 'Fine Fettle', 'Solar Cannabis', 'CANA Craft'];
-  'Good Day Farm', 'Bloc Dispensary', 'Star Buds', 'Terrabis', 'From The Earth',
-  'Greenlight', 'Swade', 'N\'Bliss', 'Verilife', 'Cookies', 'The Green Solution'
+const FRANCHISE_BRANDS = [
+  'NETA', 'Curaleaf', 'Theory Wellness', 'Berkshire Roots', 'Sira Naturals', 'Mission',
+  'Cultivate', 'Good Chemistry', 'Ayr Wellness', 'INSA', 'Garden Remedies',
+  'Revolutionary Clinics', 'CommCan', 'Temescal Wellness', 'Mayflower', 'In Good Health',
+  'Northeast Alternatives', 'ATG', 'Happy Valley', 'Canna Provisions', 'Fine Fettle',
+  'Solar Cannabis', 'CANA Craft'
 ];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
