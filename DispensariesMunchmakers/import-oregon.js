@@ -5,73 +5,60 @@ const googlePlaces = require('./src/services/googlePlaces');
 const googleSearch = require('./src/services/googleSearch');
 const slugify = require('slugify');
 
-// Known franchise brands in Oregon
-const FRANCHISE_BRANDS = ['Nectar', 'Floyd's Fine Cannabis', 'Electric Lettuce', 'Serra', 'Chalice Farms', 'Chalice Cannabis', 'Bridge City Collective', 'Oregrown', 'La Mota', 'Substance Market', 'Cannabis Nation', 'Lucky Lion', 'Homegrown Oregon', 'Broadway Cannabis', 'Mint Cannabis', 'Five Zero Trees', 'The Dank Depot'
-  'Good Day Farm', 'Bloc Dispensary', 'Star Buds', 'Terrabis', 'From The Earth',
-  'Greenlight', 'Swade', 'N\'Bliss', 'Verilife', 'Cookies', 'The Green Solution'
-];
+const FRANCHISE_BRANDS = ['Nectar', 'Electric Lettuce', 'Serra', 'Chalice', 'Oregrown', 'La Mota', 'Substance Market', 'Cannabis Nation', 'Lucky Lion'];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function identifyBrand(dispensaryName) {
+async function identifyBrand(name) {
   for (const franchise of FRANCHISE_BRANDS) {
-    if (dispensaryName.toLowerCase().includes(franchise.toLowerCase())) {
+    if (name.toLowerCase().includes(franchise.toLowerCase())) {
       return { name: franchise, isFranchise: true };
     }
   }
-  return { name: dispensaryName, isFranchise: false };
+  return { name, isFranchise: false };
 }
 
 async function findOrCreateBrand(brandName, isFranchise) {
   const slug = slugify(brandName, { lower: true, strict: true });
-
   const existing = await db.query('SELECT * FROM brands WHERE slug = $1', [slug]);
-  if (existing.rows.length > 0) {
-    return existing.rows[0];
-  }
+  if (existing.rows.length > 0) return existing.rows[0];
 
   const result = await db.query(
-    `INSERT INTO brands (name, slug, is_franchise, location_count)
-     VALUES ($1, $2, $3, 0)
-     RETURNING *`,
+    'INSERT INTO brands (name, slug, is_franchise) VALUES ($1, $2, $3) RETURNING *',
     [brandName, slug, isFranchise]
   );
-
-  console.log(`  ✓ Created brand: ${brandName} (Franchise: ${isFranchise})`);
+  console.log(`  ✓ Created brand: ${brandName}`);
   return result.rows[0];
 }
 
-async function searchAndEnrichDispensary(dispensaryInfo) {
-  const { name, address, city, zipCode } = dispensaryInfo;
-
+async function searchAndEnrichDispensary(info) {
+  const { name, address, city, zipCode } = info;
   console.log(`\n=== Processing: ${name} ===`);
-  console.log(`Address: ${address}, ${city}, OR ${zipCode}`);
+  console.log(`Address: ${address || 'N/A'}, ${city}, OR ${zipCode || ''}`);
 
   try {
     const brandInfo = await identifyBrand(name);
     const brand = await findOrCreateBrand(brandInfo.name, brandInfo.isFranchise);
-
     await delay(1000);
 
-    const searchQuery = `${name} ${address} ${city} Oregon dispensary`;
-    console.log(`Searching: ${searchQuery}`);
+    const searchQuery = address
+      ? `${name} ${address} ${city} Oregon dispensary`
+      : `${name} ${city} Oregon dispensary`;
 
     const searchResults = await googlePlaces.searchDispensaries(searchQuery);
-
     if (searchResults.results.length === 0) {
-      console.log(`⚠️  No results found for ${name}`);
+      console.log(`⚠️  No results found`);
       return null;
     }
 
     const place = searchResults.results[0];
     console.log(`Found: ${place.name}`);
-
     await delay(1000);
 
     const details = await googlePlaces.getPlaceDetails(place.place_id);
     const addressInfo = googlePlaces.parseAddressComponents(details.address_components);
-
     await delay(1000);
+
     const externalListings = await googleSearch.searchForListing(details.name, addressInfo.city, addressInfo.state);
 
     const photos = [];
@@ -81,35 +68,27 @@ async function searchAndEnrichDispensary(dispensaryInfo) {
       }
     }
 
-    const logoUrl = photos.length > 0 ? photos[0] : null;
-
     const countyResult = await db.query(
-      `SELECT id FROM counties
-       WHERE state_id = (SELECT id FROM states WHERE abbreviation = 'OR')
-       AND LOWER(name) = LOWER($1)
-       LIMIT 1`,
+      `SELECT id FROM counties WHERE state_id = (SELECT id FROM states WHERE abbreviation = 'OR')
+       AND LOWER(name) = LOWER($1) LIMIT 1`,
       [addressInfo.county || city]
     );
 
-    const countyId = countyResult.rows[0]?.id || null;
     const slug = slugify(`${details.name} ${addressInfo.city}`, { lower: true, strict: true });
 
     const dispensaryData = {
       google_place_id: details.place_id,
-      name: details.name,
-      slug: slug,
-      brand_id: brand.id,
-      address_street: addressInfo.street || address,
+      name: details.name, slug, brand_id: brand.id,
+      address_street: addressInfo.street || address || '',
       city: addressInfo.city || city,
-      county_id: countyId,
-      zip: addressInfo.zip || zipCode.toString(),
+      county_id: countyResult.rows[0]?.id || null,
+      zip: addressInfo.zip || zipCode || '',
       lat: details.geometry.location.lat,
       lng: details.geometry.location.lng,
       phone: details.formatted_phone_number || details.international_phone_number,
       website: details.website,
-      logo_url: logoUrl,
-      photos: photos,
-      hours: details.opening_hours,
+      logo_url: photos[0] || null,
+      photos, hours: details.opening_hours,
       google_rating: details.rating || 0,
       google_review_count: details.user_ratings_total || 0,
       external_listings: externalListings,
@@ -120,46 +99,35 @@ async function searchAndEnrichDispensary(dispensaryInfo) {
 
     if (existing.rows.length > 0) {
       await db.query(
-        `UPDATE dispensaries SET
-          name = $1, brand_id = $2, address_street = $3, city = $4, county_id = $5,
-          zip = $6, lat = $7, lng = $8, phone = $9, website = $10,
-          logo_url = $11, photos = $12, hours = $13, google_rating = $14,
-          google_review_count = $15, external_listings = $16, updated_at = NOW()
+        `UPDATE dispensaries SET name = $1, brand_id = $2, address_street = $3, city = $4, county_id = $5,
+          zip = $6, lat = $7, lng = $8, phone = $9, website = $10, logo_url = $11, photos = $12,
+          hours = $13, google_rating = $14, google_review_count = $15, external_listings = $16, updated_at = NOW()
          WHERE google_place_id = $17`,
-        [
-          dispensaryData.name, dispensaryData.brand_id, dispensaryData.address_street,
-          dispensaryData.city, dispensaryData.county_id, dispensaryData.zip,
-          dispensaryData.lat, dispensaryData.lng, dispensaryData.phone,
-          dispensaryData.website, dispensaryData.logo_url, JSON.stringify(dispensaryData.photos),
-          JSON.stringify(dispensaryData.hours), dispensaryData.google_rating,
-          dispensaryData.google_review_count, JSON.stringify(dispensaryData.external_listings),
-          details.place_id
-        ]
+        [dispensaryData.name, dispensaryData.brand_id, dispensaryData.address_street, dispensaryData.city,
+         dispensaryData.county_id, dispensaryData.zip, dispensaryData.lat, dispensaryData.lng,
+         dispensaryData.phone, dispensaryData.website, dispensaryData.logo_url, JSON.stringify(dispensaryData.photos),
+         JSON.stringify(dispensaryData.hours), dispensaryData.google_rating, dispensaryData.google_review_count,
+         JSON.stringify(dispensaryData.external_listings), details.place_id]
       );
-      console.log(`✓ Updated: ${details.name} - Rating: ${details.rating}/5 (${details.user_ratings_total} reviews)`);
+      console.log(`✓ Updated: ${details.name} - ${details.rating}/5 (${details.user_ratings_total})`);
     } else {
       await db.query(
-        `INSERT INTO dispensaries (
-          google_place_id, name, slug, brand_id, address_street, city, county_id,
-          zip, lat, lng, phone, website, logo_url, photos, hours,
-          google_rating, google_review_count, external_listings, is_active
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)`,
-        [
-          dispensaryData.google_place_id, dispensaryData.name, dispensaryData.slug,
-          dispensaryData.brand_id, dispensaryData.address_street, dispensaryData.city,
-          dispensaryData.county_id, dispensaryData.zip, dispensaryData.lat, dispensaryData.lng,
-          dispensaryData.phone, dispensaryData.website, dispensaryData.logo_url,
-          JSON.stringify(dispensaryData.photos), JSON.stringify(dispensaryData.hours),
-          dispensaryData.google_rating, dispensaryData.google_review_count,
-          JSON.stringify(dispensaryData.external_listings), dispensaryData.is_active
-        ]
+        `INSERT INTO dispensaries (google_place_id, name, slug, brand_id, address_street, city, county_id,
+          zip, lat, lng, phone, website, logo_url, photos, hours, google_rating, google_review_count,
+          external_listings, is_active)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)`,
+        [dispensaryData.google_place_id, dispensaryData.name, dispensaryData.slug, dispensaryData.brand_id,
+         dispensaryData.address_street, dispensaryData.city, dispensaryData.county_id, dispensaryData.zip,
+         dispensaryData.lat, dispensaryData.lng, dispensaryData.phone, dispensaryData.website,
+         dispensaryData.logo_url, JSON.stringify(dispensaryData.photos), JSON.stringify(dispensaryData.hours),
+         dispensaryData.google_rating, dispensaryData.google_review_count,
+         JSON.stringify(dispensaryData.external_listings), dispensaryData.is_active]
       );
-      console.log(`✓ Added: ${details.name} - Rating: ${details.rating}/5 (${details.user_ratings_total} reviews)`);
+      console.log(`✓ Added: ${details.name} - ${details.rating}/5 (${details.user_ratings_total})`);
     }
 
     await db.query(
-      `UPDATE brands SET
-        location_count = (SELECT COUNT(*) FROM dispensaries WHERE brand_id = $1),
+      `UPDATE brands SET location_count = (SELECT COUNT(*) FROM dispensaries WHERE brand_id = $1),
         average_rating = (SELECT AVG(google_rating) FROM dispensaries WHERE brand_id = $1),
         total_reviews = (SELECT SUM(google_review_count) FROM dispensaries WHERE brand_id = $1)
        WHERE id = $1`,
@@ -167,10 +135,9 @@ async function searchAndEnrichDispensary(dispensaryInfo) {
     );
 
     return { success: true };
-
   } catch (error) {
-    console.error(`❌ Error processing ${name}:`, error.message);
-    return { success: false, error: error.message };
+    console.error(`❌ Error:`, error.message);
+    return { success: false };
   }
 }
 
@@ -180,41 +147,34 @@ async function importOregonDispensaries() {
   try {
     const csv = fs.readFileSync('./oregon-dispensaries.csv', 'utf8');
     const lines = csv.split('\n').filter(line => line.trim());
-    const headers = lines[0].split(',');
 
     const data = lines.slice(1).map(line => {
-      const values = line.split(',');
+      const matches = line.match(/(".*?"|[^,]+)(?=\s*,|\s*$)/g);
+      if (!matches || matches.length < 3) return null;
+
       return {
-        name: values[0]?.trim(),
-        address: values[1]?.trim(),
-        city: values[2]?.trim(),
-        zipCode: values[3]?.trim(),
-        licenseType: values[4]?.trim()
+        name: matches[0]?.replace(/"/g, '').trim(),
+        address: matches[1]?.replace(/"/g, '').trim(),
+        city: matches[2]?.replace(/"/g, '').trim(),
+        zipCode: matches[3]?.replace(/"/g, '').trim(),
+        type: matches[4]?.replace(/"/g, '').trim()
       };
-    }).filter(d => d.name);
+    }).filter(d => d && d.name);
 
-    console.log(`Found ${data.length} Oregon dispensaries to process\n`);
+    console.log(`Found ${data.length} Oregon dispensaries\n`);
 
-    let added = 0;
-    let failed = 0;
+    let added = 0, failed = 0;
 
     for (let i = 0; i < data.length; i++) {
-      console.log(`[${i + 1}/${data.length}] Processing...`);
-
+      console.log(`[${i + 1}/${data.length}]`);
       const result = await searchAndEnrichDispensary(data[i]);
-
-      if (result && result.success) {
-        added++;
-      } else {
-        failed++;
-      }
-
+      if (result?.success) added++; else failed++;
       await delay(2000);
     }
 
     console.log('\n=== Oregon Import Summary ===');
-    console.log(`Total processed: ${data.length}`);
-    console.log(`Successfully added/updated: ${added}`);
+    console.log(`Total: ${data.length}`);
+    console.log(`Success: ${added}`);
     console.log(`Failed: ${failed}`);
 
   } catch (error) {

@@ -7,9 +7,6 @@ const slugify = require('slugify');
 
 // Known franchise brands in Vermont
 const FRANCHISE_BRANDS = ['Ceres Collaborative', 'Mountain Girl Cannabis'];
-  'Good Day Farm', 'Bloc Dispensary', 'Star Buds', 'Terrabis', 'From The Earth',
-  'Greenlight', 'Swade', 'N\'Bliss', 'Verilife', 'Cookies', 'The Green Solution'
-];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 

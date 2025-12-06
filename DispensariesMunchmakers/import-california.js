@@ -5,7 +5,7 @@ const googlePlaces = require('./src/services/googlePlaces');
 const googleSearch = require('./src/services/googleSearch');
 const slugify = require('slugify');
 
-const FRANCHISE_BRANDS = ['Rise', 'Thrive', 'Curaleaf', 'The Dispensary', 'Deep Roots Harvest', 'The Source', 'Zen Leaf', 'Green', 'Planet 13', 'Oasis', 'Jardin', 'Cookies'];
+const FRANCHISE_BRANDS = ['Cookies', 'Jungle Boys', 'MedMen', 'STIIIZY', 'Catalyst', 'March and Ash', 'Urbn Leaf', 'Harborside', 'The Pottery'];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -34,7 +34,7 @@ async function findOrCreateBrand(brandName, isFranchise) {
 async function searchAndEnrichDispensary(info) {
   const { name, address, city, zipCode } = info;
   console.log(`\n=== Processing: ${name} ===`);
-  console.log(`Address: ${address || 'N/A'}, ${city}, NV ${zipCode || ''}`);
+  console.log(`Address: ${address || 'N/A'}, ${city}, CA ${zipCode || ''}`);
 
   try {
     const brandInfo = await identifyBrand(name);
@@ -42,8 +42,8 @@ async function searchAndEnrichDispensary(info) {
     await delay(1000);
 
     const searchQuery = address
-      ? `${name} ${address} ${city} Nevada dispensary`
-      : `${name} ${city} Nevada dispensary`;
+      ? `${name} ${address} ${city} California dispensary`
+      : `${name} ${city} California dispensary`;
 
     const searchResults = await googlePlaces.searchDispensaries(searchQuery);
     if (searchResults.results.length === 0) {
@@ -69,7 +69,7 @@ async function searchAndEnrichDispensary(info) {
     }
 
     const countyResult = await db.query(
-      `SELECT id FROM counties WHERE state_id = (SELECT id FROM states WHERE abbreviation = 'NV')
+      `SELECT id FROM counties WHERE state_id = (SELECT id FROM states WHERE abbreviation = 'CA')
        AND LOWER(name) = LOWER($1) LIMIT 1`,
       [addressInfo.county || city]
     );
@@ -141,11 +141,11 @@ async function searchAndEnrichDispensary(info) {
   }
 }
 
-async function importNevadaDispensaries() {
-  console.log('Starting Nevada dispensaries import...\n');
+async function importCaliforniaDispensaries() {
+  console.log('Starting California dispensaries import...\n');
 
   try {
-    const csv = fs.readFileSync('./nevada-dispensaries.csv', 'utf8');
+    const csv = fs.readFileSync('./california-dispensaries.csv', 'utf8');
     const lines = csv.split('\n').filter(line => line.trim());
 
     const data = lines.slice(1).map(line => {
@@ -161,7 +161,7 @@ async function importNevadaDispensaries() {
       };
     }).filter(d => d && d.name);
 
-    console.log(`Found ${data.length} Nevada dispensaries\n`);
+    console.log(`Found ${data.length} California dispensaries\n`);
 
     let added = 0, failed = 0;
 
@@ -172,7 +172,7 @@ async function importNevadaDispensaries() {
       await delay(2000);
     }
 
-    console.log('\n=== Nevada Import Summary ===');
+    console.log('\n=== California Import Summary ===');
     console.log(`Total: ${data.length}`);
     console.log(`Success: ${added}`);
     console.log(`Failed: ${failed}`);
@@ -184,4 +184,4 @@ async function importNevadaDispensaries() {
   }
 }
 
-importNevadaDispensaries();
+importCaliforniaDispensaries();
