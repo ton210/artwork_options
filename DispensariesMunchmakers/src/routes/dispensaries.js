@@ -143,6 +143,9 @@ router.get('/:state/:county', async (req, res) => {
       stats,
       otherCounties,
       showAll,
+      mapEnabled: true,
+      GOOGLE_API_KEY: process.env.GOOGLE_PLACES_API_KEY,
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
       meta: {
         description: `Browse the best cannabis dispensaries in ${county.name} County, ${county.state_name}. Rankings based on user votes, Google reviews, and ratings.`,
         keywords: `${county.name} County dispensary, cannabis ${county.name} County, marijuana dispensary ${county.state_abbr}`

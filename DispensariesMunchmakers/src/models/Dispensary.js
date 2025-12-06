@@ -170,6 +170,43 @@ class Dispensary {
 
     return score;
   }
+
+  // Get optimized data for map display (minimal fields for performance)
+  static async getMapData(countyId) {
+    const result = await db.query(
+      `SELECT d.id, d.name, d.slug, d.lat, d.lng, d.google_rating,
+              d.google_review_count, d.address_street, d.city, d.zip, d.logo_url,
+              s.abbreviation as state_abbr
+       FROM dispensaries d
+       LEFT JOIN counties c ON d.county_id = c.id
+       LEFT JOIN states s ON c.state_id = s.id
+       WHERE d.county_id = $1 AND d.is_active = true AND d.lat IS NOT NULL
+       ORDER BY d.google_rating DESC`,
+      [countyId]
+    );
+    return result.rows;
+  }
+
+  // Find nearby dispensaries within radius (miles)
+  static async findNearby(lat, lng, radiusMiles = 25, limit = 50) {
+    const result = await db.query(
+      `SELECT d.*, c.name as county_name, s.name as state_name, s.abbreviation as state_abbr,
+              (3959 * acos(
+                cos(radians($1)) * cos(radians(d.lat)) *
+                cos(radians(d.lng) - radians($2)) +
+                sin(radians($1)) * sin(radians(d.lat))
+              )) AS distance
+       FROM dispensaries d
+       LEFT JOIN counties c ON d.county_id = c.id
+       LEFT JOIN states s ON c.state_id = s.id
+       WHERE d.is_active = true AND d.lat IS NOT NULL
+       HAVING distance < $3
+       ORDER BY distance ASC
+       LIMIT $4`,
+      [lat, lng, radiusMiles, limit]
+    );
+    return result.rows;
+  }
 }
 
 module.exports = Dispensary;

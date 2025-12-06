@@ -112,4 +112,106 @@ router.get('/vote-status/:dispensaryId', async (req, res) => {
   }
 });
 
+// Map API endpoints
+// Get map data for county dispensaries
+router.get('/map/county/:stateSlug/:countySlug', async (req, res) => {
+  try {
+    const County = require('../models/County');
+    const Dispensary = require('../models/Dispensary');
+
+    const county = await County.findBySlug(req.params.stateSlug, req.params.countySlug);
+
+    if (!county) {
+      return res.status(404).json({ error: 'County not found' });
+    }
+
+    const dispensaries = await Dispensary.getMapData(county.id);
+
+    res.json({
+      success: true,
+      dispensaries: dispensaries.map(d => ({
+        id: d.id,
+        name: d.name,
+        slug: d.slug,
+        lat: parseFloat(d.lat),
+        lng: parseFloat(d.lng),
+        rating: d.google_rating,
+        reviewCount: d.google_review_count,
+        address: `${d.address_street}, ${d.city}, ${d.state_abbr} ${d.zip}`,
+        logoUrl: d.logo_url
+      }))
+    });
+  } catch (error) {
+    console.error('Error fetching map data:', error);
+    res.status(500).json({ error: 'Failed to load map data' });
+  }
+});
+
+// Get map data for state dispensaries
+router.get('/map/state/:stateSlug', async (req, res) => {
+  try {
+    const State = require('../models/State');
+    const db = require('../config/database');
+
+    const state = await State.findBySlug(req.params.stateSlug);
+
+    if (!state) {
+      return res.status(404).json({ error: 'State not found' });
+    }
+
+    const result = await db.query(`
+      SELECT d.id, d.name, d.slug, d.lat, d.lng, d.google_rating,
+             d.google_review_count, d.address_street, d.city, d.zip, d.logo_url,
+             s.abbreviation as state_abbr
+      FROM dispensaries d
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      WHERE c.state_id = $1 AND d.is_active = true AND d.lat IS NOT NULL
+      ORDER BY d.google_rating DESC
+      LIMIT 500
+    `, [state.id]);
+
+    res.json({
+      success: true,
+      dispensaries: result.rows.map(d => ({
+        id: d.id,
+        name: d.name,
+        slug: d.slug,
+        lat: parseFloat(d.lat),
+        lng: parseFloat(d.lng),
+        rating: d.google_rating,
+        reviewCount: d.google_review_count,
+        address: `${d.address_street}, ${d.city}, ${d.state_abbr} ${d.zip}`,
+        logoUrl: d.logo_url
+      }))
+    });
+  } catch (error) {
+    console.error('Error fetching state map data:', error);
+    res.status(500).json({ error: 'Failed to load map data' });
+  }
+});
+
+// Get single dispensary location
+router.get('/map/dispensary/:id', async (req, res) => {
+  try {
+    const Dispensary = require('../models/Dispensary');
+    const dispensary = await Dispensary.findById(parseInt(req.params.id));
+
+    if (!dispensary) {
+      return res.status(404).json({ error: 'Dispensary not found' });
+    }
+
+    res.json({
+      success: true,
+      lat: parseFloat(dispensary.lat),
+      lng: parseFloat(dispensary.lng),
+      name: dispensary.name,
+      address: `${dispensary.address_street}, ${dispensary.city}`
+    });
+  } catch (error) {
+    console.error('Error fetching dispensary location:', error);
+    res.status(500).json({ error: 'Failed to load location' });
+  }
+});
+
 module.exports = router;

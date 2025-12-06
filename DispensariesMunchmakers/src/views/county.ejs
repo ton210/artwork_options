@@ -55,6 +55,14 @@
           </div>
         <% } %>
 
+        <!-- Interactive Map -->
+        <% if (rankings.length > 0) { %>
+          <div class="bg-white rounded-lg shadow-lg p-4 mb-8">
+            <h2 class="text-xl font-bold mb-4">Map View</h2>
+            <div id="map" class="w-full h-96 rounded-lg bg-gray-100"></div>
+          </div>
+        <% } %>
+
         <div class="space-y-4 mb-12">
           <% rankings.forEach((dispensary, index) => { %>
             <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6">
@@ -112,5 +120,14 @@
   </div>
 
   <%- include('partials/footer') %>
+
+  <script>
+    // Initialize map when page loads
+    window.addEventListener('load', function() {
+      if (typeof initCountyMap !== 'undefined') {
+        initCountyMap('<%= county.state_slug %>', '<%= county.slug %>');
+      }
+    });
+  </script>
 </body>
 </html>

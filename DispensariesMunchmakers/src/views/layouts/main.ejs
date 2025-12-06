@@ -74,5 +74,11 @@
 
   <!-- Scripts -->
   <script src="/js/main.js"></script>
+
+  <!-- Google Maps (load async) -->
+  <% if (typeof mapEnabled !== 'undefined' && mapEnabled) { %>
+    <script src="/js/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= typeof GOOGLE_API_KEY !== 'undefined' ? GOOGLE_API_KEY : process.env.GOOGLE_PLACES_API_KEY %>"></script>
+  <% } %>
 </body>
 </html>
