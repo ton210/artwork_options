@@ -116,4 +116,42 @@ router.get('/:state/:county', async (req, res) => {
   }
 });
 
+// Individual dispensary detail page (must be last to avoid route conflicts)
+router.get('/:slug', async (req, res) => {
+  try {
+    const dispensary = await Dispensary.findBySlug(req.params.slug);
+
+    if (!dispensary) {
+      return res.status(404).render('404', {
+        title: 'Dispensary Not Found',
+        baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+      });
+    }
+
+    // Get vote counts
+    const votes = await Vote.getVoteCounts(dispensary.id);
+    const recentVotes = await Vote.getRecentVotes(dispensary.id, 30);
+
+    // Check if user can vote
+    const clientIP = getClientIP(req);
+    const canVote = await Vote.canVote(dispensary.id, clientIP);
+
+    res.render('dispensary', {
+      title: `${dispensary.name} - ${dispensary.city}, ${dispensary.state_abbr} | Cannabis Dispensary`,
+      dispensary,
+      votes,
+      recentVotes,
+      canVote,
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      meta: {
+        description: `${dispensary.name} in ${dispensary.city}, ${dispensary.state_abbr}. ${dispensary.google_rating ? dispensary.google_rating + ' stars' : ''} ${dispensary.google_review_count ? '(' + dispensary.google_review_count + ' reviews)' : ''}. Address, hours, phone, and reviews.`,
+        keywords: `${dispensary.name}, ${dispensary.city} dispensary, cannabis ${dispensary.city}, marijuana dispensary ${dispensary.state_abbr}`
+      }
+    });
+  } catch (error) {
+    console.error('Error loading dispensary page:', error);
+    res.status(500).send('Error loading dispensary page');
+  }
+});
+
 module.exports = router;
