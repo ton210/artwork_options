@@ -1,6 +1,36 @@
+# Top Dispensaries 2026 - Robots.txt
+# Updated: December 6, 2025
+
+# Allow all search engines
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /leads/
 
-Sitemap: https://dispensaries.munchmakers.com/sitemap.xml
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-states.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-counties.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-dispensaries.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-brands.xml
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Allow social media bots for previews
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
