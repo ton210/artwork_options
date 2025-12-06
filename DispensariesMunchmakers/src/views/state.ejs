@@ -24,9 +24,20 @@
       <!-- Main Content -->
       <div class="lg:col-span-2">
         <!-- Header -->
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">
-          Top 10 Dispensaries in <%= state.name %> (2026)
-        </h1>
+        <div class="flex justify-between items-start mb-4">
+          <h1 class="text-4xl font-bold text-gray-900">
+            <% if (showAll) { %>
+              All <%= rankings.length %> Dispensaries in <%= state.name %>
+            <% } else { %>
+              Top 10 Dispensaries in <%= state.name %> (2026)
+            <% } %>
+          </h1>
+          <% if (!showAll && stats.dispensary_count > 10) { %>
+            <a href="?view=all" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-semibold whitespace-nowrap">
+              View All <%= stats.dispensary_count %> →
+            </a>
+          <% } %>
+        </div>
 
         <div class="flex items-center gap-4 mb-8 text-gray-600">
           <div>📅 Updated <%= new Date().toLocaleDateString() %></div>
@@ -35,6 +46,16 @@
           <div>•</div>
           <div>⭐ <%= Number(stats.avg_rating || 0).toFixed(1) %> avg rating</div>
         </div>
+
+        <% if (showAll) { %>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <p class="text-sm">
+              <a href="?" class="text-blue-600 hover:underline">← Back to Top 10</a>
+              <span class="mx-2">•</span>
+              Showing all <%= rankings.length %> dispensaries ranked by rating and reviews
+            </p>
+          </div>
+        <% } %>
 
         <!-- Rankings -->
         <div class="space-y-4 mb-12">
