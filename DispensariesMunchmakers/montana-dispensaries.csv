@@ -17,12 +17,12 @@ The Green Bee Dispensary,1644 S 48th St W,Billings,59106,Medical & Recreational
 Bloom West Billings,9055 Quest Ave,Billings,59106,Recreational
 Frosteez - Billings,5055 Jellison Rd,Billings,59106,Recreational
 SensiCare,1020 Hannon Rd,Billings,59101,Medical & Recreational
-Seed of Life Labs - 32nd,Multiple Locations,Billings,59102,Medical & Recreational
+Seed of Life Labs - 32nd,41 Sugar Avenue,Billings,59102,Medical & Recreational
 Seed of Life Labs - Heights,Multiple Locations,Billings,59102,Medical & Recreational
 Natural Wellness Billings,Multiple Locations,Billings,59101,Medical & Recreational
 Purple Cow Dispensary,Multiple Locations,Billings,59102,Medical & Recreational
 406 Organix - Billings,Multiple Locations,Billings,59102,Recreational
-Seed of Life Labs - Lockwood,Multiple Locations,Billings,59101,Medical & Recreational
+Yellowstone Cannabis,Multiple Locations,Billings,59101,Medical Only
 Magic City ReLeaf,Multiple Locations,Billings,59102,Medical Only
 Lighthouse Organics - Billings,Multiple Locations,Billings,59102,Medical Only
 Hometree - Billings,Multiple Locations,Billings,59102,Medical & Recreational
@@ -49,14 +49,13 @@ Lionheart Cannabis - Missoula,2007 Brooks St,Missoula,59801,Medical & Recreation
 406 Bliss - Lolo,Multiple Locations,Missoula,59802,Medical & Recreational
 Elevated - Missoula Brooks,Multiple Locations,Missoula,59801,Medical & Recreational
 Bloom Montana-South Missoula,Multiple Locations,Missoula,59801,Medical & Recreational
-Bloom - Florence,Multiple Locations,Missoula,59801,Medical & Recreational
 Indo,Multiple Locations,Missoula,59802,Medical & Recreational
 Cookies Weed Dispensary Missoula,Multiple Locations,Missoula,59802,Medical & Recreational
 Groove Solventless,Multiple Locations,Missoula,59802,Medical & Recreational
 Firefly,Multiple Locations,Missoula,59802,Medical & Recreational
 Bitterroot Cannabis Company,Multiple Locations,Missoula,59802,Medical & Recreational
 Hometree - Missoula,Multiple Locations,Missoula,59801,Medical & Recreational
-Frosteez - Missoula,Multiple Locations,Missoula,59801,Recreational
+Frosteez - Missoula,1275 W Broadway St,Missoula,59801,Recreational
 Lifted Meds Missoula Dispensary,Multiple Locations,Missoula,59801,Medical & Recreational
 Mile High Missoula,Multiple Locations,Missoula,59801,Medical & Recreational
 The Coffee Joint,Multiple Locations,Missoula,59801,Medical & Recreational
@@ -64,6 +63,9 @@ Greenhouse Farmacy,Multiple Locations,Missoula,59801,Medical & Recreational
 Mountain Heights,Multiple Locations,Missoula,59801,Medical & Recreational
 Garden Mother - Missoula,Multiple Locations,Missoula,59801,Medical & Recreational
 Montana Kush - Missoula,Multiple Locations,Missoula,59801,Medical & Recreational
+Dancing Goat Gardens - Missoula,8056 U.S. Highway 10 W,Missoula,59808,Medical & Recreational
+Yellowstoned Dispensaries,1526 S Ave W,Missoula,59801,Medical & Recreational
+710 Montana - Missoula,Multiple Locations,Missoula,59801,Medical & Recreational
 Apogee Gardens - Bozeman,1119 N 7th Ave,Bozeman,59715,Medical & Recreational
 Juniper Cannabis,120 N Grand Ave,Bozeman,59715,Medical & Recreational
 Canna Montana,618 W Griffin Dr,Bozeman,59715,Medical & Recreational
@@ -76,21 +78,21 @@ Treasure Tree - Bozeman,100 Shepherd Trail Unit 4,Bozeman,59718,Medical & Recrea
 Lionheart Cannabis - 4 Corners,29 Pioneer Way,Bozeman,59718,Medical & Recreational
 Bloom - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
 Bloom - 4 Corners,7715 Shedhorn Dr Unit A,Bozeman,59718,Medical & Recreational
-Grizzly Pine - Belgrade,Multiple Locations,Belgrade,59714,Medical & Recreational
-Grizzly Pine - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
+Grizzly Pine - Bozeman,512 N Broadway Ave,Bozeman,59715,Medical & Recreational
 Think Higher - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
 Collective Elevation Bozeman Main St,Multiple Locations,Bozeman,59715,Medical & Recreational
 Collective Elevation Bozeman 7th Ave,Multiple Locations,Bozeman,59715,Medical & Recreational
 Think Higher - Four Corners,Multiple Locations,Bozeman,59718,Medical & Recreational
 Pure Remedies,Multiple Locations,Bozeman,59715,Medical & Recreational
-Natural Wellness - Belgrade,5174 Jackrabbit Ln,Belgrade,59714,Medical & Recreational
 Elevated - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
-Bloom - Livingston,430 N 12th St,Livingston,59047,Medical & Recreational
-Lone Peak Cannabis Co. Four Corners,Multiple Locations,Bozeman,59718,Medical & Recreational
 Montana Kush - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
 Hush,Multiple Locations,Bozeman,59715,Medical & Recreational
-Lone Peak Cannabis Co. Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
+Lone Peak Cannabis Co. Bozeman,825 W Main St,Bozeman,59715,Medical & Recreational
+Lone Peak Cannabis Co. Four Corners,81555 Gallatin Rd,Bozeman,59718,Medical & Recreational
 Quaking Aspen,Multiple Locations,Bozeman,59715,Medical & Recreational
+Double Dogs Cannabis - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
+Double Dogs Cannabis - Four Corners,331 Shepherd Trail Suite A,Bozeman,59718,Medical & Recreational
+710 Montana - Bozeman,Multiple Locations,Bozeman,59715,Medical & Recreational
 Bloom Weed Dispensary - Helena,1446 Euclid Ave,Helena,59601,Medical & Recreational
 710 Montana - Helena,1417 11th Ave,Helena,59601,Medical & Recreational
 Top Shelf Botanicals - Helena,520 Euclid Ave Ste A,Helena,59601,Medical & Recreational
@@ -99,12 +101,13 @@ Helena Buds,2625 Canyon Ferry Rd,Helena,59601,Medical & Recreational
 Treasure Tree - Helena,1420 Cedar Street,Helena,59601,Medical & Recreational
 Montana Kush - Helena,1427 Orange Ave Unit B,Helena,59601,Medical & Recreational
 Apogee Gardens LLC Helena Dispensary,Multiple Locations,Helena,59601,Medical & Recreational
-Lionheart Cannabis - Helena,Multiple Locations,Helena,59601,Medical & Recreational
+Lionheart Cannabis - Helena,1530 Prospect Ave,Helena,59601,Medical & Recreational
 Bloom - Helena Central,Multiple Locations,Helena,59601,Medical & Recreational
 Bloom - Helena North Valley,Multiple Locations,Helena,59601,Medical & Recreational
 Bloom - East Helena,Multiple Locations,Helena,59601,Medical & Recreational
 Elevated - Helena,Multiple Locations,Helena,59601,Medical & Recreational
 Natural Wellness - Lyndale Helena,Multiple Locations,Helena,59601,Medical & Recreational
+Natural Wellness - North Montana,Multiple Locations,Helena,59601,Medical & Recreational
 Bloom Montana - West Helena,Multiple Locations,Helena,59601,Medical & Recreational
 Keeper of the Green - Dodge,Multiple Locations,Helena,59601,Medical & Recreational
 Keeper of the Green - Green Meadow,Multiple Locations,Helena,59601,Medical & Recreational
@@ -114,31 +117,38 @@ Silverleaf Cannabis Co. - Helena,Multiple Locations,Helena,59601,Medical & Recre
 White Pine MT,Multiple Locations,Helena,59601,Medical & Recreational
 Buzz Genetics,Multiple Locations,Helena,59601,Medical & Recreational
 The Higher Standard,Multiple Locations,Helena,59601,Medical & Recreational
+Mission Mountain Organics - Helena,Multiple Locations,Helena,59601,Medical & Recreational
 Bloom Marijuana Dispensary - Great Falls,817 23rd St N,Great Falls,59401,Medical & Recreational
 Medical Marijuana Montana,1601 2nd Ave N,Great Falls,59401,Medical & Recreational
 Holistic Releaf Great Falls 10th N,1301 10th Avenue North,Great Falls,59401,Medical & Recreational
 Holistic Releaf Great Falls,6 Black Eagle Road,Great Falls,59404,Medical & Recreational
 Top Shelf Botanicals - Great Falls,750 6th St SW,Great Falls,59404,Medical & Recreational
 Seed of Life Labs - Great Falls,Multiple Locations,Great Falls,59401,Medical & Recreational
-Frosteez - Great Falls,Multiple Locations,Great Falls,59401,Recreational
-Infinity Wellness East,Multiple Locations,Great Falls,59401,Medical & Recreational
-Infinity Wellness 6th St SW,Multiple Locations,Great Falls,59404,Medical & Recreational
+Frosteez - Great Falls,183 Black Eagle Rd,Great Falls,59404,Recreational
+Infinity Wellness East,2108 52nd ST N Unit 2,Great Falls,59405,Medical & Recreational
+Infinity Wellness 6th St SW,721 6th ST SW STE C,Great Falls,59404,Medical & Recreational
 Infinity Wellness 11th Street,Multiple Locations,Great Falls,59401,Medical & Recreational
-Elevated - Great Falls,Multiple Locations,Great Falls,59401,Medical & Recreational
+Elevated - Great Falls,3313 15th St,Great Falls,59414,Medical & Recreational
 Lionheart Cannabis - Great Falls,Multiple Locations,Great Falls,59401,Medical & Recreational
 Ganja Goddess - Great Falls,Multiple Locations,Great Falls,59401,Medical & Recreational
 Montana Kush - Great Falls,Multiple Locations,Great Falls,59401,Medical & Recreational
-Natural Wellness - North Montana,Multiple Locations,Great Falls,59401,Medical & Recreational
+710 Montana - Great Falls,Multiple Locations,Great Falls,59401,Medical & Recreational
 Top Shelf Botanicals - Kalispell,2105 U.S. Hwy 2 E,Kalispell,59901,Medical & Recreational
 Honey Sour - Kalispell,1278 US-2,Kalispell,59901,Medical & Recreational
 Natural Solutions,2684 Hwy 2 E,Kalispell,59901,Medical & Recreational
 Lil Amsterdam USA,136 North Somers Rd,Kalispell,59901,Medical & Recreational
 Golden Leaf Caregivers,430 Conrad Dr,Kalispell,59901,Medical & Recreational
-Tamarack Cannabis,1 McDermott Lane,Kalispell,59937,Medical & Recreational
+Tamarack Cannabis - Kalispell,1 McDermott Lane,Kalispell,59937,Medical & Recreational
 Mommaz Dispensary,2690 US Highway 93 N,Kalispell,59901,Medical & Recreational
-Bloom Dispensary - Evergreen,1430 Montana Hwy 35,Evergreen,59901,Medical & Recreational
-Big Mountain Botanicals,Multiple Locations,Whitefish,59937,Medical & Recreational
+Lionheart Cannabis - Kalispell,Multiple Locations,Kalispell,59901,Medical & Recreational
+Big Mountain Botanicals - Whitefish,Multiple Locations,Whitefish,59937,Medical & Recreational
 Cannabis Counter,1200 Voerman Rd,Whitefish,59937,Medical & Recreational
+Grizzly Pine - Whitefish,701 Spokane Ave,Whitefish,59937,Medical & Recreational
+Tamarack Cannabis - Whitefish,235 E 1st St,Whitefish,59937,Medical & Recreational
+Power Plant - Whitefish,5600 US-93,Whitefish,59937,Medical & Recreational
+Mission Mountain Organics - Whitefish,600 E 8th St,Whitefish,59937,Medical & Recreational
+Bloom - Whitefish,333 Baker Ave,Whitefish,59937,Medical & Recreational
+Montana Kush - Whitefish,Multiple Locations,Whitefish,59937,Medical & Recreational
 Herbaceous Dispensary - Butte,829 S Montana Street,Butte,59701,Medical & Recreational
 Bloom Montana Butte,2407 Harrison Ave,Butte,59701,Medical & Recreational
 Top Shelf Botanicals - Butte,3350 Harrison Ave,Butte,59701,Medical & Recreational
@@ -148,21 +158,90 @@ Collective Elevation - Butte,Multiple Locations,Butte,59701,Medical & Recreation
 Silverleaf Cannabis Co. - Butte,Multiple Locations,Butte,59701,Medical & Recreational
 Montana Kush - Butte,Multiple Locations,Butte,59701,Medical & Recreational
 Natural Wellness - Butte,Multiple Locations,Butte,59701,Medical & Recreational
+Apogee Gardens - Butte,Multiple Locations,Butte,59701,Medical & Recreational
+710 Montana - Butte,Multiple Locations,Butte,59701,Medical & Recreational
+Lone Peak Cannabis - Butte,Multiple Locations,Butte,59701,Medical & Recreational
 Apogee Gardens - Livingston,5060 US Hwy 89,Livingston,59047,Medical & Recreational
+Bloom - Livingston,430 N 12th St,Livingston,59047,Medical & Recreational
 Top Shelf Botanicals - Livingston,1400 E Park St,Livingston,59047,Medical & Recreational
 Paradise Organics,5237 US Highway 89 South Unit 6,Livingston,59047,Medical & Recreational
-Sensible Alternatives - Belgrade,5174 Jackrabbit Ln,Belgrade,59714,Medical & Recreational
+Natural Wellness - Belgrade,5174 Jackrabbit Ln,Belgrade,59714,Medical & Recreational
 Honest Johns Dispensary - Belgrade,412 W Main St Suite C-3,Belgrade,59714,Medical & Recreational
-Grizzly Pine - Hamilton,Multiple Locations,Hamilton,59840,Medical & Recreational
-Bloom - Hardin,Multiple Locations,Hardin,59034,Recreational
+Grizzly Pine - Belgrade,6300 Jackrabbit Ln Suite 1,Belgrade,59714,Medical & Recreational
+Apogee Gardens - Belgrade,Multiple Locations,Belgrade,59714,Medical & Recreational
+Grizzly Pine - Hamilton,1986 N 1st St Unit B,Hamilton,59840,Medical & Recreational
+Apogee Gardens - Hamilton,Multiple Locations,Hamilton,59840,Medical & Recreational
+Bloom - Hardin,569 3rd St E,Hardin,59034,Recreational
 Bloom - Lewistown,Multiple Locations,Lewistown,59457,Medical Only
 Natural Wellness - Lewistown,Multiple Locations,Lewistown,59457,Medical & Recreational
 Infinity Wellness - Lewistown,Multiple Locations,Lewistown,59457,Medical & Recreational
-Seed of Life Labs - Laurel,Multiple Locations,Laurel,59044,Medical & Recreational
-Lone Peak Cannabis Co. Laurel,Multiple Locations,Laurel,59044,Medical & Recreational
+Seed of Life Labs - Laurel,3150 Shannon Road,Laurel,59044,Medical & Recreational
+Lone Peak Cannabis Co. Laurel,1547 US Hwy 212 S,Laurel,59044,Medical & Recreational
+Frosteez - Laurel,3150 Shannon Road,Laurel,59044,Medical & Recreational
+Uncle Bucks - Laurel,Multiple Locations,Laurel,59044,Recreational
 Sweetgrass - Red Lodge,Multiple Locations,Red Lodge,59068,Medical & Recreational
 Bloom Montana-Rockvale,Multiple Locations,Rockvale,59085,Medical & Recreational
 Elevated - Cut Bank,Multiple Locations,Cut Bank,59427,Medical & Recreational
 Bloom - Craig,Multiple Locations,Craig,59648,Medical & Recreational
 Fat Hippie - Lincoln,Multiple Locations,Lincoln,59639,Medical & Recreational
 Sweetgrass - Bridger,Multiple Locations,Bridger,59014,Medical & Recreational
+Bloom Dispensary - Evergreen,1430 Montana Hwy 35,Evergreen,59901,Medical & Recreational
+Bloom - Florence,5504 Old HWY 93 S,Florence,59833,Medical & Recreational
+710 Montana - Florence,Multiple Locations,Florence,59833,Medical & Recreational
+Seed of Life Labs - Miles City,Multiple Locations,Miles City,59301,Medical & Recreational
+Bloom - Miles City,Multiple Locations,Miles City,59301,Medical & Recreational
+Seed of Life Labs - Glendive,Multiple Locations,Glendive,59330,Medical & Recreational
+Bloom - Glendive,13 Mt-16,Glendive,59330,Medical & Recreational
+High Mountain - Glendive,Multiple Locations,Glendive,59330,Medical & Recreational
+Seed of Life Labs - Havre,Multiple Locations,Havre,59501,Medical & Recreational
+Natural Wellness - Havre,2321 US-2,Havre,59501,Medical & Recreational
+Bloom - Havre,Multiple Locations,Havre,59501,Medical & Recreational
+Dancing Goat Gardens - Havre,Multiple Locations,Havre,59501,Medical & Recreational
+High Mountain - Havre,120 34th Ave W,Havre,59501,Medical & Recreational
+Bloom - Sidney,Multiple Locations,Sidney,59270,Medical & Recreational
+Double Dogs - Sidney,Multiple Locations,Sidney,59270,Medical & Recreational
+Around the Clock Cannabis - Sidney,Multiple Locations,Sidney,59270,Medical & Recreational
+Wild Sky Farms - Glasgow,54336 U.S. Highway 2,Glasgow,59230,Medical & Recreational
+Wild Sky Farms - Poplar,200 Second Ave W,Poplar,59255,Medical & Recreational
+Wild Sky Farms - Bainville,Multiple Locations,Bainville,59212,Medical & Recreational
+Double Dogs - Plentywood,Multiple Locations,Plentywood,59254,Medical & Recreational
+N8V Grown - Plentywood,Multiple Locations,Plentywood,59254,Medical & Recreational
+Wignall Trucking Inc - Plentywood,Multiple Locations,Plentywood,59254,Medical & Recreational
+Hi-Line By Tegridy - Chinook,Multiple Locations,Chinook,59523,Medical & Recreational
+Bloom - Townsend,188 Hwy 12 East,Townsend,59644,Medical & Recreational
+Bloom - Columbia Falls,1615 W 9th Street,Columbia Falls,59912,Medical & Recreational
+Big Mountain Botanicals - Columbia Falls,Multiple Locations,Columbia Falls,59912,Medical & Recreational
+Alternative Releaf - Polson,102 Rufus Ln,Polson,59860,Medical & Recreational
+The Hi-Line - Ronan,63300 US-93,Ronan,59864,Medical & Recreational
+Alternative Releaf - Libby,31906 US-2,Libby,59923,Medical & Recreational
+Alternative Releaf - Thompson Falls,5458 Montana Highway 200,Thompson Falls,59873,Medical & Recreational
+Bliss - Stevensville,Multiple Locations,Stevensville,59870,Medical & Recreational
+Red Dawg Cannoisseur South - Stevensville,Multiple Locations,Stevensville,59870,Medical & Recreational
+The Green Room - Victor,Multiple Locations,Victor,59875,Medical Only
+Apogee Gardens - Victor,Multiple Locations,Victor,59875,Medical & Recreational
+Top Shelf Botanicals - Three Forks,439 Frontage Rd,Three Forks,59752,Medical & Recreational
+Yellowstone Buds - Three Forks,Multiple Locations,Three Forks,59752,Medical & Recreational
+Top Shelf Botanicals - Ennis,219 E Main St,Ennis,59729,Medical & Recreational
+Lone Peak Cannabis - Ennis,100 Prairie Way #1,Ennis,59729,Medical & Recreational
+Lone Peak Cannabis - West Yellowstone,4420 Targhee Pass Hwy,West Yellowstone,59758,Medical & Recreational
+Northstar Organics - West Yellowstone,1870 Targhee Pass Highway,West Yellowstone,59758,Medical & Recreational
+Honey Sour - Big Sky,12 Skywood Rd,Big Sky,59716,Medical & Recreational
+Double Dogs - Big Sky,Multiple Locations,Big Sky,59716,Medical & Recreational
+Herbaceous Dispensary - Big Sky,Multiple Locations,Big Sky,59716,Medical & Recreational
+The Smoking Bear - Big Sky,Multiple Locations,Big Sky,59716,Medical & Recreational
+Connoisseur Pharms - Big Sky,Multiple Locations,Big Sky,59716,Medical & Recreational
+Lone Peak Cannabis - Big Sky,Multiple Locations,Big Sky,59716,Medical & Recreational
+Lionheart Cannabis - Paradise Valley,2892-B US Hwy emigrant 89 S,Emigrant,59027,Medical & Recreational
+Top Shelf Botanicals - Plains,Multiple Locations,Plains,59859,Medical & Recreational
+Top Shelf Botanicals - McAllister,Multiple Locations,McAllister,59740,Medical & Recreational
+Top Shelf Botanicals - Sheridan,Multiple Locations,Sheridan,59749,Medical & Recreational
+Apogee Gardens - Deer Lodge,Multiple Locations,Deer Lodge,59722,Medical & Recreational
+Dancing Goat Gardens - Seeley Lake,Multiple Locations,Seeley Lake,59868,Medical & Recreational
+Frosteez - Lockwood,3205 N. Frontage Rd,Lockwood,59101,Recreational
+High Mountain - Fairview,419 Ellery Avenue,Fairview,59221,Medical & Recreational
+High Mountain - Billings,Multiple Locations,Billings,59101,Medical & Recreational
+Lone Peak Cannabis - Lolo,Multiple Locations,Lolo,59847,Medical & Recreational
+Chronic Caregivers,Multiple Locations,Billings,59101,Medical Only
+406 Organix - Shepard,Multiple Locations,Shepard,59085,Recreational
+Nature's Fix - Joliet,Multiple Locations,Joliet,59041,Medical & Recreational
+Mountain High LLC - Manhattan,Multiple Locations,Manhattan,59741,Medical & Recreational

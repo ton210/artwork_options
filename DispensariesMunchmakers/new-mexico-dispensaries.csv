@@ -1,8 +1,17 @@
 Dispensary Name,Address,City,Zip Code,Type
 R Greenleaf Organics - Westside,5201 Ouray Rd NW Ste C,Albuquerque,87120,Recreational & Medical
-R Greenleaf Organics - NE Heights,8150 Paseo del Norte NE,Albuquerque,87109,Recreational & Medical
+R Greenleaf Organics - NE Heights,9821 Montgomery Blvd NE Ste C and D,Albuquerque,87111,Recreational & Medical
 R Greenleaf Organics - Downtown,400 Dolores Dr NW SteA,Albuquerque,87105,Recreational & Medical
+R Greenleaf Organics - Yale,110 Yale Blvd SE,Albuquerque,87106,Recreational & Medical
+R Greenleaf Organics - Midtown,Central Ave,Albuquerque,87110,Recreational & Medical
 R Greenleaf Organics - Las Cruces,775 S Telshor Blvd,Las Cruces,88011,Recreational & Medical
+R Greenleaf Organics - Las Vegas,615 E Lincoln St,Las Vegas,87701,Recreational & Medical
+R Greenleaf Organics - Santa Fe,403 W Cordova Rd,Santa Fe,87505,Recreational & Medical
+R Greenleaf Organics - Alamogordo,101 North White Sands Blvd,Alamogordo,88310,Recreational & Medical
+R Greenleaf Organics - Hobbs,1901 Joe Harvey Blvd,Hobbs,88240,Recreational & Medical
+R Greenleaf Organics - Roswell,Near Roswell Mall off Highway 285,Roswell,88201,Recreational & Medical
+R Greenleaf Organics - Clovis,North Prince Street,Clovis,88101,Recreational & Medical
+R Greenleaf Organics - Bernalillo,115 US-550,Bernalillo,87004,Recreational & Medical
 Sandia Botanicals - Albuquerque,2406 Comanche Rd NE,Albuquerque,87107,Recreational & Medical
 Sandia Botanicals - Las Cruces,2517 N Main St,Las Cruces,88001,Recreational & Medical
 Ultra Health - Albuquerque NE,1907 St Michael's Drive Ste F,Albuquerque,87505,Recreational & Medical
@@ -10,20 +19,59 @@ Ultra Health - Albuquerque South Valley,100 Coors Blvd NW Suite 108 & 109,Albuqu
 Ultra Health - Rio Rancho,3851 Southern Blvd SE,Rio Rancho,87124,Recreational & Medical
 Ultra Health - Santa Fe,1907 St Michael's Drive Ste F,Santa Fe,87505,Recreational & Medical
 Ultra Health - Portales,1012 West 2nd Street,Portales,88130,Recreational & Medical
+Ultra Health - Alamogordo,300 N White Sands Blvd,Alamogordo,88310,Recreational & Medical
+Ultra Health - Bernalillo,US-550,Bernalillo,87004,Recreational & Medical
+Ultra Health - Carlsbad,Canal Street,Carlsbad,88220,Recreational & Medical
+Ultra Health - Clayton,Main Street,Clayton,88415,Recreational & Medical
+Ultra Health - Clovis,North Prince Street,Clovis,88101,Recreational & Medical
+Ultra Health - Deming,Columbus Road,Deming,88030,Recreational & Medical
+Ultra Health - Eagle Nest,Main Street,Eagle Nest,87718,Recreational & Medical
+Ultra Health - Edgewood,Old Route 66,Edgewood,87015,Recreational & Medical
+Ultra Health - Espanola,Riverside Drive,Espanola,87532,Recreational & Medical
+Ultra Health - Gallup,East Highway 66,Gallup,87301,Recreational & Medical
+Ultra Health - Hobbs,North Grimes Street,Hobbs,88240,Recreational & Medical
+Ultra Health - Las Cruces,1600 S Valley Dr Ste D,Las Cruces,88001,Recreational & Medical
+Ultra Health - Las Vegas,Main Street,Las Vegas,87701,Recreational & Medical
+Ultra Health - Lordsburg,Main Street,Lordsburg,88045,Recreational & Medical
+Ultra Health - Los Lunas,Main Street,Los Lunas,87031,Recreational & Medical
+Ultra Health - Roswell,2800 N Main Suite 4,Roswell,88201,Recreational & Medical
+Ultra Health - Santa Rosa,Historic Route 66,Santa Rosa,88435,Recreational & Medical
+Ultra Health - Silver City,Silver Avenue,Silver City,88061,Recreational & Medical
+Ultra Health - Sunland Park,McNutt Road,Sunland Park,88063,Recreational & Medical
+Ultra Health - Truth or Consequences,Foch Street,Truth or Consequences,87901,Recreational & Medical
 Verdes Cannabis - San Antonio,7301 San Antonio Dr,Albuquerque,87109,Recreational & Medical
 Verdes Cannabis - Nob Hill,3636 Monte Vista Blvd NE,Albuquerque,87106,Recreational & Medical
 Verdes Cannabis - Coors,10032 Coors Blvd NW,Albuquerque,87114,Recreational & Medical
 Verdes Cannabis - Rio Rancho,2320 Grande Blvd Ste B,Rio Rancho,87124,Recreational & Medical
 Verdes Cannabis - Shelby Street,220 Shelby St,Santa Fe,87501,Recreational & Medical
 Verdes Cannabis - Zafarano Drive,3530 Zafarano Dr,Santa Fe,87507,Recreational & Medical
+Verdes Cannabis - Santa Fe Plaza,Downtown Santa Fe,Santa Fe,87501,Recreational & Medical
 Pecos Valley Production - Alameda Northwest,3620 New Mexico 528,Albuquerque,87114,Recreational & Medical
 Pecos Valley Production - Eubank,5200 Eubank Boulevard Northeast,Albuquerque,87111,Recreational & Medical
 Pecos Valley Production - 98th St,251 98th Street Northwest,Albuquerque,87121,Recreational & Medical
+Pecos Valley Production - Central Ave,3900 Central Avenue Southeast,Albuquerque,87108,Recreational & Medical
+Pecos Valley Production - Montgomery,9880 Montgomery Boulevard Northeast,Albuquerque,87111,Recreational & Medical
+Pecos Valley Production - Eubank South,121 Eubank Boulevard Northeast,Albuquerque,87123,Recreational & Medical
 Pecos Valley Production - Santa Fe,2440 Cerrillos Rd,Santa Fe,87505,Recreational & Medical
 Pecos Valley Production - Roadrunner,3050 Roadrunner Parkway #2,Las Cruces,88011,Recreational & Medical
 Pecos Valley Production - Locust,2460 South Locust Street,Las Cruces,88001,Recreational & Medical
 Pecos Valley Production - Ruidoso,1000 Sudderth Drive,Ruidoso,88345,Recreational & Medical
 Pecos Valley Production - Alamogordo,300 N White Sands Blvd,Alamogordo,88310,Recreational & Medical
+Pecos Valley Production - Lovington Hobbs,2620 North Lovington Highway,Hobbs,88240,Recreational & Medical
+Pecos Valley Production - Hobbs,311 West Broadway Street,Hobbs,88240,Recreational & Medical
+Pecos Valley Production - Hobbs Navajo,310 West Navajo Drive,Hobbs,88240,Recreational & Medical
+Pecos Valley Production - Mermod,810 West Mermod Street,Carlsbad,88220,Recreational & Medical
+Pecos Valley Production - Canal,812 North Canal Street,Carlsbad,88220,Recreational & Medical
+Pecos Valley Production - Roswell,313 West Country Club Road #10,Roswell,88201,Recreational & Medical
+Pecos Valley Production - 737 Roswell,737 North Main Street,Roswell,88201,Recreational & Medical
+Pecos Valley Production - Tularosa,308 Granado Street,Tularosa,88352,Recreational & Medical
+Pecos Valley Production - Artesia,501 East Main Street,Artesia,88210,Recreational & Medical
+Pecos Valley Production - Clovis North,5021 North Prince Street,Clovis,88101,Recreational & Medical
+Pecos Valley Production - Clovis Central,4024 North Prince Street,Clovis,88101,Recreational & Medical
+Pecos Valley Production - Clovis South,2521 North Prince Street,Clovis,88101,Recreational & Medical
+Pecos Valley Production - Espanola,635 North Riverside Drive,Espanola,87532,Recreational & Medical
+Pecos Valley Production - Edgewood,1942 U.S. Route 66,Edgewood,87015,Recreational & Medical
+Pecos Valley Production - Portales,215 E 2nd St,Portales,88130,Recreational & Medical
 Urban Wellness - 98th Street,120 98th St NW Suite B-5,Albuquerque,87121,Recreational & Medical
 Urban Wellness - San Mateo,6220 San Mateo Blvd NE Suite D,Albuquerque,87109,Recreational & Medical
 Urban Wellness - Coors,200 Coors Blvd NW,Albuquerque,87121,Recreational & Medical
@@ -34,16 +82,19 @@ Urban Wellness - Carmel,7610 Carmel Ave NE STE B,Albuquerque,87122,Recreational 
 Urban Wellness - Bernalillo,115 US-550,Bernalillo,87004,Recreational & Medical
 Urban Wellness - Rio Rancho,1660 NM-528 Suite 105,Rio Rancho,87124,Recreational & Medical
 Urban Wellness - Las Cruces,3830 E Lohman Ave Ste 3,Las Cruces,88011,Recreational & Medical
+Urban Wellness - Hobbs,236 E Navajo Dr Suite 700,Hobbs,88240,Recreational & Medical
 Oasis Cannabis - Juan Tabo,2925 Juan Tabo Blvd NE,Albuquerque,87112,Recreational & Medical
 Oasis Cannabis - Lomas,Lomas and San Pedro,Albuquerque,87110,Recreational & Medical
 Oasis Cannabis - Midtown,Menaul and Carlisle,Albuquerque,87110,Recreational & Medical
 Oasis Cannabis - UNM Area,Near University of New Mexico,Albuquerque,87106,Recreational & Medical
-Oasis Cannabis - Farmington,Heart of Farmington,Farmington,87401,Recreational & Medical
+Oasis Cannabis - Farmington,428 East Main St,Farmington,87401,Recreational & Medical
+Oasis Cannabis - Roswell,1407 W 2nd St,Roswell,88201,Recreational & Medical
 Sacred Garden - San Mateo,616 San Mateo Blvd NE Ste B,Albuquerque,87108,Recreational & Medical
 Sacred Garden - Green Jeans,3600 Cutler Ave NE Ste 12,Albuquerque,87110,Recreational & Medical
 Sacred Garden - Las Cruces,642 S Alameda Blvd,Las Cruces,88005,Recreational & Medical
 Sacred Garden - Sunland Park,1290 A McNutt Rd,Sunland Park,88063,Recreational & Medical
 Cookies Albuquerque,1340 Broadway Blvd NE,Albuquerque,87102,Recreational & Medical
+Cookies Sunland Park,1500 Appaloosa Dr Suite B,Sunland Park,88063,Recreational & Medical
 Duke City Organix,1011 4th St NW,Albuquerque,87102,Recreational & Medical
 High Desert Relief - Pan American,4840 Pan American Freeway NE Suite H,Albuquerque,87109,Recreational & Medical
 High Desert Relief - Coors,3320 Coors Blvd NW,Albuquerque,87120,Recreational & Medical
@@ -54,15 +105,26 @@ PurLife - Santa Fe,3140 Cerrillos Rd,Santa Fe,87507,Recreational & Medical
 PurLife - Las Cruces,755 S Telshor Blvd,Las Cruces,88011,Recreational & Medical
 PurLife - Bernalillo,501 US-550 S,Bernalillo,87004,Recreational & Medical
 PurLife - Alamogordo,123 N White Sands Blvd,Alamogordo,88310,Recreational & Medical
+PurLife - Hobbs,301 N Grimes St,Hobbs,88240,Recreational & Medical
+PurLife - Farmington,3024 E Main St,Farmington,87402,Recreational & Medical
+PurLife - Truth or Consequences,203 S Foch St,Truth or Consequences,87901,Recreational & Medical
 Prohibition 37 - Coors,1514 Coors Boulevard,Albuquerque,87121,Recreational & Medical
+Prohibition 37 - Las Cruces,1405 S Valley Dr Suite 800,Las Cruces,88005,Recreational & Medical
+Prohibition 37 - Tucumcari,912 E Route 66 Blvd,Tucumcari,88401,Recreational & Medical
+Prohibition 37 - Santa Fe,Downtown Santa Fe,Santa Fe,87501,Recreational & Medical
+Prohibition 37 - Gallup,East Highway 66,Gallup,87301,Recreational & Medical
+Prohibition 37 - Socorro,California Street,Socorro,87801,Recreational & Medical
+Prohibition 37 - Sunland Park,Appaloosa Drive,Sunland Park,88063,Recreational & Medical
 Everest Cannabis - North Valley,9237 4th St NW,Albuquerque,87114,Recreational & Medical
 Everest Cannabis - West Central,4201 Central Ave NW Ste B-6,Albuquerque,87105,Recreational & Medical
 Everest Cannabis - Montano Plaza,6010 Coors Blvd NW Ste 3,Albuquerque,87120,Recreational & Medical
 Everest Cannabis - Montgomery,3504 Montgomery Blvd NE,Albuquerque,87107,Recreational & Medical
 Everest Cannabis - Uptown,2201 Louisiana Blvd NE,Albuquerque,87110,Recreational & Medical
 Everest Cannabis - Far Northeast Heights,5809 Juan Tabo Blvd NE Suite B,Albuquerque,87111,Recreational & Medical
+Everest Cannabis - Paradise Hills,Paradise Boulevard,Albuquerque,87114,Recreational & Medical
 Everest Cannabis - Las Cruces East,3841 E Lohman Ave #2,Las Cruces,88011,Recreational & Medical
 Everest Cannabis - Las Cruces South Valley,1240 South Valley Drive Suite D,Las Cruces,88005,Recreational & Medical
+Everest Cannabis - Los Lunas,Main Street,Los Lunas,87031,Recreational & Medical
 CloudWalker Farm,1629 4th St NW,Albuquerque,87102,Recreational & Medical
 Releaf Cannabis Co,1606 Central Ave SE Suite 101,Albuquerque,87106,Recreational & Medical
 Luna Leaf,2017 Ridgecrest Dr SE,Albuquerque,87108,Recreational & Medical
@@ -74,6 +136,13 @@ Canvas Organics - Eubank,401 Eubank Blvd SE Ste D,Albuquerque,87123,Recreational
 Canvas Organics - Pan American,7814 Pan American East Fwy NE,Albuquerque,87109,Recreational & Medical
 Baked Buds,3400 Vassar Dr NE,Albuquerque,87107,Recreational & Medical
 Rocky Mountain Cannabis - Santa Fe,Sandoval Street,Santa Fe,87501,Recreational & Medical
+Rocky Mountain Cannabis - Alamogordo,1300 S White Sands Blvd Ste C,Alamogordo,88310,Recreational & Medical
+Rocky Mountain Cannabis - Truth or Consequences,Broadway Street,Truth or Consequences,87901,Recreational & Medical
+Rocky Mountain Cannabis - Gallup,Highway 66,Gallup,87301,Recreational & Medical
+Rocky Mountain Cannabis - Taos,Taos Plaza Area,Taos,87571,Recreational & Medical
+Rocky Mountain Cannabis - Clayton,Main Street,Clayton,88415,Recreational & Medical
+Rocky Mountain Cannabis - Tucumcari,Route 66,Tucumcari,88401,Recreational & Medical
+Rocky Mountain Cannabis - Anthony,Main Street,Anthony,88021,Recreational & Medical
 KURE Cannabis - Downtown,220 N Guadalupe St,Santa Fe,87501,Recreational & Medical
 KURE Cannabis - Drive-thru,3354 Cerrillos Rd,Santa Fe,87507,Recreational & Medical
 Fruit of the Earth Organics,901 Early St,Santa Fe,87505,Recreational & Medical
@@ -86,63 +155,95 @@ Roadrunner Organic ABQ Collective,4602 Lomas Boulevard NE,Albuquerque,87110,Recr
 Tafoya Farms - 4th Street,4th Street,Albuquerque,87102,Recreational & Medical
 Cannaverse Dispensary,2305 Nevada Avenue,Las Cruces,88001,Recreational & Medical
 The Grass Station - 4th Street,4th Street,Albuquerque,87102,Recreational & Medical
-Luna Leaf - Rio Grande,Rio Grande,Albuquerque,87104,Recreational & Medical
-PurLife - Old Town,Old Town,Albuquerque,87104,Recreational & Medical
-Happy Dispensary,Albuquerque,Albuquerque,87102,Recreational & Medical
-Red Gorilla Greens Dispensary,Albuquerque,Albuquerque,87102,Recreational & Medical
-Breaking Bud Dispensary,Albuquerque,Albuquerque,87102,Recreational & Medical
-Harvest Foundation,Albuquerque,Albuquerque,87102,Recreational & Medical
-Score 420,East Central Ave,Albuquerque,87102,Recreational & Medical
-Frost Station Cannabis,Albuquerque,Albuquerque,87102,Recreational & Medical
-Smokin' Joe's,Albuquerque,Albuquerque,87102,Recreational & Medical
-Mama and The Girls,Albuquerque,Albuquerque,87102,Recreational & Medical
-Dulce Cannabis,Albuquerque,Albuquerque,87102,Recreational & Medical
-Amigos Cannabis,Rio Rancho,Rio Rancho,87124,Recreational & Medical
-Stoned Desert Dispensary,Albuquerque,Albuquerque,87102,Recreational & Medical
-Baked Chicken Farm,Las Cruces,Las Cruces,88001,Recreational & Medical
-OSO Cannabis Company,Las Cruces,Las Cruces,88001,Recreational & Medical
-Top Crop Cannabis,Las Cruces,Las Cruces,88001,Recreational & Medical
-Ultra Health - Alamogordo,Alamogordo,Alamogordo,88310,Recreational & Medical
-Ultra Health - Bernalillo,Bernalillo,Bernalillo,87004,Recreational & Medical
-Ultra Health - Carlsbad,Carlsbad,Carlsbad,88220,Recreational & Medical
-Ultra Health - Clayton,Clayton,Clayton,88415,Recreational & Medical
-Ultra Health - Clovis,Clovis,Clovis,88101,Recreational & Medical
-Ultra Health - Deming,Deming,Deming,88030,Recreational & Medical
-Ultra Health - Eagle Nest,Eagle Nest,Eagle Nest,87718,Recreational & Medical
-Ultra Health - Edgewood,Edgewood,Edgewood,87015,Recreational & Medical
-Ultra Health - Espanola,Espanola,Espanola,87532,Recreational & Medical
-Ultra Health - Gallup,Gallup,Gallup,87301,Recreational & Medical
-Ultra Health - Hobbs,Hobbs,Hobbs,88240,Recreational & Medical
-Ultra Health - Las Cruces,Las Cruces,Las Cruces,88001,Recreational & Medical
-Ultra Health - Las Vegas,Las Vegas,Las Vegas,87701,Recreational & Medical
-Ultra Health - Lordsburg,Lordsburg,Lordsburg,88045,Recreational & Medical
-Ultra Health - Los Lunas,Los Lunas,Los Lunas,87031,Recreational & Medical
-Ultra Health - Roswell,Roswell,Roswell,88201,Recreational & Medical
-Ultra Health - Santa Rosa,Santa Rosa,Santa Rosa,88435,Recreational & Medical
-Ultra Health - Silver City,Silver City,Silver City,88061,Recreational & Medical
-Ultra Health - Sunland Park,Sunland Park,Sunland Park,88063,Recreational & Medical
-Ultra Health - Truth or Consequences,Truth or Consequences,Truth or Consequences,87901,Recreational & Medical
-Pecos Valley Production - Lovington Hobbs,2620 North Lovington Highway,Hobbs,88240,Recreational & Medical
-Pecos Valley Production - Hobbs,311 West Broadway Street,Hobbs,88240,Recreational & Medical
-Pecos Valley Production - Hobbs Navajo,310 West Navajo Drive,Hobbs,88240,Recreational & Medical
-Pecos Valley Production - Mermod,810 West Mermod Street,Carlsbad,88220,Recreational & Medical
-Pecos Valley Production - Canal,812 North Canal Street,Carlsbad,88220,Recreational & Medical
-Pecos Valley Production - Roswell,313 West Country Club Road #10,Roswell,88201,Recreational & Medical
-Pecos Valley Production - 737 Roswell,737 North Main Street,Roswell,88201,Recreational & Medical
-Pecos Valley Production - Tularosa,308 Granado Street,Tularosa,88352,Recreational & Medical
-Pecos Valley Production - Artesia,501 East Main Street,Artesia,88210,Recreational & Medical
-Urban Wellness - Hobbs,236 E Navajo Dr Suite 700,Hobbs,88240,Recreational & Medical
-PurLife - Hobbs,301 N Grimes St,Hobbs,88240,Recreational & Medical
-PurLife - Farmington,3024 E Main St,Farmington,87402,Recreational & Medical
-PurLife - Truth or Consequences,203 S Foch St,Truth or Consequences,87901,Recreational & Medical
-Rocky Mountain Cannabis - Alamogordo,Alamogordo,Alamogordo,88310,Recreational & Medical
-Rocky Mountain Cannabis - Truth or Consequences,Truth or Consequences,Truth or Consequences,87901,Recreational & Medical
-Rocky Mountain Cannabis - Gallup,Gallup,Gallup,87301,Recreational & Medical
-Rocky Mountain Cannabis - Taos,Taos,Taos,87571,Recreational & Medical
-Rocky Mountain Cannabis - Clayton,Clayton,Clayton,88415,Recreational & Medical
-Rocky Mountain Cannabis - Tucumcari,Tucumcari,Tucumcari,88401,Recreational & Medical
-Rocky Mountain Cannabis - Anthony,Anthony,Anthony,88021,Recreational & Medical
-Prohibition 37 - Tucumcari,912 E Route 66 Blvd,Tucumcari,88401,Recreational & Medical
-The Santa Fe Dispensary,Santa Fe,Santa Fe,87501,Recreational & Medical
+Score 420 - Albuquerque,East Central Ave,Albuquerque,87102,Recreational & Medical
+Score 420 - Clovis,Historic Downtown,Clovis,88101,Recreational & Medical
+Score 420 - Farmington,Main Street,Farmington,87401,Recreational & Medical
+Frost Station Cannabis,Central Avenue,Albuquerque,87102,Recreational & Medical
 Dark Matter Albuquerque,1713 Juan Tabo Blvd NE,Albuquerque,87112,Recreational & Medical
-Unbeweedable Cannabis Dispensary,Albuquerque,Albuquerque,87102,Recreational & Medical
+Unbeweedable Cannabis Dispensary,Downtown,Albuquerque,87102,Recreational & Medical
+Happy Dispensary,Central Avenue,Albuquerque,87102,Recreational & Medical
+Red Gorilla Greens Dispensary,4th Street,Albuquerque,87102,Recreational & Medical
+Breaking Bud Dispensary,Downtown,Albuquerque,87102,Recreational & Medical
+Harvest Foundation,Central Avenue,Albuquerque,87102,Recreational & Medical
+Smokin' Joe's,Downtown,Albuquerque,87102,Recreational & Medical
+Mama and The Girls,Central Avenue,Albuquerque,87102,Recreational & Medical
+Dulce Cannabis,Downtown,Albuquerque,87102,Recreational & Medical
+Stoned Desert Dispensary,Central Avenue,Albuquerque,87102,Recreational & Medical
+Amigos Cannabis,Grande Boulevard,Rio Rancho,87124,Recreational & Medical
+Baked Chicken Farm,Main Street,Las Cruces,88001,Recreational & Medical
+OSO Cannabis Company - Las Cruces,South Valley Drive,Las Cruces,88001,Recreational & Medical
+OSO Cannabis Company - Portales,Main Street,Portales,88130,Recreational & Medical
+OSO Cannabis Company - Ruidoso,1100 Sudderth Suite B,Ruidoso,88345,Recreational & Medical
+Top Crop Cannabis,East Lohman Avenue,Las Cruces,88011,Recreational & Medical
+Northstar Cannabis,Telshor Boulevard,Las Cruces,88011,Recreational & Medical
+The Santa Fe Dispensary,Downtown,Santa Fe,87501,Recreational & Medical
+Deep Sky Cannabis,Cerrillos Road,Santa Fe,87505,Recreational & Medical
+Santa Fe Craft Cannabis,Saint Francis Drive,Santa Fe,87505,Recreational & Medical
+Green Fuego Dispensary,Agua Fria Street,Santa Fe,87501,Recreational & Medical
+Betty Nugz,Zafarano Drive,Santa Fe,87507,Recreational & Medical
+Minerva Canna,Cerrillos Road,Santa Fe,87507,Recreational & Medical
+Best Daze,Downtown,Santa Fe,87501,Recreational & Medical
+ENDO Cannabis,Cerrillos Road,Santa Fe,87505,Recreational & Medical
+Southwest Cannabis - Taos,Taos Plaza,Taos,87571,Recreational & Medical
+Taos Canyon Cannabis,Paseo del Pueblo,Taos,87571,Recreational & Medical
+Taos Mountain Grown Cannabis,14 New Mexico Highway 150,El Prado,87529,Recreational & Medical
+Dispensary 7884,212 Bendix Dr Ste E,Taos,87571,Recreational & Medical
+Bighorn Weed,Paseo del Pueblo,Taos,87571,Recreational & Medical
+Off Grid Grow Company,Kit Carson Road,Taos,87571,Recreational & Medical
+NM HY-LYFE Cannabis,Taos Plaza,Taos,87571,Recreational & Medical
+Mountain High Express Dispensary,South Santa Fe Road,Taos,87571,Recreational & Medical
+Heritage Cannabis Dispensary,115 W Main St,Farmington,87401,Recreational & Medical
+The Reef Joint,3000 E 20th St Suite D2,Farmington,87402,Recreational & Medical
+Toke Dispensary,East Main Street,Farmington,87401,Recreational & Medical
+The Grass Station - Farmington,Main Street,Farmington,87401,Recreational & Medical
+911 Kronic,College Boulevard,Farmington,87402,Recreational & Medical
+The Grasshopper,East Main Street,Farmington,87401,Recreational & Medical
+The Green House Farmington,Highway 64,Farmington,87401,Recreational & Medical
+Every Day Weed Farmington,Main Street,Farmington,87401,Recreational & Medical
+Grass Roots RX - Gallup,3400 East Hwy 66,Gallup,87301,Recreational & Medical
+Grass Roots RX - Grants,Highway 66,Grants,87020,Recreational & Medical
+Grass Roots RX - Albuquerque,Central Avenue,Albuquerque,87102,Recreational & Medical
+Red Barn Growers,Highway 66,Gallup,87301,Recreational & Medical
+Gnomad Canna Co - Hobbs,North Grimes Street,Hobbs,88240,Recreational & Medical
+Gnomad Canna Co - Roswell,Main Street,Roswell,88201,Recreational & Medical
+Gnomad Canna Co - Tatum,Main Street,Tatum,88267,Recreational & Medical
+Gnomad Canna Co - Ruidoso,Sudderth Drive,Ruidoso,88345,Recreational & Medical
+Dreamz Dispensary - Hobbs,4301 N Grimes St,Hobbs,88240,Recreational & Medical
+Dreamz Dispensary - Taos,Taos Plaza,Taos,87571,Recreational & Medical
+Bud Board Dispensary - Carlsbad,Mermod Street,Carlsbad,88220,Recreational & Medical
+Bud Board Dispensary - Hobbs,Broadway Street,Hobbs,88240,Recreational & Medical
+Mr Goodbud,East Broadway,Hobbs,88240,Recreational & Medical
+Couth Cannabis,North Grimes Street,Hobbs,88240,Recreational & Medical
+Tree Hause,West Navajo Drive,Hobbs,88240,Recreational & Medical
+285 South Dispensary,1725 SE Main St Ste B,Roswell,88203,Recreational & Medical
+The Greenery Room,Main Street,Roswell,88201,Recreational & Medical
+The Green King,Main Street,Roswell,88201,Recreational & Medical
+Bryan's Green Care,North Main Street,Roswell,88201,Recreational & Medical
+Best Buds - Clovis,North Prince Street,Clovis,88101,Recreational & Medical
+Enchanted Strains,North Prince Street,Clovis,88101,Recreational & Medical
+Green Grove Productions,Main Street,Clovis,88101,Recreational & Medical
+Vana Society,Historic Downtown,Clovis,88101,Recreational & Medical
+Kustom Cannabis,North Prince Street,Clovis,88101,Recreational & Medical
+NM Green Door - Clovis,North Prince Street,Clovis,88101,Recreational & Medical
+NM Green Door - Portales,Main Street,Portales,88130,Recreational & Medical
+SWOP Southwest Organic Producers,Main Street,Portales,88130,Recreational & Medical
+Canna Company,115 N Silver Ave,Deming,88030,Recreational & Medical
+Eagle Moon Hemp,Columbus Road,Deming,88030,Recreational & Medical
+Kokopelli Medicinals,Silver Avenue,Deming,88030,Recreational & Medical
+Deming Ganja Lounge,Columbus Road,Deming,88030,Recreational & Medical
+BOA Holistic,Main Street,Deming,88030,Recreational & Medical
+The Besos,Silver Avenue,Deming,88030,Recreational & Medical
+Grateful Living Cannabis,Columbus Road,Deming,88030,Recreational & Medical
+RIDANKULOUS,918 N White Sands Blvd,Alamogordo,88310,Recreational & Medical
+Verve Health Shop,1942 Old US Highway 66 Suite A,Edgewood,87015,Recreational & Medical
+Budder Pros Cannabis,Main Street,Moriarty,87035,Recreational & Medical
+Roots Dispensary,Main Street,Belen,87002,Recreational & Medical
+Dispensary Near Me - Belen,Main Street,Belen,87002,Recreational & Medical
+Dispensary Near Me - Socorro,California Street,Socorro,87801,Recreational & Medical
+Dispensary Near Me - Sunland Park,Appaloosa Drive,Sunland Park,88063,Recreational & Medical
+The Stash,Main Street,Bernalillo,87004,Recreational & Medical
+The Farm House,Grande Boulevard,Rio Rancho,87124,Recreational & Medical
+Consumption Lounge & Cafe,Highway 528,Rio Rancho,87124,Recreational & Medical
+Luna Leaf - Rio Grande,Rio Grande Boulevard,Albuquerque,87104,Recreational & Medical
+PurLife - Old Town,Old Town Plaza,Albuquerque,87104,Recreational & Medical
+Jjs Secret Garden,Edgewood Area,Edgewood,87015,Recreational & Medical
