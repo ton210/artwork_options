@@ -1,0 +1,88 @@
+<%- include('../layouts/main', { content: `
+
+<div class="container mx-auto px-4 py-8">
+  <!-- Hero Section -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl font-bold mb-4">Top Cannabis Dispensary Brands</h1>
+    <p class="text-xl text-gray-600">Discover the best dispensary chains and brands across legal states</p>
+  </div>
+
+  <!-- Top Franchises Section -->
+  <% if (franchises && franchises.length > 0) { %>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Top Dispensary Chains</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% franchises.slice(0, 6).forEach(brand => { %>
+        <a href="/brands/<%= brand.slug %>" class="block bg-white rounded-lg shadow-lg hover:shadow-xl transition p-6">
+          <div class="flex items-center mb-4">
+            <% if (brand.logo_url) { %>
+              <img src="<%= brand.logo_url %>" alt="<%= brand.name %>" class="w-16 h-16 object-cover rounded-lg mr-4">
+            <% } else { %>
+              <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg mr-4 flex items-center justify-center text-white text-2xl font-bold">
+                <%= brand.name.charAt(0) %>
+              </div>
+            <% } %>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold"><%= brand.name %></h3>
+              <div class="flex items-center text-sm text-gray-600">
+                <% if (brand.average_rating) { %>
+                  <span class="text-yellow-500 mr-1">★</span>
+                  <span><%= Number(brand.average_rating).toFixed(1) %></span>
+                  <span class="mx-1">•</span>
+                <% } %>
+                <span><%= brand.location_count %> location<%= brand.location_count !== 1 ? 's' : '' %></span>
+              </div>
+            </div>
+          </div>
+          <% if (brand.total_review_count) { %>
+            <p class="text-sm text-gray-500"><%= brand.total_review_count.toLocaleString() %> total reviews</p>
+          <% } %>
+        </a>
+      <% }); %>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- All Brands Section -->
+  <section>
+    <h2 class="text-3xl font-bold mb-6">All Dispensary Brands</h2>
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <% brands.forEach(brand => { %>
+          <a href="/brands/<%= brand.slug %>" class="flex items-center p-4 hover:bg-gray-50 rounded-lg transition">
+            <% if (brand.logo_url) { %>
+              <img src="<%= brand.logo_url %>" alt="<%= brand.name %>" class="w-12 h-12 object-cover rounded mr-3">
+            <% } else { %>
+              <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded mr-3 flex items-center justify-center text-white font-bold">
+                <%= brand.name.charAt(0) %>
+              </div>
+            <% } %>
+            <div class="flex-1">
+              <h3 class="font-semibold"><%= brand.name %></h3>
+              <div class="flex items-center text-sm text-gray-600">
+                <% if (brand.avg_rating) { %>
+                  <span class="text-yellow-500 mr-1">★</span>
+                  <span class="mr-2"><%= Number(brand.avg_rating).toFixed(1) %></span>
+                <% } %>
+                <span class="text-gray-400">•</span>
+                <span class="ml-2"><%= brand.actual_location_count %> location<%= brand.actual_location_count !== 1 ? 's' : '' %></span>
+              </div>
+            </div>
+            <% if (brand.is_franchise) { %>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Chain</span>
+            <% } %>
+          </a>
+        <% }); %>
+      </div>
+
+      <% if (brands.length === 0) { %>
+        <p class="text-center text-gray-500 py-8">No brands found. Check back soon!</p>
+      <% } %>
+    </div>
+  </section>
+
+  <!-- MunchMakers Ad -->
+  <%- include('../partials/munchmakersAd') %>
+</div>
+
+` }) %>
