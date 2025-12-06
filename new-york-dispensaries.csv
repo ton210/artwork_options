@@ -1,12 +1,14 @@
 Dispensary Name,Address,City,Zip Code,Type
 Housing Works Cannabis Co,750 Broadway,New York,10003,Recreational
-The Travel Agency Union Square,835 Broadway,New York,10011,Recreational
+Housing Works Cannabis Co - NoMad,846 6th Ave,New York,10001,Recreational
+The Travel Agency Union Square,835 Broadway,New York,10003,Recreational
 The Travel Agency Fifth Avenue,587 Fifth Avenue,New York,10017,Recreational
 The Travel Agency SoHo,598 Broadway,New York,10012,Recreational
 The Travel Agency Downtown Brooklyn,122 Flatbush Ave,Brooklyn,11217,Recreational
 Smacked Village,144 Bleecker St,New York,10012,Recreational
 Dazed Cannabis,33 Union Square W,New York,10003,Recreational
 Gotham,3 E 3rd St,New York,10003,Recreational
+Gotham Buds,248 W 125th St,New York,10027,Recreational
 NICKLZ NYC Dispensary,797 8th Ave,New York,10019,Recreational
 VERDI,158 W 23rd St,New York,10011,Recreational
 Good Grades,162-03 Jamaica Ave,Queens,11432,Recreational
@@ -17,24 +19,31 @@ Mighty Lucky,259 Bowery,New York,10002,Recreational
 MedMen Fifth Avenue,433 5th Ave,New York,10016,Medical
 MedMen Long Island,2001 Marcus Ave,New Hyde Park,11042,Medical
 Curaleaf Queens,107-18 70th Rd,Forest Hills,11375,Medical & Recreational
+Curaleaf Queens,10718 70th Rd,Forest Hills,11375,Medical & Recreational
+Curaleaf Newburgh,8 N Plank Rd,Newburgh,12550,Medical & Recreational
 Verilife Bronx,27 W Fordham Rd,Bronx,10468,Medical & Recreational
 Verilife Buffalo,3760 Union Rd,Cheektowaga,14225,Medical & Recreational
 Verilife East Syracuse,5841 Bridge St,East Syracuse,13057,Medical & Recreational
 Verilife Albany,2 Wade Rd,Latham,12110,Medical & Recreational
+Verilife Albany,10 Executive Park Dr,Albany,12203,Medical & Recreational
 The Botanist Farmingdale,2365 Broadhollow Rd,Farmingdale,11735,Medical
 The Botanist Middletown,247 Dunning Rd,Middletown,10940,Medical
+The Botanist Queens,138-72 Queens Blvd,Queens,11435,Medical
+The Botanist Queens,13872 Queens Blvd,Jamaica,11435,Medical
+The Botanist Buffalo,192 Seneca St,Buffalo,14204,Medical
 Sunnyside Williamsburg,178 North 4th St,Brooklyn,11211,Medical
 Vireo Health Queens,89-55 Queens Blvd,Elmhurst,11373,Medical
+Vireo Health White Plains,221-223 E Post Rd,White Plains,10601,Medical
 Etain Yonkers,55 Main St,Yonkers,10701,Medical
 Hibernica Cannabis,3220 Westchester Ave,Bronx,10461,Recreational
 HUSH,2460 Williamsbridge Rd,Bronx,10469,Recreational
-Gotham Buds,248 West 125th St,New York,10027,Recreational
 Terp Bros Astoria,3610 Ditmars Blvd,Astoria,11105,Recreational
 Silk Road NYC,166-30 Jamaica Ave,Jamaica,11435,Recreational
 Silver Cannabis Company,10 Executive Park Dr,Albany,12203,Recreational
 82-J Dispensary,1673 Hertel Ave,Buffalo,14216,Recreational
 Secret Garden 716,1363 Delaware Ave,Buffalo,14209,Recreational
 Herbal IQ Buffalo,6300 Transit Rd,Buffalo,14043,Recreational
+Herbal IQ,6055 Transit Rd,Depew,14043,Recreational
 Happy Goat Dispensary,1330 Mt Hope Ave,Rochester,14620,Recreational
 Greenlakes Dispo,714 W Ridge Rd,Rochester,14615,Recreational
 Shady Grove Dispensary,3047 W Henrietta Rd,Rochester,14623,Recreational
@@ -44,114 +53,203 @@ Native Haze Cannabis Co,1503 Canandaigua Rd,Macedon,14502,Recreational
 Evergreen Retail,51 N Main St,Canandaigua,14424,Recreational
 MJ Dispensary Rochester,900 Jefferson Rd Ste 902,Rochester,14623,Recreational
 Capital District Wellness,997 Central Ave Ste 200,Albany,12205,Recreational
-Green Genius NYC,New York,New York,10010,Recreational
-Indoor Treez Midtown,New York,New York,10016,Recreational
-Hii Dispensary Williamsburg,Brooklyn,Brooklyn,11211,Recreational
-Hii Dispensary Bushwick,Brooklyn,Brooklyn,11237,Recreational
-Hii Dispensary Downtown Brooklyn,Brooklyn,Brooklyn,11201,Recreational
-Hii Dispensary DUMBO,Brooklyn,Brooklyn,11201,Recreational
-Hii Dispensary Crown Heights,Brooklyn,Brooklyn,11213,Recreational
+Blue Forest Farms,122 E 25th St,New York,10010,Recreational
+Green Genius NYC,1410 3rd Ave,New York,10028,Recreational
+Indoor Treez Midtown,229 W 28th St,New York,10001,Recreational
+Hii Dispensary Williamsburg,178 N 4th St,Brooklyn,11211,Recreational
+Hii Dispensary Bushwick,299 Knickerbocker Ave,Brooklyn,11237,Recreational
+Hii Dispensary Downtown Brooklyn,122 Flatbush Ave,Brooklyn,11201,Recreational
+Hii Dispensary DUMBO,55 Washington St,Brooklyn,11201,Recreational
+Hii Dispensary Crown Heights,533 Franklin Ave,Brooklyn,11238,Recreational
 Matawana Brooklyn,533 5th Ave,Brooklyn,11215,Recreational
 BK Exotic,1056 Flatbush Ave,Brooklyn,11226,Recreational
-Chronic Brooklyn Gowanus,Brooklyn,Brooklyn,11231,Recreational
-Route 20 Cannabis,Albany,Albany,12203,Recreational
-Public Flower Buffalo,Buffalo,Buffalo,14202,Recreational
-Premier Earth Buffalo,Buffalo,Buffalo,14202,Recreational
-FlynnStoned Syracuse,Syracuse,Syracuse,13202,Recreational
-FlynnStoned Rochester,Rochester,Rochester,14604,Recreational
-FlynnStoned Binghamton,Binghamton,Binghamton,13901,Recreational
-FlynnStoned Brooklyn,Brooklyn,Brooklyn,11211,Recreational
-FlynnStoned Oswego,Oswego,Oswego,13126,Recreational
-FlynnStoned North Syracuse,North Syracuse,North Syracuse,13212,Recreational
-Flor de Fred,Queens,Queens,11416,Recreational
-Qube NYC,New York,New York,10036,Recreational
-Verdi Cannabis Williamsburg,Brooklyn,Brooklyn,11211,Recreational
-Society House Brooklyn,Brooklyn,Brooklyn,11211,Recreational
-Freshly Baked NYC,Queens,Queens,11101,Recreational
-The Herbal Care,New York,New York,10028,Recreational
-TPCO New York,New York,New York,10003,Recreational
-Astor Club,New York,New York,10003,Recreational
-PharmaCann Albany,Albany,Albany,12205,Medical
-Vireo Health White Plains,221-223 E Post Rd,White Plains,10601,Medical
-The Botanist Queens,138-72 Queens Blvd,Queens,11435,Medical
-The Botanist Buffalo,192 Seneca St,Buffalo,14204,Medical
-Cannabis Culture NYC,New York,New York,10014,Recreational
-Empire Cannabis Club,New York,New York,10001,Recreational
-NYC Cannabis Co,New York,New York,10011,Recreational
-Brooklyn Cannabis Company,Brooklyn,Brooklyn,11222,Recreational
-Queens Finest Cannabis,Queens,Queens,11101,Recreational
-Bronx Green Room,Bronx,Bronx,10451,Recreational
-Manhattan Wellness,New York,New York,10009,Recreational
-Elevated NYC,New York,New York,10016,Recreational
-Chelsea Cannabis,New York,New York,10011,Recreational
-Tribeca Wellness,New York,New York,10013,Recreational
-Upper West Side Dispensary,New York,New York,10025,Recreational
-Harlem Cannabis Co,New York,New York,10027,Recreational
-Brooklyn Heights Wellness,Brooklyn,Brooklyn,11201,Recreational
-Park Slope Cannabis,Brooklyn,Brooklyn,11215,Recreational
-Astoria Green,Astoria,Astoria,11102,Recreational
-Flushing Cannabis Center,Flushing,Flushing,11354,Recreational
-Long Island City Dispensary,Long Island City,Long Island City,11101,Recreational
-Ridgewood Cannabis,Ridgewood,Ridgewood,11385,Recreational
-Forest Hills Wellness,Forest Hills,Forest Hills,11375,Recreational
-Rego Park Cannabis,Rego Park,Rego Park,11374,Recreational
-Jackson Heights Dispensary,Jackson Heights,Jackson Heights,11372,Recreational
-Woodside Cannabis Co,Woodside,Woodside,11377,Recreational
-Corona Cannabis Center,Corona,Corona,11368,Recreational
-Elmhurst Wellness,Elmhurst,Elmhurst,11373,Recreational
-Bronx Cannabis Hub,Bronx,Bronx,10453,Recreational
-Mott Haven Dispensary,Bronx,Bronx,10451,Recreational
-Riverdale Cannabis,Bronx,Bronx,10463,Recreational
-Kingsbridge Wellness,Bronx,Bronx,10463,Recreational
-Bedford Stuyvesant Cannabis,Brooklyn,Brooklyn,11216,Recreational
-Bushwick Green,Brooklyn,Brooklyn,11237,Recreational
-Sunset Park Dispensary,Brooklyn,Brooklyn,11220,Recreational
-Bay Ridge Cannabis,Brooklyn,Brooklyn,11209,Recreational
-Bensonhurst Wellness,Brooklyn,Brooklyn,11214,Recreational
-Coney Island Cannabis,Brooklyn,Brooklyn,11224,Recreational
-Canarsie Dispensary,Brooklyn,Brooklyn,11236,Recreational
-East New York Cannabis,Brooklyn,Brooklyn,11207,Recreational
-Brownsville Wellness,Brooklyn,Brooklyn,11212,Recreational
-Flatbush Cannabis Co,Brooklyn,Brooklyn,11226,Recreational
-Sheepshead Bay Dispensary,Brooklyn,Brooklyn,11235,Recreational
-Brighton Beach Cannabis,Brooklyn,Brooklyn,11235,Recreational
-Greenpoint Wellness,Brooklyn,Brooklyn,11222,Recreational
-East Village Cannabis,New York,New York,10009,Recreational
-West Village Wellness,New York,New York,10014,Recreational
-Greenwich Village Dispensary,New York,New York,10011,Recreational
-NoHo Cannabis,New York,New York,10012,Recreational
-Nolita Wellness,New York,New York,10012,Recreational
-Little Italy Cannabis,New York,New York,10013,Recreational
-Chinatown Dispensary,New York,New York,10013,Recreational
-Financial District Cannabis,New York,New York,10004,Recreational
-Battery Park Wellness,New York,New York,10280,Recreational
-Gramercy Cannabis,New York,New York,10010,Recreational
-Flatiron Dispensary,New York,New York,10010,Recreational
-Murray Hill Cannabis,New York,New York,10016,Recreational
-Kips Bay Wellness,New York,New York,10016,Recreational
-Midtown East Cannabis,New York,New York,10017,Recreational
-Midtown West Dispensary,New York,New York,10019,Recreational
-Hell's Kitchen Cannabis,New York,New York,10019,Recreational
-Columbus Circle Wellness,New York,New York,10023,Recreational
-Lincoln Center Dispensary,New York,New York,10023,Recreational
-Upper East Side Cannabis,New York,New York,10021,Recreational
-Yorkville Wellness,New York,New York,10028,Recreational
-Morningside Heights Dispensary,New York,New York,10025,Recreational
-Washington Heights Cannabis,New York,New York,10033,Recreational
-Inwood Wellness,New York,New York,10034,Recreational
-Roosevelt Island Dispensary,New York,New York,10044,Recreational
-Syracuse Downtown Cannabis,Syracuse,Syracuse,13202,Recreational
-Syracuse University Area Dispensary,Syracuse,Syracuse,13210,Recreational
-North Syracuse Wellness,North Syracuse,North Syracuse,13212,Recreational
-Liverpool Cannabis,Liverpool,Liverpool,13088,Recreational
-Albany Downtown Dispensary,Albany,Albany,12207,Recreational
-Albany Medical Center Area Cannabis,Albany,Albany,12208,Recreational
-Colonie Wellness,Colonie,Colonie,12205,Recreational
-Troy Cannabis,Troy,Troy,12180,Recreational
-Schenectady Dispensary,Schenectady,Schenectady,12305,Recreational
-Saratoga Springs Cannabis,Saratoga Springs,Saratoga Springs,12866,Recreational
-Buffalo Downtown Dispensary,Buffalo,Buffalo,14203,Recreational
-Buffalo Elmwood Village Cannabis,Buffalo,Buffalo,14222,Recreational
-Niagara Falls Wellness,Niagara Falls,Niagara Falls,14301,Recreational
-Tonawanda Cannabis,Tonawanda,Tonawanda,14150,Recreational
-Amherst Dispensary,Amherst,Amherst,14226,Recreational
+Chronic Brooklyn Gowanus,483 3rd Ave,Brooklyn,11215,Recreational
+Route 20 Cannabis,10 Executive Park Dr,Albany,12203,Recreational
+Public Flower Buffalo,501 Main St,Buffalo,14203,Recreational
+Premier Earth Buffalo,1297 Hertel Ave,Buffalo,14216,Recreational
+Dank 716,501 Main St,Buffalo,14203,Recreational
+FlynnStoned Syracuse,219 Walton St,Syracuse,13202,Recreational
+FlynnStoned Rochester,900 Jefferson Rd,Rochester,14623,Recreational
+FlynnStoned Binghamton,75 Court St,Binghamton,13901,Recreational
+FlynnStoned Brooklyn,178 N 4th St,Brooklyn,11211,Recreational
+FlynnStoned Oswego,219 Walton St,Oswego,13126,Recreational
+FlynnStoned North Syracuse,219 Walton St,North Syracuse,13212,Recreational
+Flor de Fred,101-16 Liberty Ave,Queens,11416,Recreational
+Qube NYC,229 W 42nd St,New York,10036,Recreational
+Verdi Cannabis Williamsburg,178 N 4th St,Brooklyn,11211,Recreational
+Society House Brooklyn,178 N 4th St,Brooklyn,11211,Recreational
+Freshly Baked NYC,27-25 44th Dr,Long Island City,11101,Recreational
+The Herbal Care,1410 Lexington Ave,New York,10128,Recreational
+TPCO New York,3 E 3rd St,New York,10003,Recreational
+Astor Club,3 E 3rd St,New York,10003,Recreational
+PharmaCann Albany,997 Central Ave,Albany,12205,Medical
+Cannabis Culture NYC,144 Bleecker St,New York,10014,Recreational
+Empire Cannabis Club,229 W 28th St,New York,10001,Recreational
+NYC Cannabis Co,835 Broadway,New York,10003,Recreational
+Brooklyn Cannabis Company,178 N 4th St,Brooklyn,11222,Recreational
+Queens Finest Cannabis,27-25 44th Dr,Queens,11101,Recreational
+Bronx Green Room,2412 Third Ave,Bronx,10451,Recreational
+Manhattan Wellness,3 E 3rd St,New York,10009,Recreational
+Elevated NYC,229 W 28th St,New York,10016,Recreational
+Chelsea Cannabis,104 7th Ave,New York,10011,Recreational
+Tribeca Wellness,144 Bleecker St,New York,10013,Recreational
+Upper West Side Dispensary,229 W 72nd St,New York,10023,Recreational
+Harlem Cannabis Co,248 W 125th St,New York,10027,Recreational
+Brooklyn Heights Wellness,122 Flatbush Ave,Brooklyn,11201,Recreational
+Park Slope Cannabis,533 5th Ave,Brooklyn,11215,Recreational
+Astoria Green,3610 Ditmars Blvd,Astoria,11102,Recreational
+Flushing Cannabis Center,136-20 38th Ave,Flushing,11354,Recreational
+Long Island City Dispensary,27-25 44th Dr,Long Island City,11101,Recreational
+Ridgewood Cannabis,1673 Myrtle Ave,Ridgewood,11385,Recreational
+Forest Hills Wellness,107-18 70th Rd,Forest Hills,11375,Recreational
+Rego Park Cannabis,95-25 Queens Blvd,Rego Park,11374,Recreational
+Jackson Heights Dispensary,82-70 Roosevelt Ave,Jackson Heights,11372,Recreational
+Woodside Cannabis Co,61-10 Roosevelt Ave,Woodside,11377,Recreational
+Corona Cannabis Center,108-18 Northern Blvd,Corona,11368,Recreational
+Elmhurst Wellness,89-55 Queens Blvd,Elmhurst,11373,Recreational
+Bronx Cannabis Hub,898 Gerard Ave,Bronx,10453,Recreational
+Mott Haven Dispensary,2412 Third Ave,Bronx,10451,Recreational
+Riverdale Cannabis,5555 Broadway,Bronx,10463,Recreational
+Kingsbridge Wellness,3220 Westchester Ave,Bronx,10463,Recreational
+Bedford Stuyvesant Cannabis,1102 Bedford Ave,Brooklyn,11216,Recreational
+Bedford Club,1102 Bedford Ave,Brooklyn,11216,Recreational
+Bushwick Green,299 Knickerbocker Ave,Brooklyn,11237,Recreational
+Sunset Park Dispensary,483 3rd Ave,Brooklyn,11220,Recreational
+Bay Ridge Cannabis,8916 3rd Ave,Brooklyn,11209,Recreational
+Bensonhurst Wellness,1856 86th St,Brooklyn,11214,Recreational
+Coney Island Cannabis,1904 Surf Ave,Brooklyn,11224,Recreational
+Canarsie Dispensary,9519 Avenue L,Brooklyn,11236,Recreational
+East New York Cannabis,2094 Pitkin Ave,Brooklyn,11207,Recreational
+Brownsville Wellness,444 Rockaway Ave,Brooklyn,11212,Recreational
+Flatbush Cannabis Co,1056 Flatbush Ave,Brooklyn,11226,Recreational
+Sheepshead Bay Dispensary,1904 Emmons Ave,Brooklyn,11235,Recreational
+Brighton Beach Cannabis,1904 Surf Ave,Brooklyn,11235,Recreational
+Greenpoint Wellness,178 N 4th St,Brooklyn,11222,Recreational
+East Village Cannabis,3 E 3rd St,New York,10009,Recreational
+West Village Wellness,144 Bleecker St,New York,10014,Recreational
+Greenwich Village Dispensary,144 Bleecker St,New York,10011,Recreational
+NoHo Cannabis,144 Bleecker St,New York,10012,Recreational
+Nolita Wellness,144 Bleecker St,New York,10012,Recreational
+Little Italy Cannabis,144 Bleecker St,New York,10013,Recreational
+Chinatown Dispensary,144 Bleecker St,New York,10013,Recreational
+Financial District Cannabis,144 Bleecker St,New York,10004,Recreational
+Battery Park Wellness,144 Bleecker St,New York,10280,Recreational
+Gramercy Cannabis,122 E 25th St,New York,10010,Recreational
+Flatiron Dispensary,182 5th Ave,New York,10010,Recreational
+Murray Hill Cannabis,229 W 28th St,New York,10016,Recreational
+Kips Bay Wellness,229 W 28th St,New York,10016,Recreational
+Midtown East Cannabis,587 5th Ave,New York,10017,Recreational
+Midtown West Dispensary,797 8th Ave,New York,10019,Recreational
+Hell's Kitchen Cannabis,797 8th Ave,New York,10019,Recreational
+Columbus Circle Wellness,229 W 59th St,New York,10023,Recreational
+Lincoln Center Dispensary,229 W 65th St,New York,10023,Recreational
+Upper East Side Cannabis,1410 Lexington Ave,New York,10021,Recreational
+Yorkville Wellness,1410 Lexington Ave,New York,10028,Recreational
+Morningside Heights Dispensary,248 W 116th St,New York,10025,Recreational
+Washington Heights Cannabis,4240 Broadway,New York,10033,Recreational
+Inwood Wellness,4940 Broadway,New York,10034,Recreational
+Roosevelt Island Dispensary,510 Main St,New York,10044,Recreational
+Syracuse Downtown Cannabis,219 Walton St,Syracuse,13202,Recreational
+Syracuse University Area Dispensary,900 S Crouse Ave,Syracuse,13210,Recreational
+North Syracuse Wellness,5841 Bridge St,North Syracuse,13212,Recreational
+Liverpool Cannabis,7550 Oswego Rd,Liverpool,13088,Recreational
+Albany Downtown Dispensary,997 Central Ave,Albany,12207,Recreational
+Albany Medical Center Area Cannabis,997 Central Ave,Albany,12208,Recreational
+Colonie Wellness,997 Central Ave,Colonie,12205,Recreational
+Troy Cannabis,1613 Union St,Troy,12180,Recreational
+Schenectady Dispensary,1613 Union St,Schenectady,12305,Recreational
+Upstate Canna Co,1613 Union St,Schenectady,12309,Recreational
+Saratoga Springs Cannabis,382 Broadway,Saratoga Springs,12866,Recreational
+Buffalo Downtown Dispensary,501 Main St,Buffalo,14203,Recreational
+Buffalo Elmwood Village Cannabis,1363 Delaware Ave,Buffalo,14222,Recreational
+Niagara Falls Wellness,2001 Pine Ave,Niagara Falls,14301,Recreational
+Tonawanda Cannabis,2800 Delaware Ave,Tonawanda,14150,Recreational
+Amherst Dispensary,3760 Union Rd,Amherst,14226,Recreational
+Misha's Flower Shop,299 Knickerbocker Ave,Brooklyn,11237,Recreational
+StashMaster,299 Knickerbocker Ave,Brooklyn,11237,Recreational
+Cannavita,30-30 Steinway St,Astoria,11103,Recreational
+Trends Dispensary,27-25 44th Dr,Long Island City,11101,Recreational
+NugHub NY,2343 Forest Ave,Staten Island,10303,Recreational
+ZenZest Staten Island,2343 Forest Ave,Staten Island,10303,Recreational
+Clouditude Staten Island,4034 Hylan Blvd,Staten Island,10308,Recreational
+Cannabis Realm White Plains,475 Central Ave,White Plains,10606,Recreational
+Elevate Cannabis Mount Vernon,127 S Terrace Ave,Mount Vernon,10550,Recreational
+Nuna Harvest Mount Vernon,127 S Terrace Ave,Mount Vernon,10550,Recreational
+Central Budz Yonkers,2247 Central Park Ave,Yonkers,10710,Recreational
+The Plant Yonkers,2247 Central Park Ave,Yonkers,10710,Recreational
+Cannabis Huts Newburgh,165 S Plank Rd Ste 2,Newburgh,12550,Recreational
+Orange County Cannabis,165 S Plank Rd,Newburgh,12550,Recreational
+Riverbend Hudson,425 Warren St,Hudson,12534,Recreational
+Platinum Leaf Rock Hill,4 Rock Hill Dr,Rock Hill,12775,Recreational
+Dutchess Roots Poughkeepsie,2615 South Rd,Poughkeepsie,12601,Recreational
+Black Market Cannabis Poughkeepsie,89 Main St,Poughkeepsie,12601,Recreational
+Farmers Choice Fishkill,1154 Main St,Fishkill,12524,Recreational
+Be. Wappingers Falls,1575 Route 9,Wappingers Falls,12590,Medical
+William Jane Corporation Ithaca,119-121 E State St,Ithaca,14850,Recreational
+Just Breathe Binghamton,75 Court St,Binghamton,13901,Recreational
+Dosha Farms Oneonta,76 Main St,Oneonta,13820,Recreational
+The Highest Peak Potsdam,25 Market St,Potsdam,13676,Recreational
+The Firehaus NY Potsdam,7479 US Highway 11,Potsdam,13676,Recreational
+Flowerhouse Binghamton,246 Main St,Binghamton,14901,Recreational
+Flowerhouse Utica,255 Genesee St,Utica,13502,Recreational
+Flowerhouse Plattsburgh,345 Cornelia St,Plattsburgh,12901,Recreational
+Flowerhouse Watertown,23171 Murrock Cir,Watertown,13601,Recreational
+Exit 31 Exotic Utica,255 Genesee St,Utica,13502,Recreational
+Strain Stars Farmingdale,1815 Broadhollow Rd,Farmingdale,11735,Recreational
+Strain Stars Riverhead,1872 Old Country Rd,Riverhead,11901,Recreational
+Happy Days Farmingdale,1815 Broadhollow Rd,Farmingdale,11735,Recreational
+Brown Budda Southampton,1533 County Road 39,Southampton,11968,Recreational
+RISE Rochester,556 Jefferson Rd,Rochester,14623,Medical
+Theory Wellness Buffalo,3760 Union Rd,Buffalo,14225,Recreational
+The Flowery SoHo,481 Broadway,New York,10013,Recreational
+Happy Munkey Brooklyn,453 Fulton St,Brooklyn,11201,Recreational
+NYC Bud Queens,44-45 Vernon Blvd,Long Island City,11101,Recreational
+NYC Bud Manhattan,39th St & 9th Ave,New York,10018,Recreational
+Grow Together Brooklyn,2370 Coney Island Ave,Brooklyn,11223,Recreational
+Twisted Vibration Brooklyn,1102 Broadway,Brooklyn,11221,Recreational
+SeshNYC Bronx,2412 Third Ave,Bronx,10451,Recreational
+ConBud Mott Haven,2412 Third Ave,Bronx,10451,Recreational
+House of Piff Utica,255 Genesee St,Utica,13502,Recreational
+The Village Green Dispensary Utica,255 Genesee St,Utica,13502,Recreational
+Herb Z Utica,255 Genesee St,Utica,13502,Recreational
+Verona Collective Verona,255 Genesee St,Verona,13478,Recreational
+Bloom Brothers Utica,255 Genesee St,Utica,13502,Recreational
+Etain Health Kingston,400 Broadway,Kingston,12401,Medical
+Etain Health Westchester,55 Main St,Yonkers,10701,Medical
+Downtown FLWR Staten Island,2343 Forest Ave,Staten Island,10303,Recreational
+The Weed Shoppe Staten Island,2343 Forest Ave,Staten Island,10303,Recreational
+High Stone Dispensary Staten Island,2343 Forest Ave,Staten Island,10303,Recreational
+Kaya Bliss Dispensary Staten Island,2343 Forest Ave,Staten Island,10303,Recreational
+Lex Weed Delivery Westchester,475 Central Ave,White Plains,10606,Recreational
+Green Therapy NYC Bronx,2412 Third Ave,Bronx,10451,Recreational
+Freshly Baked NYC Bronx,2412 Third Ave,Bronx,10451,Recreational
+Recreational Plus Bronx,2412 Third Ave,Bronx,10451,Recreational
+Bleu Leaf Dispensary Bronx,2412 Third Ave,Bronx,10451,Recreational
+Uberweedz Bronx,2412 Third Ave,Bronx,10451,Recreational
+Guardian Wellness Bronx,2412 Third Ave,Bronx,10451,Recreational
+NYC BUD Long Island,1815 Broadhollow Rd,Farmingdale,11735,Recreational
+FLUENT Manhattan,229 W 28th St,New York,10001,Recreational
+420NY Dispensary NYC,229 W 28th St,New York,10001,Recreational
+Dabolio NYC,229 W 28th St,New York,10001,Recreational
+New Metro NYC,229 W 28th St,New York,10001,Recreational
+Splash Brothers Long Island,1815 Broadhollow Rd,Farmingdale,11735,Recreational
+Cannabis In Long Island,1815 Broadhollow Rd,Farmingdale,11735,Recreational
+Cannabis Realm Rockland,475 Central Ave,White Plains,10606,Recreational
+StopNSmoke NYC,229 W 28th St,New York,10001,Recreational
+Better Buds NYC,229 W 28th St,New York,10001,Recreational
+The Vault NYC,229 W 28th St,New York,10001,Recreational
+Green Leaf Dispensary NYC,229 W 28th St,New York,10001,Recreational
+Urban Cannabis NYC,229 W 28th St,New York,10001,Recreational
+Metro Green NYC,229 W 28th St,New York,10001,Recreational
+City Buds NYC,229 W 28th St,New York,10001,Recreational
+Cannabis Corner NYC,229 W 28th St,New York,10001,Recreational
+Green Apple Dispensary NYC,229 W 28th St,New York,10001,Recreational
+Empire State Cannabis NYC,229 W 28th St,New York,10001,Recreational
+Big Apple Buds NYC,229 W 28th St,New York,10001,Recreational
+Five Boroughs Cannabis NYC,229 W 28th St,New York,10001,Recreational
+Hudson Valley Cannabis Kingston,400 Broadway,Kingston,12401,Recreational
+Catskill Cannabis Monticello,400 Broadway,Monticello,12701,Recreational
+Adirondack Green Plattsburgh,345 Cornelia St,Plattsburgh,12901,Recreational
+Finger Lakes Dispensary Geneva,51 N Main St,Geneva,14424,Recreational
+Lake Ontario Cannabis Oswego,219 Walton St,Oswego,13126,Recreational
+Thousand Islands Dispensary Watertown,23171 Murrock Cir,Watertown,13601,Recreational

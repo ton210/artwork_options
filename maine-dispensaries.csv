@@ -48,7 +48,7 @@ Riverbank Medical,Hammond Street,Bangor,04401,Medical
 Cannabis Cured,Hammond Street,Bangor,04401,Medical
 Pho King Great Cannabis,Hammond Street,Bangor,04401,Recreational
 Brothers Cannabis,Hammond Street,Bangor,04401,Recreational
-American ReLeaf Bangor,Hammond Street,Bangor,04401,Recreational
+American ReLeaf Bangor,185 Longview Dr,Bangor,04401,Recreational
 HIGHLY Cannaco,790 Sabattus St,Lewiston,04240,Recreational
 Cannabis Haven,806 Sabattus Street,Lewiston,04240,Recreational
 Crystal Spring Healing Alternatives,Sabattus Street,Lewiston,04240,Medical
@@ -58,26 +58,26 @@ Star City Wellness,Sabattus Street,Lewiston,04240,Medical
 Cannabis Haven,20 Union Street,Auburn,04210,Medical
 HighNorth Mystique of Maine,375 Center Street,Auburn,04210,Recreational
 Full Bloom Cannabis,Center Street,Auburn,04210,Recreational
-HIGHLY Cannaco,Center Street,Auburn,04210,Recreational
+HIGHLY Cannaco,628 Turner St,Auburn,04210,Recreational
 Full Bloom Cannabis,132 Church Road,Brunswick,04011,Recreational
 Stone Coast Botanicals,220 Bath Road,Brunswick,04011,Medical
 River Driver Cannabis Co.,132 Church St,Brunswick,04011,Recreational
 HIGHLY Cannaco,Church Road,Brunswick,04011,Recreational
 Full Bloom Cannabis,475 Kennedy Memorial Dr,Waterville,04901,Recreational
 Theory Wellness,Kennedy Memorial Dr,Waterville,04901,Recreational
-Sweet Dirt,Kennedy Memorial Dr,Waterville,04901,Recreational
+Sweet Dirt,475 Kennedy Memorial Dr,Waterville,04901,Recreational
 Full Bloom Cannabis,9 Renaissance Way,Sanford,04073,Recreational
-Green Truck Farms,Renaissance Way,Sanford,04073,Recreational
+Green Truck Farms,27 Hancock Lane,Sanford,04073,Recreational
 Stroudwater General,640 Saco St,Westbrook,04092,Medical
 Blossom Cannabis,Saco Street,Westbrook,04092,Medical
 SeaWeed Co.,Saco Street,Westbrook,04092,Recreational
 Botany,403 Main Street,Rockland,04841,Recreational
 Scrimshaw Cannabis,500 Main Street,Rockland,04841,Medical
 Belvidere Farm,Main Street,Rockland,04841,Both
-Highbrow,Main Street,Rockland,04841,Both
+Highbrow,696 Main Street,Rockland,04841,Both
 Cannabis Cured,County Road,Thomaston,04861,Recreational
 Cannabis Cured,County Road,Thomaston,04861,Medical
-Atlantic Farms,County Road,Thomaston,04861,Recreational
+Atlantic Farms,210 New County Road,Thomaston,04861,Recreational
 Higher Vibes,212 New County Road,Thomaston,04861,Medical
 Botany,161 High Street,Belfast,04915,Medical
 1 Mill,Route 1,Belfast,04915,Medical
@@ -93,7 +93,7 @@ Full Bloom Cannabis,9 Bog Road,Caribou,04736,Medical
 Meristem,Main Street,Southwest Harbor,04679,Recreational
 Snare Creek Farms,Bar Harbor Road,Trenton,04605,Medical
 Purple Co Congress,Congress Street,Portland,04101,Medical
-Highbrow Portland,Congress Street,Portland,04101,Recreational
+Highbrow Portland,605 Congress Street,Portland,04101,Recreational
 Sinsemilla Portland,Marginal Way,Portland,04101,Recreational
 Captain's Cannabis Portland,Marginal Way,Portland,04101,Medical
 The Green Well Storefront,Congress Street,Portland,04101,Medical
@@ -109,7 +109,6 @@ JAR Cannabis Co.,Congress Street,Portland,04101,Recreational
 Landrace Cannabis,Congress Street,Portland,04101,Recreational
 Stoner&CO,Marginal Way,Portland,04101,Recreational
 Ghost in the Glass,Marginal Way,Portland,04101,Recreational
-SeaWeed Co.,Marginal Way,Portland,04101,Recreational
 Peak Maine,Route 1,Falmouth,04105,Medical
 Medusa's Garden,Route 1,Falmouth,04105,Medical
 Sky Tide,Route 1,Falmouth,04105,Medical
@@ -118,14 +117,14 @@ Black Bear Bud,Route 1,Falmouth,04105,Recreational
 GanjCo Brunswick,Church Road,Brunswick,04011,Recreational
 Elevate Maine Yarmouth,Route 1,Yarmouth,04096,Medical
 OG Cannabis,Route 1,Eliot,03903,Recreational
-Sweet Dirt,Route 1,Eliot,03903,Recreational
+Sweet Dirt,495 Harold L Dow Hwy,Eliot,03903,Recreational
 Canuvo,Main Street,Bridgton,04009,Recreational
-HIGHLY Cannaco,Route 27,Boothbay,04537,Recreational
+HIGHLY Cannaco,638 Wiscasset Rd,Boothbay,04537,Recreational
 HIGHLY Cannaco,Route 1,Woolwich,04579,Recreational
 SeaWeed Co.,Marginal Way,South Portland,04106,Recreational
 CannaRx Windham,Roosevelt Trail,Windham,04062,Recreational
 Wellness Connection of Maine,685 Congress St,Portland,04101,Medical
-Curaleaf Myrick Street,Myrick Street,Ellsworth,04605,Medical
+Curaleaf,3 Myrick Street,Ellsworth,04605,Medical
 Main Street Medical,Main Street,Ellsworth,04605,Medical
 Tegridy Farms Maine,Main Street,Ellsworth,04605,Medical
 Green Lantern Delivery Medical,Main Street,Ellsworth,04605,Medical
@@ -133,4 +132,104 @@ Crystal Spring Healing Alternatives,Route 1,Lisbon,04250,Medical
 Green Truck Farms,Route 1,Sanford,04073,Recreational
 Silver Therapeutics,Route 1,Kittery,03904,Recreational
 OG Cannabis Eliot,Route 236,Eliot,03903,Recreational
-Sweet Dirt Eliot,Route 236,Eliot,03903,Recreational
+Cannabis Cured Stratton,152 Main St,Stratton,04982,Recreational
+Cannabis Cured Fairfield,228 Norridgewock Road,Fairfield,04937,Both
+Cannabis Cured Bangor Med,49 Bangor Mall Blvd,Bangor,04401,Medical
+Cannabis Cured Bethel,312 Mayville Rd,Bethel,04217,Recreational
+Cannabis Cured Damariscotta,Main Street,Damariscotta,04543,Recreational
+Cannabis Cured Eliot,Route 236,Eliot,03903,Recreational
+Cannabis Cured Sugarloaf,1215 Carrabassett Dr,Carrabassett Valley,04947,Recreational
+Full Bloom Cannabis Fort Kent,229 W Main St,Fort Kent,04743,Recreational
+Full Bloom Cannabis Grand Isle,613 Main St,Grand Isle,04746,Recreational
+Full Bloom Cannabis Presque Isle,445 Main St,Presque Isle,04769,Recreational
+Theory Wellness South Portland,Western Ave,South Portland,04106,Recreational
+Theory Wellness Waterville,Kennedy Memorial Dr,Waterville,04901,Recreational
+HIGHLY Cannaco Lewiston,Sabattus Street,Lewiston,04240,Recreational
+Blossom Cannabis Biddeford,45 Boulder Way,Biddeford,04005,Medical
+Blossom Cannabis Saco,22 Industrial Park Road,Saco,04072,Medical
+Blossom Cannabis South Portland,225 Waterman Drive,South Portland,04106,Medical
+Green Truck Farms North Berwick,19 Buffum Road,North Berwick,03906,Medical
+Green Truck Farms Kittery,89 Route 236,Kittery,03904,Recreational
+Cannabis Haven Auburn Rec,1150 Center St,Auburn,04210,Recreational
+Cannabis Haven Auburn Med,20 Union St Unit A,Auburn,04210,Medical
+Cannabis Haven Augusta Rec,265 Western Ave,Augusta,04330,Recreational
+Cannabis Haven Augusta Med,269 Western Ave,Augusta,04330,Medical
+Cannabis Haven Lewiston,806 Sabattus St,Lewiston,04240,Recreational
+Cannabis Haven Waterville,341 Main St,Waterville,04901,Recreational
+Highbrow Topsham,55 Topsham Fair Mall Rd,Topsham,04086,Both
+Highbrow Bath,141 Leeman Highway,Bath,04530,Both
+Highbrow Augusta,292 State Street,Augusta,04330,Both
+River Driver Cannabis Co Brunswick,132 Church St,Brunswick,04011,Recreational
+River Driver Cannabis Co Lisbon Falls,8 Main St,Lisbon Falls,04252,Recreational
+Silver Therapeutics Berwick,60 ME-236,Berwick,03901,Recreational
+Silver Therapeutics Portland,Congress Street,Portland,04101,Recreational
+JAR Cannabis Co South Portland,740 Broadway,South Portland,04106,Recreational
+JAR Cannabis Co Portland,Congress Street,Portland,04101,Recreational
+Wellness Connection South Portland,29 Western Avenue,South Portland,04106,Both
+Wellness Connection Brewer,221 Dirigo Drive,Brewer,04412,Both
+Wellness Connection Gardiner,31 Maine Avenue,Gardiner,04345,Both
+Atlantic Farms Thomaston,210 New County Rd,Thomaston,04861,Recreational
+Beach Boys Cannabis South Portland,818 Main St,South Portland,04106,Medical
+Canuvo Bridgton,Main Street,Bridgton,04009,Recreational
+Canuvo Biddeford,Main Street,Biddeford,04005,Recreational
+The Glass Cook,295 Bridgton Road,Fryeburg,04037,Medical
+Great Atlantic Puffin Co Fryeburg,Bridgton Road,Fryeburg,04037,Medical
+Great Atlantic Puffin Co Bridgton,510 Portland Road,Bridgton,04009,Medical
+Maine Only Cannabis Shop Bridgton,Portland Road,Bridgton,04009,Both
+Maine Only Cannabis Shop Hollis,Main Street,Hollis,04042,Both
+Blue Sky Maine,Main Street,Farmington,04938,Both
+Canna Cabana,184 Farmington Falls Road,Farmington,04938,Medical
+The Honeycomb Farm,Main Street,Wilton,04294,Medical
+Earth Keeper Cannabis,Cemetery Rd,Wilton,04294,Medical
+MarijuanaVille,3 Bryant Rd,Wilton,04294,Both
+Norridgewock Springs,Main Street,Norridgewock,04957,Medical
+ReMaine Humble Farms Winslow,746 Augusta Rd,Winslow,04901,Medical
+ReMaine Humble Farms Richmond,Main Street,Richmond,04357,Medical
+Terp Valley Farms,Main Street,Skowhegan,04976,Medical
+Sugar Leaf Co,211 Lemon Stream Road,New Portland,04961,Medical
+Your Coastal Connection,3 Main Street 2nd Floor,Belfast,04915,Medical
+Lisbon Cannabis Co,60 Capital Ave,Lisbon Falls,04252,Medical
+Lisbon Cannabis Co,8 Main St,Lisbon,04252,Medical
+Highbrow Rockland,696 Main Street,Rockland,04841,Both
+Nature's Summit,189 Water St,Gardiner,04345,Medical
+Full Bloom Cannabis Gardiner,35 Bridge St,Gardiner,04345,Recreational
+Northern Grown,228 Norridgewock Rd,Winslow,04901,Medical
+Tumbleweeds,26 Augusta Rd,Winslow,04901,Medical
+Higher Living Medical,Topsham Fair Mall Road,Topsham,04086,Medical
+Coastal Remedies,Scarborough,Scarborough,04074,Medical
+Shannon's Best Buds,Scarborough,Scarborough,04074,Medical
+Above and Beyond Cannabis,Main Street,Damariscotta,04543,Medical
+Aroostook Buds,Main Street,Limestone,04750,Medical
+Green Life Maine,Main Street,Guilford,04443,Recreational
+GreenLife Guilford,Main Street,Guilford,04443,Recreational
+Nova Farms Greenville,Main Street,Greenville,04441,Recreational
+Puffers Place,Main Street,Dover-Foxcroft,04426,Medical
+Hazy Moose,Main Street,Dover-Foxcroft,04426,Medical
+West Branch Wellness,Main Street,Millinocket,04462,Medical
+Experience Cannabis,Main Street,Bangor,04401,Medical
+BLAZIN' TRAILZ,Main Street,Bangor,04401,Medical
+Just Baked,Main Street,Bangor,04401,Recreational
+Vibes Cannabis Co,Main Street,Millinocket,04462,Recreational
+B&B Cultivation,Main Street,Machias,04654,Medical
+Northeast Alliance,Main Street,Portland,04101,Medical
+Odyssey Cannabis Delivery,Main Street,Portland,04101,Medical
+Clouded Valley Cannabis,Main Street,Ogunquit,03907,Medical
+Theory Wellness Ogunquit,Route 1,Ogunquit,03907,Recreational
+Tops Farm York,Main Street,York,03909,Medical
+Maine Medical Canna Connection,2 Bow St,Berwick,03901,Medical
+CCC Of Maine 420,Main Street,Dover-Foxcroft,04426,Medical
+Green Island Herb,Main Street,Dover-Foxcroft,04426,Medical
+Bubbles Cannabis Delivery,Main Street,Dover-Foxcroft,04426,Medical
+Good Buds,Main Street,Dover-Foxcroft,04426,Medical
+Homegrown Healthcare of Maine,Main Street,Augusta,04330,Medical
+Firestorm Orono,Main Street,Orono,04473,Recreational
+AK Edibles,Main Street,Hampden,04444,Medical
+Wildwood Bangor,Main Street,Bangor,04401,Medical
+Maine Event Cannabis,York County,York,03909,Recreational
+Reverie 73,York County,York,03909,Recreational
+Grove Cannabis,York County,York,03909,Recreational
+CNA Stores,York County,York,03909,Recreational
+East Coast Cannabis,York County,Wells,04090,Recreational
+Treehouse Cannabis,Main Street,Portland,04101,Recreational
+CLDZ Fine Cannabis,Main Street,Portland,04101,Both
+Gram's Five and Dime,Main Street,Newport,04953,Both
