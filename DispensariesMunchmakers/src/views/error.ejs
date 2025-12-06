@@ -1,0 +1,30 @@
+<%- include('layouts/main', { content: `
+
+<div class="container mx-auto px-4 py-12 max-w-2xl text-center">
+  <div class="bg-white rounded-lg shadow-lg p-12">
+    <div class="text-6xl mb-6">⚠️</div>
+    <h1 class="text-4xl font-bold mb-4">Oops! Something Went Wrong</h1>
+    <p class="text-xl text-gray-600 mb-8">
+      <%= message || 'An unexpected error occurred' %>
+    </p>
+
+    <% if (error && error.stack && process.env.NODE_ENV !== 'production') { %>
+      <div class="bg-gray-100 p-4 rounded text-left mb-6">
+        <pre class="text-xs overflow-auto"><%= error.stack %></pre>
+      </div>
+    <% } %>
+
+    <div class="space-y-4">
+      <a href="/" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition font-semibold">
+        Go to Homepage
+      </a>
+      <div>
+        <a href="/contact" class="text-blue-600 hover:underline">
+          Report this issue
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+` }) %>
