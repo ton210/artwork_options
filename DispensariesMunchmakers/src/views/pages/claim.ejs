@@ -1,0 +1,65 @@
+<%- include('../layouts/main', { content: `
+
+<div class="container mx-auto px-4 py-12 max-w-4xl">
+  <h1 class="text-4xl font-bold mb-6">Claim Your Dispensary Listing</h1>
+
+  <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+    <p class="text-lg mb-6">
+      Is your dispensary listed on our site? Claim your listing to update information, respond to reviews, and improve your ranking!
+    </p>
+
+    <div class="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-600 p-6 mb-8">
+      <h2 class="text-2xl font-bold mb-4">Benefits of Claiming Your Listing</h2>
+      <ul class="space-y-2">
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Update hours, contact info, and photos</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Feature your menu and special offers</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Access to detailed analytics</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Priority placement in search results</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-green-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Wholesale pricing on custom branded products</span>
+        </li>
+      </ul>
+    </div>
+
+    <%- include('../partials/leadForm', {
+      source: 'claim_page',
+      dispensaryName: ''
+    }) %>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-bold mb-4">Need Custom Branded Products?</h2>
+    <p class="mb-6">
+      As a verified dispensary owner, get exclusive access to wholesale pricing on custom grinders, rolling trays,
+      ashtrays, and more from MunchMakers.
+    </p>
+    <a href="https://munchmakers.com" target="_blank" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition font-semibold">
+      Shop Wholesale Products →
+    </a>
+  </div>
+</div>
+
+` }) %>
