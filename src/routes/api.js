@@ -116,7 +116,7 @@ router.get('/vote-status/:dispensaryId', async (req, res) => {
 // Get map data for county dispensaries
 router.get('/map/county/:stateSlug/:countySlug', async (req, res) => {
   try {
-    const County = require('../models/County');
+    const { County } = require('../models/State');
     const Dispensary = require('../models/Dispensary');
 
     const county = await County.findBySlug(req.params.stateSlug, req.params.countySlug);
