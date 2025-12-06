@@ -82,6 +82,7 @@ app.use((req, res, next) => {
 // Routes
 const indexRoutes = require('./routes/index');
 const dispensaryRoutes = require('./routes/dispensaries');
+const brandsRoutes = require('./routes/brands');
 const apiRoutes = require('./routes/api');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
@@ -89,6 +90,7 @@ const leadRoutes = require('./routes/leads');
 app.use('/', indexRoutes);
 app.use('/dispensaries', dispensaryRoutes);
 app.use('/dispensary', dispensaryRoutes); // Alternative singular route
+app.use('/brands', brandsRoutes);
 app.use('/api', apiRoutes);
 app.use('/admin', adminRoutes);
 app.use('/leads', leadRoutes);
