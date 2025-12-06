@@ -75,13 +75,13 @@ class SitemapGenerator {
 
   async generateStatesSitemap() {
     const states = await db.query(
-      'SELECT slug, name, updated_at FROM states ORDER BY name'
+      'SELECT slug, name FROM states ORDER BY name'
     );
 
     const urls = states.rows.map(state =>
       this.createUrl(
         `/dispensaries/${state.slug}`,
-        state.updated_at,
+        new Date(),
         'daily',
         '0.9'
       )
@@ -92,7 +92,7 @@ class SitemapGenerator {
 
   async generateCountiesSitemap() {
     const counties = await db.query(`
-      SELECT c.slug, s.slug as state_slug, c.updated_at
+      SELECT c.slug, s.slug as state_slug
       FROM counties c
       JOIN states s ON s.id = c.state_id
       ORDER BY s.name, c.name
@@ -101,7 +101,7 @@ class SitemapGenerator {
     const urls = counties.rows.map(county =>
       this.createUrl(
         `/dispensaries/${county.state_slug}/${county.slug}`,
-        county.updated_at,
+        new Date(),
         'weekly',
         '0.7'
       )
