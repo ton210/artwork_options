@@ -67,7 +67,7 @@
   <%- include('../partials/header') %>
 
   <main>
-    <%- body %>
+    <%- typeof content !== 'undefined' ? content : body %>
   </main>
 
   <%- include('../partials/footer') %>
