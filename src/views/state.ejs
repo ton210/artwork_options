@@ -33,7 +33,7 @@
           <div>•</div>
           <div>📊 <%= stats.dispensary_count || 0 %> dispensaries</div>
           <div>•</div>
-          <div>⭐ <%= (stats.avg_rating || 0).toFixed(1) %> avg rating</div>
+          <div>⭐ <%= Number(stats.avg_rating || 0).toFixed(1) %> avg rating</div>
         </div>
 
         <!-- Rankings -->
