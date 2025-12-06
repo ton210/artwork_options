@@ -24,7 +24,7 @@ router.post('/vote',
 
       const { dispensaryId, voteType } = req.body;
       const clientIP = getClientIP(req);
-      const sessionId = req.session.id;
+      const sessionId = req.session?.id || req.sessionID || null;
 
       // Check if user can vote
       const canVote = await Vote.canVote(dispensaryId, clientIP);

@@ -24,15 +24,36 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div class="lg:col-span-2">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">
-          Top Dispensaries in <%= county.name %> County, <%= county.state_abbr %> (2026)
-        </h1>
+        <div class="flex justify-between items-start mb-4">
+          <h1 class="text-4xl font-bold text-gray-900">
+            <% if (showAll) { %>
+              All <%= rankings.length %> Dispensaries in <%= county.name %> County
+            <% } else { %>
+              Top Dispensaries in <%= county.name %> County, <%= county.state_abbr %> (2026)
+            <% } %>
+          </h1>
+          <% if (!showAll && stats.dispensary_count > 50) { %>
+            <a href="?view=all" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-semibold whitespace-nowrap">
+              View All <%= stats.dispensary_count %> →
+            </a>
+          <% } %>
+        </div>
 
         <div class="flex items-center gap-4 mb-8 text-gray-600">
           <div>📅 Updated <%= new Date().toLocaleDateString() %></div>
           <div>•</div>
           <div>📊 <%= stats.dispensary_count || 0 %> dispensaries</div>
         </div>
+
+        <% if (showAll) { %>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <p class="text-sm">
+              <a href="?" class="text-blue-600 hover:underline">← Back to Top Rankings</a>
+              <span class="mx-2">•</span>
+              Showing all <%= rankings.length %> dispensaries
+            </p>
+          </div>
+        <% } %>
 
         <div class="space-y-4 mb-12">
           <% rankings.forEach((dispensary, index) => { %>

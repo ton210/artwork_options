@@ -21,8 +21,12 @@ router.get('/:state', async (req, res) => {
     // Get counties with dispensary counts
     const counties = await State.getCounties(state.id);
 
-    // Get top 10 dispensaries for state
-    const rankings = await Ranking.getByLocation('state', state.id, 10);
+    // Check if user wants to see all or just top 10
+    const showAll = req.query.view === 'all';
+    const limit = showAll ? 1000 : 10;
+
+    // Get dispensaries for state
+    const rankings = await Ranking.getByLocation('state', state.id, limit);
 
     // Get vote counts for each dispensary
     for (const ranking of rankings) {
@@ -38,11 +42,14 @@ router.get('/:state', async (req, res) => {
     const stats = await State.getStats(state.id);
 
     res.render('state', {
-      title: `Top 10 Dispensaries in ${state.name} (2026) | Cannabis Dispensary Rankings`,
+      title: showAll ?
+        `All ${rankings.length} Dispensaries in ${state.name} (2026) | Complete Rankings` :
+        `Top 10 Dispensaries in ${state.name} (2026) | Cannabis Dispensary Rankings`,
       state,
       counties,
       rankings,
       stats,
+      showAll,
       meta: {
         description: `Find the top-rated cannabis dispensaries in ${state.name}. User-voted rankings based on Google reviews, ratings, and community feedback.`,
         keywords: `${state.name} dispensary, cannabis ${state.name}, marijuana dispensary ${state.name}, weed dispensary ${state.name}`
@@ -66,8 +73,12 @@ router.get('/:state/:county', async (req, res) => {
       });
     }
 
+    // Check if user wants to see all or just top results
+    const showAll = req.query.view === 'all';
+    const limit = showAll ? 1000 : 50;
+
     // Get top dispensaries for county
-    const rankings = await Ranking.getByLocation('county', county.id, 100);
+    const rankings = await Ranking.getByLocation('county', county.id, limit);
 
     // Get vote counts for each dispensary
     for (const ranking of rankings) {
@@ -86,11 +97,14 @@ router.get('/:state/:county', async (req, res) => {
     const otherCounties = await State.getCounties(county.state_id);
 
     res.render('county', {
-      title: `Top Dispensaries in ${county.name} County, ${county.state_abbr} (2026)`,
+      title: showAll ?
+        `All ${rankings.length} Dispensaries in ${county.name} County, ${county.state_abbr}` :
+        `Top Dispensaries in ${county.name} County, ${county.state_abbr} (2026)`,
       county,
       rankings,
       stats,
       otherCounties,
+      showAll,
       meta: {
         description: `Browse the best cannabis dispensaries in ${county.name} County, ${county.state_name}. Rankings based on user votes, Google reviews, and ratings.`,
         keywords: `${county.name} County dispensary, cannabis ${county.name} County, marijuana dispensary ${county.state_abbr}`
