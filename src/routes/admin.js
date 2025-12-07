@@ -193,7 +193,10 @@ router.get('/', async (req, res) => {
 
   } catch (error) {
     console.error('Error loading dashboard:', error);
-    res.status(500).send('Error loading dashboard');
+    res.status(500).render('admin/login', {
+      title: 'Admin Dashboard Error',
+      error: `Dashboard error: ${error.message}. The analytics migration may need to be run: heroku run "node src/db/add-analytics-country.js"`
+    });
   }
 });
 
