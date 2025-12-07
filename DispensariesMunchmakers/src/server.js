@@ -72,11 +72,13 @@ async function setupSession() {
 // Session middleware - Use memory store (simple and reliable)
 app.use(session({
   secret: process.env.SESSION_SECRET || 'your-secret-key-change-in-production',
-  resave: false,
+  resave: true, // Save session even if unmodified
   saveUninitialized: true,
+  name: 'dispensary.sid', // Custom session name
   cookie: {
-    secure: process.env.NODE_ENV === 'production',
+    secure: false, // Changed to false - Heroku handles SSL termination
     httpOnly: true,
+    sameSite: 'lax',
     maxAge: 1000 * 60 * 60 * 24 * 7
   }
 }));
