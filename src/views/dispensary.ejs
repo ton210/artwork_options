@@ -104,6 +104,27 @@
                     <a href="<%= dispensary.website %>" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Visit Website →</a>
                   </div>
                 <% } %>
+
+                <% if (dispensary.hours && typeof dispensary.hours === 'object') { %>
+                  <div class="mt-4 pt-4 border-t border-gray-200">
+                    <div class="flex items-center mb-2">
+                      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <span class="font-semibold">Hours</span>
+                      <% if (dispensary.is_open_now === true) { %>
+                        <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded">OPEN NOW</span>
+                      <% } else if (dispensary.is_open_now === false) { %>
+                        <span class="ml-2 px-2 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded">CLOSED</span>
+                      <% } %>
+                    </div>
+                    <div class="text-sm text-gray-600 ml-7">
+                      <% Object.entries(dispensary.hours).forEach(([day, hours]) => { %>
+                        <div><%= day %>: <%= hours %></div>
+                      <% }); %>
+                    </div>
+                  </div>
+                <% } %>
               </div>
             </div>
           </div>
