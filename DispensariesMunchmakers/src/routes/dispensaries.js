@@ -8,8 +8,15 @@ const { getClientIP } = require('../middleware/analytics');
 const SchemaGenerator = require('../utils/schemaGenerator');
 
 // Individual dispensary detail page (check first if it has hyphens - dispensary slugs always have hyphens)
-router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res) => {
+// Note: This route must check if the slug is a state first (e.g., new-mexico, new-york) and pass to next handler
+router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
   try {
+    // First check if this slug matches a state (e.g., new-mexico, new-jersey, new-york, rhode-island)
+    const state = await State.findBySlug(req.params.slug);
+    if (state) {
+      return next(); // Let the state route handler below handle this
+    }
+
     const dispensary = await Dispensary.findBySlug(req.params.slug);
 
     if (!dispensary) {

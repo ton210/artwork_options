@@ -149,7 +149,8 @@
         card.className = 'bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition';
 
         card.innerHTML = `
-          <div class="flex items-start justify-between mb-3">
+          <div class="flex items-start gap-4 mb-3">
+            ${disp.logo_url ? `<img src="${disp.logo_url}" alt="${disp.name}" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">` : ''}
             <div class="flex-1">
               <h3 class="text-lg font-bold mb-1">
                 <a href="/dispensary/${disp.slug}" class="hover:text-green-600">${disp.name}</a>

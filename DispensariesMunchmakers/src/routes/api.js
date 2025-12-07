@@ -217,12 +217,14 @@ router.get('/map/dispensary/:id', async (req, res) => {
 // Get all active dispensaries (for Near Me feature)
 router.get('/dispensaries/all', async (req, res) => {
   try {
+    const db = require('../config/database');
     const result = await db.query(
-      `SELECT id, name, slug, lat, lng, city, google_rating, google_review_count,
-              address_street, zip, phone
-       FROM dispensaries
-       WHERE is_active = true AND lat IS NOT NULL AND lng IS NOT NULL
-       ORDER BY google_rating DESC NULLS LAST
+      `SELECT d.id, d.name, d.slug, d.lat, d.lng, d.city, d.google_rating, d.google_review_count,
+              d.address_street, d.zip, d.phone, d.logo_url, s.name as state_name, s.abbreviation as state_abbr
+       FROM dispensaries d
+       LEFT JOIN states s ON d.state_id = s.id
+       WHERE d.is_active = true AND d.lat IS NOT NULL AND d.lng IS NOT NULL
+       ORDER BY d.google_rating DESC NULLS LAST
        LIMIT 3000`
     );
 

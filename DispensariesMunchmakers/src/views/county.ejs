@@ -78,6 +78,11 @@
                   <% if (index === 2) { %><div class="text-2xl">🥉</div><% } %>
                 </div>
 
+                <!-- Logo -->
+                <% if (dispensary.logo_url) { %>
+                  <img src="<%= dispensary.logo_url %>" alt="<%= dispensary.name %>" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
+                <% } %>
+
                 <div class="flex-grow">
                   <h3 class="text-xl font-bold text-gray-900 mb-2">
                     <a href="/dispensary/<%= dispensary.slug %>" class="hover:text-green-600">

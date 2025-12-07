@@ -142,10 +142,15 @@
         card.className = 'bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition';
 
         card.innerHTML = `
-          <h3 class="text-lg font-bold mb-2">
-            <a href="/dispensary/${disp.slug}" class="hover:text-green-600">${disp.name}</a>
-          </h3>
-          <p class="text-sm text-gray-600 mb-3">${disp.city || ''}, ${disp.state_abbr || disp.state_name || ''}</p>
+          <div class="flex items-start gap-3 mb-3">
+            ${disp.logo_url ? `<img src="${disp.logo_url}" alt="${disp.name}" class="w-14 h-14 object-cover rounded-lg flex-shrink-0">` : ''}
+            <div class="flex-1">
+              <h3 class="text-lg font-bold mb-1">
+                <a href="/dispensary/${disp.slug}" class="hover:text-green-600">${disp.name}</a>
+              </h3>
+              <p class="text-sm text-gray-600">${disp.city || ''}, ${disp.state_abbr || disp.state_name || ''}</p>
+            </div>
+          </div>
 
           ${disp.google_rating ? `
             <div class="flex items-center gap-2 mb-3">

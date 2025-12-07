@@ -74,6 +74,11 @@
                   <% } %>
                 </div>
 
+                <!-- Logo -->
+                <% if (dispensary.logo_url) { %>
+                  <img src="<%= dispensary.logo_url %>" alt="<%= dispensary.name %>" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
+                <% } %>
+
                 <!-- Details -->
                 <div class="flex-grow">
                   <h3 class="text-xl font-bold text-gray-900 mb-2">
