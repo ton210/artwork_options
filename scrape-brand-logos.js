@@ -1,7 +1,6 @@
 require('dotenv').config();
 const https = require('https');
 const http = require('http');
-const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 const db = require('./src/config/database');
@@ -83,9 +82,9 @@ async function searchGoogleForLogo(brandName) {
 }
 
 /**
- * Strategy 3: Scrape logo from brand website
+ * Strategy 3: Simple pattern matching for common logo URLs
  */
-async function scrapeLogoFromWebsite(website, brandName) {
+async function guessLogoFromWebsite(website, brandName) {
   try {
     if (!website) return null;
 
@@ -95,49 +94,34 @@ async function scrapeLogoFromWebsite(website, brandName) {
       url = 'https://' + url;
     }
 
-    const response = await httpGet(url);
-    const $ = cheerio.load(response.data);
+    const baseUrl = new URL(url);
+    const domain = baseUrl.origin;
 
-    // Look for logo in common places
-    const logoSelectors = [
-      'img[alt*="logo" i]',
-      'img[src*="logo" i]',
-      'img.logo',
-      'img#logo',
-      '.site-logo img',
-      '.brand-logo img',
-      'header img',
-      '.navbar img',
-      'meta[property="og:image"]',
-      'link[rel="icon"]',
-      'link[rel="apple-touch-icon"]'
+    // Common logo URL patterns
+    const logoPatterns = [
+      `${domain}/logo.png`,
+      `${domain}/logo.jpg`,
+      `${domain}/images/logo.png`,
+      `${domain}/assets/logo.png`,
+      `${domain}/wp-content/uploads/logo.png`,
+      `${domain}/static/logo.png`
     ];
 
-    for (const selector of logoSelectors) {
-      const elem = $(selector).first();
-      if (elem.length) {
-        let logoUrl = elem.attr('content') || elem.attr('href') || elem.attr('src');
-
-        if (logoUrl) {
-          // Make absolute URL
-          if (logoUrl.startsWith('//')) {
-            logoUrl = 'https:' + logoUrl;
-          } else if (logoUrl.startsWith('/')) {
-            const baseUrl = new URL(url);
-            logoUrl = baseUrl.origin + logoUrl;
-          } else if (!logoUrl.startsWith('http')) {
-            const baseUrl = new URL(url);
-            logoUrl = baseUrl.origin + '/' + logoUrl;
-          }
-
-          console.log(`  ✓ Found logo on website (${selector}): ${logoUrl.substring(0, 60)}...`);
+    // Try each pattern
+    for (const logoUrl of logoPatterns) {
+      try {
+        const testResponse = await httpGet(logoUrl);
+        if (testResponse.status === 200) {
+          console.log(`  ✓ Found logo at: ${logoUrl}`);
           return logoUrl;
         }
+      } catch (err) {
+        // Pattern not found, continue
       }
     }
 
   } catch (error) {
-    console.error(`  Error scraping website:`, error.message);
+    console.error(`  Error checking website patterns:`, error.message);
   }
   return null;
 }
@@ -220,11 +204,11 @@ async function scrapeAllBrandLogos() {
         await sleep(2000); // Rate limit
       }
 
-      // Strategy 3: Scrape from website
+      // Strategy 3: Guess common logo URLs
       if (!logoUrl && brand.website) {
-        console.log(`  Scraping website: ${brand.website}`);
-        logoUrl = await scrapeLogoFromWebsite(brand.website, brand.name);
-        await sleep(2000); // Rate limit
+        console.log(`  Checking website for logo: ${brand.website}`);
+        logoUrl = await guessLogoFromWebsite(brand.website, brand.name);
+        await sleep(1000); // Rate limit
       }
 
       if (logoUrl) {
