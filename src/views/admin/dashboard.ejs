@@ -21,10 +21,16 @@
 
     <div class="max-w-7xl mx-auto px-4 py-8">
       <!-- Stats Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-white rounded-lg shadow p-6">
           <div class="text-gray-500 text-sm mb-1">Total Dispensaries</div>
           <div class="text-3xl font-bold text-gray-900"><%= stats.total_dispensaries %></div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="text-gray-500 text-sm mb-1">US Views Today</div>
+          <div class="text-3xl font-bold text-blue-600"><%= stats.views_today_us || 0 %></div>
+          <div class="text-xs text-gray-500 mt-1">(<%= stats.views_today_all || 0 %> total)</div>
         </div>
 
         <div class="bg-white rounded-lg shadow p-6">
@@ -33,23 +39,131 @@
         </div>
 
         <div class="bg-white rounded-lg shadow p-6">
-          <div class="text-gray-500 text-sm mb-1">Page Views Today</div>
-          <div class="text-3xl font-bold text-blue-600"><%= stats.views_today %></div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow p-6">
           <div class="text-gray-500 text-sm mb-1">Uncontacted Leads</div>
           <div class="text-3xl font-bold text-orange-600"><%= stats.uncontacted_leads %></div>
         </div>
 
         <div class="bg-white rounded-lg shadow p-6">
-          <div class="text-gray-500 text-sm mb-1">Total States</div>
-          <div class="text-3xl font-bold text-gray-900"><%= stats.total_states %></div>
+          <div class="text-gray-500 text-sm mb-1">Total Users</div>
+          <div class="text-3xl font-bold text-purple-600"><%= stats.total_users || 0 %></div>
         </div>
 
         <div class="bg-white rounded-lg shadow p-6">
-          <div class="text-gray-500 text-sm mb-1">Total Counties</div>
-          <div class="text-3xl font-bold text-gray-900"><%= stats.total_counties %></div>
+          <div class="text-gray-500 text-sm mb-1">Total Reviews</div>
+          <div class="text-3xl font-bold text-indigo-600"><%= stats.total_reviews || 0 %></div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="text-gray-500 text-sm mb-1">Pending Claims</div>
+          <div class="text-3xl font-bold text-red-600"><%= stats.pending_claims || 0 %></div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="text-gray-500 text-sm mb-1">States / Counties</div>
+          <div class="text-3xl font-bold text-gray-900"><%= stats.total_states %> / <%= stats.total_counties %></div>
+        </div>
+      </div>
+
+      <!-- Analytics Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <!-- Daily Stats -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Daily Stats (US Visitors - Last 7 Days)</h2>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b">
+                <th class="pb-2">Date</th>
+                <th class="pb-2">Views</th>
+                <th class="pb-2">Unique Visitors</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (dailyStats || []).forEach(day => { %>
+                <tr class="border-b">
+                  <td class="py-2"><%= new Date(day.date).toLocaleDateString() %></td>
+                  <td class="py-2"><%= day.view_count %></td>
+                  <td class="py-2"><%= day.unique_visitors %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Traffic by Country -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Traffic by Country (Last 30 Days)</h2>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b">
+                <th class="pb-2">Country</th>
+                <th class="pb-2">Views</th>
+                <th class="pb-2">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (trafficByCountry || []).forEach(country => { %>
+                <tr class="border-b">
+                  <td class="py-2 font-semibold"><%= country.country %></td>
+                  <td class="py-2"><%= country.view_count %></td>
+                  <td class="py-2"><%= country.percentage %>%</td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Top Pages & Dispensaries -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <!-- Top Pages -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Top Pages (US Visitors - Last 30 Days)</h2>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b">
+                <th class="pb-2">URL</th>
+                <th class="pb-2">Views</th>
+                <th class="pb-2">Unique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (topPages || []).forEach(page => { %>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="py-2 max-w-xs truncate"><a href="<%= page.url_path %>" class="text-blue-600 hover:underline" target="_blank"><%= page.url_path %></a></td>
+                  <td class="py-2"><%= page.view_count %></td>
+                  <td class="py-2"><%= page.unique_visitors %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Top Dispensaries -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Top Dispensaries (US Visitors - Last 30 Days)</h2>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b">
+                <th class="pb-2">Dispensary</th>
+                <th class="pb-2">Views</th>
+                <th class="pb-2">Unique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (topDispensaries || []).forEach(disp => { %>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="py-2">
+                    <a href="/dispensary/<%= disp.slug %>" class="text-blue-600 hover:underline font-medium" target="_blank">
+                      <%= disp.name %>
+                    </a>
+                    <div class="text-xs text-gray-500"><%= disp.city %>, <%= disp.state_abbr %></div>
+                  </td>
+                  <td class="py-2"><%= disp.view_count %></td>
+                  <td class="py-2"><%= disp.unique_visitors %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
         </div>
       </div>
 
