@@ -214,6 +214,29 @@ router.get('/map/dispensary/:id', async (req, res) => {
   }
 });
 
+// Get all active dispensaries (for Near Me feature)
+router.get('/dispensaries/all', async (req, res) => {
+  try {
+    const result = await db.query(
+      `SELECT id, name, slug, lat, lng, city, google_rating, google_review_count,
+              address_street, zip, phone
+       FROM dispensaries
+       WHERE is_active = true AND lat IS NOT NULL AND lng IS NOT NULL
+       ORDER BY google_rating DESC NULLS LAST
+       LIMIT 3000`
+    );
+
+    res.json({
+      success: true,
+      dispensaries: result.rows
+    });
+
+  } catch (error) {
+    console.error('Error fetching all dispensaries:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch dispensaries' });
+  }
+});
+
 // Map API endpoints
 const { State, County } = require('../models/State');
 

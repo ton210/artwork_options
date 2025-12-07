@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Top Dispensaries 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50">
+  <%- include('partials/header') %>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">My Account</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Profile Info -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4">Profile</h2>
+          <div id="profile-info" class="space-y-2">
+            <p class="text-gray-600">Loading...</p>
+          </div>
+        </div>
+
+        <!-- Favorites -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4">Favorite Dispensaries</h2>
+          <div id="favorites-list" class="space-y-4">
+            <p class="text-gray-600">Loading...</p>
+          </div>
+        </div>
+
+        <!-- Business Claims -->
+        <div class="bg-white rounded-lg shadow-lg p-6 md:col-span-2">
+          <h2 class="text-xl font-bold mb-4">My Business Claims</h2>
+          <div id="claims-list" class="space-y-4">
+            <p class="text-gray-600">Loading...</p>
+          </div>
+          <a href="/claim" class="inline-block mt-4 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+            Claim a Dispensary
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script>
+    async function loadAccount() {
+      try {
+        const [userRes, favRes] = await Promise.all([
+          fetch('/auth/me'),
+          fetch('/auth/favorites')
+        ]);
+
+        const userData = await userRes.json();
+        const favData = await favRes.json();
+
+        if (userData.success) {
+          document.getElementById('profile-info').innerHTML = `
+            <p><strong>Name:</strong> ${userData.user.name}</p>
+            <p><strong>Email:</strong> ${userData.user.email}</p>
+            <p><strong>Status:</strong> ${userData.user.isVerified ? '<span class="text-green-600">Verified</span>' : '<span class="text-yellow-600">Not Verified</span>'}</p>
+          `;
+        }
+
+        if (favData.success && favData.favorites.length > 0) {
+          document.getElementById('favorites-list').innerHTML = favData.favorites.map(fav => `
+            <div class="border-b pb-2">
+              <a href="/dispensary/${fav.slug}" class="font-semibold text-green-600 hover:underline">${fav.name}</a>
+              <p class="text-sm text-gray-600">${fav.city}</p>
+            </div>
+          `).join('');
+        } else {
+          document.getElementById('favorites-list').innerHTML = '<p class="text-gray-500">No favorites yet</p>';
+        }
+
+        document.getElementById('claims-list').innerHTML = '<p class="text-gray-500">No claims yet</p>';
+
+      } catch (error) {
+        console.error('Error loading account:', error);
+      }
+    }
+
+    loadAccount();
+  </script>
+</body>
+</html>
