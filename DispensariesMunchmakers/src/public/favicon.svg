@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#leafGrad)"/>
+  <!-- Cannabis leaf simplified -->
+  <g fill="#ffffff" transform="translate(16,16) scale(0.7)">
+    <!-- Center leaf -->
+    <path d="M0,-12 C2,-8 2,-4 0,0 C-2,-4 -2,-8 0,-12"/>
+    <!-- Left leaves -->
+    <path d="M-3,-10 C-8,-10 -10,-6 -8,-2 C-6,-4 -4,-6 -3,-10" transform="rotate(-25)"/>
+    <path d="M-3,-10 C-8,-10 -10,-6 -8,-2 C-6,-4 -4,-6 -3,-10" transform="rotate(-50)"/>
+    <!-- Right leaves -->
+    <path d="M3,-10 C8,-10 10,-6 8,-2 C6,-4 4,-6 3,-10" transform="rotate(25)"/>
+    <path d="M3,-10 C8,-10 10,-6 8,-2 C6,-4 4,-6 3,-10" transform="rotate(50)"/>
+    <!-- Stem -->
+    <rect x="-1" y="0" width="2" height="8" rx="1"/>
+  </g>
+</svg>
