@@ -140,15 +140,17 @@ router.get('/', async (req, res) => {
       SELECT
         d.name,
         d.city,
-        d.state_abbr,
+        s.abbreviation as state_abbr,
         d.slug,
         COUNT(pv.id) as view_count,
         COUNT(DISTINCT pv.ip_hash) as unique_visitors
       FROM dispensaries d
       JOIN page_views pv ON d.id = pv.dispensary_id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
       WHERE pv.created_at >= CURRENT_DATE - INTERVAL '30 days'
         AND (pv.country = 'US' OR pv.country IS NULL)
-      GROUP BY d.id, d.name, d.city, d.state_abbr, d.slug
+      GROUP BY d.id, d.name, d.city, s.abbreviation, d.slug
       ORDER BY view_count DESC
       LIMIT 10
     `);
