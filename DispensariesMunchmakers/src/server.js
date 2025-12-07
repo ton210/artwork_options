@@ -69,6 +69,19 @@ async function setupSession() {
   }
 }
 
+// Session middleware - Use memory store (simple and reliable)
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-secret-key-change-in-production',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 7
+  }
+}));
+console.log('✓ Session middleware configured (memory store)');
+
 // Force HTTPS in production
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production' && req.header('x-forwarded-proto') !== 'https') {
@@ -159,9 +172,6 @@ app.use((err, req, res, next) => {
 // Start server
 async function startServer() {
   try {
-    // Setup session first
-    await setupSession();
-
     app.listen(PORT, () => {
       console.log(`
 ╔═══════════════════════════════════════════════╗
