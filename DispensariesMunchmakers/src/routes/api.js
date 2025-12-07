@@ -222,7 +222,8 @@ router.get('/dispensaries/all', async (req, res) => {
       `SELECT d.id, d.name, d.slug, d.lat, d.lng, d.city, d.google_rating, d.google_review_count,
               d.address_street, d.zip, d.phone, d.logo_url, s.name as state_name, s.abbreviation as state_abbr
        FROM dispensaries d
-       LEFT JOIN states s ON d.state_id = s.id
+       LEFT JOIN counties c ON d.county_id = c.id
+       LEFT JOIN states s ON c.state_id = s.id
        WHERE d.is_active = true AND d.lat IS NOT NULL AND d.lng IS NOT NULL
        ORDER BY d.google_rating DESC NULLS LAST
        LIMIT 3000`
