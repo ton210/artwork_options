@@ -95,6 +95,7 @@ const brandsRoutes = require('./routes/brands');
 const pagesRoutes = require('./routes/pages');
 const sitemapRoutes = require('./routes/sitemap');
 const apiRoutes = require('./routes/api');
+const reviewRoutes = require('./routes/reviews');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 
@@ -105,6 +106,7 @@ app.use('/brands', brandsRoutes);
 app.use('/', pagesRoutes);
 app.use('/', sitemapRoutes);
 app.use('/api', apiRoutes);
+app.use('/api/reviews', reviewRoutes);
 app.use('/admin', adminRoutes);
 app.use('/leads', leadRoutes);
 
