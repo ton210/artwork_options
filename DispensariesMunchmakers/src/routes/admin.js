@@ -59,15 +59,78 @@ router.use(isAuthenticated);
 // Dashboard
 router.get('/', async (req, res) => {
   try {
-    // Get overall stats
+    // Get overall stats with US filter
     const stats = await db.query(`
       SELECT
         (SELECT COUNT(*) FROM dispensaries WHERE is_active = true) as total_dispensaries,
         (SELECT COUNT(*) FROM votes WHERE DATE(created_at) = CURRENT_DATE) as votes_today,
-        (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE) as views_today,
+        (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE AND (country = 'US' OR country IS NULL)) as views_today_us,
+        (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE) as views_today_all,
         (SELECT COUNT(*) FROM leads WHERE is_contacted = false) as uncontacted_leads,
         (SELECT COUNT(*) FROM states) as total_states,
-        (SELECT COUNT(*) FROM counties) as total_counties
+        (SELECT COUNT(*) FROM counties) as total_counties,
+        (SELECT COUNT(*) FROM users) as total_users,
+        (SELECT COUNT(*) FROM reviews WHERE is_approved = true) as total_reviews,
+        (SELECT COUNT(*) FROM business_claims WHERE is_approved = false) as pending_claims
+    `);
+
+    // Get daily stats for last 7 days (US only)
+    const dailyStats = await db.query(`
+      SELECT
+        DATE(created_at) as date,
+        COUNT(*) as view_count,
+        COUNT(DISTINCT ip_hash) as unique_visitors
+      FROM page_views
+      WHERE created_at >= CURRENT_DATE - INTERVAL '7 days'
+        AND (country = 'US' OR country IS NULL)
+      GROUP BY DATE(created_at)
+      ORDER BY date DESC
+    `);
+
+    // Get top pages by URL (US visitors only)
+    const topPages = await db.query(`
+      SELECT
+        url_path,
+        COUNT(*) as view_count,
+        COUNT(DISTINCT ip_hash) as unique_visitors
+      FROM page_views
+      WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'
+        AND (country = 'US' OR country IS NULL)
+        AND url_path IS NOT NULL
+      GROUP BY url_path
+      ORDER BY view_count DESC
+      LIMIT 20
+    `);
+
+    // Get top dispensaries by views (US visitors)
+    const topDispensaries = await db.query(`
+      SELECT
+        d.name,
+        d.city,
+        d.state_abbr,
+        d.slug,
+        COUNT(pv.id) as view_count,
+        COUNT(DISTINCT pv.ip_hash) as unique_visitors
+      FROM dispensaries d
+      JOIN page_views pv ON d.id = pv.dispensary_id
+      WHERE pv.created_at >= CURRENT_DATE - INTERVAL '30 days'
+        AND (pv.country = 'US' OR pv.country IS NULL)
+      GROUP BY d.id, d.name, d.city, d.state_abbr, d.slug
+      ORDER BY view_count DESC
+      LIMIT 10
+    `);
+
+    // Get traffic by country
+    const trafficByCountry = await db.query(`
+      SELECT
+        COALESCE(country, 'Unknown') as country,
+        COUNT(*) as view_count,
+        ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM page_views WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'), 2) as percentage
+      FROM page_views
+      WHERE created_at >= CURRENT_DATE - INTERVAL '30 days'
+      GROUP BY country
+      ORDER BY view_count DESC
+      LIMIT 10
     `);
 
     // Get recent scrape logs
@@ -87,6 +150,10 @@ router.get('/', async (req, res) => {
     res.render('admin/dashboard', {
       title: 'Admin Dashboard - Dispensary Rankings',
       stats: stats.rows[0],
+      dailyStats: dailyStats.rows,
+      topPages: topPages.rows,
+      topDispensaries: topDispensaries.rows,
+      trafficByCountry: trafficByCountry.rows,
       scrapeLogs: scrapeLogs.rows,
       recentLeads: recentLeads.rows
     });
