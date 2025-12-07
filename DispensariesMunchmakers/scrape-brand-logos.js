@@ -1,9 +1,26 @@
 require('dotenv').config();
-const axios = require('axios');
+const https = require('https');
+const http = require('http');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 const db = require('./src/config/database');
+
+// Simple HTTP GET function to replace axios
+function httpGet(url) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith('https') ? https : http;
+    client.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      }
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => resolve({ data, status: res.statusCode }));
+    }).on('error', reject);
+  });
+}
 
 const OUTPUT_DIR = './brand-logos';
 
@@ -50,11 +67,12 @@ async function searchGoogleForLogo(brandName) {
     const searchQuery = `${brandName} dispensary logo`;
     const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&cx=${cx}&key=${apiKey}&searchType=image&num=3&imgSize=medium&imgType=photo`;
 
-    const response = await axios.get(url, { timeout: 10000 });
+    const response = await httpGet(url);
+    const data = JSON.parse(response.data);
 
-    if (response.data.items && response.data.items.length > 0) {
+    if (data.items && data.items.length > 0) {
       // Return first image result
-      const logoUrl = response.data.items[0].link;
+      const logoUrl = data.items[0].link;
       console.log(`  ✓ Found logo via Google Image Search: ${logoUrl.substring(0, 60)}...`);
       return logoUrl;
     }
@@ -77,13 +95,7 @@ async function scrapeLogoFromWebsite(website, brandName) {
       url = 'https://' + url;
     }
 
-    const response = await axios.get(url, {
-      timeout: 10000,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-      }
-    });
-
+    const response = await httpGet(url);
     const $ = cheerio.load(response.data);
 
     // Look for logo in common places
@@ -135,22 +147,29 @@ async function scrapeLogoFromWebsite(website, brandName) {
  */
 async function downloadAndSaveLogo(logoUrl, brandSlug) {
   try {
-    const response = await axios.get(logoUrl, {
-      responseType: 'arraybuffer',
-      timeout: 15000,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-      }
+    return new Promise((resolve, reject) => {
+      const client = logoUrl.startsWith('https') ? https : http;
+      client.get(logoUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      }, (res) => {
+        const chunks = [];
+        res.on('data', chunk => chunks.push(chunk));
+        res.on('end', () => {
+          const buffer = Buffer.concat(chunks);
+          const filename = `${brandSlug}.jpg`;
+          const filepath = path.join(OUTPUT_DIR, filename);
+
+          fs.writeFileSync(filepath, buffer);
+          console.log(`  ✓ Downloaded and saved: ${filename}`);
+          resolve(`/brand-logos/${filename}`);
+        });
+      }).on('error', (err) => {
+        console.error(`  Error downloading logo:`, err.message);
+        resolve(null);
+      });
     });
-
-    const filename = `${brandSlug}.jpg`;
-    const filepath = path.join(OUTPUT_DIR, filename);
-
-    fs.writeFileSync(filepath, response.data);
-
-    console.log(`  ✓ Downloaded and saved: ${filename}`);
-    return `/brand-logos/${filename}`;
-
   } catch (error) {
     console.error(`  Error downloading logo:`, error.message);
     return null;
