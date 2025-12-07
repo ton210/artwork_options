@@ -119,6 +119,13 @@ app.get('/near-me', (req, res) => {
   });
 });
 
+// Search page route
+app.get('/search', (req, res) => {
+  res.render('search', {
+    title: 'Search Dispensaries - Top Dispensaries 2026'
+  });
+});
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).render('404', {
