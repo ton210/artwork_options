@@ -17,7 +17,7 @@ class RankingCalculator {
   }
 
   async calculateCompositeScore(dispensary) {
-    const stateId = dispensary.county_state_id || dispensary.dispensary_state_id || dispensary.state_id;
+    const stateId = dispensary.county_state_id;
 
     const scores = {
       googleRating: await this.normalizeGoogleRating(dispensary.google_rating),
@@ -214,7 +214,7 @@ class RankingCalculator {
     try {
       // Get all active dispensaries (LEFT JOIN to include those without county)
       const result = await db.query(
-        `SELECT d.*, c.state_id as county_state_id, d.state_id as dispensary_state_id
+        `SELECT d.*, c.state_id as county_state_id
          FROM dispensaries d
          LEFT JOIN counties c ON d.county_id = c.id
          WHERE d.is_active = true`
@@ -229,15 +229,15 @@ class RankingCalculator {
         // Calculate composite score (use state_id for normalization if no county)
         const compositeScore = await this.calculateCompositeScore(dispensary);
 
-        // Get state_id (from county if available, otherwise from dispensary)
-        const stateId = dispensary.county_state_id || dispensary.dispensary_state_id;
+        // Get state_id from county (all counties have state_id)
+        const stateId = dispensary.county_state_id;
 
         // Upsert county ranking ONLY if county_id exists
         if (dispensary.county_id) {
           await Ranking.upsert(dispensary.id, 'county', dispensary.county_id, compositeScore);
         }
 
-        // Upsert state ranking (all dispensaries have state_id)
+        // Upsert state ranking if we have state_id
         if (stateId) {
           await Ranking.upsert(dispensary.id, 'state', stateId, compositeScore);
         }
