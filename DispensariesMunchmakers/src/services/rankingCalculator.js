@@ -17,12 +17,14 @@ class RankingCalculator {
   }
 
   async calculateCompositeScore(dispensary) {
+    const stateId = dispensary.county_state_id || dispensary.dispensary_state_id || dispensary.state_id;
+
     const scores = {
       googleRating: await this.normalizeGoogleRating(dispensary.google_rating),
-      reviewVolume: await this.normalizeReviewVolume(dispensary.google_review_count, dispensary.county_id),
+      reviewVolume: await this.normalizeReviewVolume(dispensary.google_review_count, dispensary.county_id, stateId),
       externalListings: this.calculateExternalListingsScore(dispensary.external_listings),
-      userVotes: await this.calculateVoteScore(dispensary.id, dispensary.county_id),
-      pageViews: await this.calculatePageViewScore(dispensary.id, dispensary.county_id),
+      userVotes: await this.calculateVoteScore(dispensary.id, dispensary.county_id, stateId),
+      pageViews: await this.calculatePageViewScore(dispensary.id, dispensary.county_id, stateId),
       dataCompleteness: dispensary.data_completeness_score || 0,
       engagement: await this.calculateEngagementScore(dispensary.id)
     };
@@ -42,17 +44,26 @@ class RankingCalculator {
     return ((rating - 1) / 4) * 100;
   }
 
-  async normalizeReviewVolume(reviewCount, countyId) {
+  async normalizeReviewVolume(reviewCount, countyId, stateId) {
     if (!reviewCount || reviewCount === 0) return 0;
 
-    // Get max reviews in county for normalization
-    const result = await db.query(
-      `SELECT MAX(google_review_count) as max_reviews
-       FROM dispensaries
-       WHERE county_id = $1 AND is_active = true`,
-      [countyId]
-    );
+    // Get max reviews in county (or state if no county)
+    let query, params;
+    if (countyId) {
+      query = `SELECT MAX(google_review_count) as max_reviews
+               FROM dispensaries
+               WHERE county_id = $1 AND is_active = true`;
+      params = [countyId];
+    } else if (stateId) {
+      query = `SELECT MAX(google_review_count) as max_reviews
+               FROM dispensaries
+               WHERE state_id = $1 AND is_active = true`;
+      params = [stateId];
+    } else {
+      return 0;
+    }
 
+    const result = await db.query(query, params);
     const maxReviews = result.rows[0].max_reviews || 1;
 
     // Use logarithmic scale for review volume to prevent outliers from dominating
@@ -80,7 +91,7 @@ class RankingCalculator {
     return Math.min(score, 100);
   }
 
-  async calculateVoteScore(dispensaryId, countyId) {
+  async calculateVoteScore(dispensaryId, countyId, stateId) {
     try {
       // Get vote counts for this dispensary
       const voteCounts = await Vote.getVoteCounts(dispensaryId);
@@ -88,18 +99,31 @@ class RankingCalculator {
 
       if (netVotes <= 0) return 0;
 
-      // Get max net votes in county for normalization
-      const result = await db.query(
-        `SELECT d.id, SUM(v.vote_type) as net_votes
-         FROM dispensaries d
-         LEFT JOIN votes v ON d.id = v.dispensary_id
-         WHERE d.county_id = $1 AND d.is_active = true
-         GROUP BY d.id
-         ORDER BY net_votes DESC
-         LIMIT 1`,
-        [countyId]
-      );
+      // Get max net votes in county or state
+      let query, params;
+      if (countyId) {
+        query = `SELECT d.id, SUM(v.vote_type) as net_votes
+                 FROM dispensaries d
+                 LEFT JOIN votes v ON d.id = v.dispensary_id
+                 WHERE d.county_id = $1 AND d.is_active = true
+                 GROUP BY d.id
+                 ORDER BY net_votes DESC
+                 LIMIT 1`;
+        params = [countyId];
+      } else if (stateId) {
+        query = `SELECT d.id, SUM(v.vote_type) as net_votes
+                 FROM dispensaries d
+                 LEFT JOIN votes v ON d.id = v.dispensary_id
+                 WHERE d.state_id = $1 AND d.is_active = true
+                 GROUP BY d.id
+                 ORDER BY net_votes DESC
+                 LIMIT 1`;
+        params = [stateId];
+      } else {
+        return 0;
+      }
 
+      const result = await db.query(query, params);
       const maxNetVotes = result.rows[0]?.net_votes || 1;
 
       // Normalize to 0-100 scale
@@ -110,7 +134,7 @@ class RankingCalculator {
     }
   }
 
-  async calculatePageViewScore(dispensaryId, countyId) {
+  async calculatePageViewScore(dispensaryId, countyId, stateId) {
     try {
       // Get page views for last 30 days
       const result = await db.query(
@@ -125,18 +149,33 @@ class RankingCalculator {
 
       if (viewCount === 0) return 0;
 
-      // Get max views in county
-      const maxResult = await db.query(
-        `SELECT d.id, COUNT(pv.id) as view_count
-         FROM dispensaries d
-         LEFT JOIN page_views pv ON d.id = pv.dispensary_id
-           AND pv.created_at >= NOW() - INTERVAL '30 days'
-         WHERE d.county_id = $1 AND d.is_active = true
-         GROUP BY d.id
-         ORDER BY view_count DESC
-         LIMIT 1`,
-        [countyId]
-      );
+      // Get max views in county or state
+      let query, params;
+      if (countyId) {
+        query = `SELECT d.id, COUNT(pv.id) as view_count
+                 FROM dispensaries d
+                 LEFT JOIN page_views pv ON d.id = pv.dispensary_id
+                   AND pv.created_at >= NOW() - INTERVAL '30 days'
+                 WHERE d.county_id = $1 AND d.is_active = true
+                 GROUP BY d.id
+                 ORDER BY view_count DESC
+                 LIMIT 1`;
+        params = [countyId];
+      } else if (stateId) {
+        query = `SELECT d.id, COUNT(pv.id) as view_count
+                 FROM dispensaries d
+                 LEFT JOIN page_views pv ON d.id = pv.dispensary_id
+                   AND pv.created_at >= NOW() - INTERVAL '30 days'
+                 WHERE d.state_id = $1 AND d.is_active = true
+                 GROUP BY d.id
+                 ORDER BY view_count DESC
+                 LIMIT 1`;
+        params = [stateId];
+      } else {
+        return 0;
+      }
+
+      const maxResult = await db.query(query, params);
 
       const maxViews = maxResult.rows[0]?.view_count || 1;
 
@@ -173,11 +212,11 @@ class RankingCalculator {
     console.log('Starting ranking calculation...');
 
     try {
-      // Get all active dispensaries
+      // Get all active dispensaries (LEFT JOIN to include those without county)
       const result = await db.query(
-        `SELECT d.*, c.state_id
+        `SELECT d.*, c.state_id as county_state_id, d.state_id as dispensary_state_id
          FROM dispensaries d
-         JOIN counties c ON d.county_id = c.id
+         LEFT JOIN counties c ON d.county_id = c.id
          WHERE d.is_active = true`
       );
 
@@ -187,14 +226,21 @@ class RankingCalculator {
       let processed = 0;
 
       for (const dispensary of dispensaries) {
-        // Calculate composite score
+        // Calculate composite score (use state_id for normalization if no county)
         const compositeScore = await this.calculateCompositeScore(dispensary);
 
-        // Upsert county ranking
-        await Ranking.upsert(dispensary.id, 'county', dispensary.county_id, compositeScore);
+        // Get state_id (from county if available, otherwise from dispensary)
+        const stateId = dispensary.county_state_id || dispensary.dispensary_state_id;
 
-        // Upsert state ranking
-        await Ranking.upsert(dispensary.id, 'state', dispensary.state_id, compositeScore);
+        // Upsert county ranking ONLY if county_id exists
+        if (dispensary.county_id) {
+          await Ranking.upsert(dispensary.id, 'county', dispensary.county_id, compositeScore);
+        }
+
+        // Upsert state ranking (all dispensaries have state_id)
+        if (stateId) {
+          await Ranking.upsert(dispensary.id, 'state', stateId, compositeScore);
+        }
 
         processed++;
 

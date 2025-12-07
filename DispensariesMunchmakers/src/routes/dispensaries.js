@@ -5,6 +5,7 @@ const Dispensary = require('../models/Dispensary');
 const Ranking = require('../models/Ranking');
 const Vote = require('../models/Vote');
 const { getClientIP } = require('../middleware/analytics');
+const SchemaGenerator = require('../utils/schemaGenerator');
 
 // Individual dispensary detail page (check first if it has hyphens - dispensary slugs always have hyphens)
 router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res) => {
@@ -26,13 +27,26 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res) => {
     const clientIP = getClientIP(req);
     const canVote = await Vote.canVote(dispensary.id, clientIP);
 
+    // Generate schema.org structured data
+    const baseUrl = process.env.BASE_URL || 'https://bestdispensaries.munchmakers.com';
+    const schemas = {
+      business: SchemaGenerator.generateDispensarySchema(dispensary, baseUrl),
+      breadcrumb: SchemaGenerator.generateBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: dispensary.state_name, url: `/dispensaries/${dispensary.state_slug}` },
+        { name: dispensary.city, url: `/dispensaries/${dispensary.state_slug}/${dispensary.county_slug}` },
+        { name: dispensary.name, url: null }
+      ], baseUrl)
+    };
+
     res.render('dispensary', {
       title: `${dispensary.name} - ${dispensary.city}, ${dispensary.state_abbr} | Cannabis Dispensary`,
       dispensary,
       votes,
       recentVotes,
       canVote,
-      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      schemas,
+      baseUrl,
       meta: {
         description: `${dispensary.name} in ${dispensary.city}, ${dispensary.state_abbr}. ${dispensary.google_rating ? dispensary.google_rating + ' stars' : ''} ${dispensary.google_review_count ? '(' + dispensary.google_review_count + ' reviews)' : ''}. Address, hours, phone, and reviews.`,
         keywords: `${dispensary.name}, ${dispensary.city} dispensary, cannabis ${dispensary.city}, marijuana dispensary ${dispensary.state_abbr}`
