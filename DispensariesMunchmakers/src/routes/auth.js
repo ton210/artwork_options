@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const BusinessClaim = require('../models/BusinessClaim');
+const emailService = require('../services/emailService');
 
 /**
  * Register new user
@@ -28,6 +29,15 @@ router.post('/register', async (req, res) => {
 
     // Create user
     const { user, verificationToken } = await User.create(email, password, name);
+
+    // Send welcome email
+    try {
+      await emailService.sendWelcomeEmail(user);
+      await emailService.sendVerificationEmail(user, verificationToken);
+    } catch (emailError) {
+      console.error('Error sending welcome email:', emailError);
+      // Don't fail registration if email fails
+    }
 
     // Set session
     req.session.userId = user.id;
@@ -219,6 +229,14 @@ router.post('/claim', async (req, res) => {
 
     // Try auto-verification by email domain
     const autoVerified = await BusinessClaim.autoVerifyByDomain(claim.id);
+
+    // Send claim notification email
+    try {
+      const fullClaim = await BusinessClaim.findById(claim.id);
+      await emailService.sendClaimNotification(fullClaim, { name: 'Dispensary' }); // TODO: Get actual dispensary
+    } catch (emailError) {
+      console.error('Error sending claim email:', emailError);
+    }
 
     res.json({
       success: true,
