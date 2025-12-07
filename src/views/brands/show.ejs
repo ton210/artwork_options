@@ -1,129 +1,130 @@
-<%- include('../layouts/main', { content: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= brand.name %> - <%= brand.location_count %> dispensary locations. Find all <%= brand.name %> dispensaries with ratings, addresses, and reviews.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50">
+  <%- include('../partials/header') %>
 
-<div class="container mx-auto px-4 py-8">
-  <!-- Brand Header -->
-  <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-    <div class="flex items-start">
-      <% if (brand.logo_url) { %>
-        <img src="<%= brand.logo_url %>" alt="<%= brand.name %>" class="w-24 h-24 object-cover rounded-lg mr-6">
-      <% } else { %>
-        <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg mr-6 flex items-center justify-center text-white text-4xl font-bold">
-          <%= brand.name.charAt(0) %>
-        </div>
-      <% } %>
-
-      <div class="flex-1">
-        <div class="flex items-center mb-2">
-          <h1 class="text-4xl font-bold mr-4"><%= brand.name %></h1>
-          <% if (brand.is_franchise) { %>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Chain</span>
-          <% } %>
-        </div>
-
-        <div class="flex items-center text-lg mb-4">
-          <% if (brand.average_rating) { %>
-            <div class="flex items-center mr-6">
-              <span class="text-yellow-500 text-2xl mr-1">★</span>
-              <span class="font-bold text-2xl"><%= Number(brand.average_rating).toFixed(1) %></span>
-              <span class="text-gray-600 ml-1">/ 5</span>
+  <main>
+    <div class="container mx-auto px-4 py-8">
+      <!-- Brand Header -->
+      <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div class="flex items-start">
+          <% if (brand.logo_url) { %>
+            <img src="<%= brand.logo_url %>" alt="<%= brand.name %>" class="w-24 h-24 object-cover rounded-lg mr-6">
+          <% } else { %>
+            <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg mr-6 flex items-center justify-center text-white text-4xl font-bold">
+              <%= brand.name.charAt(0) %>
             </div>
           <% } %>
-          <div class="text-gray-600">
-            <strong><%= brand.location_count %></strong> location<%= brand.location_count !== 1 ? 's' : '' %>
-            <% if (brand.total_reviews) { %>
-              <span class="mx-2">•</span>
-              <strong><%= brand.total_reviews.toLocaleString() %></strong> total reviews
+
+          <div class="flex-1">
+            <div class="flex items-center mb-2">
+              <h1 class="text-4xl font-bold mr-4"><%= brand.name %></h1>
+              <% if (brand.is_franchise) { %>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Chain</span>
+              <% } %>
+            </div>
+
+            <div class="flex items-center text-lg mb-4">
+              <% if (brand.average_rating) { %>
+                <div class="flex items-center mr-6">
+                  <span class="text-yellow-500 text-2xl mr-1">★</span>
+                  <span class="font-bold text-2xl"><%= Number(brand.average_rating).toFixed(1) %></span>
+                  <span class="text-gray-600 ml-1">/ 5</span>
+                </div>
+              <% } %>
+              <div class="text-gray-600">
+                <strong><%= brand.location_count %></strong> location<%= brand.location_count !== 1 ? 's' : '' %>
+                <% if (brand.total_reviews) { %>
+                  <span class="mx-2">•</span>
+                  <strong><%= brand.total_reviews.toLocaleString() %></strong> total reviews
+                <% } %>
+              </div>
+            </div>
+
+            <% if (brand.website) { %>
+              <a href="<%= brand.website %>" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Visit Website
+              </a>
+            <% } %>
+
+            <% if (brand.description) { %>
+              <p class="mt-4 text-gray-700"><%= brand.description %></p>
             <% } %>
           </div>
         </div>
-
-        <% if (brand.website) { %>
-          <a href="<%= brand.website %>" target="_blank" rel="noopener" class="inline-flex items-center text-blue-600 hover:text-blue-800">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-            </svg>
-            Visit Website
-          </a>
-        <% } %>
-
-        <% if (brand.description) { %>
-          <p class="mt-4 text-gray-700"><%= brand.description %></p>
-        <% } %>
       </div>
-    </div>
-  </div>
 
-  <!-- Locations by State -->
-  <% if (Object.keys(locationsByState).length > 0) { %>
-    <h2 class="text-3xl font-bold mb-6"><%= brand.name %> Locations</h2>
+      <!-- Locations by State -->
+      <% if (Object.keys(locationsByState).length > 0) { %>
+        <h2 class="text-3xl font-bold mb-6"><%= brand.name %> Locations</h2>
 
-    <% Object.keys(locationsByState).sort().forEach(state => { %>
-      <div class="mb-8">
-        <h3 class="text-2xl font-bold mb-4"><%= state %> (<%= locationsByState[state].length %>)</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <% locationsByState[state].forEach(location => { %>
-            <a href="/dispensary/<%= location.slug %>" class="block bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-              <% if (location.logo_url || location.photos) { %>
-                <% const photo = location.logo_url || (location.photos && location.photos[0]); %>
-                <% if (photo) { %>
-                  <img src="<%= photo %>" alt="<%= location.name %>" class="w-full h-48 object-cover rounded-lg mb-4">
-                <% } %>
-              <% } %>
+        <% Object.keys(locationsByState).sort().forEach(state => { %>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4"><%= state %> (<%= locationsByState[state].length %>)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <% locationsByState[state].forEach(location => { %>
+                <a href="/dispensary/<%= location.slug %>" class="block bg-white rounded-lg shadow hover:shadow-lg transition p-6">
+                  <% if (location.logo_url || location.photos) { %>
+                    <% const photo = location.logo_url || (location.photos && location.photos[0]); %>
+                    <% if (photo) { %>
+                      <img src="<%= photo %>" alt="<%= location.name %>" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <% } %>
+                  <% } %>
 
-              <h4 class="text-xl font-bold mb-2"><%= location.name %></h4>
+                  <h4 class="text-xl font-bold mb-2"><%= location.name %></h4>
 
-              <div class="flex items-center mb-2">
-                <% if (location.google_rating) { %>
-                  <span class="text-yellow-500 mr-1">★</span>
-                  <span class="font-semibold mr-1"><%= Number(location.google_rating).toFixed(1) %></span>
-                  <span class="text-gray-500 text-sm">(<%= location.google_review_count || 0 %>)</span>
-                <% } %>
-              </div>
+                  <div class="flex items-center mb-2">
+                    <% if (location.google_rating) { %>
+                      <span class="text-yellow-500 mr-1">★</span>
+                      <span class="font-semibold mr-1"><%= Number(location.google_rating).toFixed(1) %></span>
+                      <span class="text-gray-500 text-sm">(<%= location.google_review_count || 0 %>)</span>
+                    <% } %>
+                  </div>
 
-              <p class="text-gray-600 text-sm mb-1">
-                <%= location.address_street %>
-              </p>
-              <p class="text-gray-600 text-sm">
-                <%= location.city %>, <%= location.state_abbr %> <%= location.zip %>
-              </p>
+                  <p class="text-gray-600 text-sm mb-1">
+                    <%= location.address_street %>
+                  </p>
+                  <p class="text-gray-600 text-sm">
+                    <%= location.city %>, <%= location.state_abbr %> <%= location.zip %>
+                  </p>
 
-              <% if (location.phone) { %>
-                <p class="text-blue-600 text-sm mt-2"><%= location.phone %></p>
-              <% } %>
-            </a>
-          <% }); %>
+                  <% if (location.phone) { %>
+                    <p class="text-blue-600 text-sm mt-2"><%= location.phone %></p>
+                  <% } %>
+                </a>
+              <% }); %>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+          <p class="text-gray-500">No locations found for this brand.</p>
         </div>
-      </div>
-    <% }); %>
-  <% } else { %>
-    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-      <p class="text-gray-500">No locations found for this brand.</p>
+      <% } %>
+
+      <!-- Lead Form -->
+      <%- include('../partials/leadForm', {
+        source: 'brand_page',
+        dispensaryName: brand.name
+      }) %>
+
+      <!-- MunchMakers Ad -->
+      <%- include('../partials/munchmakersAd') %>
     </div>
-  <% } %>
+  </main>
 
-  <!-- Lead Form -->
-  <%- include('../partials/leadForm', {
-    source: 'brand_page',
-    dispensaryName: brand.name
-  }) %>
-
-  <!-- MunchMakers Ad -->
-  <%- include('../partials/munchmakersAd') %>
-</div>
-
-<!-- Schema.org Markup -->
-<%- include('../partials/schema', {
-  type: 'Organization',
-  data: {
-    name: brand.name,
-    url: baseUrl + '/brands/' + brand.slug,
-    logo: brand.logo_url,
-    aggregateRating: brand.average_rating ? {
-      '@type': 'AggregateRating',
-      ratingValue: brand.average_rating,
-      reviewCount: brand.total_reviews || 0
-    } : null
-  }
-}) %>
-
-` }) %>
+  <%- include('../partials/footer') %>
+</body>
+</html>
