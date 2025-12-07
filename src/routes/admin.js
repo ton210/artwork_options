@@ -21,15 +21,27 @@ router.get('/login', (req, res) => {
 });
 
 // Login POST
-router.post('/login', loginLimiter, async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
 
+    console.log('Admin login attempt:', { username, hasPassword: !!password });
+
+    if (!username || !password) {
+      return res.render('admin/login', {
+        title: 'Admin Login - Dispensary Rankings',
+        error: 'Username and password are required'
+      });
+    }
+
     const isValid = await checkAdminCredentials(username, password);
+
+    console.log('Admin login validation result:', isValid);
 
     if (isValid) {
       req.session.isAdmin = true;
       req.session.username = username;
+      console.log('Admin login successful, redirecting');
       return res.redirect('/admin');
     }
 
@@ -42,7 +54,7 @@ router.post('/login', loginLimiter, async (req, res) => {
     console.error('Login error:', error);
     res.render('admin/login', {
       title: 'Admin Login - Dispensary Rankings',
-      error: 'An error occurred. Please try again.'
+      error: `Error: ${error.message}`
     });
   }
 });
