@@ -49,4 +49,28 @@ router.get('/terms', (req, res) => {
   });
 });
 
+// Login page
+router.get('/login', (req, res) => {
+  res.render('login', {
+    title: 'Login - Top Dispensaries 2026'
+  });
+});
+
+// Register page
+router.get('/register', (req, res) => {
+  res.render('register', {
+    title: 'Sign Up - Top Dispensaries 2026'
+  });
+});
+
+// Account page
+router.get('/account', (req, res) => {
+  if (!req.session.userId) {
+    return res.redirect('/login');
+  }
+  res.render('account', {
+    title: 'My Account - Top Dispensaries 2026'
+  });
+});
+
 module.exports = router;

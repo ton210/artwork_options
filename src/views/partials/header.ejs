@@ -15,10 +15,17 @@
       </div>
 
       <!-- Navigation -->
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex items-center space-x-6">
         <a href="/" class="text-gray-700 hover:text-green-600 font-medium">Home</a>
         <a href="/#states" class="text-gray-700 hover:text-green-600 font-medium">Browse States</a>
         <a href="/brands" class="text-gray-700 hover:text-green-600 font-medium">Top Brands</a>
+        <a href="/near-me" class="flex items-center gap-1 text-gray-700 hover:text-green-600 font-medium">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+          </svg>
+          Near Me
+        </a>
+        <div id="user-nav"></div>
         <a href="<%= MUNCHMAKERS_URL %>" target="_blank" class="text-green-600 hover:text-green-700 font-semibold">
           MunchMakers Store →
         </a>
@@ -63,4 +70,42 @@ function toggleMobileMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.classList.toggle('hidden');
 }
+
+// Load user navigation
+async function loadUserNav() {
+  try {
+    const response = await fetch('/auth/me');
+    const data = await response.json();
+
+    const userNavEl = document.getElementById('user-nav');
+    if (data.success && data.user) {
+      userNavEl.innerHTML = `
+        <div class="flex items-center gap-2">
+          <a href="/account" class="text-gray-700 hover:text-green-600 font-medium">${data.user.name}</a>
+          <button onclick="logout()" class="text-sm text-gray-500 hover:text-gray-700">Logout</button>
+        </div>
+      `;
+    } else {
+      userNavEl.innerHTML = `
+        <div class="flex items-center gap-2">
+          <a href="/login" class="text-gray-700 hover:text-green-600 font-medium">Login</a>
+          <a href="/register" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium">Sign Up</a>
+        </div>
+      `;
+    }
+  } catch (error) {
+    console.error('Error loading user nav:', error);
+  }
+}
+
+async function logout() {
+  try {
+    await fetch('/auth/logout', { method: 'POST' });
+    window.location.reload();
+  } catch (error) {
+    console.error('Error logging out:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadUserNav);
 </script>

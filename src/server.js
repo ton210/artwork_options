@@ -96,6 +96,7 @@ const pagesRoutes = require('./routes/pages');
 const sitemapRoutes = require('./routes/sitemap');
 const apiRoutes = require('./routes/api');
 const reviewRoutes = require('./routes/reviews');
+const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 
@@ -107,8 +108,16 @@ app.use('/', pagesRoutes);
 app.use('/', sitemapRoutes);
 app.use('/api', apiRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/auth', authRoutes);
 app.use('/admin', adminRoutes);
 app.use('/leads', leadRoutes);
+
+// Near Me page route
+app.get('/near-me', (req, res) => {
+  res.render('near-me', {
+    title: 'Dispensaries Near Me - Find Cannabis Dispensaries Nearby'
+  });
+});
 
 // 404 handler
 app.use((req, res) => {
