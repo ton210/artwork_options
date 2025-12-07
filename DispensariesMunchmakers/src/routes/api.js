@@ -214,4 +214,97 @@ router.get('/map/dispensary/:id', async (req, res) => {
   }
 });
 
+// Map API endpoints
+const { State, County } = require('../models/State');
+
+// Get dispensaries for county map
+router.get('/map/county/:stateSlug/:countySlug', async (req, res) => {
+  try {
+    const { stateSlug, countySlug} = req.params;
+
+    // Get county
+    const county = await County.findBySlug(countySlug, stateSlug);
+    if (!county) {
+      return res.status(404).json({ success: false, error: 'County not found' });
+    }
+
+    // Get dispensaries with location data
+    const result = await db.query(
+      `SELECT id, name, slug, lat, lng, address_street as address, city,
+              google_rating as rating, google_review_count as review_count
+       FROM dispensaries
+       WHERE county_id = $1 AND is_active = true
+         AND lat IS NOT NULL AND lng IS NOT NULL
+       ORDER BY google_rating DESC NULLS LAST, google_review_count DESC NULLS LAST
+       LIMIT 100`,
+      [county.id]
+    );
+
+    const dispensaries = result.rows.map(row => ({
+      id: row.id,
+      name: row.name,
+      slug: row.slug,
+      lat: parseFloat(row.lat),
+      lng: parseFloat(row.lng),
+      address: row.address,
+      rating: row.rating ? parseFloat(row.rating) : null,
+      reviewCount: row.review_count
+    }));
+
+    res.json({
+      success: true,
+      dispensaries
+    });
+
+  } catch (error) {
+    console.error('Error fetching county map data:', error);
+    res.status(500).json({ success: false, error: 'Failed to load map data' });
+  }
+});
+
+// Get dispensaries for state map
+router.get('/map/state/:stateSlug', async (req, res) => {
+  try {
+    const { stateSlug } = req.params;
+
+    // Get state
+    const state = await State.findBySlug(stateSlug);
+    if (!state) {
+      return res.status(404).json({ success: false, error: 'State not found' });
+    }
+
+    // Get dispensaries with location data
+    const result = await db.query(
+      `SELECT id, name, slug, lat, lng, address_street as address, city,
+              google_rating as rating, google_review_count as review_count
+       FROM dispensaries
+       WHERE state_id = $1 AND is_active = true
+         AND lat IS NOT NULL AND lng IS NOT NULL
+       ORDER BY google_rating DESC NULLS LAST, google_review_count DESC NULLS LAST
+       LIMIT 200`,
+      [state.id]
+    );
+
+    const dispensaries = result.rows.map(row => ({
+      id: row.id,
+      name: row.name,
+      slug: row.slug,
+      lat: parseFloat(row.lat),
+      lng: parseFloat(row.lng),
+      address: row.address,
+      rating: row.rating ? parseFloat(row.rating) : null,
+      reviewCount: row.review_count
+    }));
+
+    res.json({
+      success: true,
+      dispensaries
+    });
+
+  } catch (error) {
+    console.error('Error fetching state map data:', error);
+    res.status(500).json({ success: false, error: 'Failed to load map data' });
+  }
+});
+
 module.exports = router;
