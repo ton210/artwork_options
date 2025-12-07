@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-11-22T13:20:00.000Z",
+  "pairs": [
+    {
+      "prompt": "can you smoke the raw warning paper",
+      "response": "No, you should never smoke the RAW warning paper. It contains ink and chemicals not intended for combustion. The warning paper is there to remind you about the health risks of smoking, and it should be removed and discarded before rolling your joint. Smoking it could release toxic fumes and harsh chemicals."
+    }
+  ],
+  "targetKeyword": "raw warning paper",
+  "internalLinkSuggestions": "rolling papers, custom rolling papers",
+  "status": "pending",
+  "processedBy": "claude-code"
+}

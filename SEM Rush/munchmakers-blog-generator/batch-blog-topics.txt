@@ -1,0 +1,31 @@
+BATCH #3 - 15 BLOG POSTS TO CREATE
+
+Based on SEMrush keyword analysis and AI search trends:
+
+HIGH-PRIORITY (Top 5):
+1. Can You Smoke RAW Warning Paper (Pos 3-4, 480 vol) → Safety guide
+2. Electric Grinders for Weed (Pos 2, 1,300 vol) → Buyer's guide
+3. Square Grinders Guide (Pos 5, 2,900 vol!) → Shape comparison
+4. Boomers Grinder Review (Pos 3, 260 vol) → Coarse grind specialist
+5. Bamboo Trays Wholesale (Pos 1, 1,300 vol) → Already #1, reinforce
+
+MEDIUM-PRIORITY (Next 5):
+6. How to Clean a Grinder → Maintenance guide
+7. Grinder Teeth Types → Technical comparison
+8. Kief Catcher Grinders → 4-piece value prop
+9. RAW Papers Price Guide → Wholesale comparison
+10. Cool Weed Grinders → Unique designs
+
+BONUS LONG-TAIL (Final 5):
+11. Grinder Size Guide → Capacity matching
+12. Commercial Pre-Roll Grinders → B2B equipment
+13. Grinder Material Comparison → Aluminum vs Titanium
+14. Smell-Proof Storage Guide → Complete solutions
+15. Custom vs Generic Accessories ROI → Business analysis
+
+All should:
+- Target dispensary/B2B angle
+- Include 8-12 internal links to MunchMakers products
+- Have specific, detailed Imagen prompts (NO "8K", NO text/logos)
+- 1000-1500 words each
+- Article + FAQ schema markup

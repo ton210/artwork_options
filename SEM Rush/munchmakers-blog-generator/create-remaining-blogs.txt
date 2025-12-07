@@ -1,0 +1,15 @@
+REMAINING BLOGS TO CREATE:
+
+Blog #5 (1763804685764): Dispensary Profitability
+Blog #6 (1763804720767): Where to Buy Rolling Papers Online  
+Blog #7 (1763804743400): How to Choose Rolling Papers
+Blog #8 (1763804787038): Herb Grinder Cards
+Blog #9 (1763804816274): 420-Themed Merchandise
+
+Claude Code: Create output JSON files for these 5 blogs with:
+- Original SEO content (1000-1500 words each)
+- Strategic internal links (8-12 per post)
+- 3 Imagen3 prompts per post
+- Proper metadata
+
+Then publish all 5 in sequence!

@@ -101,7 +101,7 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                     </svg>
-                    <a href="<%= dispensary.website %>" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Visit Website →</a>
+                    <a href="<%= dispensary.website %>" target="_blank" rel="nofollow noopener" class="text-blue-600 hover:underline">Visit Website →</a>
                   </div>
                 <% } %>
 
@@ -151,13 +151,13 @@
             <h2 class="text-2xl font-bold mb-4">Find on Other Platforms</h2>
             <div class="flex gap-4">
               <% if (dispensary.external_listings.leafly) { %>
-                <a href="<%= dispensary.external_listings.leafly.url %>" target="_blank" class="flex-1 bg-green-50 border-2 border-green-600 rounded-lg p-4 hover:bg-green-100 transition">
+                <a href="<%= dispensary.external_listings.leafly.url %>" target="_blank" rel="nofollow noopener" class="flex-1 bg-green-50 border-2 border-green-600 rounded-lg p-4 hover:bg-green-100 transition">
                   <div class="font-bold text-green-700">Leafly</div>
                   <div class="text-sm text-gray-600"><%= dispensary.external_listings.leafly.title %></div>
                 </a>
               <% } %>
               <% if (dispensary.external_listings.weedmaps) { %>
-                <a href="<%= dispensary.external_listings.weedmaps.url %>" target="_blank" class="flex-1 bg-orange-50 border-2 border-orange-600 rounded-lg p-4 hover:bg-orange-100 transition">
+                <a href="<%= dispensary.external_listings.weedmaps.url %>" target="_blank" rel="nofollow noopener" class="flex-1 bg-orange-50 border-2 border-orange-600 rounded-lg p-4 hover:bg-orange-100 transition">
                   <div class="font-bold text-orange-700">Weedmaps</div>
                   <div class="text-sm text-gray-600"><%= dispensary.external_listings.weedmaps.title %></div>
                 </a>

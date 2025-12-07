@@ -1,0 +1,4807 @@
+{
+  "test_date": "2025-11-22T09:38:42.537963",
+  "total_urls_tested": 433,
+  "status_summary": {
+    "OK": 385,
+    "Not Found": 48
+  },
+  "results": [
+    {
+      "url": "http://www.munchmakers.com/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "http://www.munchmakers.com/",
+          "status": 301
+        },
+        {
+          "url": "https://www.munchmakers.com/",
+          "status": 301
+        }
+      ],
+      "response_time": 1546.01,
+      "error": null,
+      "page_type": "homepage"
+    },
+    {
+      "url": "https://cs.munchmakers.com/blog/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://cs.munchmakers.com/blog/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+      "redirect_chain": [],
+      "response_time": 2135.88,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://cs.munchmakers.com/blog/personalize-your-smoke-quality-custom-rolling-papers-in-just-10-days-cdc009/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://cs.munchmakers.com/blog/personalize-your-smoke-quality-custom-rolling-papers-in-just-10-days-cdc009/",
+      "redirect_chain": [],
+      "response_time": 1692.22,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://da.munchmakers.com/blog/roll-with-style-the-ultimate-guide-to-raw-rolling-papers-for-eco-friendly-smokers-73aa76/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://da.munchmakers.com/blog/roll-with-style-the-ultimate-guide-to-raw-rolling-papers-for-eco-friendly-smokers-73aa76/",
+      "redirect_chain": [],
+      "response_time": 1793.42,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://da.munchmakers.com/product/custom-glass-stash-jar",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://da.munchmakers.com/product/custom-glass-stash-jar",
+      "redirect_chain": [],
+      "response_time": 1914.62,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://de.munchmakers.com/blog/top-5-awesome-weed-grinders-to-elevate-your-herb-game/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://de.munchmakers.com/blog/top-5-awesome-weed-grinders-to-elevate-your-herb-game/",
+      "redirect_chain": [],
+      "response_time": 2114.58,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://de.munchmakers.com/cannabis-conferences-and-events-united-states-2025-2026/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://de.munchmakers.com/cannabis-conferences-and-events-united-states-2025-2026/",
+      "redirect_chain": [],
+      "response_time": 1726.7,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://fi.munchmakers.com/blog/top-picks-for-the-best-weed-grinder-in-2025/?setCurrencyId=2",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://fi.munchmakers.com/blog/top-picks-for-the-best-weed-grinder-in-2025/?setCurrencyId=2",
+      "redirect_chain": [],
+      "response_time": 2415.21,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://fi.munchmakers.com/product-category/metal-ashtrays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://fi.munchmakers.com/product-category/metal-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 1011.7,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://fr.munchmakers.com/product/custom-branded-matchbook",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://fr.munchmakers.com/product/custom-branded-matchbook",
+      "redirect_chain": [],
+      "response_time": 2255.42,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://hu.munchmakers.com/blog/master-the-art-of-rolling-your-ultimate-guide-to-cigarette-rolling-machines-768107/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://hu.munchmakers.com/blog/master-the-art-of-rolling-your-ultimate-guide-to-cigarette-rolling-machines-768107/",
+      "redirect_chain": [],
+      "response_time": 2085.96,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://lt.munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-grinder-for-kief-collection-30031c/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://lt.munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-grinder-for-kief-collection-30031c/",
+      "redirect_chain": [],
+      "response_time": 3216.49,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [],
+      "response_time": 422.39,
+      "error": null,
+      "page_type": "homepage"
+    },
+    {
+      "url": "https://munchmakers.com/blog/4-piece-grinder-vs-2-piece-grinder-what-grinder-should-you-get-it/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/4-piece-grinder-vs-2-piece-grinder-what-grinder-should-you-get-it/",
+      "redirect_chain": [],
+      "response_time": 644.19,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/best-bamboo-rolling-trays-quality-durability-style/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/best-bamboo-rolling-trays-quality-durability-style/",
+      "redirect_chain": [],
+      "response_time": 674.19,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/best-custom-dab-mats-enhance-your-dabbing-experience-9a5b8a/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/best-custom-dab-mats-enhance-your-dabbing-experience-9a5b8a/",
+      "redirect_chain": [],
+      "response_time": 603.9,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/best-dabber-pen-options-top-wax-vaporizers-for-concentrates/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/best-dabber-pen-options-top-wax-vaporizers-for-concentrates/",
+      "redirect_chain": [],
+      "response_time": 659.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+      "redirect_chain": [],
+      "response_time": 639.9,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/cannabis-promotional-products/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/cannabis-promotional-products/",
+      "redirect_chain": [],
+      "response_time": 740.58,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/choosing-the-ideal-ashtray-for-cannabis-smokers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/choosing-the-ideal-ashtray-for-cannabis-smokers/",
+      "redirect_chain": [],
+      "response_time": 613.52,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/choosing-the-perfect-grinder-for-your-cannabis-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/choosing-the-perfect-grinder-for-your-cannabis-experience/",
+      "redirect_chain": [],
+      "response_time": 527.08,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/choosing-the-right-lighter-essential-guide-and-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/choosing-the-right-lighter-essential-guide-and-tips/",
+      "redirect_chain": [],
+      "response_time": 585.21,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/craft-your-perfect-rolling-tray-a-step-by-step-diy-guide-for-personalized-smoking-bliss/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/craft-your-perfect-rolling-tray-a-step-by-step-diy-guide-for-personalized-smoking-bliss/",
+      "redirect_chain": [],
+      "response_time": 636.12,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/craft-your-unique-rolling-tray-a-complete-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/craft-your-unique-rolling-tray-a-complete-guide/",
+      "redirect_chain": [],
+      "response_time": 598.02,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/crafting-your-own-rolling-papers-a-complete-guide-22fc0c/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/crafting-your-own-rolling-papers-a-complete-guide-22fc0c/",
+      "redirect_chain": [],
+      "response_time": 551.9,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/create-your-own-custom-rolling-papers-a-step-by-step-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/create-your-own-custom-rolling-papers-a-step-by-step-guide/",
+      "redirect_chain": [],
+      "response_time": 515.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/custom-papers-online-design-and-print-unique-sizes-easily/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/custom-papers-online-design-and-print-unique-sizes-easily/",
+      "redirect_chain": [],
+      "response_time": 614.14,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/customize-your-smoke-sessions-a-guide-to-custom-roll-trays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/customize-your-smoke-sessions-a-guide-to-custom-roll-trays/",
+      "redirect_chain": [],
+      "response_time": 609.96,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/design-your-own-rolling-tray-a-step-by-step-tutorial/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/design-your-own-rolling-tray-a-step-by-step-tutorial/",
+      "redirect_chain": [],
+      "response_time": 584.73,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/different-types-of-ashtrays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/different-types-of-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 591.81,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/discover-the-art-of-custom-torch-lighters-style-function/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/discover-the-art-of-custom-torch-lighters-style-function/",
+      "redirect_chain": [],
+      "response_time": 606.21,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+      "redirect_chain": [],
+      "response_time": 642.34,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/discover-the-weed-grinder-card-the-future-of-cannabis-gear/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/discover-the-weed-grinder-card-the-future-of-cannabis-gear/",
+      "redirect_chain": [],
+      "response_time": 601.77,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/diy-rolling-tray-tutorial/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/diy-rolling-tray-tutorial/",
+      "redirect_chain": [],
+      "response_time": 662.87,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/electric-weed-grinders-revolutionizing-cannabis-preparation/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/electric-weed-grinders-revolutionizing-cannabis-preparation/",
+      "redirect_chain": [],
+      "response_time": 556.93,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-cannabis-experience-with-bamboo-joint-cases/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-cannabis-experience-with-bamboo-joint-cases/",
+      "redirect_chain": [],
+      "response_time": 531.64,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-experience-the-ultimate-guide-to-luxury-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-experience-the-ultimate-guide-to-luxury-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 591.65,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-herb-game-the-ultimate-guide-to-the-tectonic9-auto-dispensing-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-herb-game-the-ultimate-guide-to-the-tectonic9-auto-dispensing-grinder/",
+      "redirect_chain": [],
+      "response_time": 506.74,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-outdoor-space-the-ultimate-guide-to-vintage-antique-ashtray-stands/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-outdoor-space-the-ultimate-guide-to-vintage-antique-ashtray-stands/",
+      "redirect_chain": [],
+      "response_time": 553.63,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-rolling-experience-the-ultimate-guide-to-choosing-the-best-cool-rolling-tray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-rolling-experience-the-ultimate-guide-to-choosing-the-best-cool-rolling-tray/",
+      "redirect_chain": [],
+      "response_time": 584.59,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "redirect_chain": [],
+      "response_time": 640.6,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-smoking-ritual-the-ultimate-guide-to-ceramic-cigar-ashtrays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-smoking-ritual-the-ultimate-guide-to-ceramic-cigar-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 674.68,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/elevate-your-smoking-the-essential-weed-grinder-guide",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-smoking-the-essential-weed-grinder-guide/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/elevate-your-smoking-the-essential-weed-grinder-guide",
+          "status": 301
+        }
+      ],
+      "response_time": 785.33,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/enhance-your-smoke-choosing-the-perfect-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/enhance-your-smoke-choosing-the-perfect-rolling-papers/",
+      "redirect_chain": [],
+      "response_time": 538.34,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/essential-care-tips-for-your-wooden-ashtray-longevity/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/essential-care-tips-for-your-wooden-ashtray-longevity/",
+      "redirect_chain": [],
+      "response_time": 620.57,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/essential-guide-to-choosing-compact-lighters-for-outdoors/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/essential-guide-to-choosing-compact-lighters-for-outdoors/",
+      "redirect_chain": [],
+      "response_time": 580.49,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/essential-guide-to-choosing-the-best-electric-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/essential-guide-to-choosing-the-best-electric-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 544.56,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+      "redirect_chain": [],
+      "response_time": 572.19,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/everything-you-should-know-about-7-oh-kratom-before-trying-it/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/everything-you-should-know-about-7-oh-kratom-before-trying-it/",
+      "redirect_chain": [],
+      "response_time": 557.46,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/finding-your-perfect-grind-how-to-choose-the-right-grinder-size/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/finding-your-perfect-grind-how-to-choose-the-right-grinder-size/",
+      "redirect_chain": [],
+      "response_time": 587.22,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+      "redirect_chain": [],
+      "response_time": 567.46,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/gifts-for-smokers-ultimate-guide-with-50-perfect-presents-for-every-type-of-smoker/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/gifts-for-smokers-ultimate-guide-with-50-perfect-presents-for-every-type-of-smoker/",
+      "redirect_chain": [],
+      "response_time": 576.02,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-in-style-the-ultimate-guide-to-pretty-and-customizable-weed-grinders",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-in-style-the-ultimate-guide-to-pretty-and-customizable-weed-grinders/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/grind-in-style-the-ultimate-guide-to-pretty-and-customizable-weed-grinders",
+          "status": 301
+        }
+      ],
+      "response_time": 877.9,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-in-style-the-ultimate-guide-to-pretty-and-customizable-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-in-style-the-ultimate-guide-to-pretty-and-customizable-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 566.81,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-in-style-your-ultimate-guide-to-unique-herb-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-in-style-your-ultimate-guide-to-unique-herb-grinders/",
+      "redirect_chain": [],
+      "response_time": 535.56,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-it-your-way-creative-techniques-to-grind-weed-without-a-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-it-your-way-creative-techniques-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 589.31,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-like-a-pro-the-2024-essential-guide-to-choosing-the-best-weed-grinder-6e7da6/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-like-a-pro-the-2024-essential-guide-to-choosing-the-best-weed-grinder-6e7da6/",
+      "redirect_chain": [],
+      "response_time": 575.81,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-like-a-pro-the-top-cool-grinders-for-every-budget/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-like-a-pro-the-top-cool-grinders-for-every-budget/",
+      "redirect_chain": [],
+      "response_time": 542.16,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-like-a-pro-the-ultimate-guide-to-choosing-the-best-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-like-a-pro-the-ultimate-guide-to-choosing-the-best-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 634.76,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-right-a-complete-guide-to-choosing-the-perfect-herb-grinder-size/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-right-a-complete-guide-to-choosing-the-perfect-herb-grinder-size/",
+      "redirect_chain": [],
+      "response_time": 553.68,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-smart-the-ultimate-guide-to-choosing-the-best-automatic-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-smart-the-ultimate-guide-to-choosing-the-best-automatic-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 536.06,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-smarter-your-ultimate-guide-to-electric-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-smarter-your-ultimate-guide-to-electric-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 588.47,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grind-with-a-smile-your-ultimate-guide-to-funny-herb-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grind-with-a-smile-your-ultimate-guide-to-funny-herb-grinders/",
+      "redirect_chain": [],
+      "response_time": 600.85,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/grinders-decoded-your-ultimate-guide-to-choosing-the-perfect-size-for-weed/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/grinders-decoded-your-ultimate-guide-to-choosing-the-perfect-size-for-weed/",
+      "redirect_chain": [],
+      "response_time": 600.7,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/healthiest-rolling-papers-2025-top-brands-for-a-better-smoking-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/healthiest-rolling-papers-2025-top-brands-for-a-better-smoking-experience/",
+      "redirect_chain": [],
+      "response_time": 594.24,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/how-to-roll-a-joint/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-roll-a-joint/",
+      "redirect_chain": [],
+      "response_time": 560.79,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/how-to-roll-with-raw-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-roll-with-raw-papers/",
+      "redirect_chain": [],
+      "response_time": 517.28,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/how-to-sell-cannabis-accessories-in-california-a-munchmakers-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-sell-cannabis-accessories-in-california-a-munchmakers-guide/",
+      "redirect_chain": [],
+      "response_time": 565.65,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/how-to-store-thc-gummies-and-keep-them-fresh/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-store-thc-gummies-and-keep-them-fresh/",
+      "redirect_chain": [],
+      "response_time": 593.16,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/how-to-use-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-use-rolling-papers/",
+      "redirect_chain": [],
+      "response_time": 601.12,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/keep-your-customers-coming-back-with-custom-vape-pens/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/keep-your-customers-coming-back-with-custom-vape-pens/",
+      "redirect_chain": [],
+      "response_time": 517.04,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/light-up-your-life-the-ultimate-guide-to-custom-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/light-up-your-life-the-ultimate-guide-to-custom-lighters/",
+      "redirect_chain": [],
+      "response_time": 634.75,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-the-art-of-grinding-weed-for-optimal-enjoyment-7adb65/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-the-art-of-grinding-weed-for-optimal-enjoyment-7adb65/",
+      "redirect_chain": [],
+      "response_time": 573.06,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-the-art-of-rolling-the-ultimate-guide-to-cigarette-rolling-machines-4c6d80/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-the-art-of-rolling-the-ultimate-guide-to-cigarette-rolling-machines-4c6d80/",
+      "redirect_chain": [],
+      "response_time": 592.11,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-the-art-of-rolling-the-ultimate-guide-to-joint-rollers-for-effortless-enjoyment/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-the-art-of-rolling-the-ultimate-guide-to-joint-rollers-for-effortless-enjoyment/",
+      "redirect_chain": [],
+      "response_time": 575.59,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-the-art-of-rolling-your-ultimate-guide-to-cigarette-rolling-machines-768107/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-the-art-of-rolling-your-ultimate-guide-to-cigarette-rolling-machines-768107/",
+      "redirect_chain": [],
+      "response_time": 511.6,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-your-grind-the-essential-guide-to-three-piece-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-your-grind-the-essential-guide-to-three-piece-grinders/",
+      "redirect_chain": [],
+      "response_time": 539.44,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-your-herb-game-the-ultimate-guide-to-weed-grinders-and-storage-solutions/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-your-herb-game-the-ultimate-guide-to-weed-grinders-and-storage-solutions/",
+      "redirect_chain": [],
+      "response_time": 560.37,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-your-rolling-game-the-ultimate-guide-to-choosing-the-best-joint-roller-for-cannabis-enthusiasts/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-your-rolling-game-the-ultimate-guide-to-choosing-the-best-joint-roller-for-cannabis-enthusiasts/",
+      "redirect_chain": [],
+      "response_time": 656.49,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/master-your-rolling-game-the-ultimate-guide-to-choosing-the-perfect-rolling-machine/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-your-rolling-game-the-ultimate-guide-to-choosing-the-perfect-rolling-machine/",
+      "redirect_chain": [],
+      "response_time": 532.64,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-grinder-care-expert-tips-for-a-cleaner-better-grind/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-grinder-care-expert-tips-for-a-cleaner-better-grind/",
+      "redirect_chain": [],
+      "response_time": 532.37,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-grinder-parts-your-ultimate-guide-to-accessories-and-purchasing-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-grinder-parts-your-ultimate-guide-to-accessories-and-purchasing-tips/",
+      "redirect_chain": [],
+      "response_time": 544.78,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-rolling-trays-your-essential-guide-for-cannabis/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-rolling-trays-your-essential-guide-for-cannabis/",
+      "redirect_chain": [],
+      "response_time": 594.29,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-5-clever-ways-to-grind-weed-without-a-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-5-clever-ways-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 569.79,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-cannabis-tips-and-techniques/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-cannabis-tips-and-techniques/",
+      "redirect_chain": [],
+      "response_time": 545.34,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-creative-ways-to-grind-weed-without-a-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-creative-ways-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 544.61,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-how-to-prepare-weed-without-a-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-how-to-prepare-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 549.53,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-how-to-prepare-weed-without-a-grinder/?setCurrencyId=1",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-art-of-grinding-how-to-prepare-weed-without-a-grinder/?setCurrencyId=1",
+      "redirect_chain": [],
+      "response_time": 523.37,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-art-of-rolling-your-ultimate-guide-to-joint-rollers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-art-of-rolling-your-ultimate-guide-to-joint-rollers/",
+      "redirect_chain": [],
+      "response_time": 656.03,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-grind-a-complete-guide-to-electric-weed-grinders-5e3156/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-grind-a-complete-guide-to-electric-weed-grinders-5e3156/",
+      "redirect_chain": [],
+      "response_time": 557.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-the-grind-your-ultimate-guide-to-metal-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-the-grind-your-ultimate-guide-to-metal-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 577.11,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/mastering-your-grind-the-definitive-guide-to-choosing-the-best-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-your-grind-the-definitive-guide-to-choosing-the-best-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 651.84,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/maximize-cannabis-strength-with-cannabis-storage-containers-to-maintain-potency/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/maximize-cannabis-strength-with-cannabis-storage-containers-to-maintain-potency/",
+      "redirect_chain": [],
+      "response_time": 540.67,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/maximize-profits-the-case-for-wholesale-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/maximize-profits-the-case-for-wholesale-grinders/",
+      "redirect_chain": [],
+      "response_time": 560.84,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/maximize-your-rolling-experience-the-ultimate-guide-to-rolling-trays-with-compartments/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/maximize-your-rolling-experience-the-ultimate-guide-to-rolling-trays-with-compartments/",
+      "redirect_chain": [],
+      "response_time": 589.93,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/phatboy-xl-grinder-review-is-big-grinder-for-weed-really-better-b67799/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/phatboy-xl-grinder-review-is-big-grinder-for-weed-really-better-b67799/",
+      "redirect_chain": [],
+      "response_time": 615.15,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/revolutionizing-weed-grinders-the-power-of-ceramic-coating/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/revolutionizing-weed-grinders-the-power-of-ceramic-coating/",
+      "redirect_chain": [],
+      "response_time": 570.82,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-in-style-the-ultimate-guide-to-choosing-the-best-rolling-tray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-in-style-the-ultimate-guide-to-choosing-the-best-rolling-tray/",
+      "redirect_chain": [],
+      "response_time": 556.88,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-in-style-the-ultimate-guide-to-customizing-your-rolling-tray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-in-style-the-ultimate-guide-to-customizing-your-rolling-tray/",
+      "redirect_chain": [],
+      "response_time": 549.11,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-it-right-the-ultimate-guide-to-choosing-the-best-joint-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-it-right-the-ultimate-guide-to-choosing-the-best-joint-rolling-papers/",
+      "redirect_chain": [],
+      "response_time": 600.31,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-it-right-your-ultimate-guide-to-joint-rolling-papers-for-2024/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-it-right-your-ultimate-guide-to-joint-rolling-papers-for-2024/",
+      "redirect_chain": [],
+      "response_time": 528.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-choosing-the-best-rolling-machine-for-your-smoking-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-choosing-the-best-rolling-machine-for-your-smoking-experience/",
+      "redirect_chain": [],
+      "response_time": 608.83,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-joint-rollers-for-perfect-blunts-every-time",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-joint-rollers-for-perfect-blunts-every-time/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-joint-rollers-for-perfect-blunts-every-time",
+          "status": 301
+        }
+      ],
+      "response_time": 792.9,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-joint-rollers-for-perfect-blunts-every-time/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-guide-to-joint-rollers-for-perfect-blunts-every-time/",
+      "redirect_chain": [],
+      "response_time": 556.2,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-joint-roller-guide-for-every-cannabis-enthusiast/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-like-a-pro-the-ultimate-joint-roller-guide-for-every-cannabis-enthusiast/",
+      "redirect_chain": [],
+      "response_time": 572.91,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-like-a-pro-your-ultimate-guide-to-choosing-the-best-joint-roller-for-2024/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-like-a-pro-your-ultimate-guide-to-choosing-the-best-joint-roller-for-2024/",
+      "redirect_chain": [],
+      "response_time": 548.19,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-right-the-ultimate-guide-to-buying-bulk-rolling-papers-for-every-enthusiast-f9cf8c/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-right-the-ultimate-guide-to-buying-bulk-rolling-papers-for-every-enthusiast-f9cf8c/",
+      "redirect_chain": [],
+      "response_time": 528.24,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-smart-your-ultimate-guide-to-bulk-rolling-papers-choosing-raw-king-size-c84ef8/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-smart-your-ultimate-guide-to-bulk-rolling-papers-choosing-raw-king-size-c84ef8/",
+      "redirect_chain": [],
+      "response_time": 581.49,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-with-ease-the-ultimate-guide-to-choosing-your-perfect-joint-roller/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-with-ease-the-ultimate-guide-to-choosing-your-perfect-joint-roller/",
+      "redirect_chain": [],
+      "response_time": 547.1,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-d7cea0/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-d7cea0/",
+      "redirect_chain": [],
+      "response_time": 544.35,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-cigarette-rolling-machines-for-every-smoker-a940ab/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-cigarette-rolling-machines-for-every-smoker-a940ab/",
+      "redirect_chain": [],
+      "response_time": 524.7,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/roll-your-way-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-06bf76/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-your-way-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-06bf76/",
+      "redirect_chain": [],
+      "response_time": 575.82,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-in-style-the-complete-guide-to-weed-rolling-tray-sets/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-in-style-the-complete-guide-to-weed-rolling-tray-sets/",
+      "redirect_chain": [],
+      "response_time": 548.81,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-choosing-the-perfect-rolling-tray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-choosing-the-perfect-rolling-tray/",
+      "redirect_chain": [],
+      "response_time": 553.44,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-cute-and-girly-weed-rolling-tray-sets/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-cute-and-girly-weed-rolling-tray-sets/",
+      "redirect_chain": [],
+      "response_time": 609.1,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-wooden-rolling-trays-you-need-to-know/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-wooden-rolling-trays-you-need-to-know/",
+      "redirect_chain": [],
+      "response_time": 549.58,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-papers-the-future-of-unique-business-cards/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-papers-the-future-of-unique-business-cards/",
+      "redirect_chain": [],
+      "response_time": 561.41,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-tray-basics-choosing-the-right-size-and-style/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-tray-basics-choosing-the-right-size-and-style/",
+      "redirect_chain": [],
+      "response_time": 640.03,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-with-style-the-rise-of-business-card-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-with-style-the-rise-of-business-card-papers/",
+      "redirect_chain": [],
+      "response_time": 527.88,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/rolling-with-style-the-ultimate-humorous-guide-to-choosing-the-best-rolling-paper-brands/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-with-style-the-ultimate-humorous-guide-to-choosing-the-best-rolling-paper-brands/",
+      "redirect_chain": [],
+      "response_time": 554.02,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/smoking-evolution-hand-rolled-vs-pre-rolled-joints/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/smoking-evolution-hand-rolled-vs-pre-rolled-joints/",
+      "redirect_chain": [],
+      "response_time": 569.54,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/spark-your-creativity-the-magic-of-custom-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/spark-your-creativity-the-magic-of-custom-lighters/",
+      "redirect_chain": [],
+      "response_time": 537.99,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-barneys-farm-is-finally-opening-in-the-us/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-barneys-farm-is-finally-opening-in-the-us/",
+      "redirect_chain": [],
+      "response_time": 576.65,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-best-weed-stash-jar-for-your-cannabis-needs-ab629d/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-best-weed-stash-jar-for-your-cannabis-needs-ab629d/",
+      "redirect_chain": [],
+      "response_time": 602.75,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-complete-guide-to-weed-grinders-everything-you-need-to-know-in-2025/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-complete-guide-to-weed-grinders-everything-you-need-to-know-in-2025/",
+      "redirect_chain": [],
+      "response_time": 550.66,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-definitive-guide-to-metal-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-definitive-guide-to-metal-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 571.38,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-essential-guide-to-choosing-the-best-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-essential-guide-to-choosing-the-best-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 572.39,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-guide-to-custom-aluminum-pipes-features-benefits-and-uses/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-guide-to-custom-aluminum-pipes-features-benefits-and-uses/",
+      "redirect_chain": [],
+      "response_time": 601.53,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-history-and-evolution-of-custom-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-history-and-evolution-of-custom-lighters/",
+      "redirect_chain": [],
+      "response_time": 549.29,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-top-5-benefits-of-using-an-electric-herb-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-top-5-benefits-of-using-an-electric-herb-grinder/",
+      "redirect_chain": [],
+      "response_time": 553.89,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-top-weed-grinder-picks-for-2025-04078e/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-top-weed-grinder-picks-for-2025-04078e/",
+      "redirect_chain": [],
+      "response_time": 541.15,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-buyers-guide-to-weed-ashtrays-finding-the-perfect-ashtray-for-your-needs/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-buyers-guide-to-weed-ashtrays-finding-the-perfect-ashtray-for-your-needs/",
+      "redirect_chain": [],
+      "response_time": 644.01,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-grinder-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-grinder-guide/",
+      "redirect_chain": [],
+      "response_time": 542.92,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-ashtray-sand-enhance-your-smoking-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-ashtray-sand-enhance-your-smoking-experience/",
+      "redirect_chain": [],
+      "response_time": 533.91,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-auto-weed-grinders-the-tectonic-9/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-auto-weed-grinders-the-tectonic-9/",
+      "redirect_chain": [],
+      "response_time": 592.83,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-buying-custom-rolling-trays-wholesale/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-buying-custom-rolling-trays-wholesale/",
+      "redirect_chain": [],
+      "response_time": 548.75,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-between-3-part-and-4-piece-models/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-between-3-part-and-4-piece-models/",
+      "redirect_chain": [],
+      "response_time": 626.47,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-coarse-herb-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-coarse-herb-grinder/",
+      "redirect_chain": [],
+      "response_time": 567.39,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-grinder-for-kief-collection-30031c/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-grinder-for-kief-collection-30031c/",
+      "redirect_chain": [],
+      "response_time": 546.72,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-weed-grinder-2/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-weed-grinder-2/",
+      "redirect_chain": [],
+      "response_time": 604.52,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-choosing-the-best-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 728.54,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-custom-ashtrays-16912b/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-custom-ashtrays-16912b/",
+      "redirect_chain": [],
+      "response_time": 582.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-electric-weed-crushers-and-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-electric-weed-crushers-and-grinders/",
+      "redirect_chain": [],
+      "response_time": 558.22,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-engraving-your-lighter-tips-and-tricks/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-engraving-your-lighter-tips-and-tricks/",
+      "redirect_chain": [],
+      "response_time": 603.06,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-sharper-weed-grinders-cc806a/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-sharper-weed-grinders-cc806a/",
+      "redirect_chain": [],
+      "response_time": 526.36,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-the-3-inch-herb-grinder-for-culinary-and-herbal-enthusiasts/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-the-3-inch-herb-grinder-for-culinary-and-herbal-enthusiasts/",
+      "redirect_chain": [],
+      "response_time": 587.35,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-the-best-grinder-for-kief-collection-99fca0/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-the-best-grinder-for-kief-collection-99fca0/",
+      "redirect_chain": [],
+      "response_time": 530.48,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-three-chamber-herb-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-three-chamber-herb-grinders/",
+      "redirect_chain": [],
+      "response_time": 607.73,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-weed-grinders-types-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-weed-grinders-types-and-buying-tips/",
+      "redirect_chain": [],
+      "response_time": 602.1,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-weed-grinders-with-kief-catchers-2/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-weed-grinders-with-kief-catchers-2/",
+      "redirect_chain": [],
+      "response_time": 561.73,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-guide-to-weed-stash-boxes-secure-discreet-storage-solutions-for-2024/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-guide-to-weed-stash-boxes-secure-discreet-storage-solutions-for-2024/",
+      "redirect_chain": [],
+      "response_time": 569.25,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/the-ultimate-weed-storage-box-for-discreet-and-safe-keeping-4c2d3d/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-ultimate-weed-storage-box-for-discreet-and-safe-keeping-4c2d3d/",
+      "redirect_chain": [],
+      "response_time": 533.28,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/titanium-vs-aluminum-grinders-which-is-worth-the-upgrade/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/titanium-vs-aluminum-grinders-which-is-worth-the-upgrade/",
+      "redirect_chain": [],
+      "response_time": 552.37,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-10-best-rolling-papers-for-a-smooth-smoking-experience",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-10-best-rolling-papers-for-a-smooth-smoking-experience/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/top-10-best-rolling-papers-for-a-smooth-smoking-experience",
+          "status": 301
+        }
+      ],
+      "response_time": 805.36,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-10-best-rolling-papers-for-a-smooth-smoking-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-10-best-rolling-papers-for-a-smooth-smoking-experience/",
+      "redirect_chain": [],
+      "response_time": 563.79,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-10-custom-smoking-accessories-for-every-enthusiast/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-10-custom-smoking-accessories-for-every-enthusiast/",
+      "redirect_chain": [],
+      "response_time": 571.51,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-5-awesome-weed-grinders-to-elevate-your-herb-game/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-5-awesome-weed-grinders-to-elevate-your-herb-game/",
+      "redirect_chain": [],
+      "response_time": 591.63,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-ashtrays-for-home-choose-the-perfect-blend-of-style-and-functionality/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-ashtrays-for-home-choose-the-perfect-blend-of-style-and-functionality/",
+      "redirect_chain": [],
+      "response_time": 574.1,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-choices-for-lighters-personalised-elevate-your-style-with-custom-designs/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-choices-for-lighters-personalised-elevate-your-style-with-custom-designs/",
+      "redirect_chain": [],
+      "response_time": 707.85,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-cool-weed-grinders-enhance-your-herb-experience",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-cool-weed-grinders-enhance-your-herb-experience/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/top-cool-weed-grinders-enhance-your-herb-experience",
+          "status": 301
+        }
+      ],
+      "response_time": 835.61,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-cool-weed-grinders-enhance-your-herb-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-cool-weed-grinders-enhance-your-herb-experience/",
+      "redirect_chain": [],
+      "response_time": 519.35,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-custom-herb-grinders-for-a-personalized-grinding-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-custom-herb-grinders-for-a-personalized-grinding-experience/",
+      "redirect_chain": [],
+      "response_time": 583.66,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-custom-lighters-for-personalized-style-dd1bfb/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-custom-lighters-for-personalized-style-dd1bfb/",
+      "redirect_chain": [],
+      "response_time": 560.23,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-custom-vape-pen-designs-elevate-your-vaping-experience-8df3fd/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-custom-vape-pen-designs-elevate-your-vaping-experience-8df3fd/",
+      "redirect_chain": [],
+      "response_time": 604.53,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-electric-grinders-for-weed-elevate-your-cannabis-experience-with-ease/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-electric-grinders-for-weed-elevate-your-cannabis-experience-with-ease/",
+      "redirect_chain": [],
+      "response_time": 559.98,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-picks-for-custom-matches-enhance-your-event-today",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-picks-for-custom-matches-enhance-your-event-today/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/top-picks-for-custom-matches-enhance-your-event-today",
+          "status": 301
+        }
+      ],
+      "response_time": 938.6,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+      "redirect_chain": [],
+      "response_time": 690.83,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-pocket-weed-grinder-options-of-2025-compact-efficient-choices/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-pocket-weed-grinder-options-of-2025-compact-efficient-choices/",
+      "redirect_chain": [],
+      "response_time": 600.14,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-quality-custom-grinders-for-personalized-herb-enjoyment/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-quality-custom-grinders-for-personalized-herb-enjoyment/",
+      "redirect_chain": [],
+      "response_time": 578.37,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-quality-weed-pouches-wholesale-for-cannabis-packaging-needs/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-quality-weed-pouches-wholesale-for-cannabis-packaging-needs/",
+      "redirect_chain": [],
+      "response_time": 523.17,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-rolling-paper-brands-of-2024-healthier-choices-for-a-better-smoking-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-rolling-paper-brands-of-2024-healthier-choices-for-a-better-smoking-experience/",
+      "redirect_chain": [],
+      "response_time": 609.26,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-tips-to-keep-cannabis-storage-fresh-and-effective/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-tips-to-keep-cannabis-storage-fresh-and-effective/",
+      "redirect_chain": [],
+      "response_time": 551.23,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-weed-ashtray-features-your-smoking-setup-needs/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-weed-ashtray-features-your-smoking-setup-needs/",
+      "redirect_chain": [],
+      "response_time": 617.63,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/top-weed-pouch-smell-proof-options-for-discreet-storage/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-weed-pouch-smell-proof-options-for-discreet-storage/",
+      "redirect_chain": [],
+      "response_time": 551.36,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/transform-your-gardening-game-the-ultimate-guide-to-electric-weed-crushers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/transform-your-gardening-game-the-ultimate-guide-to-electric-weed-crushers/",
+      "redirect_chain": [],
+      "response_time": 602.09,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience",
+          "status": 301
+        }
+      ],
+      "response_time": 782.18,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "redirect_chain": [],
+      "response_time": 529.54,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-coke-grinders-guide-features-benefits-custom-options-revealed/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-coke-grinders-guide-features-benefits-custom-options-revealed/",
+      "redirect_chain": [],
+      "response_time": 572.74,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-electric-pot-grinder-guide-unleash-flavor-efficiency-with-kief-catchers-aad4f5/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-electric-pot-grinder-guide-unleash-flavor-efficiency-with-kief-catchers-aad4f5/",
+      "redirect_chain": [],
+      "response_time": 529.26,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-guide-to-ashtrays-features-benefits-and-buying-tips-for-smokers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-guide-to-ashtrays-features-benefits-and-buying-tips-for-smokers/",
+      "redirect_chain": [],
+      "response_time": 564.31,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-guide-to-automatic-weed-grinders-features-benefits-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-guide-to-automatic-weed-grinders-features-benefits-and-buying-tips/",
+      "redirect_chain": [],
+      "response_time": 530.66,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-guide-to-choosing-the-perfect-car-ashtray-features-benefits-and-top-picks/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-guide-to-choosing-the-perfect-car-ashtray-features-benefits-and-top-picks/",
+      "redirect_chain": [],
+      "response_time": 574.38,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-guide-to-choosing-the-perfect-extra-large-glass-ashtray-features-benefits-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-guide-to-choosing-the-perfect-extra-large-glass-ashtray-features-benefits-buying-tips/",
+      "redirect_chain": [],
+      "response_time": 587.19,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-guide-to-choosing-your-perfect-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-guide-to-choosing-your-perfect-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 546.81,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/ultimate-guide-to-custom-grinders-style-meets-function/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-guide-to-custom-grinders-style-meets-function/",
+      "redirect_chain": [],
+      "response_time": 567.82,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unleash-flavor-why-ceramic-weed-grinders-are-a-must-have-for-herb-lovers",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unleash-flavor-why-ceramic-weed-grinders-are-a-must-have-for-herb-lovers/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/unleash-flavor-why-ceramic-weed-grinders-are-a-must-have-for-herb-lovers",
+          "status": 301
+        }
+      ],
+      "response_time": 745.92,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unleash-flavor-why-ceramic-weed-grinders-are-a-must-have-for-herb-lovers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unleash-flavor-why-ceramic-weed-grinders-are-a-must-have-for-herb-lovers/",
+      "redirect_chain": [],
+      "response_time": 538.09,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unleash-the-power-of-cool-the-ultimate-guide-to-stylish-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unleash-the-power-of-cool-the-ultimate-guide-to-stylish-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 612.5,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-the-power-of-coke-grinders-your-ultimate-guide-to-features-benefits-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-the-power-of-coke-grinders-your-ultimate-guide-to-features-benefits-and-buying-tips/",
+      "redirect_chain": [],
+      "response_time": 626.04,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-the-power-of-kief-the-ultimate-guide-to-choosing-the-best-grinder-for-collection-db9be3/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-the-power-of-kief-the-ultimate-guide-to-choosing-the-best-grinder-for-collection-db9be3/",
+      "redirect_chain": [],
+      "response_time": 566.99,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-the-ultimate-rolling-experience-why-every-enthusiast-needs-a-magnetic-rolling-tray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-the-ultimate-rolling-experience-why-every-enthusiast-needs-a-magnetic-rolling-tray/",
+      "redirect_chain": [],
+      "response_time": 598.55,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-the-ultimate-rolling-experience-your-complete-guide-to-magnetic-rolling-trays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-the-ultimate-rolling-experience-your-complete-guide-to-magnetic-rolling-trays/",
+      "redirect_chain": [],
+      "response_time": 546.49,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-your-creativity-the-ultimate-guide-to-blank-rolling-trays-customization",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-your-creativity-the-ultimate-guide-to-blank-rolling-trays-customization/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/unlock-your-creativity-the-ultimate-guide-to-blank-rolling-trays-customization",
+          "status": 301
+        }
+      ],
+      "response_time": 812.49,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-your-perfect-roll-the-essential-guide-to-rolling-trays-with-compartments/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-your-perfect-roll-the-essential-guide-to-rolling-trays-with-compartments/",
+      "redirect_chain": [],
+      "response_time": 555.91,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlock-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlock-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "redirect_chain": [],
+      "response_time": 568.56,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder-3",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder-3/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder-3",
+          "status": 301
+        }
+      ],
+      "response_time": 808.81,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder-3/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder-3/",
+      "redirect_chain": [],
+      "response_time": 601.15,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unlocking-the-price-how-much-should-you-pay-for-raw-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlocking-the-price-how-much-should-you-pay-for-raw-rolling-papers/",
+      "redirect_chain": [],
+      "response_time": 564.26,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unrolling-the-price-how-much-do-raw-papers-really-cost/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unrolling-the-price-how-much-do-raw-papers-really-cost/",
+      "redirect_chain": [],
+      "response_time": 535.56,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/unrolling-the-truth-how-much-do-raw-papers-really-cost/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unrolling-the-truth-how-much-do-raw-papers-really-cost/",
+      "redirect_chain": [],
+      "response_time": 516.74,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/why-a-good-grinder-is-essential-for-your-cannabis-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/why-a-good-grinder-is-essential-for-your-cannabis-experience/",
+      "redirect_chain": [],
+      "response_time": 529.11,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/why-wood-ashtrays-are-making-a-comeback-in-the-smoking-world/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/why-wood-ashtrays-are-making-a-comeback-in-the-smoking-world/",
+      "redirect_chain": [],
+      "response_time": 640.47,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-essential-guide-to-grinder-parts-maintenance/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-essential-guide-to-grinder-parts-maintenance/",
+      "redirect_chain": [],
+      "response_time": 636.43,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-guide-to-mastering-a-square-wood-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-guide-to-mastering-a-square-wood-grinder/",
+      "redirect_chain": [],
+      "response_time": 570.15,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-guide-to-tobacco-grinding-04bb77/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-guide-to-tobacco-grinding-04bb77/",
+      "redirect_chain": [],
+      "response_time": 553.71,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-4-piece-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-4-piece-grinders/",
+      "redirect_chain": [],
+      "response_time": 596.76,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-affordable-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-affordable-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 580.72,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-buying-weed-grinders",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-buying-weed-grinders/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/blog/your-ultimate-guide-to-buying-weed-grinders",
+          "status": 301
+        }
+      ],
+      "response_time": 829.16,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-buying-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-buying-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 575.41,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-chromium-crushers-for-epic-herb-grinding/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-chromium-crushers-for-epic-herb-grinding/",
+      "redirect_chain": [],
+      "response_time": 670.82,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-coarse-weed-grinders-the-boomers-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-coarse-weed-grinders-the-boomers-experience/",
+      "redirect_chain": [],
+      "response_time": 603.57,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-finding-the-perfect-tobacco-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-finding-the-perfect-tobacco-grinder/",
+      "redirect_chain": [],
+      "response_time": 564.72,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-small-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-small-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 559.58,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-guide-to-the-biggest-grinders-on-the-market-701778/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-guide-to-the-biggest-grinders-on-the-market-701778/",
+      "redirect_chain": [],
+      "response_time": 574.86,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-herb-grinding-companion/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-herb-grinding-companion/",
+      "redirect_chain": [],
+      "response_time": 573.8,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/your-ultimate-purchasing-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/your-ultimate-purchasing-guide/",
+      "redirect_chain": [],
+      "response_time": 573.29,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/blog/zinc-vs-aluminum-which-grinder-is-best-for-your-dispensary/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/zinc-vs-aluminum-which-grinder-is-best-for-your-dispensary/",
+      "redirect_chain": [],
+      "response_time": 588.0,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/cannabis-conferences-and-events-united-states-2025-2026/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/cannabis-conferences-and-events-united-states-2025-2026/",
+      "redirect_chain": [],
+      "response_time": 581.4,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://munchmakers.com/company/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/company/",
+      "redirect_chain": [],
+      "response_time": 542.15,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://munchmakers.com/custom-magnify-light-up-jar",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-magnify-light-up-jar",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/custom-magnify-light-up-jar",
+          "status": 301
+        }
+      ],
+      "response_time": 940.95,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://munchmakers.com/custom-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-rolling-trays",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/custom-rolling-tray",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/product/custom-rolling-tray",
+          "status": 301
+        }
+      ],
+      "response_time": 1117.71,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/best-dabber-pen-options-top-wax-vaporizers-for-concentrates/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/best-dabber-pen-options-top-wax-vaporizers-for-concentrates/",
+      "redirect_chain": [],
+      "response_time": 541.36,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/design-your-own-ashtray-a-guide-to-customization/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/design-your-own-ashtray-a-guide-to-customization/",
+      "redirect_chain": [],
+      "response_time": 473.39,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/elevate-your-brand-with-custom-bulk-lighters/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/elevate-your-brand-with-custom-bulk-lighters/",
+      "redirect_chain": [],
+      "response_time": 550.43,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/elevate-your-smoking-experience-the-power-of-weed-grinders/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/elevate-your-smoking-experience-the-power-of-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 581.44,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/elevate-your-smoking-experience-the-ultimate-guide-to-glass-ashtrays/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/elevate-your-smoking-experience-the-ultimate-guide-to-glass-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 563.83,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/get-your-grind-on-the-ultimate-guide-to-funny-herb-grinders-smell-proof-options-d57fa0/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/get-your-grind-on-the-ultimate-guide-to-funny-herb-grinders-smell-proof-options-d57fa0/",
+      "redirect_chain": [],
+      "response_time": 667.24,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/grind-like-a-pro-the-ultimate-guide-to-choosing-the-best-weed-grinders/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/grind-like-a-pro-the-ultimate-guide-to-choosing-the-best-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 590.01,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/how-to-roll-a-joint/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/how-to-roll-a-joint/",
+      "redirect_chain": [],
+      "response_time": 551.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/mastering-the-art-of-grinding-5-clever-ways-to-grind-weed-without-a-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/mastering-the-art-of-grinding-5-clever-ways-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 1088.65,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/roll-in-style-the-ultimate-guide-to-choosing-the-perfect-cannabis-rolling-tray/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/roll-in-style-the-ultimate-guide-to-choosing-the-perfect-cannabis-rolling-tray/",
+      "redirect_chain": [],
+      "response_time": 543.35,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/ultimate-guide-to-choosing-the-perfect-marijuana-grinder-features-benefits-boomers-grinders-explained/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/ultimate-guide-to-choosing-the-perfect-marijuana-grinder-features-benefits-boomers-grinders-explained/",
+      "redirect_chain": [],
+      "response_time": 523.6,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/blog/uncover-the-timeless-elegance-of-vintage-crystal-ashtrays-a-collectors-guide/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/blog/uncover-the-timeless-elegance-of-vintage-crystal-ashtrays-a-collectors-guide/",
+      "redirect_chain": [],
+      "response_time": 604.91,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/de/cannabis-promotional-products/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/cannabis-promotional-products/",
+      "redirect_chain": [],
+      "response_time": 545.88,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/de/product-category/custom-vape-pen/?setCurrencyId=1&page=2",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/de/product-category/custom-vape-pen/?setCurrencyId=1&page=2",
+      "redirect_chain": [],
+      "response_time": 519.42,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/es",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es",
+      "redirect_chain": [],
+      "response_time": 498.39,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/elevate-your-smoking-experience-the-ultimate-guide-to-crystal-glass-ashtrays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/elevate-your-smoking-experience-the-ultimate-guide-to-crystal-glass-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 727.15,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+      "redirect_chain": [],
+      "response_time": 687.98,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/grind-and-shine-the-ultimate-guide-to-cleaning-your-grinder-with-a-fun-twist/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/grind-and-shine-the-ultimate-guide-to-cleaning-your-grinder-with-a-fun-twist/",
+      "redirect_chain": [],
+      "response_time": 764.97,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/grind-it-right-your-complete-guide-to-choosing-the-perfect-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/grind-it-right-your-complete-guide-to-choosing-the-perfect-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 720.12,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/grinder-cards-101-the-ultimate-guide-to-convenient-and-compact-herb-grinding-d06e84/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/grinder-cards-101-the-ultimate-guide-to-convenient-and-compact-herb-grinding-d06e84/",
+      "redirect_chain": [],
+      "response_time": 704.46,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/grinder-cleaning-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/grinder-cleaning-guide/",
+      "redirect_chain": [],
+      "response_time": 728.45,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/grinding-it-right-the-complete-guide-to-choosing-the-best-weed-grinder-for-optimal-enjoyment/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/grinding-it-right-the-complete-guide-to-choosing-the-best-weed-grinder-for-optimal-enjoyment/",
+      "redirect_chain": [],
+      "response_time": 735.42,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/master-the-art-of-rolling-your-ultimate-guide-to-cigarette-rolling-machines-768107/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/master-the-art-of-rolling-your-ultimate-guide-to-cigarette-rolling-machines-768107/",
+      "redirect_chain": [],
+      "response_time": 689.56,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/master-the-art-of-rolling-your-ultimate-guide-to-joint-rollers-top-picks-for-2023/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/master-the-art-of-rolling-your-ultimate-guide-to-joint-rollers-top-picks-for-2023/",
+      "redirect_chain": [],
+      "response_time": 725.53,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/mastering-the-art-of-grinding-5-clever-ways-to-grind-weed-without-a-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/mastering-the-art-of-grinding-5-clever-ways-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 718.51,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/rolling-in-style-the-complete-guide-to-weed-rolling-tray-sets/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/rolling-in-style-the-complete-guide-to-weed-rolling-tray-sets/",
+      "redirect_chain": [],
+      "response_time": 706.93,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/rolling-your-own-the-ultimate-guide-to-choosing-the-best-smoking-paper-e9e5d8/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/rolling-your-own-the-ultimate-guide-to-choosing-the-best-smoking-paper-e9e5d8/",
+      "redirect_chain": [],
+      "response_time": 697.38,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/the-ultimate-guide-to-weed-grinders-types-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/the-ultimate-guide-to-weed-grinders-types-and-buying-tips/",
+      "redirect_chain": [],
+      "response_time": 723.95,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/the-ultimate-guide-to-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/the-ultimate-guide-to-weed-grinders/",
+      "redirect_chain": [],
+      "response_time": 736.16,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+      "redirect_chain": [],
+      "response_time": 733.99,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "redirect_chain": [],
+      "response_time": 724.24,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/ultimate-guide-to-choosing-the-perfect-marijuana-grinder-features-benefits-boomers-grinders-explained/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/ultimate-guide-to-choosing-the-perfect-marijuana-grinder-features-benefits-boomers-grinders-explained/",
+      "redirect_chain": [],
+      "response_time": 676.86,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/blog/why-grinder-weed-is-the-key-to-a-better-smoking-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/why-grinder-weed-is-the-key-to-a-better-smoking-experience/",
+      "redirect_chain": [],
+      "response_time": 707.69,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/es/product/custom-1-14-size-rolling-papers",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/product/custom-1-14-size-rolling-papers",
+      "redirect_chain": [],
+      "response_time": 935.72,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/es/product/custom-1-14-size-rolling-papers?rating=4",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/product/custom-1-14-size-rolling-papers?rating=4",
+      "redirect_chain": [],
+      "response_time": 901.77,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/es/product/custom-vape-pen-battery",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/product/custom-vape-pen-battery",
+      "redirect_chain": [],
+      "response_time": 935.95,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/es/product/custom-wooden-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/product/custom-wooden-rolling-tray",
+      "redirect_chain": [],
+      "response_time": 869.98,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/es/product/official-bic-logo-lighters-single-imprint",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/product/official-bic-logo-lighters-single-imprint",
+      "redirect_chain": [],
+      "response_time": 942.85,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/es/the-ultimate-buyers-guide-to-weed-ashtrays-finding-the-perfect-ashtray-for-your-needs/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/the-ultimate-buyers-guide-to-weed-ashtrays-finding-the-perfect-ashtray-for-your-needs/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/es/the-ultimate-buyers-guide-to-weed-ashtrays-finding-the-perfect-ashtray-for-your-needs/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/es/blog/the-ultimate-buyers-guide-to-weed-ashtrays-finding-the-perfect-ashtray-for-your-needs",
+          "status": 301
+        }
+      ],
+      "response_time": 1230.58,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/es/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/es/top-picks-for-lighters-bic-best-options-for-everyday-use/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/es/blog/top-picks-for-lighters-bic-best-options-for-everyday-use",
+          "status": 301
+        }
+      ],
+      "response_time": 1152.53,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/es/ultimate-guide-to-ashtrays-features-benefits-and-buying-tips-for-smokers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es/blog/ultimate-guide-to-ashtrays-features-benefits-and-buying-tips-for-smokers/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/es/ultimate-guide-to-ashtrays-features-benefits-and-buying-tips-for-smokers/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/es/blog/ultimate-guide-to-ashtrays-features-benefits-and-buying-tips-for-smokers",
+          "status": 301
+        }
+      ],
+      "response_time": 1110.18,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/grind-it-your-way-creative-techniques-to-grind-weed-without-a-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/grind-it-your-way-creative-techniques-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 588.31,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/master-the-art-of-grinding-weed-for-optimal-enjoyment-7adb65/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/master-the-art-of-grinding-weed-for-optimal-enjoyment-7adb65/",
+      "redirect_chain": [],
+      "response_time": 531.69,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/mastering-grinder-care-expert-tips-for-a-cleaner-better-grind/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/mastering-grinder-care-expert-tips-for-a-cleaner-better-grind/",
+      "redirect_chain": [],
+      "response_time": 526.73,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/mastering-the-art-of-rolling-your-ultimate-guide-to-joint-rollers/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/mastering-the-art-of-rolling-your-ultimate-guide-to-joint-rollers/",
+      "redirect_chain": [],
+      "response_time": 500.69,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/roll-your-own-the-ultimate-guide-to-cigarette-rolling-machines-for-smokers-c653d2/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/roll-your-own-the-ultimate-guide-to-cigarette-rolling-machines-for-smokers-c653d2/",
+      "redirect_chain": [],
+      "response_time": 524.56,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/top-5-awesome-weed-grinders-to-elevate-your-herb-game/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/top-5-awesome-weed-grinders-to-elevate-your-herb-game/",
+      "redirect_chain": [],
+      "response_time": 552.46,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/top-custom-ashtrays-for-personalized-smoking-accessories-1abb7a/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/top-custom-ashtrays-for-personalized-smoking-accessories-1abb7a/",
+      "redirect_chain": [],
+      "response_time": 546.84,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/top-custom-lighters-for-personalized-style-dd1bfb/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/top-custom-lighters-for-personalized-style-dd1bfb/",
+      "redirect_chain": [],
+      "response_time": 589.48,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/blog/uncover-the-timeless-elegance-of-vintage-crystal-ashtrays-a-collectors-guide/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/blog/uncover-the-timeless-elegance-of-vintage-crystal-ashtrays-a-collectors-guide/",
+      "redirect_chain": [],
+      "response_time": 594.05,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/fr/mastering-the-art-of-grinding-creative-ways-to-grind-weed-without-a-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/mastering-the-art-of-grinding-creative-ways-to-grind-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 529.17,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/gift-guide-the-perfect-presents-for-your-420-friendly-friends/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/gift-guide-the-perfect-presents-for-your-420-friendly-friends/",
+      "redirect_chain": [],
+      "response_time": 532.31,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/grinder-cleaning-guide/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/grinder-cleaning-guide/",
+      "redirect_chain": [],
+      "response_time": 478.36,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/how-to-roll-with-raw-papers/?setCurrencyId=3",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/how-to-roll-with-raw-papers/?setCurrencyId=3",
+      "redirect_chain": [],
+      "response_time": 534.25,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/master-your-herb-game-the-ultimate-guide-to-choosing-the-perfect-weed-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/master-your-herb-game-the-ultimate-guide-to-choosing-the-perfect-weed-grinder/",
+      "redirect_chain": [],
+      "response_time": 514.55,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/the-ultimate-guide-to-choosing-the-best-coarse-herb-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/the-ultimate-guide-to-choosing-the-best-coarse-herb-grinder/",
+      "redirect_chain": [],
+      "response_time": 606.59,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/top-custom-lighters-for-personalized-style-dd1bfb/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/top-custom-lighters-for-personalized-style-dd1bfb/",
+      "redirect_chain": [],
+      "response_time": 515.92,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/blog/unlock-the-secrets-of-raw-rolling-papers-your-ultimate-guide-to-quality-and-experience-b577e6/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/blog/unlock-the-secrets-of-raw-rolling-papers-your-ultimate-guide-to-quality-and-experience-b577e6/",
+      "redirect_chain": [],
+      "response_time": 521.74,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/it/mastering-the-art-of-grinding-how-to-prepare-weed-without-a-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/mastering-the-art-of-grinding-how-to-prepare-weed-without-a-grinder/",
+      "redirect_chain": [],
+      "response_time": 566.92,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/it/product/official-bic-lighter-assorted-light-colors",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/product/official-bic-lighter-assorted-light-colors",
+      "redirect_chain": [],
+      "response_time": 524.08,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/it/unlock-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/unlock-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "redirect_chain": [],
+      "response_time": 526.49,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/ja/blog/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/ja/blog/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+      "redirect_chain": [],
+      "response_time": 544.69,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/ja/blog/master-the-art-of-grinding-weed-for-optimal-enjoyment-7adb65/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/ja/blog/master-the-art-of-grinding-weed-for-optimal-enjoyment-7adb65/",
+      "redirect_chain": [],
+      "response_time": 538.5,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/ja/blog/roll-your-own-a-guide-to-crafting-custom-rolling-papers-88ac9d/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/ja/blog/roll-your-own-a-guide-to-crafting-custom-rolling-papers-88ac9d/",
+      "redirect_chain": [],
+      "response_time": 523.75,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://munchmakers.com/pl/podnie%C5%9B-poziom-swojej-gry-w-skr%C4%99canie-najlepszy-przewodnik-po-luksusowych-tackach-do-skr%C4%99cania/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/pl/podnie%C5%9B-poziom-swojej-gry-w-skr%C4%99canie-najlepszy-przewodnik-po-luksusowych-tackach-do-skr%C4%99cania/",
+          "status": 301
+        }
+      ],
+      "response_time": 551.23,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/2-piece-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/2-piece-grinders/",
+      "redirect_chain": [],
+      "response_time": 799.65,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/4-piece-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/4-piece-grinders/",
+      "redirect_chain": [],
+      "response_time": 744.23,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/510-batteries/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/510-batteries/",
+      "redirect_chain": [],
+      "response_time": 608.15,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/bic-brand-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/bic-brand-lighters/",
+      "redirect_chain": [],
+      "response_time": 598.28,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/cannabis-accessories/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/cannabis-accessories/",
+      "redirect_chain": [],
+      "response_time": 703.81,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/clipper-brand-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/clipper-brand-lighters/",
+      "redirect_chain": [],
+      "response_time": 563.25,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-ashtrays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 738.6,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-grinders/",
+      "redirect_chain": [],
+      "response_time": 858.93,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-lighters/",
+      "redirect_chain": [],
+      "response_time": 785.58,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-rolling-papers/",
+      "redirect_chain": [],
+      "response_time": 757.22,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-rolling-trays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-rolling-trays/",
+      "redirect_chain": [],
+      "response_time": 738.29,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-vape-pen/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-vape-pen/",
+      "redirect_chain": [],
+      "response_time": 730.92,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-weed-stash-jars/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-weed-stash-jars/",
+      "redirect_chain": [],
+      "response_time": 759.89,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/custom-wraps/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/product-category/custom-wraps/",
+      "redirect_chain": [],
+      "response_time": 497.01,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/disposable-vape-pens/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/disposable-vape-pens/",
+      "redirect_chain": [],
+      "response_time": 639.66,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/filter-tips-accessories/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/filter-tips-accessories/",
+      "redirect_chain": [],
+      "response_time": 636.36,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/glass-stash-jars/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/glass-stash-jars/",
+      "redirect_chain": [],
+      "response_time": 647.93,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/herb-storage-jars/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/herb-storage-jars/",
+      "redirect_chain": [],
+      "response_time": 692.31,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/joint-cases-holders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/joint-cases-holders/",
+      "redirect_chain": [],
+      "response_time": 730.95,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/joint-storage/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/joint-storage/",
+      "redirect_chain": [],
+      "response_time": 620.74,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/metal-stash-jars/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/metal-stash-jars/",
+      "redirect_chain": [],
+      "response_time": 616.12,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/portable-keychain-ashtrays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/portable-keychain-ashtrays/",
+      "redirect_chain": [],
+      "response_time": 610.96,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/pre-rolled-cones/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/pre-rolled-cones/",
+      "redirect_chain": [],
+      "response_time": 581.1,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/premium-metal-lighters/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/premium-metal-lighters/",
+      "redirect_chain": [],
+      "response_time": 591.51,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/special-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/product-category/special-grinders/",
+          "status": 301
+        }
+      ],
+      "response_time": 600.71,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product-category/standard-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/standard-grinders/",
+      "redirect_chain": [],
+      "response_time": 709.78,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://munchmakers.com/product/bamboozled-custom-wood-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/bamboozled-custom-wood-rolling-tray",
+      "redirect_chain": [],
+      "response_time": 684.76,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/blazegadget-grinder-onehitter",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/blazegadget-grinder-onehitter",
+      "redirect_chain": [],
+      "response_time": 694.32,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-1-1-4-size-cones-3-pack",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-1-1-4-size-cones-3-pack",
+      "redirect_chain": [],
+      "response_time": 670.43,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-1-14-size-rolling-papers",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-1-14-size-rolling-papers",
+      "redirect_chain": [],
+      "response_time": 753.72,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-4-piece-aluminum-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-4-piece-aluminum-grinder",
+      "redirect_chain": [],
+      "response_time": 687.33,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-aerolite-vape-pen",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-aerolite-vape-pen",
+      "redirect_chain": [],
+      "response_time": 781.37,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-aluminum-ashtray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-aluminum-ashtray",
+      "redirect_chain": [],
+      "response_time": 762.68,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-aluminum-pipe",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-aluminum-pipe",
+      "redirect_chain": [],
+      "response_time": 606.21,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-aluminum-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-aluminum-rolling-tray",
+      "redirect_chain": [],
+      "response_time": 674.08,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-big-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-big-grinder",
+      "redirect_chain": [],
+      "response_time": 664.77,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-biodegradable-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-biodegradable-grinder",
+      "redirect_chain": [],
+      "response_time": 763.09,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-branded-matchbook",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-branded-matchbook",
+      "redirect_chain": [],
+      "response_time": 652.74,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-branded-matchbox",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-branded-matchbox",
+      "redirect_chain": [],
+      "response_time": 670.15,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-branded-matchbox/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-branded-matchbox",
+      "redirect_chain": [
+        {
+          "url": "https://munchmakers.com/product/custom-branded-matchbox/",
+          "status": 301
+        }
+      ],
+      "response_time": 904.98,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-ceramic-ashtray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-ceramic-ashtray",
+      "redirect_chain": [],
+      "response_time": 672.72,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-ceramic-ashtray-with-lid",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-ceramic-ashtray-with-lid",
+      "redirect_chain": [],
+      "response_time": 775.72,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-ceramic-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-ceramic-grinder",
+      "redirect_chain": [],
+      "response_time": 660.45,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-compact-torch-lighter",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-compact-torch-lighter",
+      "redirect_chain": [],
+      "response_time": 673.88,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-dab-mat",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-dab-mat",
+      "redirect_chain": [],
+      "response_time": 758.77,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-dualflex-vape-battery",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-dualflex-vape-battery",
+      "redirect_chain": [],
+      "response_time": 673.33,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-edge-vape-pen",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-edge-vape-pen",
+      "redirect_chain": [],
+      "response_time": 875.96,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-electric-weed-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-electric-weed-grinder",
+      "redirect_chain": [],
+      "response_time": 710.02,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-filter-tips-booklet",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-filter-tips-booklet",
+      "redirect_chain": [],
+      "response_time": 696.57,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-folded-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-folded-rolling-tray",
+      "redirect_chain": [],
+      "response_time": 710.9,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-glass-stash-jar",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-glass-stash-jar",
+      "redirect_chain": [],
+      "response_time": 660.56,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-glow-in-dark-ashtray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-glow-in-dark-ashtray",
+      "redirect_chain": [],
+      "response_time": 767.25,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-glow-in-the-dark-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-glow-in-the-dark-grinder",
+      "redirect_chain": [],
+      "response_time": 675.56,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-gold-foil-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-gold-foil-grinder",
+      "redirect_chain": [],
+      "response_time": 694.26,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-grinder-box",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-grinder-box",
+      "redirect_chain": [],
+      "response_time": 627.29,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-jet-flame-lighter",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-jet-flame-lighter",
+      "redirect_chain": [],
+      "response_time": 720.44,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-led-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-led-rolling-tray",
+      "redirect_chain": [],
+      "response_time": 662.87,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-magnify-light-up-jar",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-magnify-light-up-jar",
+      "redirect_chain": [],
+      "response_time": 657.38,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-mini-grinder-keychain",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-mini-grinder-keychain",
+      "redirect_chain": [],
+      "response_time": 746.0,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-plastic-joint-tube",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-plastic-joint-tube",
+      "redirect_chain": [],
+      "response_time": 709.08,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-plastic-lighters-transparent-or-solid-color",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-plastic-lighters-transparent-or-solid-color",
+      "redirect_chain": [],
+      "response_time": 860.08,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-prism-vape-pen",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-prism-vape-pen",
+      "redirect_chain": [],
+      "response_time": 731.26,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-queen-size-rolling-papers",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-queen-size-rolling-papers",
+      "redirect_chain": [],
+      "response_time": 726.02,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-rolling-paper",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-rolling-paper",
+      "redirect_chain": [],
+      "response_time": 828.09,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-rolling-tray-with-magnetic-lid",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-rolling-tray-with-magnetic-lid",
+      "redirect_chain": [],
+      "response_time": 821.56,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-smell-proof-pouch",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-smell-proof-pouch",
+      "redirect_chain": [],
+      "response_time": 701.01,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-square-glass-ashtray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-square-glass-ashtray",
+      "redirect_chain": [],
+      "response_time": 647.0,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-square-joint-case",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-square-joint-case",
+      "redirect_chain": [],
+      "response_time": 643.67,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-square-shaped-wood-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-square-shaped-wood-grinder",
+      "redirect_chain": [],
+      "response_time": 622.05,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-stainless-steel-ashtray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-stainless-steel-ashtray",
+      "redirect_chain": [],
+      "response_time": 677.17,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-stainless-steel-lighter",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-stainless-steel-lighter",
+      "redirect_chain": [],
+      "response_time": 647.64,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-stash-pro",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-stash-pro",
+      "redirect_chain": [],
+      "response_time": 655.11,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-timberflow-wood-vape-pen",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-timberflow-wood-vape-pen",
+      "redirect_chain": [],
+      "response_time": 689.11,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-ugo-v3-vape-pen-battery-650-900-mah-510-thread-battery",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-ugo-v3-vape-pen-battery-650-900-mah-510-thread-battery",
+      "redirect_chain": [],
+      "response_time": 745.41,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-vape-pen-battery",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-vape-pen-battery",
+      "redirect_chain": [],
+      "response_time": 765.33,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-wooden-grinder-for-weed",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-wooden-grinder-for-weed",
+      "redirect_chain": [],
+      "response_time": 616.46,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/custom-wooden-rolling-tray",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-wooden-rolling-tray",
+      "redirect_chain": [],
+      "response_time": 709.31,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/diamond-edge-2-piece-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/diamond-edge-2-piece-grinder",
+      "redirect_chain": [],
+      "response_time": 742.77,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/easygrind",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/easygrind",
+      "redirect_chain": [],
+      "response_time": 685.86,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/gold-rush-4pc-big-custom-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/gold-rush-4pc-big-custom-grinder",
+      "redirect_chain": [],
+      "response_time": 703.82,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/j-shield",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/j-shield",
+      "redirect_chain": [],
+      "response_time": 760.9,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/king-size-cones-100-per-box",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/king-size-cones-100-per-box",
+      "redirect_chain": [],
+      "response_time": 684.91,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/mini-keychain-stash-jar",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/mini-keychain-stash-jar",
+      "redirect_chain": [],
+      "response_time": 712.17,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/official-bic-lighter-assorted-light-colors",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/official-bic-lighter-assorted-light-colors",
+      "redirect_chain": [],
+      "response_time": 664.69,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/official-bic-logo-lighters-full-color",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/official-bic-logo-lighters-full-color",
+      "redirect_chain": [],
+      "response_time": 665.49,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/official-bic-logo-lighters-single-imprint",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/official-bic-logo-lighters-single-imprint",
+      "redirect_chain": [],
+      "response_time": 655.05,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/portable-metal-ashtray-keychain",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/portable-metal-ashtray-keychain",
+      "redirect_chain": [],
+      "response_time": 735.11,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/promotional-weed-grinder-card",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/promotional-weed-grinder-card",
+      "redirect_chain": [],
+      "response_time": 710.53,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/square-wooden-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/square-wooden-grinder",
+      "redirect_chain": [],
+      "response_time": 635.18,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/the-carti-glass-cartridge",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/the-carti-glass-cartridge",
+      "redirect_chain": [],
+      "response_time": 697.19,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://munchmakers.com/product/titan-custom-stainless-steel-grinder",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/titan-custom-stainless-steel-grinder",
+      "redirect_chain": [],
+      "response_time": 719.72,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://nl.munchmakers.com/product-category/wood-bamboo-trays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://nl.munchmakers.com/product-category/wood-bamboo-trays/",
+      "redirect_chain": [],
+      "response_time": 2187.71,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://no.munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-d7cea0/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://no.munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-d7cea0/",
+      "redirect_chain": [],
+      "response_time": 1852.48,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://pt.munchmakers.com/blog/elevate-your-herb-game-the-essential-benefits-of-a-weed-grinder-machine/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://pt.munchmakers.com/blog/elevate-your-herb-game-the-essential-benefits-of-a-weed-grinder-machine/",
+      "redirect_chain": [],
+      "response_time": 1961.21,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://pt.munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-d7cea0/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://pt.munchmakers.com/blog/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine-d7cea0/",
+      "redirect_chain": [],
+      "response_time": 1756.77,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://ro.munchmakers.com/product-category/custom-rolling-trays/?page=2",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://ro.munchmakers.com/product-category/custom-rolling-trays/?page=2",
+      "redirect_chain": [],
+      "response_time": 2004.22,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://www.munchmakers.com/5-tips-for-choosing-the-perfect-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/5-tips-for-choosing-the-perfect-weed-grinder/",
+          "status": 301
+        }
+      ],
+      "response_time": 571.07,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/best-weed-logo-design-ideas-top-inspirations-and-free-logo-maker-tools",
+          "status": 301
+        }
+      ],
+      "response_time": 1040.44,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/blog/how-to-roll-a-joint/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-roll-a-joint/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/blog/how-to-roll-a-joint/",
+          "status": 301
+        }
+      ],
+      "response_time": 775.86,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://www.munchmakers.com/blog/the-best-grinder-to-get-the-most-bang-for-your-buck/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/the-best-grinder-to-get-the-most-bang-for-your-buck/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/blog/the-best-grinder-to-get-the-most-bang-for-your-buck/",
+          "status": 301
+        }
+      ],
+      "response_time": 754.18,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://www.munchmakers.com/blog/the-best-weed-stash-jar-for-your-cannabis-needs/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/blog/the-best-weed-stash-jar-for-your-cannabis-needs/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/blog/the-best-weed-stash-jar-for-your-cannabis-needs/",
+          "status": 301
+        }
+      ],
+      "response_time": 759.41,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://www.munchmakers.com/craft-your-perfect-rolling-tray-a-step-by-step-diy-guide-for-personalized-smoking-bliss/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/craft-your-perfect-rolling-tray-a-step-by-step-diy-guide-for-personalized-smoking-bliss/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/craft-your-perfect-rolling-tray-a-step-by-step-diy-guide-for-personalized-smoking-bliss/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/craft-your-perfect-rolling-tray-a-step-by-step-diy-guide-for-personalized-smoking-bliss",
+          "status": 301
+        }
+      ],
+      "response_time": 999.72,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/create-your-own-custom-rolling-papers-a-step-by-step-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/create-your-own-custom-rolling-papers-a-step-by-step-guide/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/create-your-own-custom-rolling-papers-a-step-by-step-guide/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/create-your-own-custom-rolling-papers-a-step-by-step-guide",
+          "status": 301
+        }
+      ],
+      "response_time": 975.28,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/custom-magnify-light-up-jar",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-magnify-light-up-jar",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/custom-magnify-light-up-jar",
+          "status": 301
+        }
+      ],
+      "response_time": 914.13,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/custom-rolling-papers/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/custom-rolling-papers/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips",
+          "status": 301
+        }
+      ],
+      "response_time": 1047.57,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/discover-the-best-joint-holder-for-a-stylish-and-secure-smoke",
+          "status": 301
+        }
+      ],
+      "response_time": 1023.28,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/elevate-your-rolling-experience-the-ultimate-guide-to-wood-weed-trays/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/elevate-your-rolling-experience-the-ultimate-guide-to-wood-weed-trays/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/elevate-your-rolling-experience-the-ultimate-guide-to-wood-weed-trays/",
+          "status": 301
+        }
+      ],
+      "response_time": 735.61,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/elevate-your-rolling-game-the-ultimate-guide-to-luxury-rolling-trays/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/elevate-your-rolling-game-the-ultimate-guide-to-luxury-rolling-trays/",
+          "status": 301
+        }
+      ],
+      "response_time": 544.63,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/elevate-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/elevate-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/elevate-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/elevate-your-rolling-game-the-ultimate-guide-to-rolling-tray-grinder-sets",
+          "status": 301
+        }
+      ],
+      "response_time": 1055.25,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/enhance-your-cannabis-experience-with-wood-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/enhance-your-cannabis-experience-with-wood-grinders/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/enhance-your-cannabis-experience-with-wood-grinders/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/enhance-your-cannabis-experience-with-wood-grinders",
+          "status": 301
+        }
+      ],
+      "response_time": 966.62,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/es/blog/enrolla-el-tuyo-una-gu%C3%ADa-para-crear-papeles-de-liar-personalizados/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/es",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/es/blog/enrolla-el-tuyo-una-gu%C3%ADa-para-crear-papeles-de-liar-personalizados/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/es/",
+          "status": 301
+        }
+      ],
+      "response_time": 731.94,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://www.munchmakers.com/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/everything-you-need-to-know-about-raw-rolling-papers-features-benefits-and-buying-tips",
+          "status": 301
+        }
+      ],
+      "response_time": 1059.73,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/fr/Les-produits/cendrier-%C3%A0-cigares-en-c%C3%A9ramique/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/fr/Les-produits/cendrier-%C3%A0-cigares-en-c%C3%A9ramique/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/fr/Les-produits/cendrier-%C3%A0-cigares-en-c%C3%A9ramique/",
+          "status": 301
+        }
+      ],
+      "response_time": 753.68,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://www.munchmakers.com/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/from-bud-to-bowl-how-to-use-a-weed-grinder-like-a-pro",
+          "status": 301
+        }
+      ],
+      "response_time": 1049.89,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/grinder-guides/choosing-the-perfect-grinder-for-your-cannabis-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/choosing-the-perfect-grinder-for-your-cannabis-experience/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/grinder-guides/choosing-the-perfect-grinder-for-your-cannabis-experience/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/choosing-the-perfect-grinder-for-your-cannabis-experience",
+          "status": 301
+        }
+      ],
+      "response_time": 1039.9,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/grinder-guides/mastering-the-grind-a-complete-guide-to-electric-weed-grinders/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/grinder-guides/mastering-the-grind-a-complete-guide-to-electric-weed-grinders/",
+          "status": 301
+        }
+      ],
+      "response_time": 540.19,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/how-to-sell-cannabis-accessories-in-california-a-munchmakers-guide/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/how-to-sell-cannabis-accessories-in-california-a-munchmakers-guide/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/how-to-sell-cannabis-accessories-in-california-a-munchmakers-guide/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/how-to-sell-cannabis-accessories-in-california-a-munchmakers-guide",
+          "status": 301
+        }
+      ],
+      "response_time": 1006.12,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/it/accendini-personalizzati/perch%C3%A9-gli-accendini-a-butano-personalizzati-sono-essenziali-ed-eleganti/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/it/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/it/accendini-personalizzati/perch%C3%A9-gli-accendini-a-butano-personalizzati-sono-essenziali-ed-eleganti/",
+          "status": 301
+        }
+      ],
+      "response_time": 786.06,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://www.munchmakers.com/iw/%D7%91%D7%9C%D7%95%D7%92/%D7%A9%D7%9C%D7%98%D7%95-%D7%91%D7%90%D7%95%D7%9E%D7%A0%D7%95%D7%AA-%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%A7%D7%99%D7%A3-%D7%A9%D7%9C%D7%9B%D7%9D-%D7%9C%D7%91%D7%97%D7%99%D7%A8%D7%AA-%D7%9E%D7%9B%D7%95%D7%A0%D7%AA-%D7%94%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%94%D7%9E%D7%95%D7%A9%D7%9C%D7%9E%D7%AA/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/iw/%D7%91%D7%9C%D7%95%D7%92/%D7%A9%D7%9C%D7%98%D7%95-%D7%91%D7%90%D7%95%D7%9E%D7%A0%D7%95%D7%AA-%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%A7%D7%99%D7%A3-%D7%A9%D7%9C%D7%9B%D7%9D-%D7%9C%D7%91%D7%97%D7%99%D7%A8%D7%AA-%D7%9E%D7%9B%D7%95%D7%A0%D7%AA-%D7%94%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%94%D7%9E%D7%95%D7%A9%D7%9C%D7%9E%D7%AA/",
+          "status": 301
+        }
+      ],
+      "response_time": 615.15,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://www.munchmakers.com/iw/%D7%9E%D7%95%D7%A6%D7%A8/%D7%9E%D7%90%D7%A4%D7%A8%D7%94-%D7%A7%D7%A8%D7%9E%D7%99%D7%AA-%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA-%D7%A2%D7%9D-%D7%9E%D7%9B%D7%A1%D7%94/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/iw/%D7%9E%D7%95%D7%A6%D7%A8/%D7%9E%D7%90%D7%A4%D7%A8%D7%94-%D7%A7%D7%A8%D7%9E%D7%99%D7%AA-%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA-%D7%A2%D7%9D-%D7%9E%D7%9B%D7%A1%D7%94/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/iw/%D7%9E%D7%95%D7%A6%D7%A8/%D7%9E%D7%90%D7%A4%D7%A8%D7%94-%D7%A7%D7%A8%D7%9E%D7%99%D7%AA-%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA-%D7%A2%D7%9D-%D7%9E%D7%9B%D7%A1%D7%94/",
+          "status": 301
+        }
+      ],
+      "response_time": 795.7,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://www.munchmakers.com/iw/%D7%9E%D7%95%D7%A6%D7%A8/%D7%A0%D7%99%D7%99%D7%A8%D7%95%D7%AA-%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%91%D7%92%D7%95%D7%93%D7%9C-1-14-%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/iw/%D7%9E%D7%95%D7%A6%D7%A8/%D7%A0%D7%99%D7%99%D7%A8%D7%95%D7%AA-%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%91%D7%92%D7%95%D7%93%D7%9C-1-14-%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/iw/%D7%9E%D7%95%D7%A6%D7%A8/%D7%A0%D7%99%D7%99%D7%A8%D7%95%D7%AA-%D7%92%D7%9C%D7%92%D7%95%D7%9C-%D7%91%D7%92%D7%95%D7%93%D7%9C-1-14-%D7%91%D7%94%D7%AA%D7%90%D7%9E%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA/",
+          "status": 301
+        }
+      ],
+      "response_time": 766.86,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://www.munchmakers.com/iw/blog/crafting-your-own-rolling-papers-a-complete-guide/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/iw/blog/crafting-your-own-rolling-papers-a-complete-guide/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/iw/blog/crafting-your-own-rolling-papers-a-complete-guide/",
+          "status": 301
+        }
+      ],
+      "response_time": 734.63,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://www.munchmakers.com/iw/blog/mastering-the-art-of-rolling-the-ultimate-guide-to-choosing-joint-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/iw/blog/mastering-the-art-of-rolling-the-ultimate-guide-to-choosing-joint-rolling-papers/",
+          "status": 301
+        }
+      ],
+      "response_time": 561.95,
+      "error": null,
+      "page_type": "blog"
+    },
+    {
+      "url": "https://www.munchmakers.com/iw/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/iw/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/iw/roll-your-own-the-ultimate-guide-to-choosing-the-best-cigarette-rolling-machine/",
+          "status": 301
+        }
+      ],
+      "response_time": 755.86,
+      "error": null,
+      "page_type": "international"
+    },
+    {
+      "url": "https://www.munchmakers.com/master-your-rolling-game-the-ultimate-guide-to-choosing-the-perfect-rolling-machine/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/master-your-rolling-game-the-ultimate-guide-to-choosing-the-perfect-rolling-machine/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/master-your-rolling-game-the-ultimate-guide-to-choosing-the-perfect-rolling-machine/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/master-your-rolling-game-the-ultimate-guide-to-choosing-the-perfect-rolling-machine",
+          "status": 301
+        }
+      ],
+      "response_time": 985.78,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/mastering-care-tips-for-your-custom-ceramic-ashtray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-ceramic-ashtray",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/mastering-care-tips-for-your-custom-ceramic-ashtray/",
+          "status": 301
+        }
+      ],
+      "response_time": 852.75,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/mastering-your-grind-the-definitive-guide-to-choosing-the-best-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/mastering-your-grind-the-definitive-guide-to-choosing-the-best-weed-grinder/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/mastering-your-grind-the-definitive-guide-to-choosing-the-best-weed-grinder/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/mastering-your-grind-the-definitive-guide-to-choosing-the-best-weed-grinder",
+          "status": 301
+        }
+      ],
+      "response_time": 1019.14,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/overview-why-choose-custom-grinder-from-munchmakers/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/overview-why-choose-custom-grinder-from-munchmakers/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/overview-why-choose-custom-grinder-from-munchmakers/",
+          "status": 301
+        }
+      ],
+      "response_time": 818.59,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/product-category/custom-weed-stash-jars/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product-category/custom-weed-stash-jars/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/product-category/custom-weed-stash-jars/",
+          "status": 301
+        }
+      ],
+      "response_time": 929.76,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://www.munchmakers.com/product-category/no-minimums/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/easygrind",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/product-category/no-minimums/",
+          "status": 301
+        }
+      ],
+      "response_time": 947.31,
+      "error": null,
+      "page_type": "category"
+    },
+    {
+      "url": "https://www.munchmakers.com/product/custom-stash-pro/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-stash-pro",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/product/custom-stash-pro/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/product/custom-stash-pro/",
+          "status": 301
+        }
+      ],
+      "response_time": 1112.51,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://www.munchmakers.com/product/easygrind/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/easygrind",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/product/easygrind/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/product/easygrind/",
+          "status": 301
+        }
+      ],
+      "response_time": 1105.71,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://www.munchmakers.com/product/genuine-wood-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/genuine-wood-grinder",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/product/genuine-wood-grinder/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/product/genuine-wood-grinder/",
+          "status": 301
+        }
+      ],
+      "response_time": 1149.26,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://www.munchmakers.com/product/love-death-roses-all-over-print-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-all-over-print-grinder",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/product/love-death-roses-all-over-print-grinder/",
+          "status": 301
+        }
+      ],
+      "response_time": 882.51,
+      "error": null,
+      "page_type": "product"
+    },
+    {
+      "url": "https://www.munchmakers.com/reasons-to-buy-a-weed-grinder/",
+      "status_code": 404,
+      "status_text": "Not Found",
+      "final_url": "https://munchmakers.com/reasons-to-buy-a-weed-grinder/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/reasons-to-buy-a-weed-grinder/",
+          "status": 301
+        }
+      ],
+      "response_time": 754.27,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/roll-in-luxury-unveiling-the-allure-of-24k-gold-rolling-papers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/roll-in-luxury-unveiling-the-allure-of-24k-gold-rolling-papers/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/roll-in-luxury-unveiling-the-allure-of-24k-gold-rolling-papers/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/roll-in-luxury-unveiling-the-allure-of-24k-gold-rolling-papers",
+          "status": 301
+        }
+      ],
+      "response_time": 1010.32,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/roll-with-style-the-ultimate-guide-to-raw-rolling-papers-for-eco-friendly-smokers/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/roll-with-style-the-ultimate-guide-to-raw-rolling-papers-for-eco-friendly-smokers/",
+          "status": 301
+        }
+      ],
+      "response_time": 545.13,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/roll-your-own-the-ultimate-guide-to-cigarette-rolling-machines-for-every-smoker/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/roll-your-own-the-ultimate-guide-to-cigarette-rolling-machines-for-every-smoker/",
+          "status": 301
+        }
+      ],
+      "response_time": 560.6,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/rolling-in-style-the-ultimate-guide-to-choosing-the-perfect-rolling-tray/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-choosing-the-perfect-rolling-tray/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/rolling-in-style-the-ultimate-guide-to-choosing-the-perfect-rolling-tray/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/rolling-in-style-the-ultimate-guide-to-choosing-the-perfect-rolling-tray",
+          "status": 301
+        }
+      ],
+      "response_time": 1008.62,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/shop/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/shop/",
+          "status": 301
+        }
+      ],
+      "response_time": 528.74,
+      "error": null,
+      "page_type": "shop"
+    },
+    {
+      "url": "https://www.munchmakers.com/the-best-weed-stash-jar-for-your-cannabis-needs/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/the-best-weed-stash-jar-for-your-cannabis-needs/",
+          "status": 301
+        }
+      ],
+      "response_time": 537.11,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/top-custom-vape-pen-designs-elevate-your-vaping-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/top-custom-vape-pen-designs-elevate-your-vaping-experience/",
+          "status": 301
+        }
+      ],
+      "response_time": 574.17,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/top-electric-grinders-for-weed-elevate-your-cannabis-experience-with-ease/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/top-electric-grinders-for-weed-elevate-your-cannabis-experience-with-ease/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/top-electric-grinders-for-weed-elevate-your-cannabis-experience-with-ease/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/top-electric-grinders-for-weed-elevate-your-cannabis-experience-with-ease",
+          "status": 301
+        }
+      ],
+      "response_time": 1069.52,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/ultimate-2024-guide-discover-the-best-weed-grinders-for-a-perfect-cannabis-experience",
+          "status": 301
+        }
+      ],
+      "response_time": 1014.33,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/ultimate-guide-to-custom-magnetic-rolling-trays-with-lids/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/product/custom-rolling-tray-with-magnetic-lid",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/ultimate-guide-to-custom-magnetic-rolling-trays-with-lids/",
+          "status": 301
+        }
+      ],
+      "response_time": 950.53,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/unlocking-the-benefits-of-a-quality-weed-grinder/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/unlocking-the-benefits-of-a-quality-weed-grinder/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/unlocking-the-benefits-of-a-quality-weed-grinder",
+          "status": 301
+        }
+      ],
+      "response_time": 995.72,
+      "error": null,
+      "page_type": "other"
+    },
+    {
+      "url": "https://www.munchmakers.com/why-custom-butane-lighters-are-essential-and-stylish/",
+      "status_code": 200,
+      "status_text": "OK",
+      "final_url": "https://munchmakers.com/blog/why-custom-butane-lighters-are-essential-and-stylish/",
+      "redirect_chain": [
+        {
+          "url": "https://www.munchmakers.com/why-custom-butane-lighters-are-essential-and-stylish/",
+          "status": 301
+        },
+        {
+          "url": "https://munchmakers.com/blog/why-custom-butane-lighters-are-essential-and-stylish",
+          "status": 301
+        }
+      ],
+      "response_time": 982.75,
+      "error": null,
+      "page_type": "other"
+    }
+  ]
+}

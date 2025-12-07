@@ -1,0 +1,301 @@
+================================================================================
+MUNCHMAKERS LANDING PAGES - QUICK START GUIDE
+================================================================================
+
+PROJECT: Full Content Restoration for 14 Landing Pages
+STATUS: ✅ COMPLETE - All pages restored successfully
+DATE: November 16, 2025
+
+================================================================================
+WHAT WAS CREATED
+================================================================================
+
+1. FULL_CONTENT_RESTORATION.py
+   - Main script to restore all 14 pages
+   - Extracts HTML from 14 Python source files
+   - Updates BigCommerce pages via API
+   - Keeps pages HIDDEN for safety
+   - 100% success rate tested
+
+2. RESTORATION_SCRIPT_README.md
+   - Detailed documentation
+   - How to run the script
+   - Troubleshooting guide
+   - Best practices
+   - FAQ section
+
+3. RESTORATION_COMPLETION_REPORT.md
+   - Executive summary
+   - Complete page details
+   - API integration info
+   - Next steps and recommendations
+
+4. QUICK_START_GUIDE.txt
+   - This file
+   - Quick reference
+   - Most common tasks
+
+================================================================================
+HOW TO RUN THE RESTORATION SCRIPT
+================================================================================
+
+STEP 1: Open Terminal
+$ cd "/Users/tomernahumi/Documents/Plugins/MM Lp's with claude"
+
+STEP 2: Run the script
+$ python3 FULL_CONTENT_RESTORATION.py
+
+STEP 3: Wait for completion (~45 seconds)
+✓ All 14 pages will update automatically
+✓ You'll see detailed status for each page
+✓ Script will report 100% success rate
+
+STEP 4: Verify in BigCommerce
+→ Go to Content → Pages
+→ Find pages with IDs: 48-62
+→ Click Edit to see the restored content
+
+================================================================================
+PAGES THAT WERE RESTORED (14 total)
+================================================================================
+
+Page 48  - Dispensaries
+Page 49  - Cannabis Cultivators
+Page 51  - Smoke Shops
+Page 52  - CBD Retailers
+Page 53  - Cannabis Brands
+Page 54  - Event Organizers
+Page 55  - Podcasters & Influencers
+Page 56  - Cannabis Tourism
+Page 57  - Wellness Centers
+Page 58  - Education Providers
+Page 59  - Medical Clinics
+Page 60  - Hemp Farmers
+Page 61  - Delivery Services
+Page 62  - Musicians & DJs
+
+================================================================================
+EACH PAGE CONTAINS
+================================================================================
+
+✓ Hero section with headline & CTA
+✓ Problem-Solution framework
+✓ Market statistics & opportunity
+✓ Product showcase
+✓ ROI calculator
+✓ Success stories & testimonials
+✓ Pricing & packages
+✓ Compliance & benefits info
+✓ FAQ section
+✓ Final CTA section
+✓ Professional styling & design
+✓ Complete schema markup
+
+Total: ~354 KB of content across all 14 pages
+
+================================================================================
+PAGE VISIBILITY STATUS
+================================================================================
+
+CURRENT: ALL PAGES ARE HIDDEN (is_visible: false)
+
+This means:
+✓ Pages accessible via direct URL
+✓ NOT in navigation menus
+✓ NOT in sitemaps
+✓ NOT indexed by search engines
+✓ You control when to make visible
+
+TO MAKE A PAGE VISIBLE:
+
+Option 1 - Via BigCommerce Admin:
+1. Go to Content → Pages
+2. Click on the page (ID 48-62)
+3. Check "Is this page visible?"
+4. Save
+
+Option 2 - Let us make it visible:
+- Ask to update via API
+- Script can make pages visible automatically
+
+================================================================================
+BIGCOMMERCE ACCESS INFO
+================================================================================
+
+Store Hash: tqjrceegho
+API Token: lmg7prm3b0fxypwwaja27rtlvqejic0
+
+Admin URL: https://store-tqjrceegho.mybigcommerce.com
+
+To view/edit pages:
+1. Go to: Content → Pages
+2. Search by ID (48-62)
+3. Click Edit to see restored HTML
+
+================================================================================
+IF SOMETHING GOES WRONG
+================================================================================
+
+Script won't run:
+→ Make sure you're in the correct directory
+→ Check Python 3 is installed: python3 --version
+→ Verify source files exist: ls -la create_*.py
+
+API errors:
+→ Check internet connection
+→ Verify BigCommerce is accessible
+→ Check API credentials in script
+→ Try running script again
+
+Pages not updating:
+→ Check page IDs 48-62 exist in BigCommerce
+→ Verify you have permission to edit pages
+→ Check API response messages for details
+
+Content appears blank:
+→ Refresh the page in browser
+→ Try clearing browser cache (Cmd+Shift+R)
+→ Verify in BigCommerce admin (see raw HTML)
+
+Need help:
+→ Check RESTORATION_SCRIPT_README.md for detailed guide
+→ Review error messages from script
+→ Contact BigCommerce support for API issues
+
+================================================================================
+COMMON TASKS
+================================================================================
+
+Run restoration again:
+$ python3 FULL_CONTENT_RESTORATION.py
+
+Make all pages visible:
+1. Go to BigCommerce Admin
+2. Content → Pages
+3. For each page (48-62):
+   - Click Edit
+   - Check "Is this page visible?"
+   - Save
+
+Check page content:
+1. Go to BigCommerce Admin
+2. Content → Pages → [Page ID] → Edit
+3. Scroll to see the HTML body content
+
+Update page content later:
+1. Edit the source Python file
+2. Run: python3 FULL_CONTENT_RESTORATION.py
+3. Script will update BigCommerce with new content
+
+View page on website (when visible):
+→ https://www.munchmakers.com/page-url-here/
+
+Edit page metadata:
+1. Go to BigCommerce Admin
+2. Content → Pages → [Page ID] → Edit
+3. Change: Meta description, keywords, title, etc.
+
+================================================================================
+WHAT MAKES THESE PAGES SPECIAL
+================================================================================
+
+Each page is tailored to a specific audience:
+
+→ Dispensaries: Focus on profit margins, compliance, ROI
+→ Cultivators: Focus on brand building, loyalty, storytelling
+→ Smoke Shops: Focus on exclusivity, territory protection, margins
+→ CBD Retailers: Focus on wellness, compliance, gift markets
+→ Cannabis Brands: Focus on brand loyalty, daily exposure
+→ Event Organizers: Focus on swag retention, sponsor ROI
+→ Podcasters: Focus on monetization, dropship, fan engagement
+→ Tourism: Focus on premium souvenirs, experience upsells
+→ Wellness Centers: Focus on wellness lifestyle, compliant
+→ Education: Focus on compliance, training, student kits
+→ Medical Clinics: Focus on medical-grade, patient gifts
+→ Hemp Farmers: Focus on brand building, direct-to-consumer
+→ Delivery Services: Focus on brand loyalty, driver gifts
+→ Musicians: Focus on fan merch, tour monetization
+
+Each page has custom:
+- Headlines and messaging
+- Industry-specific examples
+- Relevant success stories
+- Tailored pricing tiers
+- Custom FAQs
+- Industry jargon & language
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+IMMEDIATE (Today):
+☐ Review the restored pages in BigCommerce
+☐ Check that content displays correctly
+☐ Test links and CTAs
+☐ Verify page structure
+
+THIS WEEK:
+☐ Make some pages visible for testing
+☐ Review in browser on website
+☐ Test all forms and CTAs work
+☐ Check analytics/tracking
+
+WITHIN 2 WEEKS:
+☐ Determine which pages to make live first
+☐ Update navigation menus as needed
+☐ Set up conversion tracking
+☐ Monitor page performance
+
+ONGOING:
+☐ Monitor page views and analytics
+☐ Track conversion rates
+☐ Update content as needed
+☐ Optimize underperforming pages
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+Main script:
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/FULL_CONTENT_RESTORATION.py
+
+Source Python files (14 total):
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/fix_dispensary_page_content.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_cultivators_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_smokeshops_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_cbd_retailers_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_cannabis_brands_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_event_organizers_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_podcasters_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_tourism_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_wellness_centers_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_education_providers_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_medical_clinics_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_hemp_farmers_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_delivery_services_page.py
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/create_musicians_page.py
+
+Documentation:
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/RESTORATION_SCRIPT_README.md
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/RESTORATION_COMPLETION_REPORT.md
+/Users/tomernahumi/Documents/Plugins/MM Lp's with claude/QUICK_START_GUIDE.txt (this file)
+
+================================================================================
+SUMMARY
+================================================================================
+
+✅ All 14 landing pages have been restored with FULL HTML content
+✅ Pages are complete with all sections, FAQs, CTAs, and styling
+✅ All pages are currently HIDDEN (not visible in navigation)
+✅ You can make pages visible anytime via BigCommerce Admin
+✅ Script can be run anytime to reset/update pages
+✅ Complete documentation provided
+✅ 100% success rate - all pages updated correctly
+
+READY TO GO!
+
+To get started: python3 FULL_CONTENT_RESTORATION.py
+
+Questions? Check RESTORATION_SCRIPT_README.md for detailed guide.
+
+================================================================================

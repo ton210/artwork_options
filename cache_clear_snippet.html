@@ -1,0 +1,30 @@
+<!-- Add this script BEFORE the existing bulk discount script in bulk-discount-rates.html -->
+<script>
+// Cache clearing for bulk pricing updates
+(function() {
+    // Clear any existing bulk pricing cache
+    window.bulkClickInitialized = false;
+
+    // Clear localStorage if used
+    if (typeof(Storage) !== "undefined") {
+        localStorage.removeItem('bulkPricingCache');
+        localStorage.removeItem('originalPrice');
+    }
+
+    // Clear sessionStorage if used
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.removeItem('bulkPricingCache');
+        sessionStorage.removeItem('originalPrice');
+    }
+
+    // Force refresh of price data
+    setTimeout(function() {
+        const priceElements = document.querySelectorAll('[data-product-price-without-tax], .price--main');
+        priceElements.forEach(function(el) {
+            if (el.getAttribute('data-cached')) {
+                el.removeAttribute('data-cached');
+            }
+        });
+    }, 100);
+})();
+</script>

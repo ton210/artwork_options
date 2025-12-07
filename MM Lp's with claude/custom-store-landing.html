@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Custom Smoke Accessories Store | MunchMakers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c5f2d;
+        }
+
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #45a049;
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+
+        .cta-button-secondary:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5f2d 0%, #4CAF50 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c5f2d;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2c5f2d;
+        }
+
+        .step p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            padding: 30px;
+            border-left: 4px solid #4CAF50;
+            background: #f9f9f9;
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c5f2d;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkmark {
+            color: #4CAF50;
+            font-size: 24px;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Example Store Section */
+        .example-store {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+        }
+
+        .example-store .section-title {
+            color: white;
+        }
+
+        .store-screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .screenshot-container {
+            text-align: center;
+        }
+
+        .screenshot-container h4 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            color: #4CAF50;
+        }
+
+        .screenshot-placeholder {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c5f2d;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefit p {
+            color: #666;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2c5f2d 0%, #4CAF50 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .store-screenshots {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">MunchMakers</div>
+                <a href="#contact" class="cta-button">Talk to Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Build Your Custom Smoke Accessories Store</h1>
+            <p>Launch a fully-branded merchandise store with custom smoke accessories, complete control, and zero inventory hassle</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get Started</a>
+                <a href="#example" class="cta-button cta-button-secondary">See Example Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Brand</h3>
+                    <p>Work with us to design your custom smoke accessories with your branding. From grinders to rolling trays, we'll create your perfect product line.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Build Your Store</h3>
+                    <p>Get a fully-functional, custom-built online store with your branding. Complete with admin portal, inventory tracking, and payment processing.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Launch & Manage</h3>
+                    <p>Take control with your admin dashboard. Add products, track inventory, manage orders, and watch your brand grow. We handle fulfillment and dropshipping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need to Succeed</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3><span class="checkmark">✓</span> Custom Branded Products</h3>
+                    <p>Create your own line of smoke accessories with your branding. From grinders and rolling trays to storage containers and more.</p>
+                </div>
+                <div class="feature">
+                    <h3><span class="checkmark">✓</span> Full Admin Control</h3>
+                    <p>Powerful back-end portal gives you complete control. Manage products, pricing, inventory, orders, and customers with ease.</p>
+                </div>
+                <div class="feature">
+                    <h3><span class="checkmark">✓</span> Dropshipping Included</h3>
+                    <p>Zero inventory stress. We handle storage, packing, and shipping. Focus on your brand while we handle logistics.</p>
+                </div>
+                <div class="feature">
+                    <h3><span class="checkmark">✓</span> Inventory Tracking</h3>
+                    <p>Real-time inventory management. Track stock levels, set low-stock alerts, and never oversell products.</p>
+                </div>
+                <div class="feature">
+                    <h3><span class="checkmark">✓</span> Add Any Products</h3>
+                    <p>Not limited to smoke accessories. Add apparel, stickers, or any other merchandise to complement your brand.</p>
+                </div>
+                <div class="feature">
+                    <h3><span class="checkmark">✓</span> Complete Customization</h3>
+                    <p>Your store, your way. Customize design, layout, colors, and functionality to match your brand identity perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Store Section -->
+    <section class="example-store" id="example">
+        <div class="container">
+            <h2 class="section-title">See It In Action</h2>
+            <p style="text-align: center; font-size: 18px; margin-bottom: 20px;">
+                Check out a live example: <a href="https://bluntslutsmerch.munchmakers.com/" target="_blank" style="color: #4CAF50; font-weight: bold;">bluntslutsmerch.munchmakers.com</a>
+            </p>
+            <div class="store-screenshots">
+                <div class="screenshot-container">
+                    <h4>Desktop Experience</h4>
+                    <div class="screenshot-placeholder">
+                        Screenshot of desktop store view<br>
+                        Visit: bluntslutsmerch.munchmakers.com
+                    </div>
+                </div>
+                <div class="screenshot-container">
+                    <h4>Mobile Optimized</h4>
+                    <div class="screenshot-placeholder">
+                        Screenshot of mobile store view<br>
+                        Fully responsive design
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose MunchMakers?</h2>
+            <div class="benefits-list">
+                <div class="benefit">
+                    <h4><span class="checkmark">✓</span> No Upfront Inventory</h4>
+                    <p>Start selling without buying bulk inventory. We manufacture and ship as orders come in.</p>
+                </div>
+                <div class="benefit">
+                    <h4><span class="checkmark">✓</span> Expert Support</h4>
+                    <p>Our team handles product creation, quality control, and customer service for your store's orders.</p>
+                </div>
+                <div class="benefit">
+                    <h4><span class="checkmark">✓</span> Fast Turnaround</h4>
+                    <p>Quick production and shipping times keep your customers happy and coming back for more.</p>
+                </div>
+                <div class="benefit">
+                    <h4><span class="checkmark">✓</span> Scalable Solution</h4>
+                    <p>Start small and grow. Our platform scales with your brand from first sale to thousands of orders.</p>
+                </div>
+                <div class="benefit">
+                    <h4><span class="checkmark">✓</span> Brand Building</h4>
+                    <p>Create lasting brand loyalty with quality merchandise that customers use and see every day.</p>
+                </div>
+                <div class="benefit">
+                    <h4><span class="checkmark">✓</span> Revenue Stream</h4>
+                    <p>Add a new revenue channel to your brand without operational overhead or inventory risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Build Your Store?</h2>
+            <p>Let's create something amazing together. Reach out to learn more about how MunchMakers can help grow your brand.</p>
+            <div class="hero-buttons">
+                <a href="mailto:info@munchmakers.com" class="cta-button" style="background: white; color: #2c5f2d;">Email Us</a>
+                <a href="https://www.munchmakers.com/contact" class="cta-button cta-button-secondary" style="border-color: white; color: white;">Contact Form</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MunchMakers. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="https://www.munchmakers.com">Visit MunchMakers.com</a> |
+                <a href="mailto:info@munchmakers.com">info@munchmakers.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
