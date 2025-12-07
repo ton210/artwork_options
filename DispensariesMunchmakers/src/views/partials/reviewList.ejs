@@ -1,0 +1,221 @@
+<div id="reviews-section" class="bg-white rounded-lg shadow-lg p-6">
+  <h3 class="text-2xl font-bold mb-6">User Reviews</h3>
+
+  <!-- Review Stats Summary -->
+  <div id="review-stats" class="mb-8 p-4 bg-gray-50 rounded-lg">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <div class="text-4xl font-bold text-green-600" id="average-rating">-</div>
+        <div class="text-sm text-gray-600">out of 5</div>
+      </div>
+      <div class="text-right">
+        <div class="text-2xl font-semibold" id="total-reviews">0</div>
+        <div class="text-sm text-gray-600">reviews</div>
+      </div>
+    </div>
+
+    <!-- Rating Distribution -->
+    <div id="rating-distribution" class="space-y-2">
+      <!-- Will be populated by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Sort Options -->
+  <div class="mb-6">
+    <label class="text-sm font-medium text-gray-700 mr-3">Sort by:</label>
+    <select id="sort-reviews" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+      <option value="recent">Most Recent</option>
+      <option value="highest">Highest Rated</option>
+      <option value="helpful">Most Helpful</option>
+    </select>
+  </div>
+
+  <!-- Reviews List -->
+  <div id="reviews-list" class="space-y-6">
+    <!-- Reviews will be loaded here -->
+  </div>
+
+  <!-- Load More Button -->
+  <div id="load-more-container" class="text-center mt-6 hidden">
+    <button id="load-more-btn" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+      Load More Reviews
+    </button>
+  </div>
+
+  <!-- No Reviews Message -->
+  <div id="no-reviews-message" class="text-center py-8 text-gray-500 hidden">
+    <p>No reviews yet. Be the first to review this dispensary!</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  const dispensaryId = <%= dispensary.id %>;
+  let currentOffset = 0;
+  let currentSort = 'recent';
+  const limit = 20;
+
+  // Load reviews
+  async function loadReviews(reset = false) {
+    if (reset) {
+      currentOffset = 0;
+      document.getElementById('reviews-list').innerHTML = '';
+    }
+
+    try {
+      const response = await fetch(`/api/reviews/dispensary/${dispensaryId}?limit=${limit}&offset=${currentOffset}&sortBy=${currentSort}`);
+      const data = await response.json();
+
+      displayStats(data.stats);
+      displayReviews(data.reviews);
+
+      if (data.hasMore) {
+        document.getElementById('load-more-container').classList.remove('hidden');
+      } else {
+        document.getElementById('load-more-container').classList.add('hidden');
+      }
+
+      if (data.total === 0) {
+        document.getElementById('no-reviews-message').classList.remove('hidden');
+        document.getElementById('review-stats').style.display = 'none';
+      } else {
+        document.getElementById('no-reviews-message').classList.add('hidden');
+        document.getElementById('review-stats').style.display = 'block';
+      }
+
+      currentOffset += data.reviews.length;
+    } catch (error) {
+      console.error('Error loading reviews:', error);
+    }
+  }
+
+  // Display stats
+  function displayStats(stats) {
+    document.getElementById('average-rating').textContent = stats.average || '-';
+    document.getElementById('total-reviews').textContent = stats.total;
+
+    const distribution = document.getElementById('rating-distribution');
+    distribution.innerHTML = '';
+
+    for (let rating = 5; rating >= 1; rating--) {
+      const count = stats[rating] || 0;
+      const percentage = stats.total > 0 ? (count / stats.total * 100) : 0;
+
+      const bar = document.createElement('div');
+      bar.className = 'flex items-center gap-2 text-sm';
+      bar.innerHTML = `
+        <span class="w-12 text-gray-600">${rating} ★</span>
+        <div class="flex-1 bg-gray-200 rounded-full h-2">
+          <div class="bg-yellow-400 h-2 rounded-full" style="width: ${percentage}%"></div>
+        </div>
+        <span class="w-12 text-gray-600 text-right">${count}</span>
+      `;
+      distribution.appendChild(bar);
+    }
+  }
+
+  // Display reviews
+  function displayReviews(reviews) {
+    const container = document.getElementById('reviews-list');
+
+    reviews.forEach(review => {
+      const reviewEl = document.createElement('div');
+      reviewEl.className = 'border-b border-gray-200 pb-6';
+
+      const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+      const date = new Date(review.created_at).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      reviewEl.innerHTML = `
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <div class="font-semibold text-gray-900">
+              ${escapeHtml(review.author_name)}
+              ${review.is_verified ? '<span class="ml-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Verified</span>' : ''}
+            </div>
+            <div class="text-yellow-400 text-lg">${stars}</div>
+          </div>
+          <div class="text-sm text-gray-500">${date}</div>
+        </div>
+        <p class="text-gray-700 mb-3">${escapeHtml(review.review_text)}</p>
+        <div class="flex items-center gap-4 text-sm text-gray-600">
+          <button class="helpful-btn flex items-center gap-1 hover:text-green-600 transition" data-review-id="${review.id}" data-helpful="true">
+            <span>👍</span>
+            <span>Helpful (${review.helpful_count})</span>
+          </button>
+          <button class="helpful-btn flex items-center gap-1 hover:text-red-600 transition" data-review-id="${review.id}" data-helpful="false">
+            <span>👎</span>
+            <span>Not Helpful (${review.not_helpful_count})</span>
+          </button>
+        </div>
+      `;
+
+      container.appendChild(reviewEl);
+    });
+
+    // Add helpful/not helpful event listeners
+    document.querySelectorAll('.helpful-btn').forEach(btn => {
+      btn.addEventListener('click', handleHelpfulClick);
+    });
+  }
+
+  // Escape HTML to prevent XSS
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Handle helpful/not helpful clicks
+  async function handleHelpfulClick(e) {
+    e.preventDefault();
+    const btn = e.currentTarget;
+    const reviewId = btn.dataset.reviewId;
+    const helpful = btn.dataset.helpful === 'true';
+
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(`/api/reviews/${reviewId}/helpful`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ helpful })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Reload reviews to update counts
+        currentOffset = 0;
+        loadReviews(true);
+      } else {
+        alert(data.error || 'Failed to mark review');
+        btn.disabled = false;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Network error');
+      btn.disabled = false;
+    }
+  }
+
+  // Sort change handler
+  document.getElementById('sort-reviews').addEventListener('change', (e) => {
+    currentSort = e.target.value;
+    loadReviews(true);
+  });
+
+  // Load more button
+  document.getElementById('load-more-btn').addEventListener('click', () => {
+    loadReviews(false);
+  });
+
+  // Initial load
+  loadReviews();
+})();
+</script>

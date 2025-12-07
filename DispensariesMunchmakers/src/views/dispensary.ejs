@@ -131,6 +131,21 @@
         <%- include('partials/leadForm', { source: 'dispensary_page', dispensaryName: dispensary.name }) %>
       </div>
     </div>
+
+    <!-- Reviews Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Reviews List (2/3 width) -->
+        <div class="lg:col-span-2">
+          <%- include('partials/reviewList') %>
+        </div>
+
+        <!-- Review Form (1/3 width) -->
+        <div class="lg:col-span-1">
+          <%- include('partials/reviewForm') %>
+        </div>
+      </div>
+    </div>
   </main>
 
   <%- include('partials/footer') %>
