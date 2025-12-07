@@ -115,6 +115,69 @@
             </div>
           <% }); %>
         </div>
+
+        <!-- About Section -->
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+          <h2 class="text-2xl font-bold mb-4">Cannabis Dispensaries in <%= county.name %> County</h2>
+          <div class="prose max-w-none text-gray-700 space-y-3">
+            <p>
+              <%= county.name %> County features <%= dispensaries.length %> cannabis dispensaries
+              <% if (stats.avg_rating) { %>
+                with an average rating of <%= Number(stats.avg_rating).toFixed(1) %> stars
+              <% } %>.
+              Our community-driven rankings help you find the best dispensaries based on verified customer reviews,
+              ratings, and local feedback.
+            </p>
+            <p>
+              Whether you're looking for medical marijuana or recreational cannabis, <%= county.name %> County dispensaries
+              offer a wide selection of products including flower, concentrates, edibles, vapes, and more. Many locations
+              provide convenient services like online ordering, curbside pickup, and delivery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Tips -->
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+          <h3 class="text-xl font-bold mb-4">Tips for Visiting Dispensaries in <%= county.name %> County</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold">✓</span>
+              <span>Check dispensary hours and whether they accept walk-ins or require appointments</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold">✓</span>
+              <span>Compare prices and deals across multiple dispensaries in <%= county.name %> County</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold">✓</span>
+              <span>Read reviews to learn about product quality, staff helpfulness, and store atmosphere</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold">✓</span>
+              <span>Ask budtenders for recommendations based on your experience level and desired effects</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold">✓</span>
+              <span>Join loyalty programs to earn rewards and receive exclusive deals</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Related Counties -->
+        <% if (nearbyCounties && nearbyCounties.length > 0) { %>
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+          <h3 class="text-xl font-bold mb-4">Dispensaries in Nearby Counties</h3>
+          <div class="grid grid-cols-1 gap-2">
+            <% nearbyCounties.slice(0, 5).forEach(nc => { %>
+              <a href="/dispensaries/<%= county.state_slug %>/<%= nc.slug %>"
+                 class="block p-3 bg-gray-50 rounded hover:bg-green-50 hover:text-green-600 transition">
+                <div class="font-semibold"><%= nc.name %> County</div>
+                <div class="text-sm text-gray-500"><%= nc.dispensary_count || 0 %> dispensaries</div>
+              </a>
+            <% }); %>
+          </div>
+        </div>
+        <% } %>
       </div>
 
       <div class="lg:col-span-1">

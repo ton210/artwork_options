@@ -134,6 +134,9 @@ router.get('/:state/:county', async (req, res) => {
     // Get other counties in state
     const otherCounties = await State.getCounties(county.state_id);
 
+    // Filter out current county and pass as nearby
+    const nearbyCounties = otherCounties.filter(c => c.id !== county.id);
+
     res.render('county', {
       title: showAll ?
         `All ${rankings.length} Dispensaries in ${county.name} County, ${county.state_abbr}` :
@@ -141,7 +144,9 @@ router.get('/:state/:county', async (req, res) => {
       county,
       rankings,
       stats,
+      dispensaries: rankings,
       otherCounties,
+      nearbyCounties,
       showAll,
       mapEnabled: true,
       GOOGLE_API_KEY: process.env.GOOGLE_PLACES_API_KEY,
