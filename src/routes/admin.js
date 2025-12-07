@@ -37,12 +37,33 @@ router.post('/login', async (req, res) => {
     const isValid = await checkAdminCredentials(username, password);
 
     console.log('Admin login validation result:', isValid);
+    console.log('Session object exists:', !!req.session);
 
     if (isValid) {
+      // Ensure session exists
+      if (!req.session) {
+        return res.render('admin/login', {
+          title: 'Admin Login - Dispensary Rankings',
+          error: 'Session not available. Please try refreshing the page.'
+        });
+      }
+
       req.session.isAdmin = true;
       req.session.username = username;
-      console.log('Admin login successful, redirecting');
-      return res.redirect('/admin');
+
+      // Save session before redirect
+      req.session.save((err) => {
+        if (err) {
+          console.error('Session save error:', err);
+          return res.render('admin/login', {
+            title: 'Admin Login - Dispensary Rankings',
+            error: 'Failed to save session. Please try again.'
+          });
+        }
+        console.log('Admin login successful, redirecting');
+        return res.redirect('/admin');
+      });
+      return;
     }
 
     res.render('admin/login', {
