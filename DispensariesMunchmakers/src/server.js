@@ -43,7 +43,7 @@ async function setupSession() {
       store: new RedisStore({ client: redisClient }),
       secret: process.env.SESSION_SECRET || 'your-secret-key-change-in-production',
       resave: false,
-      saveUninitialized: false,
+      saveUninitialized: true, // Changed to true to create session on first request
       cookie: {
         secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
@@ -51,20 +51,21 @@ async function setupSession() {
       }
     }));
 
-    console.log('✓ Session middleware configured');
+    console.log('✓ Session middleware configured with Redis');
   } catch (error) {
-    console.error('Error setting up session:', error);
-    // Fallback to memory store in development
+    console.error('Error setting up Redis session, falling back to memory store:', error);
+    // Fallback to memory store if Redis fails
     app.use(session({
       secret: process.env.SESSION_SECRET || 'your-secret-key-change-in-production',
       resave: false,
-      saveUninitialized: false,
+      saveUninitialized: true, // Create session on first request
       cookie: {
-        secure: false,
+        secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 7
       }
     }));
+    console.log('✓ Session middleware configured with memory store (fallback)');
   }
 }
 
