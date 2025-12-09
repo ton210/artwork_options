@@ -9,6 +9,12 @@
   <meta name="description" content="Find the best cannabis dispensaries near your location. Use your device's GPS to discover top-rated dispensaries within miles of you.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    // Define callback before loading Google Maps API
+    function initNearMeMap() {
+      console.log('Google Maps loaded');
+    }
+  </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.GOOGLE_PLACES_API_KEY %>&callback=initNearMeMap"></script>
   <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
@@ -76,7 +82,7 @@
     let nearbyDispensaries = [];
     let currentRadius = 10;
     let userLat, userLng;
-    let map;
+    // Note: 'map' is already declared in map.js
 
     document.getElementById('get-location-btn').addEventListener('click', findNearbyDispensaries);
     document.getElementById('radius-select').addEventListener('change', (e) => {
@@ -254,11 +260,6 @@
           infoWindow.open(map, marker);
         });
       });
-    }
-
-    function initNearMeMap() {
-      // Callback for Google Maps API
-      console.log('Google Maps loaded');
     }
   </script>
 </body>
