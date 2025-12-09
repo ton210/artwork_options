@@ -64,6 +64,26 @@
         </div>
       </div>
 
+      <!-- Click Stats Row -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">
+          <div class="text-gray-500 text-sm mb-1">Clicks Today</div>
+          <div class="text-3xl font-bold text-blue-600"><%= clickStats?.clicks_today || 0 %></div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-green-500">
+          <div class="text-gray-500 text-sm mb-1">Website Clicks Today</div>
+          <div class="text-3xl font-bold text-green-600"><%= clickStats?.website_clicks_today || 0 %></div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-yellow-500">
+          <div class="text-gray-500 text-sm mb-1">Phone Clicks Today</div>
+          <div class="text-3xl font-bold text-yellow-600"><%= clickStats?.phone_clicks_today || 0 %></div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-purple-500">
+          <div class="text-gray-500 text-sm mb-1">Clicks (30 Days)</div>
+          <div class="text-3xl font-bold text-purple-600"><%= clickStats?.clicks_month || 0 %></div>
+        </div>
+      </div>
+
       <!-- Analytics Section -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <!-- Daily Stats -->
@@ -175,6 +195,39 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <!-- Top Clicked Dispensaries -->
+      <div class="bg-white rounded-lg shadow p-6 mb-8">
+        <h2 class="text-xl font-bold mb-4">Top Clicked Dispensaries (Last 7 Days)</h2>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left border-b">
+              <th class="pb-2">Dispensary</th>
+              <th class="pb-2">Website</th>
+              <th class="pb-2">Phone</th>
+              <th class="pb-2">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% (topClickedDispensaries || []).forEach(disp => { %>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="py-2">
+                  <a href="/dispensary/<%= disp.slug %>" class="text-blue-600 hover:underline font-medium" target="_blank">
+                    <%= disp.name %>
+                  </a>
+                  <div class="text-xs text-gray-500"><%= disp.city %>, <%= disp.state_abbr %></div>
+                </td>
+                <td class="py-2 text-green-600"><%= disp.website_clicks %></td>
+                <td class="py-2 text-yellow-600"><%= disp.phone_clicks %></td>
+                <td class="py-2 font-bold"><%= disp.total_clicks %></td>
+              </tr>
+            <% }); %>
+            <% if (!topClickedDispensaries || topClickedDispensaries.length === 0) { %>
+              <tr><td colspan="4" class="py-2 text-gray-500">No click data yet</td></tr>
+            <% } %>
+          </tbody>
+        </table>
       </div>
 
       <!-- Top Pages & Dispensaries -->
