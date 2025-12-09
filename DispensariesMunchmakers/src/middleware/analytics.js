@@ -1,6 +1,69 @@
 const db = require('../config/database');
 const crypto = require('crypto');
 
+// Common bot User-Agent patterns
+const BOT_PATTERNS = [
+  /googlebot/i,
+  /bingbot/i,
+  /slurp/i,           // Yahoo
+  /duckduckbot/i,
+  /baiduspider/i,
+  /yandexbot/i,
+  /sogou/i,
+  /exabot/i,
+  /facebot/i,
+  /facebookexternalhit/i,
+  /ia_archiver/i,
+  /mj12bot/i,
+  /semrushbot/i,
+  /ahrefsbot/i,
+  /dotbot/i,
+  /petalbot/i,
+  /bytespider/i,
+  /applebot/i,
+  /twitterbot/i,
+  /linkedinbot/i,
+  /pinterest/i,
+  /screaming frog/i,
+  /sitebulb/i,
+  /crawler/i,
+  /spider/i,
+  /bot\b/i,
+  /headless/i,
+  /puppet/i,
+  /phantom/i,
+  /selenium/i,
+  /wget/i,
+  /curl/i,
+  /python-requests/i,
+  /python-urllib/i,
+  /go-http-client/i,
+  /java\//i,
+  /libwww/i,
+  /httpunit/i,
+  /nutch/i,
+  /httrack/i,
+  /apache-httpclient/i,
+  /guzzlehttp/i,
+  /node-fetch/i,
+  /axios/i,
+  /postmanruntime/i,
+  /^$/                // Empty user agent
+];
+
+// Paths to exclude from tracking
+const EXCLUDED_PATHS = [
+  '/sitemap.xml',
+  '/sitemap',
+  '/robots.txt',
+  '/favicon.ico',
+  '/apple-touch-icon',
+  '/manifest.json',
+  '/.well-known',
+  '/health',
+  '/ping'
+];
+
 function hashIP(ip) {
   return crypto.createHash('sha256').update(ip).digest('hex');
 }
@@ -12,13 +75,34 @@ function getClientIP(req) {
          req.ip;
 }
 
+function isBot(userAgent) {
+  if (!userAgent) return true; // No user agent = likely bot
+  return BOT_PATTERNS.some(pattern => pattern.test(userAgent));
+}
+
+function isExcludedPath(path) {
+  return EXCLUDED_PATHS.some(excluded => path.startsWith(excluded));
+}
+
 async function trackPageView(req, res, next) {
-  // Track all page views, not just dispensary pages
-  if (req.method === 'GET' && !req.path.startsWith('/api/') && !req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|json)$/)) {
+  // Track page views for real visitors only
+  if (req.method === 'GET' &&
+      !req.path.startsWith('/api/') &&
+      !req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|json|xml|txt|woff|woff2|ttf|eot|map)$/) &&
+      !isExcludedPath(req.path)) {
+
+    const userAgent = req.get('User-Agent') || '';
+    const isBotVisit = isBot(userAgent);
+
+    // Skip bots entirely - don't track them at all
+    if (isBotVisit) {
+      return next();
+    }
+
     try {
       const ip = getClientIP(req);
       const ipHash = hashIP(ip);
-      const country = getCountryFromRequest(req); // Default to 'US' for Heroku
+      const country = getCountryFromRequest(req);
       const urlPath = req.path;
 
       let dispensaryId = null;
@@ -43,7 +127,7 @@ async function trackPageView(req, res, next) {
           dispensaryId,
           ipHash,
           req.get('Referrer') || req.get('Referer'),
-          req.get('User-Agent'),
+          userAgent,
           urlPath,
           country
         ]
@@ -93,5 +177,7 @@ module.exports = {
   trackPageView,
   trackClickEvent,
   getClientIP,
-  hashIP
+  hashIP,
+  isBot,
+  BOT_PATTERNS
 };
