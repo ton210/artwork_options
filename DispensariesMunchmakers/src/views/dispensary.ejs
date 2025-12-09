@@ -47,17 +47,17 @@
       <!-- Main Content -->
       <div class="lg:col-span-2">
         <!-- Header Card -->
-        <div class="bg-white rounded-lg shadow-lg p-8 mb-6">
-          <div class="flex items-start gap-6">
+        <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 mb-6">
+          <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
             <% if (dispensary.logo_url) { %>
-              <img src="<%= dispensary.logo_url %>" alt="<%= dispensary.name %>" class="w-32 h-32 object-cover rounded-lg">
+              <img src="<%= dispensary.logo_url %>" alt="<%= dispensary.name %>" class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-lg mx-auto sm:mx-0">
             <% } %>
-            <div class="flex-1">
-              <div class="flex items-start justify-between mb-3">
-                <h1 class="text-4xl font-bold flex-1"><%= dispensary.name %></h1>
+            <div class="flex-1 w-full">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold"><%= dispensary.name %></h1>
 
                 <!-- Social Sharing -->
-                <div class="flex gap-2">
+                <div class="flex gap-2 flex-shrink-0">
                   <button onclick="shareOnFacebook()" class="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition" title="Share on Facebook">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                   </button>
@@ -71,11 +71,11 @@
               </div>
 
               <% if (dispensary.google_rating) { %>
-                <div class="flex items-center mb-4">
-                  <span class="text-yellow-500 text-3xl mr-2">★</span>
-                  <span class="text-3xl font-bold"><%= Number(dispensary.google_rating).toFixed(1) %></span>
-                  <span class="text-gray-600 text-xl ml-2">/ 5</span>
-                  <span class="text-gray-500 ml-3">(<%= dispensary.google_review_count || 0 %> reviews)</span>
+                <div class="flex flex-wrap items-center mb-4">
+                  <span class="text-yellow-500 text-2xl sm:text-3xl mr-2">★</span>
+                  <span class="text-2xl sm:text-3xl font-bold"><%= Number(dispensary.google_rating).toFixed(1) %></span>
+                  <span class="text-gray-600 text-lg sm:text-xl ml-2">/ 5</span>
+                  <span class="text-gray-500 text-sm sm:text-base ml-3">(<%= dispensary.google_review_count || 0 %> reviews)</span>
                 </div>
               <% } %>
 

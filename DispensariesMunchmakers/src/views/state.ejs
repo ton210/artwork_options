@@ -26,8 +26,8 @@
       <!-- Main Content -->
       <div class="lg:col-span-2">
         <!-- Header -->
-        <div class="flex justify-between items-start mb-4">
-          <h1 class="text-4xl font-bold text-gray-900">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
             <% if (showAll) { %>
               All <%= rankings.length %> Dispensaries in <%= state.name %>
             <% } else { %>
@@ -35,18 +35,18 @@
             <% } %>
           </h1>
           <% if (!showAll && stats.dispensary_count > 10) { %>
-            <a href="?view=all" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-semibold whitespace-nowrap">
+            <a href="?view=all" class="bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-green-700 transition font-semibold whitespace-nowrap text-center text-sm sm:text-base">
               View All <%= stats.dispensary_count %> →
             </a>
           <% } %>
         </div>
 
-        <div class="flex items-center gap-4 mb-8 text-gray-600">
-          <div>📅 Updated <%= new Date().toLocaleDateString() %></div>
-          <div>•</div>
-          <div>📊 <%= stats.dispensary_count || 0 %> dispensaries</div>
-          <div>•</div>
-          <div>⭐ <%= Number(stats.avg_rating || 0).toFixed(1) %> avg rating</div>
+        <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-8 text-gray-600 text-sm sm:text-base">
+          <div>Updated <%= new Date().toLocaleDateString() %></div>
+          <div class="hidden sm:block">•</div>
+          <div><%= stats.dispensary_count || 0 %> dispensaries</div>
+          <div class="hidden sm:block">•</div>
+          <div><%= Number(stats.avg_rating || 0).toFixed(1) %> avg rating</div>
         </div>
 
         <% if (showAll) { %>
@@ -62,52 +62,63 @@
         <!-- Rankings -->
         <div class="space-y-4 mb-12">
           <% rankings.forEach((dispensary, index) => { %>
-            <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition">
-              <div class="flex items-start gap-4">
-                <!-- Rank -->
-                <div class="flex-shrink-0 text-center">
-                  <div class="text-3xl font-bold text-gray-400">#<%= dispensary.rank %></div>
-                  <% if (index === 0) { %>
-                    <div class="text-2xl">🥇</div>
-                  <% } else if (index === 1) { %>
-                    <div class="text-2xl">🥈</div>
-                  <% } else if (index === 2) { %>
-                    <div class="text-2xl">🥉</div>
+            <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 hover:shadow-lg transition">
+              <div class="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                <!-- Rank and Logo row on mobile -->
+                <div class="flex items-center gap-3 sm:contents w-full sm:w-auto">
+                  <!-- Rank -->
+                  <div class="flex-shrink-0 text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-gray-400">#<%= dispensary.rank %></div>
+                    <% if (index === 0) { %>
+                      <div class="text-xl sm:text-2xl">🥇</div>
+                    <% } else if (index === 1) { %>
+                      <div class="text-xl sm:text-2xl">🥈</div>
+                    <% } else if (index === 2) { %>
+                      <div class="text-xl sm:text-2xl">🥉</div>
+                    <% } %>
+                  </div>
+
+                  <!-- Logo -->
+                  <% if (dispensary.logo_url) { %>
+                    <img src="<%= dispensary.logo_url %>" alt="<%= dispensary.name %>" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg flex-shrink-0">
                   <% } %>
+
+                  <!-- Name on mobile only -->
+                  <h3 class="text-lg font-bold text-gray-900 sm:hidden flex-1">
+                    <a href="/dispensary/<%= dispensary.slug %>" class="hover:text-green-600">
+                      <%= dispensary.name %>
+                    </a>
+                  </h3>
                 </div>
 
-                <!-- Logo -->
-                <% if (dispensary.logo_url) { %>
-                  <img src="<%= dispensary.logo_url %>" alt="<%= dispensary.name %>" class="w-20 h-20 object-cover rounded-lg flex-shrink-0">
-                <% } %>
-
                 <!-- Details -->
-                <div class="flex-grow">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">
+                <div class="flex-grow w-full">
+                  <!-- Name on desktop -->
+                  <h3 class="hidden sm:block text-xl font-bold text-gray-900 mb-2">
                     <a href="/dispensary/<%= dispensary.slug %>" class="hover:text-green-600">
                       <%= dispensary.name %>
                     </a>
                   </h3>
 
-                  <div class="text-gray-600 mb-3">
-                    <div>📍 <%= dispensary.address_street %>, <%= dispensary.city %></div>
+                  <div class="text-gray-600 mb-3 text-sm sm:text-base">
+                    <div><%= dispensary.address_street %>, <%= dispensary.city %></div>
                     <% if (dispensary.phone) { %>
-                      <div>📞 <%= dispensary.phone %></div>
+                      <div><%= dispensary.phone %></div>
                     <% } %>
                   </div>
 
-                  <div class="flex items-center gap-4 mb-3">
+                  <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-3 text-sm sm:text-base">
                     <div class="flex items-center gap-1">
-                      <span class="text-yellow-500">⭐</span>
+                      <span class="text-yellow-500">★</span>
                       <span class="font-semibold"><%= dispensary.google_rating || 'N/A' %></span>
-                      <span class="text-gray-500 text-sm">(<%= dispensary.google_review_count || 0 %> reviews)</span>
+                      <span class="text-gray-500 text-xs sm:text-sm">(<%= dispensary.google_review_count || 0 %>)</span>
                     </div>
                     <div class="text-green-600 font-semibold">
                       Score: <%= dispensary.composite_score %>
                     </div>
                   </div>
 
-                  <div class="flex items-center gap-4">
+                  <div class="flex flex-wrap items-center gap-3 sm:gap-4">
                     <%- include('partials/voteWidget', {
                       dispensary: dispensary,
                       votes: dispensary.votes,
@@ -116,7 +127,7 @@
                     }) %>
 
                     <a href="/dispensary/<%= dispensary.slug %>"
-                       class="text-green-600 hover:text-green-700 font-medium">
+                       class="text-green-600 hover:text-green-700 font-medium text-sm sm:text-base">
                       View Details →
                     </a>
                   </div>
@@ -126,16 +137,16 @@
 
             <!-- Ad after #3 -->
             <% if (index === 2) { %>
-              <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">
-                <div class="text-2xl mb-2">🏆</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">
+              <div class="bg-green-50 border-2 border-green-200 rounded-lg p-4 sm:p-6 text-center">
+                <div class="text-xl sm:text-2xl mb-2">🏆</div>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                   Want your dispensary's brand on custom accessories?
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-gray-600 mb-4 text-sm sm:text-base">
                   Partner with MunchMakers for premium branded grinders, trays, and more
                 </p>
                 <a href="<%= MUNCHMAKERS_URL %>" target="_blank"
-                   class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700">
+                   class="inline-block bg-green-600 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-green-700 text-sm sm:text-base">
                   Get Wholesale Quote
                 </a>
               </div>
@@ -144,49 +155,49 @@
         </div>
 
         <!-- Browse by Category -->
-        <div class="bg-white rounded-lg shadow p-6 mb-8">
-          <h2 class="text-2xl font-bold mb-4">Best Dispensaries by Category</h2>
-          <p class="text-gray-600 mb-4">Find top-rated dispensaries in <%= state.name %> specializing in:</p>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <a href="/dispensaries/<%= state.slug %>/best-edibles" class="block p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold">Best Edibles</div>
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4">Best Dispensaries by Category</h2>
+          <p class="text-gray-600 mb-4 text-sm sm:text-base">Find top-rated dispensaries in <%= state.name %> specializing in:</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+            <a href="/dispensaries/<%= state.slug %>/best-edibles" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best Edibles</div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-flower" class="block p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold">Best Flower</div>
+            <a href="/dispensaries/<%= state.slug %>/best-flower" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best Flower</div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-vapes" class="block p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold">Best Vapes</div>
+            <a href="/dispensaries/<%= state.slug %>/best-vapes" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best Vapes</div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-concentrates" class="block p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold">Best Concentrates</div>
+            <a href="/dispensaries/<%= state.slug %>/best-concentrates" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best Concentrates</div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-pre-rolls" class="block p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold">Best Pre-Rolls</div>
+            <a href="/dispensaries/<%= state.slug %>/best-pre-rolls" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best Pre-Rolls</div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-delivery" class="block p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold">Best Delivery</div>
+            <a href="/dispensaries/<%= state.slug %>/best-delivery" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best Delivery</div>
             </a>
           </div>
         </div>
 
         <!-- Counties in State -->
-        <div class="bg-white rounded-lg shadow p-6 mb-8">
-          <h2 class="text-2xl font-bold mb-4">Browse by County</h2>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4">Browse by County</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
             <% counties.forEach(county => { %>
               <a href="/dispensaries/<%= state.slug %>/<%= county.slug %>"
-                 class="block p-3 bg-gray-50 rounded hover:bg-green-50 hover:text-green-600 transition">
-                <div class="font-semibold"><%= county.name %></div>
-                <div class="text-sm text-gray-500"><%= county.dispensary_count || 0 %> dispensaries</div>
+                 class="block p-2 sm:p-3 bg-gray-50 rounded hover:bg-green-50 hover:text-green-600 transition">
+                <div class="font-semibold text-sm sm:text-base"><%= county.name %></div>
+                <div class="text-xs sm:text-sm text-gray-500"><%= county.dispensary_count || 0 %> dispensaries</div>
               </a>
             <% }); %>
           </div>
         </div>
 
         <!-- About Cannabis in State -->
-        <div class="bg-white rounded-lg shadow p-6 mb-8">
-          <h2 class="text-2xl font-bold mb-4">About Cannabis Dispensaries in <%= state.name %></h2>
-          <div class="prose max-w-none text-gray-700 space-y-4">
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4">About Cannabis Dispensaries in <%= state.name %></h2>
+          <div class="prose max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
             <p>
               <%= state.name %> is home to <%= stats.dispensary_count || 0 %> licensed cannabis dispensaries serving both medical
               and recreational customers. Our comprehensive directory helps you discover the highest-rated dispensaries
@@ -206,12 +217,12 @@
         </div>
 
         <!-- FAQ Section -->
-        <div class="bg-white rounded-lg shadow p-6 mb-8">
-          <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold mb-6">Frequently Asked Questions</h2>
           <div class="space-y-6">
             <div>
-              <h3 class="font-bold text-lg mb-2">How are dispensaries ranked in <%= state.name %>?</h3>
-              <p class="text-gray-700">
+              <h3 class="font-bold text-base sm:text-lg mb-2">How are dispensaries ranked in <%= state.name %>?</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
                 Dispensaries are ranked using our 7-factor weighted algorithm that considers Google ratings (25%),
                 review volume (15%), external listings on platforms like Leafly and Weedmaps (10%), user votes (20%),
                 page views (10%), data completeness (10%), and user engagement (10%). This ensures the most reputable
@@ -220,8 +231,8 @@
             </div>
 
             <div>
-              <h3 class="font-bold text-lg mb-2">What should I look for when choosing a dispensary?</h3>
-              <p class="text-gray-700">
+              <h3 class="font-bold text-base sm:text-lg mb-2">What should I look for when choosing a dispensary?</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
                 Consider factors like customer reviews, product variety, pricing, location convenience, staff knowledge,
                 store cleanliness, and available deals or loyalty programs. Our rankings help identify dispensaries that
                 excel in these areas based on real customer feedback.
@@ -229,8 +240,8 @@
             </div>
 
             <div>
-              <h3 class="font-bold text-lg mb-2">Do I need a medical card to visit dispensaries in <%= state.name %>?</h3>
-              <p class="text-gray-700">
+              <h3 class="font-bold text-base sm:text-lg mb-2">Do I need a medical card to visit dispensaries in <%= state.name %>?</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
                 Requirements vary by state. <%= state.name %> may have both medical and recreational dispensaries.
                 Check individual dispensary listings for their specific requirements. Most recreational dispensaries
                 only require a valid ID showing you're 21+.
@@ -238,8 +249,8 @@
             </div>
 
             <div>
-              <h3 class="font-bold text-lg mb-2">How can I find dispensaries near me in <%= state.name %>?</h3>
-              <p class="text-gray-700">
+              <h3 class="font-bold text-base sm:text-lg mb-2">How can I find dispensaries near me in <%= state.name %>?</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
                 Use our <a href="/near-me" class="text-green-600 hover:underline font-semibold">"Near Me" search feature</a>
                 to find dispensaries within 5-100 miles of your current location. You can also browse by county above to
                 narrow down your search to specific regions within <%= state.name %>.
@@ -247,8 +258,8 @@
             </div>
 
             <div>
-              <h3 class="font-bold text-lg mb-2">Can dispensary owners claim their listing?</h3>
-              <p class="text-gray-700">
+              <h3 class="font-bold text-base sm:text-lg mb-2">Can dispensary owners claim their listing?</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
                 Yes! Dispensary owners can <a href="/claim" class="text-green-600 hover:underline font-semibold">claim their listing</a>
                 to update information, respond to reviews, and access analytics. If your email domain matches your dispensary's
                 website, you'll be automatically verified.
@@ -258,36 +269,36 @@
         </div>
 
         <!-- Buying Guide -->
-        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg shadow p-6 mb-8">
-          <h2 class="text-2xl font-bold mb-4">First-Time Dispensary Visitor? Here's What to Know</h2>
-          <div class="space-y-3 text-gray-700">
+        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg shadow p-4 sm:p-6 mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4">First-Time Dispensary Visitor? Here's What to Know</h2>
+          <div class="space-y-3 text-gray-700 text-sm sm:text-base">
             <div class="flex items-start gap-3">
-              <span class="text-2xl">🆔</span>
+              <span class="text-xl sm:text-2xl flex-shrink-0">🆔</span>
               <div>
                 <strong>Bring Valid ID:</strong> All visitors must be 21+ and show government-issued identification.
                 Medical patients should bring their medical card.
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="text-2xl">💰</span>
+              <span class="text-xl sm:text-2xl flex-shrink-0">💰</span>
               <div>
                 <strong>Payment Methods:</strong> Many dispensaries are cash-only or accept debit cards. ATMs are typically available on-site.
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="text-2xl">📱</span>
+              <span class="text-xl sm:text-2xl flex-shrink-0">📱</span>
               <div>
                 <strong>Check Menus Online:</strong> Most dispensaries post their product menus online. Browse before visiting to save time.
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="text-2xl">🎓</span>
+              <span class="text-xl sm:text-2xl flex-shrink-0">🎓</span>
               <div>
                 <strong>Ask Questions:</strong> Budtenders are knowledgeable and happy to help you find the right products for your needs.
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="text-2xl">⚖️</span>
+              <span class="text-xl sm:text-2xl flex-shrink-0">⚖️</span>
               <div>
                 <strong>Know Purchase Limits:</strong> <%= state.name %> has legal limits on how much cannabis you can purchase per transaction.
                 Ask staff if you're unsure.
