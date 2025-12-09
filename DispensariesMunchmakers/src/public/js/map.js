@@ -237,12 +237,32 @@ function getUserLocation() {
       return;
     }
 
+    // Check if we have cached location (within last 5 minutes)
+    const cached = localStorage.getItem('userLocation');
+    if (cached) {
+      try {
+        const { lat, lng, timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < 300000) { // 5 minutes
+          resolve({ lat, lng });
+          return;
+        }
+      } catch (e) {
+        localStorage.removeItem('userLocation');
+      }
+    }
+
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        resolve({
+        const location = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        });
+        };
+        // Cache the location
+        localStorage.setItem('userLocation', JSON.stringify({
+          ...location,
+          timestamp: Date.now()
+        }));
+        resolve(location);
       },
       (error) => {
         let message;

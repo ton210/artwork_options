@@ -55,9 +55,10 @@ class RankingCalculator {
                WHERE county_id = $1 AND is_active = true`;
       params = [countyId];
     } else if (stateId) {
-      query = `SELECT MAX(google_review_count) as max_reviews
-               FROM dispensaries
-               WHERE state_id = $1 AND is_active = true`;
+      query = `SELECT MAX(d.google_review_count) as max_reviews
+               FROM dispensaries d
+               JOIN counties c ON d.county_id = c.id
+               WHERE c.state_id = $1 AND d.is_active = true`;
       params = [stateId];
     } else {
       return 0;
@@ -113,8 +114,9 @@ class RankingCalculator {
       } else if (stateId) {
         query = `SELECT d.id, SUM(v.vote_type) as net_votes
                  FROM dispensaries d
+                 JOIN counties c ON d.county_id = c.id
                  LEFT JOIN votes v ON d.id = v.dispensary_id
-                 WHERE d.state_id = $1 AND d.is_active = true
+                 WHERE c.state_id = $1 AND d.is_active = true
                  GROUP BY d.id
                  ORDER BY net_votes DESC
                  LIMIT 1`;
@@ -164,9 +166,10 @@ class RankingCalculator {
       } else if (stateId) {
         query = `SELECT d.id, COUNT(pv.id) as view_count
                  FROM dispensaries d
+                 JOIN counties c ON d.county_id = c.id
                  LEFT JOIN page_views pv ON d.id = pv.dispensary_id
                    AND pv.created_at >= NOW() - INTERVAL '30 days'
-                 WHERE d.state_id = $1 AND d.is_active = true
+                 WHERE c.state_id = $1 AND d.is_active = true
                  GROUP BY d.id
                  ORDER BY view_count DESC
                  LIMIT 1`;

@@ -6,6 +6,28 @@ const Ranking = require('../models/Ranking');
 const Vote = require('../models/Vote');
 const { getClientIP } = require('../middleware/analytics');
 const SchemaGenerator = require('../utils/schemaGenerator');
+const db = require('../config/database');
+
+// Tag display names mapping
+const TAG_DISPLAY_NAMES = {
+  'edibles': 'Edibles',
+  'flower': 'Flower',
+  'vapes': 'Vapes',
+  'concentrates': 'Concentrates',
+  'pre-rolls': 'Pre-Rolls',
+  'tinctures': 'Tinctures',
+  'topicals': 'Topicals',
+  'delivery': 'Delivery',
+  'curbside-pickup': 'Curbside Pickup',
+  'recreational': 'Recreational',
+  'medical': 'Medical',
+  'online-ordering': 'Online Ordering',
+  'accessories': 'Accessories',
+  'cbd': 'CBD'
+};
+
+// Minimum dispensaries required for a tag page
+const MIN_DISPENSARIES_FOR_TAG_PAGE = 3;
 
 // Individual dispensary detail page (check first if it has hyphens - dispensary slugs always have hyphens)
 // Note: This route must check if the slug is a state first (e.g., new-mexico, new-york) and pass to next handler
@@ -62,6 +84,294 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
   } catch (error) {
     console.error('Error loading dispensary page:', error);
     res.status(500).send('Error loading dispensary page');
+  }
+});
+
+// State-level tag rankings page (e.g., /dispensaries/california/best-edibles)
+router.get('/:state/best-:tag', async (req, res) => {
+  try {
+    const { state: stateSlug, tag } = req.params;
+
+    // Validate tag
+    if (!TAG_DISPLAY_NAMES[tag]) {
+      return res.status(404).render('404', {
+        title: 'Page Not Found',
+        message: 'The category you are looking for does not exist.'
+      });
+    }
+
+    const state = await State.findBySlug(stateSlug);
+    if (!state) {
+      return res.status(404).render('404', {
+        title: 'State Not Found',
+        message: 'The state you are looking for does not exist.'
+      });
+    }
+
+    // Get dispensaries with this tag in this state
+    const result = await db.query(`
+      SELECT DISTINCT d.*, s.name as state_name, s.slug as state_slug, s.abbreviation as state_abbr,
+             c.name as county_name, c.slug as county_slug,
+             array_agg(dt2.tag) as tags
+      FROM dispensaries d
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      JOIN dispensary_tags dt ON d.id = dt.dispensary_id
+      LEFT JOIN dispensary_tags dt2 ON d.id = dt2.dispensary_id
+      WHERE c.state_id = $1
+        AND dt.tag = $2
+        AND d.is_active = true
+      GROUP BY d.id, s.name, s.slug, s.abbreviation, c.name, c.slug
+      ORDER BY d.google_rating DESC NULLS LAST, d.google_review_count DESC NULLS LAST
+      LIMIT 50
+    `, [state.id, tag]);
+
+    const dispensaries = result.rows;
+
+    // Check minimum count
+    if (dispensaries.length < MIN_DISPENSARIES_FOR_TAG_PAGE) {
+      return res.status(404).render('404', {
+        title: 'Not Enough Dispensaries',
+        message: `There are not enough dispensaries with ${TAG_DISPLAY_NAMES[tag]} in ${state.name} to display rankings.`
+      });
+    }
+
+    // Calculate average rating
+    const ratingsSum = dispensaries.reduce((sum, d) => sum + (parseFloat(d.google_rating) || 0), 0);
+    const avgRating = dispensaries.length > 0 ? ratingsSum / dispensaries.length : null;
+
+    // Get other tags available in this state
+    const otherTagsResult = await db.query(`
+      SELECT dt.tag, COUNT(DISTINCT d.id) as count
+      FROM dispensary_tags dt
+      JOIN dispensaries d ON dt.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      WHERE c.state_id = $1 AND d.is_active = true AND dt.tag != $2
+      GROUP BY dt.tag
+      HAVING COUNT(DISTINCT d.id) >= $3
+      ORDER BY count DESC
+    `, [state.id, tag, MIN_DISPENSARIES_FOR_TAG_PAGE]);
+
+    const otherTags = otherTagsResult.rows
+      .filter(t => TAG_DISPLAY_NAMES[t.tag])
+      .map(t => ({
+        slug: t.tag,
+        display: TAG_DISPLAY_NAMES[t.tag],
+        count: t.count,
+        url: `/dispensaries/${stateSlug}/best-${t.tag}`
+      }));
+
+    const tagDisplay = TAG_DISPLAY_NAMES[tag];
+    const baseUrl = process.env.BASE_URL || 'https://bestdispensaries.munchmakers.com';
+    const canonicalUrl = `/dispensaries/${stateSlug}/best-${tag}`;
+
+    // Generate schema.org structured data
+    const schemas = {
+      itemList: {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'name': `Best ${tagDisplay} Dispensaries in ${state.name}`,
+        'description': `Top ${dispensaries.length} ${tagDisplay.toLowerCase()} dispensaries in ${state.name}, ranked by customer reviews`,
+        'numberOfItems': dispensaries.length,
+        'itemListElement': dispensaries.slice(0, 10).map((d, i) => ({
+          '@type': 'ListItem',
+          'position': i + 1,
+          'item': {
+            '@type': 'LocalBusiness',
+            'name': d.name,
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': d.address_street,
+              'addressLocality': d.city,
+              'addressRegion': d.state_abbr
+            },
+            ...(d.google_rating && {
+              'aggregateRating': {
+                '@type': 'AggregateRating',
+                'ratingValue': d.google_rating,
+                'reviewCount': d.google_review_count || 0
+              }
+            }),
+            'url': `${baseUrl}/dispensary/${d.slug}`
+          }
+        }))
+      },
+      breadcrumb: SchemaGenerator.generateBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: state.name, url: `/dispensaries/${stateSlug}` },
+        { name: `Best ${tagDisplay}`, url: null }
+      ], baseUrl)
+    };
+
+    res.render('tag-rankings', {
+      title: `Best ${tagDisplay} Dispensaries in ${state.name} (2026) | Top ${dispensaries.length} Ranked`,
+      dispensaries,
+      tagDisplay,
+      tag,
+      avgRating,
+      otherTags,
+      location: {
+        stateName: state.name,
+        stateSlug: stateSlug,
+        countyName: null,
+        countySlug: null
+      },
+      schemas,
+      baseUrl,
+      canonicalUrl,
+      meta: {
+        description: `Find the best ${tagDisplay.toLowerCase()} dispensaries in ${state.name}. Top ${dispensaries.length} ranked by customer reviews, ratings, and quality. Updated 2026.`,
+        keywords: `best ${tagDisplay.toLowerCase()} dispensaries ${state.name}, ${tagDisplay.toLowerCase()} ${state.name}, cannabis ${tagDisplay.toLowerCase()} ${state.name}, ${state.name} dispensary ${tagDisplay.toLowerCase()}`
+      }
+    });
+
+  } catch (error) {
+    console.error('Error loading tag rankings page:', error);
+    res.status(500).send('Error loading page');
+  }
+});
+
+// County-level tag rankings page (e.g., /dispensaries/california/los-angeles-county/best-edibles)
+router.get('/:state/:county/best-:tag', async (req, res) => {
+  try {
+    const { state: stateSlug, county: countySlug, tag } = req.params;
+
+    // Validate tag
+    if (!TAG_DISPLAY_NAMES[tag]) {
+      return res.status(404).render('404', {
+        title: 'Page Not Found',
+        message: 'The category you are looking for does not exist.'
+      });
+    }
+
+    const county = await County.findBySlug(stateSlug, countySlug);
+    if (!county) {
+      return res.status(404).render('404', {
+        title: 'County Not Found',
+        message: 'The county you are looking for does not exist.'
+      });
+    }
+
+    // Get dispensaries with this tag in this county
+    const result = await db.query(`
+      SELECT DISTINCT d.*, s.name as state_name, s.slug as state_slug, s.abbreviation as state_abbr,
+             c.name as county_name, c.slug as county_slug,
+             array_agg(dt2.tag) as tags
+      FROM dispensaries d
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      JOIN dispensary_tags dt ON d.id = dt.dispensary_id
+      LEFT JOIN dispensary_tags dt2 ON d.id = dt2.dispensary_id
+      WHERE d.county_id = $1
+        AND dt.tag = $2
+        AND d.is_active = true
+      GROUP BY d.id, s.name, s.slug, s.abbreviation, c.name, c.slug
+      ORDER BY d.google_rating DESC NULLS LAST, d.google_review_count DESC NULLS LAST
+      LIMIT 50
+    `, [county.id, tag]);
+
+    const dispensaries = result.rows;
+
+    // Check minimum count
+    if (dispensaries.length < MIN_DISPENSARIES_FOR_TAG_PAGE) {
+      return res.status(404).render('404', {
+        title: 'Not Enough Dispensaries',
+        message: `There are not enough dispensaries with ${TAG_DISPLAY_NAMES[tag]} in ${county.name} County to display rankings.`
+      });
+    }
+
+    // Calculate average rating
+    const ratingsSum = dispensaries.reduce((sum, d) => sum + (parseFloat(d.google_rating) || 0), 0);
+    const avgRating = dispensaries.length > 0 ? ratingsSum / dispensaries.length : null;
+
+    // Get other tags available in this county
+    const otherTagsResult = await db.query(`
+      SELECT dt.tag, COUNT(DISTINCT d.id) as count
+      FROM dispensary_tags dt
+      JOIN dispensaries d ON dt.dispensary_id = d.id
+      WHERE d.county_id = $1 AND d.is_active = true AND dt.tag != $2
+      GROUP BY dt.tag
+      HAVING COUNT(DISTINCT d.id) >= $3
+      ORDER BY count DESC
+    `, [county.id, tag, MIN_DISPENSARIES_FOR_TAG_PAGE]);
+
+    const otherTags = otherTagsResult.rows
+      .filter(t => TAG_DISPLAY_NAMES[t.tag])
+      .map(t => ({
+        slug: t.tag,
+        display: TAG_DISPLAY_NAMES[t.tag],
+        count: t.count,
+        url: `/dispensaries/${stateSlug}/${countySlug}/best-${t.tag}`
+      }));
+
+    const tagDisplay = TAG_DISPLAY_NAMES[tag];
+    const baseUrl = process.env.BASE_URL || 'https://bestdispensaries.munchmakers.com';
+    const canonicalUrl = `/dispensaries/${stateSlug}/${countySlug}/best-${tag}`;
+
+    // Generate schema.org structured data
+    const schemas = {
+      itemList: {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'name': `Best ${tagDisplay} Dispensaries in ${county.name} County, ${county.state_name}`,
+        'description': `Top ${dispensaries.length} ${tagDisplay.toLowerCase()} dispensaries in ${county.name} County, ${county.state_name}`,
+        'numberOfItems': dispensaries.length,
+        'itemListElement': dispensaries.slice(0, 10).map((d, i) => ({
+          '@type': 'ListItem',
+          'position': i + 1,
+          'item': {
+            '@type': 'LocalBusiness',
+            'name': d.name,
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': d.address_street,
+              'addressLocality': d.city,
+              'addressRegion': d.state_abbr
+            },
+            ...(d.google_rating && {
+              'aggregateRating': {
+                '@type': 'AggregateRating',
+                'ratingValue': d.google_rating,
+                'reviewCount': d.google_review_count || 0
+              }
+            }),
+            'url': `${baseUrl}/dispensary/${d.slug}`
+          }
+        }))
+      },
+      breadcrumb: SchemaGenerator.generateBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: county.state_name, url: `/dispensaries/${stateSlug}` },
+        { name: `${county.name} County`, url: `/dispensaries/${stateSlug}/${countySlug}` },
+        { name: `Best ${tagDisplay}`, url: null }
+      ], baseUrl)
+    };
+
+    res.render('tag-rankings', {
+      title: `Best ${tagDisplay} Dispensaries in ${county.name} County, ${county.state_abbr} (2026)`,
+      dispensaries,
+      tagDisplay,
+      tag,
+      avgRating,
+      otherTags,
+      location: {
+        stateName: county.state_name,
+        stateSlug: stateSlug,
+        countyName: county.name,
+        countySlug: countySlug
+      },
+      schemas,
+      baseUrl,
+      canonicalUrl,
+      meta: {
+        description: `Find the best ${tagDisplay.toLowerCase()} dispensaries in ${county.name} County, ${county.state_name}. Top ${dispensaries.length} ranked by customer reviews and ratings.`,
+        keywords: `best ${tagDisplay.toLowerCase()} dispensaries ${county.name} County, ${tagDisplay.toLowerCase()} ${county.name}, cannabis ${tagDisplay.toLowerCase()} ${county.state_abbr}`
+      }
+    });
+
+  } catch (error) {
+    console.error('Error loading county tag rankings page:', error);
+    res.status(500).send('Error loading page');
   }
 });
 
