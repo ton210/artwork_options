@@ -52,6 +52,10 @@ class SitemapGenerator {
     <loc>${this.baseUrl}/sitemap-brands.xml</loc>
     <lastmod>${this.formatDate(new Date())}</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>${this.baseUrl}/sitemap-tags.xml</loc>
+    <lastmod>${this.formatDate(new Date())}</lastmod>
+  </sitemap>
 </sitemapindex>`;
 
     return xml;
@@ -157,6 +161,34 @@ class SitemapGenerator {
         priority
       );
     });
+
+    return this.wrapUrlset(urls.join(''));
+  }
+
+  async generateTagsSitemap() {
+    // All valid tag slugs
+    const tags = [
+      'edibles', 'flower', 'vapes', 'concentrates', 'pre-rolls',
+      'tinctures', 'topicals', 'delivery', 'curbside-pickup',
+      'recreational', 'medical', 'online-ordering'
+    ];
+
+    // Get all states
+    const states = await db.query('SELECT slug FROM states ORDER BY name');
+
+    const urls = [];
+
+    // Generate URLs for each state + tag combination
+    for (const state of states.rows) {
+      for (const tag of tags) {
+        urls.push(this.createUrl(
+          `/dispensaries/${state.slug}/best-${tag}`,
+          new Date(),
+          'weekly',
+          '0.6'
+        ));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }

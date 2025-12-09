@@ -1,0 +1,639 @@
+[
+  {
+    "name": "Pisos",
+    "url": "https://www.pisoslv.com/",
+    "success": true,
+    "meta": {
+      "title": "PISOS | Las Vegas Dispensary",
+      "description": "Shop top-quality cannabis flower, edibles, vapes, and more at Pisos \r\nDispensary in Las Vegas. Enjoy daily deals, fast service, and a wide \r\nselection just minutes from the Strip. Join our loyalty program and get \r\nrewarded with exclusive discounts and offers.",
+      "keywords": null,
+      "og_title": "PISOS | Las Vegas Dispensary",
+      "og_description": "Shop top-quality cannabis flower, edibles, vapes, and more at Pisos Dispensary in Las Vegas. Enjoy daily deals, fast service, and a wide selection just minutes from the Strip. Join our loyalty program and get rewarded with exclusive discounts and offers."
+    },
+    "sitemap": {
+      "sitemap_url": "https://www.pisoslv.com/sitemap.xml",
+      "total_urls": 21,
+      "product_urls": [],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://www.pisoslv.com/home",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/6453a584-94df-4593-9999-90fd0534b054/152415.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/f215286c-cc82-4e70-9fda-eebf25226d1e/Copy+of+pisosinside.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/5a374620-ce64-4c4e-8105-0351d37f9dbf/Copy+of+IMG_7827.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/cb70b7a2-e158-40b0-abe4-0803d987fdf3/Screen+Shot+2023-05-16+at+8.32.46+AM.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/7b6c154f-b7eb-4c02-a978-a23bd3b27b41/Screen+Shot+2023-05-16+at+8.32.28+AM.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/cff43a58-01e8-40ec-a9e8-7afbd0157127/Copy+of+IMG_1661.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/4fdb8809-f2a3-416c-bda6-7216be8fc72e/Copy+of+IMG_1266.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/585510ea-73af-4479-aafe-7f1b853ce10a/Screen+Shot+2023-05-16+at+8.32.37+AM.png",
+        "https://www.pisoslv.com/about"
+      ]
+    },
+    "platforms": [],
+    "product_mentions": {
+      "flower": 9,
+      "edibles": 4,
+      "concentrates": 6,
+      "vapes": 67,
+      "tinctures": 6
+    },
+    "menu_links": [
+      {
+        "url": "https://www.pisoslv.com/menu/rec",
+        "text": "DEALS"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "Cookies San Bernardino",
+    "url": "https://cookiesdispensary.com/locations/san-bernardino/",
+    "success": true,
+    "meta": {
+      "title": "Premium San Bernardino Cannabis Dispensary | COOKIES",
+      "description": "Experience the best San Bernardino dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in San Bernardino, CA.",
+      "keywords": null,
+      "og_title": "Premium San Bernardino Cannabis Dispensary | COOKIES",
+      "og_description": "Experience the best San Bernardino dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in San Bernardino, CA."
+    },
+    "sitemap": {
+      "sitemap_url": "https://cookiesdispensary.com/sitemap.xml",
+      "total_urls": 20325,
+      "product_urls": [
+        "https://cookiesdispensary.com/strains/",
+        "https://cookiesdispensary.com/panama-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/",
+        "https://cookiesdispensary.com/brentwood/shop/",
+        "https://cookiesdispensary.com/broadway/shop/",
+        "https://cookiesdispensary.com/flamingo/shop/",
+        "https://cookiesdispensary.com/fresno/shop/",
+        "https://cookiesdispensary.com/hayward/shop/",
+        "https://cookiesdispensary.com/la-mesa/shop/",
+        "https://cookiesdispensary.com/merced/shop/",
+        "https://cookiesdispensary.com/modesto/shop/",
+        "https://cookiesdispensary.com/napa/shop/",
+        "https://cookiesdispensary.com/san-bernardino/shop/",
+        "https://cookiesdispensary.com/sanford/shop/",
+        "https://cookiesdispensary.com/lemonnade-union-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-p90-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-berry-dream-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-pina-colana-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-unflavored-distillate-syringe-1g/"
+      ],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://cookiesdispensary.com/about/",
+        "https://cookiesdispensary.com/california/",
+        "https://cookiesdispensary.com/california/dispensary-near-burbank-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-fairview/",
+        "https://cookiesdispensary.com/california/dispensary-near-harder-tennyson/",
+        "https://cookiesdispensary.com/california/dispensary-near-jackson-triangle/",
+        "https://cookiesdispensary.com/california/dispensary-near-longwood-winton-grove/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-foothills/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-garin/",
+        "https://cookiesdispensary.com/california/dispensary-near-santa-clara-neighborhood/"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "product_mentions": {
+      "flower": 31,
+      "edibles": 4,
+      "concentrates": 9,
+      "vapes": 404,
+      "pre_rolls": 14,
+      "tinctures": 5,
+      "topicals": 1
+    },
+    "menu_links": [
+      {
+        "url": "https://cookiesdispensary.com#popup",
+        "text": "Shop Products"
+      },
+      {
+        "url": "https://cookiesdispensary.com/la-mesa/shop/",
+        "text": "Shop"
+      },
+      {
+        "url": "https://cookiesdispensary.com/shop/",
+        "text": "Shop"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "JARS Cannabis",
+    "url": "https://jarscannabis.com/",
+    "success": true,
+    "meta": {
+      "title": "JARS Cannabis | Best Recreational Cannabis Dispensary",
+      "description": "JARS Cannabis - Best dispensary for premium recreational cannabis. Explore the widest selection at affordable prices in Michigan, Colorado, and Arizona.",
+      "keywords": "online store, ecommerce, shopping",
+      "og_title": "TOP-SHELF QUALITY. UNMATCHED VARIETY. PRICED FOR THE PEOPLE.",
+      "og_description": "Discover JARS Cannabis \u2014 your go-to dispensary for premium cannabis, vapes, edibles, and concentrates at unbeatable prices. With multiple locations and a commitment to quality, value, and experience, JARS delivers top-shelf products and expert service in a welcoming environment. Shop in-store or online today and see why cannabis consumers across the region choose JARS."
+    },
+    "sitemap": {
+      "sitemap_url": "https://jarscannabis.com/sitemap.xml",
+      "total_urls": 17639,
+      "product_urls": [
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/product/007-up",
+        "https://jarscannabis.com/product/05-malibu-live-rosin-cartridge",
+        "https://jarscannabis.com/product/1-1-1-blackberry-lemonade-pearls-cbn-cbd-thc-sleepy-indica",
+        "https://jarscannabis.com/product/1-1-1-cbd-cbn-thc-chocolate-chip-cookies",
+        "https://jarscannabis.com/product/1-1-1-cbg-cbd-thc-formula-transdermal-compound",
+        "https://jarscannabis.com/product/1-1-1-clementine-shine-cbg-thcv-thc-gummies",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-27369",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-84320",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-22572",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-98852",
+        "https://jarscannabis.com/product/1-1-1-pm-tablets",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-1501",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-19335",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-27565",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-41723",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-43511"
+      ],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://jarscannabis.com/",
+        "https://jarscannabis.com/team",
+        "https://jarscannabis.com/editorial-policy",
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures"
+      ]
+    },
+    "platforms": [
+      "dutchie",
+      "treez"
+    ],
+    "product_mentions": {
+      "flower": 20,
+      "edibles": 2,
+      "concentrates": 4,
+      "vapes": 29,
+      "tinctures": 1
+    },
+    "menu_links": [],
+    "error": null
+  },
+  {
+    "name": "Planet 13",
+    "url": "https://planet13.com/stores/planet-13-dispensary",
+    "success": true,
+    "meta": {
+      "title": null,
+      "description": null,
+      "keywords": null,
+      "og_title": null,
+      "og_description": null
+    },
+    "sitemap": {
+      "sitemap_url": "https://planet13.com/sitemap.xml",
+      "total_urls": 16,
+      "product_urls": [
+        "https://planet13.com/strains-sitemap.xml",
+        "https://planet13.com/products-sitemap.xml",
+        "https://planet13.com/edibles-sitemap.xml",
+        "https://planet13.com/strains-sitemap.xml",
+        "https://planet13.com/products-sitemap.xml",
+        "https://planet13.com/edibles-sitemap.xml"
+      ],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://planet13.com/post-sitemap.xml",
+        "https://planet13.com/page-sitemap.xml",
+        "https://planet13.com/terpenes-sitemap.xml",
+        "https://planet13.com/strains-sitemap.xml",
+        "https://planet13.com/products-sitemap.xml",
+        "https://planet13.com/faq-sitemap.xml",
+        "https://planet13.com/edibles-sitemap.xml",
+        "https://planet13.com/event-sitemap.xml",
+        "https://planet13.com/post-sitemap.xml",
+        "https://planet13.com/page-sitemap.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "product_mentions": {
+      "vapes": 10
+    },
+    "menu_links": [],
+    "error": null
+  },
+  {
+    "name": "Curaleaf Las Vegas",
+    "url": "https://curaleaf.com/dispensary/nevada/reef-dispensary-las-vegas-strip",
+    "success": true,
+    "meta": {
+      "title": "Age Gate",
+      "description": null,
+      "keywords": null,
+      "og_title": "Curaleaf",
+      "og_description": "Curaleaf is a leading medical and recreational marijuana dispensary in the United States. We serve 350k+ registered patients across 23 states. Shop now!"
+    },
+    "sitemap": {
+      "sitemap_url": "https://curaleaf.com/sitemap.xml",
+      "total_urls": 6,
+      "product_urls": [],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://curaleaf.com/articles-sitemap.xml",
+        "https://curaleaf.com/pages-sitemap.xml",
+        "https://curaleaf.com/dispensaries-sitemap.xml",
+        "https://curaleaf.com/articles-sitemap.xml",
+        "https://curaleaf.com/pages-sitemap.xml",
+        "https://curaleaf.com/dispensaries-sitemap.xml"
+      ]
+    },
+    "platforms": [],
+    "product_mentions": {
+      "flower": 4,
+      "edibles": 4,
+      "concentrates": 4,
+      "vapes": 76,
+      "pre_rolls": 2,
+      "tinctures": 4
+    },
+    "menu_links": [],
+    "error": null
+  },
+  {
+    "name": "Feel State",
+    "url": "https://feelstate.com/location/florissant/",
+    "success": true,
+    "meta": {
+      "title": "Visit The Best Weed Dispensary In Florissant, MO: Feel State",
+      "description": "Feel State Weed Dispensary in Florissant is located at 444 Howdershell Rd. We offer premium cannabis products such as flower, edibles, vapes, pre-rolls and more",
+      "keywords": null,
+      "og_title": "Visit The Best Weed Dispensary In Florissant, MO: Feel State",
+      "og_description": "Feel State Weed Dispensary in Florissant is located at 444 Howdershell Rd. We offer premium cannabis products such as flower, edibles, vapes, pre-rolls and more"
+    },
+    "sitemap": {
+      "sitemap_url": "https://feelstate.com/sitemap_index.xml",
+      "total_urls": 18,
+      "product_urls": [
+        "https://feelstate.com/product-sitemap.xml",
+        "https://feelstate.com/product-sitemap.xml"
+      ],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://feelstate.com/post-sitemap1.xml",
+        "https://feelstate.com/post-sitemap2.xml",
+        "https://feelstate.com/page-sitemap.xml",
+        "https://feelstate.com/faq-sitemap.xml",
+        "https://feelstate.com/location-sitemap.xml",
+        "https://feelstate.com/missouri-sitemap.xml",
+        "https://feelstate.com/partner-sitemap.xml",
+        "https://feelstate.com/product-sitemap.xml",
+        "https://feelstate.com/local-sitemap.xml",
+        "https://feelstate.com/post-sitemap1.xml"
+      ]
+    },
+    "platforms": [
+      "weedmaps",
+      "leafly"
+    ],
+    "product_mentions": {
+      "flower": 22,
+      "edibles": 10,
+      "concentrates": 8,
+      "vapes": 118,
+      "pre_rolls": 9,
+      "tinctures": 1,
+      "topicals": 2,
+      "accessories": 1
+    },
+    "menu_links": [
+      {
+        "url": "http://",
+        "text": "Select Your Location\nFlorissant, MO\n\n\n\n\n\n\nHome\nLoc"
+      },
+      {
+        "url": "https://feelstate.com/menu/florissant/",
+        "text": "Shop Online"
+      },
+      {
+        "url": "https://feelstate.com/menu/florissant/?dtche%5Bcategory%5D=flower",
+        "text": "Flower"
+      },
+      {
+        "url": "https://feelstate.com/menu/florissant/?submit=Shop+Now&dtche%5Bcategory%5D=pre-rolls",
+        "text": "Pre-Rolls"
+      },
+      {
+        "url": "https://feelstate.com/menu/florissant/?submit=Shop+Now&dtche%5Bcategory%5D=vaporizers",
+        "text": "Vaporizers"
+      },
+      {
+        "url": "https://feelstate.com/menu/florissant/?submit=Shop+Now&dtche%5Bcategory%5D=concentrates",
+        "text": "Concentrates"
+      },
+      {
+        "url": "https://feelstate.com/menu/florissant/?submit=Shop+Now&dtche%5Bcategory%5D=edibles",
+        "text": "Edibles"
+      },
+      {
+        "url": "https://feelstate.com/shop/",
+        "text": "Merch Shop"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "Jardin Las Vegas",
+    "url": "https://jardinlasvegas.com/",
+    "success": true,
+    "meta": {
+      "title": "Jardin | Las Vegas Dispensary",
+      "description": "Discover Jardin Las Vegas for top-tier cannabis products and an unmatched dispensary experience. Quality, variety, and expert service await.",
+      "keywords": null,
+      "og_title": "Jardin | Las Vegas Dispensary",
+      "og_description": "Discover Jardin Las Vegas for top-tier cannabis products and an unmatched dispensary experience. Quality, variety, and expert service await."
+    },
+    "sitemap": {
+      "sitemap_url": "https://jardinlasvegas.com/sitemap.xml",
+      "total_urls": 6,
+      "product_urls": [],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://www.jardinlasvegas.com/post-sitemap.xml",
+        "https://www.jardinlasvegas.com/page-sitemap.xml",
+        "https://www.jardinlasvegas.com/wpa-stats-type-sitemap.xml",
+        "https://www.jardinlasvegas.com/post-sitemap.xml",
+        "https://www.jardinlasvegas.com/page-sitemap.xml",
+        "https://www.jardinlasvegas.com/wpa-stats-type-sitemap.xml"
+      ]
+    },
+    "platforms": [],
+    "product_mentions": {
+      "flower": 26,
+      "edibles": 27,
+      "concentrates": 12,
+      "vapes": 41,
+      "pre_rolls": 14,
+      "tinctures": 10,
+      "topicals": 14,
+      "accessories": 1
+    },
+    "menu_links": [
+      {
+        "url": "https://www.jardinlasvegas.com/store",
+        "text": "Store"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/flower",
+        "text": "Flower"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/pre-rolls",
+        "text": "Pre-Roll"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/vaporizers",
+        "text": "Vaporizers"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/concentrates",
+        "text": "Concentrates"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/edibles",
+        "text": "Edibles"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/beverages",
+        "text": "Beverages"
+      },
+      {
+        "url": "https://www.jardinlasvegas.com/store/categories/tinctures-and-topicals",
+        "text": "Tinctures & Topicals"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/cbd",
+        "text": "CBD"
+      },
+      {
+        "url": "https://jardinlasvegas.com/store/categories/merchandise",
+        "text": "Merch"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "Cloud Cannabis",
+    "url": "https://cloudcannabis.com/utica-order-online/",
+    "success": true,
+    "meta": {
+      "title": "Shop Our Utica Dispensary Weed Deals: Cloud Cannabis",
+      "description": "Browse our dispensary in Utica online and score great cannabis deals on flower, edibles, and vapes at one of Michigan\u2019s top dispensaries\u2013 Cloud Cannabis!",
+      "keywords": null,
+      "og_title": "Utica - Order online",
+      "og_description": "Browse our dispensary in Utica online and score great cannabis deals on flower, edibles, and vapes at one of Michigan\u2019s top dispensaries\u2013 Cloud Cannabis!"
+    },
+    "sitemap": {
+      "sitemap_url": "https://cloudcannabis.com/sitemap.xml",
+      "total_urls": 22,
+      "product_urls": [],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://cloudcannabis.com/post-sitemap.xml",
+        "https://cloudcannabis.com/page-sitemap.xml",
+        "https://cloudcannabis.com/tribe_venue-sitemap.xml",
+        "https://cloudcannabis.com/tribe_organizer-sitemap.xml",
+        "https://cloudcannabis.com/tribe_events-sitemap.xml",
+        "https://cloudcannabis.com/tribe_event_series-sitemap.xml",
+        "https://cloudcannabis.com/category-sitemap.xml",
+        "https://cloudcannabis.com/post_tag-sitemap.xml",
+        "https://cloudcannabis.com/tribe_events_cat-sitemap.xml",
+        "https://cloudcannabis.com/author-sitemap.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie",
+      "weedmaps"
+    ],
+    "product_mentions": {
+      "flower": 70,
+      "edibles": 56,
+      "concentrates": 64,
+      "vapes": 104,
+      "pre_rolls": 51,
+      "tinctures": 37,
+      "topicals": 36,
+      "accessories": 36
+    },
+    "menu_links": [
+      {
+        "url": "https://cloudcannabis.com/order-online/",
+        "text": "Order Online"
+      },
+      {
+        "url": "https://cloudcannabis.com/ann-arbor-order-online/",
+        "text": "Ann Arbor"
+      },
+      {
+        "url": "https://cloudcannabis.com/cedar-springs-order-online/",
+        "text": "Cedar Springs"
+      },
+      {
+        "url": "https://cloudcannabis.com/detroit-order-online/",
+        "text": "Detroit"
+      },
+      {
+        "url": "https://cloudcannabis.com/gaylord-order-online/",
+        "text": "Gaylord"
+      },
+      {
+        "url": "https://cloudcannabis.com/gr-28th-st-order-online/",
+        "text": "GR 28th St"
+      },
+      {
+        "url": "https://cloudcannabis.com/gr-fulton-st-order-online/",
+        "text": "GR Fulton St"
+      },
+      {
+        "url": "https://cloudcannabis.com/kalamazoo-order-online/",
+        "text": "Kalamazoo"
+      },
+      {
+        "url": "https://cloudcannabis.com/muskegon-order-online/",
+        "text": "Muskegon"
+      },
+      {
+        "url": "https://cloudcannabis.com/new-baltimore-order-online/",
+        "text": "New Baltimore"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "Maggie's Farm",
+    "url": "https://www.maggiesfarmmarijuana.com/locations/manitou-springs/",
+    "success": false,
+    "meta": {},
+    "sitemap": null,
+    "platforms": [],
+    "product_mentions": {},
+    "menu_links": [],
+    "error": "403 Client Error: Forbidden for url: https://www.maggiesfarmmarijuana.com/locations/manitou-springs/"
+  },
+  {
+    "name": "Lume Cannabis",
+    "url": "https://www.lume.com/",
+    "success": true,
+    "meta": {
+      "title": "Lume Cannabis Co. - Michigan's Best Cannabis Dispensary",
+      "description": "Lume Cannabis Co. is Michigan's largest cannabis company. Click here to shop online, or find our closest dispensary to you.",
+      "keywords": "Lume, Lume Cannabis Co., Cannabis",
+      "og_title": "Lume Cannabis Co. - Michigan's Best Cannabis Dispensary",
+      "og_description": "Lume Cannabis Co. is Michigan's largest cannabis company. Click here to shop online, or find our closest dispensary to you."
+    },
+    "sitemap": {
+      "sitemap_url": "https://www.lume.com/sitemap.xml",
+      "total_urls": 7644,
+      "product_urls": [
+        "https://www.lume.com/shop/all",
+        "https://www.lume.com/shop/effects/dream",
+        "https://www.lume.com/shop/effects/recover",
+        "https://www.lume.com/shop/effects/unwind",
+        "https://www.lume.com/shop/effects/center",
+        "https://www.lume.com/shop/effects/focus",
+        "https://www.lume.com/shop/effects/move",
+        "https://www.lume.com/shop/category",
+        "https://www.lume.com/shop/effects",
+        "https://www.lume.com/cannalicious-concentrates",
+        "https://www.lume.com/harbor-farmz-concentrates",
+        "https://www.lume.com/tend-harvest-cultivate-flower",
+        "https://www.lume.com/holistic-industries-flower",
+        "https://www.lume.com/freedom-green-flower-prerolls",
+        "https://www.lume.com/most-potent-strongest-weed-strains-2023",
+        "https://www.lume.com/in-store-only-flower-specials",
+        "https://www.lume.com/classic-roots-flower",
+        "https://www.lume.com/ritual-concentrates",
+        "https://www.lume.com/ampd-infused-flower",
+        "https://www.lume.com/shop/category"
+      ],
+      "menu_urls": [],
+      "sample_urls": [
+        "https://www.lume.com",
+        "https://www.lume.com/shop/all",
+        "https://www.lume.com/shop/effects/dream",
+        "https://www.lume.com/shop/effects/recover",
+        "https://www.lume.com/shop/effects/unwind",
+        "https://www.lume.com/shop/effects/center",
+        "https://www.lume.com/shop/effects/focus",
+        "https://www.lume.com/shop/effects/move",
+        "https://www.lume.com/shop/category",
+        "https://www.lume.com/shop/effects"
+      ]
+    },
+    "platforms": [
+      "dutchie",
+      "treez"
+    ],
+    "product_mentions": {
+      "flower": 196,
+      "edibles": 64,
+      "concentrates": 94,
+      "vapes": 274,
+      "pre_rolls": 56,
+      "tinctures": 21,
+      "topicals": 62,
+      "accessories": 23
+    },
+    "menu_links": [
+      {
+        "url": "https://www.lume.com/shop/all",
+        "text": "Shop All"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/flower",
+        "text": "Flower"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/vaporizers",
+        "text": "Carts"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/edibles",
+        "text": "Edibles"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/pre-rolls",
+        "text": "Pre-rolls"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/concentrates",
+        "text": "Concentrates"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/edibles?filters=%2CSubcategory%255Etree%255EDRINKS",
+        "text": "Beverages"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/accessories",
+        "text": "Accessories"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/tinctures",
+        "text": "Tinctures"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/topicals",
+        "text": "Topicals"
+      }
+    ],
+    "error": null
+  }
+]

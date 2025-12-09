@@ -1,0 +1,462 @@
+[
+  {
+    "id": 505,
+    "name": "RISE Bloomfield",
+    "url": "https://risecannabis.com/dispensaries/new-jersey/bloomfield/",
+    "city": "Bloomfield",
+    "state": "New Jersey",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": null,
+    "page_data": null,
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "delivery",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  },
+  {
+    "id": 1162,
+    "name": "Star Buds Manitou Springs",
+    "url": "https://starbuds.com/stores/recreational-marijuana-dispensary-manitou-springs/",
+    "city": "Manitou Springs",
+    "state": "Colorado",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://starbuds.com/sitemap_index.xml",
+      "total_urls": 3,
+      "product_urls": []
+    },
+    "page_data": null,
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "recreational"
+    ]
+  },
+  {
+    "id": 402,
+    "name": "Verilife Chicago",
+    "url": "https://www.verilife.com/il/locations/chicago-river-north",
+    "city": "Chicago",
+    "state": "Illinois",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://www.verilife.com/sitemap.xml",
+      "total_urls": 39103,
+      "product_urls": [
+        "https://www.verilife.com/learn/cannabis-strain-names",
+        "https://www.verilife.com/learn/cannabis-concentrates",
+        "https://www.verilife.com/learn/banana-cannabis-strains",
+        "https://www.verilife.com/learn/central-asian-landrace-strains",
+        "https://www.verilife.com/learn/funny-strain-names",
+        "https://www.verilife.com/learn/choose-vape",
+        "https://www.verilife.com/learn/african-landrace-strains",
+        "https://www.verilife.com/learn/landrace-strains",
+        "https://www.verilife.com/learn/strongest-marijuana-strain",
+        "https://www.verilife.com/learn/mexican-landrace-strains",
+        "https://www.verilife.com/learn/exotic-strains-zaza",
+        "https://www.verilife.com/learn/strawberry-cannabis-strains",
+        "https://www.verilife.com/learn/og-kush-og-strains",
+        "https://www.verilife.com/learn/popcorn-flower",
+        "https://www.verilife.com/learn/how-to-make-edible-gummies",
+        "https://www.verilife.com/learn/grape-strains",
+        "https://www.verilife.com/learn/guide-marijuana-edibles",
+        "https://www.verilife.com/learn/lemon-cannabis-strains",
+        "https://www.verilife.com/learn/premium-flower",
+        "https://www.verilife.com/learn/mango-cannabis-strains"
+      ]
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Chicago Dispensary - Recreational Marijuana in the River North Neighborhood | Verilife",
+      "description": "Visit our recreational marijuana dispensary in Chicago, IL. Located in the River North neighborhood, our dispensary offers a variety of products.",
+      "html_length": 314816
+    },
+    "inferred_tags": [
+      "flower",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "topicals",
+      "delivery",
+      "curbside-pickup",
+      "online-ordering",
+      "medical",
+      "recreational"
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Feel State Florissant",
+    "url": "https://feelstate.com/location/florissant/",
+    "city": "Florissant",
+    "state": "Missouri",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://feelstate.com/sitemap_index.xml",
+      "total_urls": 9,
+      "product_urls": [
+        "https://feelstate.com/product-sitemap.xml"
+      ]
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Visit The Best Weed Dispensary In Florissant, MO: Feel State",
+      "description": "Feel State Weed Dispensary in Florissant is located at 444 Howdershell Rd. We offer premium cannabis products such as flower, edibles, vapes, pre-rolls and more",
+      "html_length": 151788
+    },
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  },
+  {
+    "id": 625,
+    "name": "Jard\u00edn Las Vegas",
+    "url": "https://jardinlasvegas.com/",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://jardinlasvegas.com/sitemap.xml",
+      "total_urls": 3,
+      "product_urls": []
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Jardin | Las Vegas Dispensary",
+      "description": "Discover Jardin Las Vegas for top-tier cannabis products and an unmatched dispensary experience. Quality, variety, and expert service await.",
+      "html_length": 224444
+    },
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "topicals",
+      "tinctures",
+      "delivery",
+      "recreational"
+    ]
+  },
+  {
+    "id": 503,
+    "name": "RISE Paterson",
+    "url": "https://risecannabis.com/dispensaries/new-jersey/paterson/",
+    "city": "Paterson",
+    "state": "New Jersey",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": null,
+    "page_data": null,
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "delivery",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  },
+  {
+    "id": 443,
+    "name": "RISE Mundelein",
+    "url": "https://risecannabis.com/dispensaries/illinois/mundelein/",
+    "city": "Mundelein",
+    "state": "Illinois",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": null,
+    "page_data": null,
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "delivery",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  },
+  {
+    "id": 1253,
+    "name": "Maggie's Farm",
+    "url": "https://www.maggiesfarmmarijuana.com/locations/manitou-springs/",
+    "city": "Manitou Springs",
+    "state": "Colorado",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://www.maggiesfarmmarijuana.com/sitemap.xml",
+      "total_urls": 4,
+      "product_urls": [
+        "https://maggiesfarmmarijuana.com/category-sitemap1.xml"
+      ]
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Shop Local REC Marijuana in Manitou Springs | Maggie\u2019s Farm Dispensary",
+      "description": "Daily deals on recreational cannabis local favorites in Manitou Springs! Shop Award winning certified organic cannabis at Maggie\u2019s Farm.",
+      "html_length": 80058
+    },
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "recreational"
+    ]
+  },
+  {
+    "id": 1845,
+    "name": "Cookies Modesto",
+    "url": "https://cookiesdispensary.com/locations/modesto/",
+    "city": "Modesto",
+    "state": "California",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://cookiesdispensary.com/sitemap.xml",
+      "total_urls": 20325,
+      "product_urls": [
+        "https://cookiesdispensary.com/strains/",
+        "https://cookiesdispensary.com/panama-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/",
+        "https://cookiesdispensary.com/brentwood/shop/",
+        "https://cookiesdispensary.com/broadway/shop/",
+        "https://cookiesdispensary.com/flamingo/shop/",
+        "https://cookiesdispensary.com/fresno/shop/",
+        "https://cookiesdispensary.com/hayward/shop/",
+        "https://cookiesdispensary.com/la-mesa/shop/",
+        "https://cookiesdispensary.com/merced/shop/",
+        "https://cookiesdispensary.com/modesto/shop/",
+        "https://cookiesdispensary.com/napa/shop/",
+        "https://cookiesdispensary.com/san-bernardino/shop/",
+        "https://cookiesdispensary.com/sanford/shop/",
+        "https://cookiesdispensary.com/lemonnade-union-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-p90-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-berry-dream-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-pina-colana-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-unflavored-distillate-syringe-1g/"
+      ]
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Premium Modesto Cannabis Dispensary | COOKIES",
+      "description": "Experience the best Modesto dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in Modesto, CA.",
+      "html_length": 597025
+    },
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "topicals",
+      "delivery",
+      "curbside-pickup",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  },
+  {
+    "id": 603,
+    "name": "Cookies Flamingo",
+    "url": "https://cookiesdispensary.com/locations/flamingo/",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://cookiesdispensary.com/sitemap.xml",
+      "total_urls": 20325,
+      "product_urls": [
+        "https://cookiesdispensary.com/strains/",
+        "https://cookiesdispensary.com/panama-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/",
+        "https://cookiesdispensary.com/brentwood/shop/",
+        "https://cookiesdispensary.com/broadway/shop/",
+        "https://cookiesdispensary.com/flamingo/shop/",
+        "https://cookiesdispensary.com/fresno/shop/",
+        "https://cookiesdispensary.com/hayward/shop/",
+        "https://cookiesdispensary.com/la-mesa/shop/",
+        "https://cookiesdispensary.com/merced/shop/",
+        "https://cookiesdispensary.com/modesto/shop/",
+        "https://cookiesdispensary.com/napa/shop/",
+        "https://cookiesdispensary.com/san-bernardino/shop/",
+        "https://cookiesdispensary.com/sanford/shop/",
+        "https://cookiesdispensary.com/lemonnade-union-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-p90-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-berry-dream-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-pina-colana-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-unflavored-distillate-syringe-1g/"
+      ]
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Premium Las Vegas Cannabis Dispensary | COOKIES",
+      "description": "Experience the best Las Vegas dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in Las Vegas, NV.",
+      "html_length": 586715
+    },
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "topicals",
+      "delivery",
+      "curbside-pickup",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  },
+  {
+    "id": 271,
+    "name": "Cookies Chicago",
+    "url": "https://www.cookieschicago.co/",
+    "city": "Chicago",
+    "state": "Illinois",
+    "data_found": true,
+    "methods_tried": [
+      "sitemap",
+      "page_fetch"
+    ],
+    "sitemap_data": {
+      "success": true,
+      "method": "sitemap (Mozilla/5.0 (compati...)",
+      "sitemap_url": "https://www.cookieschicago.co/sitemap.xml",
+      "total_urls": 766,
+      "product_urls": [
+        "https://cookieschicago.co/shop/",
+        "https://cookieschicago.co/strains/",
+        "https://cookieschicago.co/shop/p90-1-8oz/",
+        "https://cookieschicago.co/shop/berry-dream-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/pina-colana-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/unflavored-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/pomegranate-shake-1-8oz/",
+        "https://cookieschicago.co/shop/blue-suede-rso-1g/",
+        "https://cookieschicago.co/shop/purple-dino-1-8oz/",
+        "https://cookieschicago.co/shop/blue-raz-x-light-blue-rso-1g/",
+        "https://cookieschicago.co/shop/sour-black-currant-c-bite-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/emergen-c-rso-1g/",
+        "https://cookieschicago.co/shop/london-pound-cake-75-1-4oz/",
+        "https://cookieschicago.co/shop/london-pound-cake-75-1-8oz/",
+        "https://cookieschicago.co/shop/moonwalkers-1-8oz/",
+        "https://cookieschicago.co/shop/moonwalkers-1-4oz/",
+        "https://cookieschicago.co/shop/blueberry-banana-1-4oz/",
+        "https://cookieschicago.co/shop/sour-apple-c-bite-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/golden-berry-distillate-syringe-1g/"
+      ]
+    },
+    "page_data": {
+      "success": true,
+      "method": "page (Mozilla/5.0 (compati...)",
+      "title": "Chicago Dispensary with Fire Strains | COOKIES CHICAGO",
+      "description": "Cookies Chicago dispensary has the most fire strains and cannabis in the market. Experience the difference with Cookies dispensary in Chicago, IL today.",
+      "html_length": 579207
+    },
+    "inferred_tags": [
+      "flower",
+      "pre-rolls",
+      "vapes",
+      "concentrates",
+      "edibles",
+      "tinctures",
+      "topicals",
+      "delivery",
+      "curbside-pickup",
+      "medical",
+      "recreational",
+      "online-ordering"
+    ]
+  }
+]

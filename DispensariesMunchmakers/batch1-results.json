@@ -1,0 +1,1530 @@
+Scraping 1/25: Pisos...
+Scraping 2/25: Cookies San Bernardino Dispensary...
+Scraping 3/25: JARS Cannabis Phoenix Metrocenter...
+Scraping 4/25: RISE Medical & Recreational Marijuana Dispensary Bloomfield...
+Scraping 5/25: Star Buds Manitou Springs...
+Scraping 6/25: JARS Cannabis Phoenix Airport...
+Scraping 7/25: Exclusive Monroe...
+Scraping 8/25: Planet 13 Las Vegas...
+Scraping 9/25: Curaleaf Dispensary Las Vegas Strip...
+Scraping 10/25: Verilife Dispensary Rosemont...
+Scraping 11/25: JARS Cannabis Dispensary - New Buffalo US-12...
+Scraping 12/25: Verilife Dispensary Chicago...
+Scraping 13/25: Feel State Weed Dispensary - Florissant...
+Scraping 14/25: Jardín Premium Cannabis Dispensary...
+Scraping 15/25: RISE Medical & Recreational Marijuana Dispensary Paterson...
+Scraping 16/25: RISE Recreational Dispensary Mundelein...
+Scraping 17/25: Cloud Cannabis Weed Dispensary Utica...
+Scraping 18/25: Cookies Flamingo Las Vegas Dispensary...
+Scraping 19/25: Maggie's Farm...
+Scraping 20/25: Lume Cannabis Dispensary Mackinaw City...
+Scraping 21/25: Cookies Modesto Dispensary...
+Scraping 22/25: JARS Cannabis Mesa...
+Scraping 23/25: Earth's Healing South...
+Scraping 24/25: Cookies Chicago Dispensary...
+Scraping 25/25: Mint Cannabis - Tempe...
+[
+  {
+    "id": 636,
+    "name": "Pisos",
+    "url": "https://www.pisoslv.com/",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "PISOS | Las Vegas Dispensary",
+      "description": "Shop top-quality cannabis flower, edibles, vapes, and more at Pisos \r\nDispensary in Las Vegas. Enjoy daily deals, fast service, and a wide \r\nselection just minutes from the Strip. Join our loyalty program and get \r\nrewarded with exclusive discounts and offers.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 21,
+      "product_urls": [],
+      "sample_urls": [
+        "https://www.pisoslv.com/home",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/6453a584-94df-4593-9999-90fd0534b054/152415.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/f215286c-cc82-4e70-9fda-eebf25226d1e/Copy+of+pisosinside.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/5a374620-ce64-4c4e-8105-0351d37f9dbf/Copy+of+IMG_7827.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/cb70b7a2-e158-40b0-abe4-0803d987fdf3/Screen+Shot+2023-05-16+at+8.32.46+AM.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/7b6c154f-b7eb-4c02-a978-a23bd3b27b41/Screen+Shot+2023-05-16+at+8.32.28+AM.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/cff43a58-01e8-40ec-a9e8-7afbd0157127/Copy+of+IMG_1661.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/4fdb8809-f2a3-416c-bda6-7216be8fc72e/Copy+of+IMG_1266.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/585510ea-73af-4479-aafe-7f1b853ce10a/Screen+Shot+2023-05-16+at+8.32.37+AM.png",
+        "https://www.pisoslv.com/about",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/6453a584-94df-4593-9999-90fd0534b054/152415.png",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/bbb7d2f6-18e2-414d-8149-873b27697ee2/IMG_7301.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/94fc8136-f86b-49fb-b449-376dd23aa009/Copy+of+10788300928_IMG_3853.jpg",
+        "https://images.squarespace-cdn.com/content/v1/6450658bced50f4003ea4c74/8cdee2ba-3250-4ea7-bd82-f2f4465ce6e8/Copy+of+IMG_8539.jpg",
+        "https://www.pisoslv.com/faq"
+      ]
+    },
+    "platforms": [],
+    "products": {
+      "flower": 5,
+      "edibles": 4,
+      "vapes": 36,
+      "tinctures": 6
+    },
+    "services": [
+      "delivery"
+    ],
+    "menu_links": [
+      {
+        "url": "https://www.pisoslv.com/menu/rec",
+        "text": "DEALS"
+      }
+    ]
+  },
+  {
+    "id": 1797,
+    "name": "Cookies San Bernardino Dispensary",
+    "url": "https://cookiesdispensary.com/locations/san-bernardino/",
+    "city": "San Bernardino",
+    "state": "California",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Premium San Bernardino Cannabis Dispensary | COOKIES",
+      "description": "Experience the best San Bernardino dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in San Bernardino, CA.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 20325,
+      "product_urls": [
+        "https://cookiesdispensary.com/strains/",
+        "https://cookiesdispensary.com/panama-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/",
+        "https://cookiesdispensary.com/brentwood/shop/",
+        "https://cookiesdispensary.com/broadway/shop/",
+        "https://cookiesdispensary.com/flamingo/shop/",
+        "https://cookiesdispensary.com/fresno/shop/",
+        "https://cookiesdispensary.com/hayward/shop/",
+        "https://cookiesdispensary.com/la-mesa/shop/",
+        "https://cookiesdispensary.com/merced/shop/",
+        "https://cookiesdispensary.com/modesto/shop/",
+        "https://cookiesdispensary.com/napa/shop/",
+        "https://cookiesdispensary.com/san-bernardino/shop/",
+        "https://cookiesdispensary.com/sanford/shop/",
+        "https://cookiesdispensary.com/lemonnade-union-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-p90-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-berry-dream-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-pina-colana-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-unflavored-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-pomegranate-shake-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-blue-suede-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-purple-dino-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-blue-raz-x-light-blue-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-sour-black-currant-c-bite-100mg-10ct-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-emergen-c-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-london-pound-cake-75-1-4oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-london-pound-cake-75-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-moonwalkers-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-moonwalkers-1-4oz/"
+      ],
+      "sample_urls": [
+        "https://cookiesdispensary.com/about/",
+        "https://cookiesdispensary.com/california/",
+        "https://cookiesdispensary.com/california/dispensary-near-burbank-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-fairview/",
+        "https://cookiesdispensary.com/california/dispensary-near-harder-tennyson/",
+        "https://cookiesdispensary.com/california/dispensary-near-jackson-triangle/",
+        "https://cookiesdispensary.com/california/dispensary-near-longwood-winton-grove/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-foothills/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-garin/",
+        "https://cookiesdispensary.com/california/dispensary-near-santa-clara-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-upper-b-street/",
+        "https://cookiesdispensary.com/contact/",
+        "https://cookiesdispensary.com/cookies-melrose-location-alternative/",
+        "https://cookiesdispensary.com/faqs/",
+        "https://cookiesdispensary.com/"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 31,
+      "edibles": 3,
+      "concentrates": 7,
+      "vapes": 45,
+      "pre_rolls": 14,
+      "tinctures": 5,
+      "topicals": 1
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://cookiesdispensary.com#popup",
+        "text": "Shop Products"
+      },
+      {
+        "url": "https://cookiesdispensary.com/la-mesa/shop/",
+        "text": "Shop"
+      },
+      {
+        "url": "https://cookiesdispensary.com/shop/",
+        "text": "Shop"
+      }
+    ]
+  },
+  {
+    "id": 401,
+    "name": "JARS Cannabis Phoenix Metrocenter",
+    "url": "https://jarscannabis.com/",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "JARS Cannabis | Best Recreational Cannabis Dispensary",
+      "description": "JARS Cannabis - Best dispensary for premium recreational cannabis. Explore the widest selection at affordable prices in Michigan, Colorado, and Arizona.",
+      "keywords": "online store, ecommerce, shopping"
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 17639,
+      "product_urls": [
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures",
+        "https://jarscannabis.com/category/cbd",
+        "https://jarscannabis.com/category/accessories",
+        "https://jarscannabis.com/category/clones",
+        "https://jarscannabis.com/category/apparel",
+        "https://jarscannabis.com/product/007-up",
+        "https://jarscannabis.com/product/05-malibu-live-rosin-cartridge",
+        "https://jarscannabis.com/product/1-1-1-blackberry-lemonade-pearls-cbn-cbd-thc-sleepy-indica",
+        "https://jarscannabis.com/product/1-1-1-cbd-cbn-thc-chocolate-chip-cookies",
+        "https://jarscannabis.com/product/1-1-1-cbg-cbd-thc-formula-transdermal-compound",
+        "https://jarscannabis.com/product/1-1-1-clementine-shine-cbg-thcv-thc-gummies",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-27369",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-84320",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-22572",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-98852",
+        "https://jarscannabis.com/product/1-1-1-pm-tablets",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-1501",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-19335",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-27565",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-41723",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-43511",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-46831",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-60859"
+      ],
+      "sample_urls": [
+        "https://jarscannabis.com/",
+        "https://jarscannabis.com/team",
+        "https://jarscannabis.com/editorial-policy",
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures",
+        "https://jarscannabis.com/category/cbd",
+        "https://jarscannabis.com/category/accessories",
+        "https://jarscannabis.com/category/clones",
+        "https://jarscannabis.com/category/apparel",
+        "https://jarscannabis.com/product/007-up"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 20,
+      "edibles": 2,
+      "concentrates": 4,
+      "vapes": 20,
+      "tinctures": 1
+    },
+    "services": [
+      "delivery",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": []
+  },
+  {
+    "id": 505,
+    "name": "RISE Medical & Recreational Marijuana Dispensary Bloomfield",
+    "url": "https://risecannabis.com/dispensaries/new-jersey/bloomfield/",
+    "city": "Bloomfield",
+    "state": "New Jersey",
+    "success": false,
+    "error": "403 Client Error: Forbidden for url: https://risecannabis.com/dispensaries/new-jersey/bloomfield/"
+  },
+  {
+    "id": 1162,
+    "name": "Star Buds Manitou Springs",
+    "url": "https://starbuds.com/stores/recreational-marijuana-dispensary-manitou-springs/",
+    "city": "Manitou Springs",
+    "state": "Colorado",
+    "success": false,
+    "error": "403 Client Error: Forbidden for url: https://starbuds.com/stores/recreational-marijuana-dispensary-m"
+  },
+  {
+    "id": 33,
+    "name": "JARS Cannabis Phoenix Airport",
+    "url": "https://jarscannabis.com/",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "JARS Cannabis | Best Recreational Cannabis Dispensary",
+      "description": "JARS Cannabis - Best dispensary for premium recreational cannabis. Explore the widest selection at affordable prices in Michigan, Colorado, and Arizona.",
+      "keywords": "online store, ecommerce, shopping"
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 17639,
+      "product_urls": [
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures",
+        "https://jarscannabis.com/category/cbd",
+        "https://jarscannabis.com/category/accessories",
+        "https://jarscannabis.com/category/clones",
+        "https://jarscannabis.com/category/apparel",
+        "https://jarscannabis.com/product/007-up",
+        "https://jarscannabis.com/product/05-malibu-live-rosin-cartridge",
+        "https://jarscannabis.com/product/1-1-1-blackberry-lemonade-pearls-cbn-cbd-thc-sleepy-indica",
+        "https://jarscannabis.com/product/1-1-1-cbd-cbn-thc-chocolate-chip-cookies",
+        "https://jarscannabis.com/product/1-1-1-cbg-cbd-thc-formula-transdermal-compound",
+        "https://jarscannabis.com/product/1-1-1-clementine-shine-cbg-thcv-thc-gummies",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-27369",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-84320",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-22572",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-98852",
+        "https://jarscannabis.com/product/1-1-1-pm-tablets",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-1501",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-19335",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-27565",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-41723",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-43511",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-46831",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-60859"
+      ],
+      "sample_urls": [
+        "https://jarscannabis.com/",
+        "https://jarscannabis.com/team",
+        "https://jarscannabis.com/editorial-policy",
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures",
+        "https://jarscannabis.com/category/cbd",
+        "https://jarscannabis.com/category/accessories",
+        "https://jarscannabis.com/category/clones",
+        "https://jarscannabis.com/category/apparel",
+        "https://jarscannabis.com/product/007-up"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 20,
+      "edibles": 2,
+      "concentrates": 4,
+      "vapes": 20,
+      "tinctures": 1
+    },
+    "services": [
+      "delivery",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": []
+  },
+  {
+    "id": 1441,
+    "name": "Exclusive Monroe",
+    "url": "https://www.exclusivemi.com/dispensaries/locations/monroe/",
+    "city": "Monroe",
+    "state": "Michigan",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Cannabis Dispensary in Monroe, Michigan | Exclusive",
+      "description": "Searching for a dispensary in Monroe? Enjoy friendly service, daily deals, and quality cannabis all in one place. Shop in-store, online, or for delivery.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 13,
+      "product_urls": [
+        "https://exclusivemi.com/product-sitemap.xml",
+        "https://exclusivemi.com/product-sitemap2.xml",
+        "https://exclusivemi.com/product-sitemap3.xml",
+        "https://exclusivemi.com/product-sitemap4.xml",
+        "https://exclusivemi.com/product-sitemap5.xml",
+        "https://exclusivemi.com/category-sitemap.xml"
+      ],
+      "sample_urls": [
+        "https://exclusivemi.com/post-sitemap.xml",
+        "https://exclusivemi.com/page-sitemap.xml",
+        "https://exclusivemi.com/collections-sitemap.xml",
+        "https://exclusivemi.com/product-sitemap.xml",
+        "https://exclusivemi.com/product-sitemap2.xml",
+        "https://exclusivemi.com/product-sitemap3.xml",
+        "https://exclusivemi.com/product-sitemap4.xml",
+        "https://exclusivemi.com/product-sitemap5.xml",
+        "https://exclusivemi.com/brands-sitemap.xml",
+        "https://exclusivemi.com/category-sitemap.xml",
+        "https://exclusivemi.com/categories-sitemap.xml",
+        "https://exclusivemi.com/author-sitemap.xml",
+        "https://exclusivemi.com/geo-sitemap.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 100,
+      "edibles": 35,
+      "concentrates": 25,
+      "vapes": 387,
+      "pre_rolls": 21,
+      "tinctures": 7,
+      "topicals": 9,
+      "accessories": 7
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://www.exclusivemi.com#!",
+        "text": "SHOP"
+      },
+      {
+        "url": "https://www.exclusivemi.com/dispensaries/locations/ann-arbor/shop-recreational/",
+        "text": "ANN ARBOR MENU"
+      },
+      {
+        "url": "https://www.exclusivemi.com/dispensaries/locations/coldwater/shop-recreational/",
+        "text": "COLDWATER MENU"
+      },
+      {
+        "url": "https://exclusivemi.com/dispensaries/locations/grand-rapids/",
+        "text": "GRAND RAPIDS MENU"
+      },
+      {
+        "url": "https://exclusivemi.com/dispensaries/locations/kalamazoo/",
+        "text": "KALAMAZOO MENU"
+      },
+      {
+        "url": "https://exclusivemi.com/dispensaries/locations/lowell/",
+        "text": "LOWELL MENU"
+      },
+      {
+        "url": "https://exclusivemi.com/dispensaries/locations/monroe/",
+        "text": "MONROE MENU"
+      },
+      {
+        "url": "https://exclusivemi.com/dispensaries/locations/muskegon/",
+        "text": "MUSKEGON MENU"
+      },
+      {
+        "url": "https://www.exclusivemi.com#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjExNzkyMyIsInRvZ2dsZSI6ZmFsc2V9",
+        "text": "Shopping At"
+      },
+      {
+        "url": "https://www.exclusivemi.com/shop",
+        "text": "SHOP ALL"
+      }
+    ]
+  },
+  {
+    "id": 637,
+    "name": "Planet 13 Las Vegas",
+    "url": "https://planet13.com/stores/planet-13-dispensary",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": null,
+      "description": null,
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 8,
+      "product_urls": [
+        "https://planet13.com/strains-sitemap.xml",
+        "https://planet13.com/products-sitemap.xml",
+        "https://planet13.com/edibles-sitemap.xml"
+      ],
+      "sample_urls": [
+        "https://planet13.com/post-sitemap.xml",
+        "https://planet13.com/page-sitemap.xml",
+        "https://planet13.com/terpenes-sitemap.xml",
+        "https://planet13.com/strains-sitemap.xml",
+        "https://planet13.com/products-sitemap.xml",
+        "https://planet13.com/faq-sitemap.xml",
+        "https://planet13.com/edibles-sitemap.xml",
+        "https://planet13.com/event-sitemap.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "vapes": 1
+    },
+    "services": [],
+    "menu_links": []
+  },
+  {
+    "id": 609,
+    "name": "Curaleaf Dispensary Las Vegas Strip",
+    "url": "https://curaleaf.com/dispensary/nevada/reef-dispensary-las-vegas-strip",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Age Gate",
+      "description": null,
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 3,
+      "product_urls": [],
+      "sample_urls": [
+        "https://curaleaf.com/articles-sitemap.xml",
+        "https://curaleaf.com/pages-sitemap.xml",
+        "https://curaleaf.com/dispensaries-sitemap.xml"
+      ]
+    },
+    "platforms": [],
+    "products": {
+      "flower": 4,
+      "edibles": 4,
+      "concentrates": 4,
+      "vapes": 8,
+      "pre_rolls": 2,
+      "tinctures": 4
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": []
+  },
+  {
+    "id": 344,
+    "name": "Verilife Dispensary Rosemont",
+    "url": "https://www.verilife.com/il/locations/rosemont",
+    "city": "Rosemont",
+    "state": "Illinois",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Rosemont Dispensary - Recreational Cannabis Near You | Verilife",
+      "description": "Visit our Verilife recreational marijuana dispensary in Rosemont, IL. We are located in the Rosemont entertainment district. Shop our marijuana products!",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 39103,
+      "product_urls": [
+        "https://www.verilife.com/learn/cannabis-strain-names",
+        "https://www.verilife.com/learn/cannabis-concentrates",
+        "https://www.verilife.com/learn/banana-cannabis-strains",
+        "https://www.verilife.com/learn/central-asian-landrace-strains",
+        "https://www.verilife.com/learn/funny-strain-names",
+        "https://www.verilife.com/learn/choose-vape",
+        "https://www.verilife.com/learn/african-landrace-strains",
+        "https://www.verilife.com/learn/tinctures",
+        "https://www.verilife.com/learn/landrace-strains",
+        "https://www.verilife.com/learn/strongest-marijuana-strain",
+        "https://www.verilife.com/learn/mexican-landrace-strains",
+        "https://www.verilife.com/learn/exotic-strains-zaza",
+        "https://www.verilife.com/learn/strawberry-cannabis-strains",
+        "https://www.verilife.com/learn/cannabis-topicals",
+        "https://www.verilife.com/learn/og-kush-og-strains",
+        "https://www.verilife.com/learn/popcorn-flower",
+        "https://www.verilife.com/learn/how-to-make-edible-gummies",
+        "https://www.verilife.com/learn/grape-strains",
+        "https://www.verilife.com/learn/guide-marijuana-edibles",
+        "https://www.verilife.com/learn/lemon-cannabis-strains",
+        "https://www.verilife.com/learn/premium-flower",
+        "https://www.verilife.com/learn/mango-cannabis-strains",
+        "https://www.verilife.com/learn/pre-roll",
+        "https://www.verilife.com/learn/solventless-concentrates",
+        "https://www.verilife.com/learn/flower-101",
+        "https://www.verilife.com/learn/jamaican-landrace-strains",
+        "https://www.verilife.com/learn/thai-landrace-strains",
+        "https://www.verilife.com/learn/cherry-cannabis-strains",
+        "https://www.verilife.com/learn/diesel-strains",
+        "https://www.verilife.com/learn/valentines-day-strains"
+      ],
+      "sample_urls": [
+        "https://www.verilife.com/accessibility-statement",
+        "https://www.verilife.com/careers",
+        "https://www.verilife.com/ecommerce-privacy-policy",
+        "https://www.verilife.com/email-disclaimers",
+        "https://www.verilife.com/fresh-buds",
+        "https://www.verilife.com/il",
+        "https://www.verilife.com/il/community",
+        "https://www.verilife.com/il/dispensaries",
+        "https://www.verilife.com/il/locations/arlington-heights",
+        "https://www.verilife.com/il/locations/chicago-river-north",
+        "https://www.verilife.com/il/locations/galena",
+        "https://www.verilife.com/il/locations/north-aurora",
+        "https://www.verilife.com/il/locations/ottawa",
+        "https://www.verilife.com/il/locations/romeoville",
+        "https://www.verilife.com/il/locations/rosemont"
+      ]
+    },
+    "platforms": [],
+    "products": {
+      "flower": 5,
+      "edibles": 1,
+      "concentrates": 1,
+      "vapes": 57,
+      "tinctures": 1,
+      "topicals": 2
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://www.verilife.com/il/locations/rosemont",
+        "text": "View Full Store Details"
+      },
+      {
+        "url": "https://www.verilife.com/locations",
+        "text": "Find Another Store"
+      },
+      {
+        "url": "https://www.verilife.com",
+        "text": "Shop Now"
+      },
+      {
+        "url": "https://www.verilife.com/il/menu/rosemont-recreational",
+        "text": "Shop"
+      },
+      {
+        "url": "javascript:void(0);",
+        "text": "Back to Menu"
+      },
+      {
+        "url": "https://www.instagram.com/verilifestores",
+        "text": ""
+      },
+      {
+        "url": "https://www.facebook.com/Verilifestores",
+        "text": ""
+      },
+      {
+        "url": "https://www.twitter.com/verilifestores",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "id": 1448,
+    "name": "JARS Cannabis Dispensary - New Buffalo US-12",
+    "url": "https://jarscannabis.com/",
+    "city": "New Buffalo",
+    "state": "Michigan",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "JARS Cannabis | Best Recreational Cannabis Dispensary",
+      "description": "JARS Cannabis - Best dispensary for premium recreational cannabis. Explore the widest selection at affordable prices in Michigan, Colorado, and Arizona.",
+      "keywords": "online store, ecommerce, shopping"
+    },
+    "sitemap": {
+      "found": false
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 20,
+      "edibles": 2,
+      "concentrates": 4,
+      "vapes": 20,
+      "tinctures": 1
+    },
+    "services": [
+      "delivery",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": []
+  },
+  {
+    "id": 402,
+    "name": "Verilife Dispensary Chicago",
+    "url": "https://www.verilife.com/il/locations/chicago-river-north",
+    "city": "Chicago",
+    "state": "Illinois",
+    "success": false,
+    "error": "HTTPSConnectionPool(host='www.verilife.com', port=443): Read timed out. (read timeout=15)"
+  },
+  {
+    "id": 131,
+    "name": "Feel State Weed Dispensary - Florissant",
+    "url": "https://feelstate.com/location/florissant/",
+    "city": "Florissant",
+    "state": "Missouri",
+    "success": false,
+    "error": "HTTPSConnectionPool(host='feelstate.com', port=443): Max retries exceeded with url: /location/floris"
+  },
+  {
+    "id": 625,
+    "name": "Jard\u00edn Premium Cannabis Dispensary",
+    "url": "https://jardinlasvegas.com/",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "success": false,
+    "error": "HTTPSConnectionPool(host='jardinlasvegas.com', port=443): Read timed out. (read timeout=15)"
+  },
+  {
+    "id": 503,
+    "name": "RISE Medical & Recreational Marijuana Dispensary Paterson",
+    "url": "https://risecannabis.com/dispensaries/new-jersey/paterson/",
+    "city": "Paterson",
+    "state": "New Jersey",
+    "success": false,
+    "error": "403 Client Error: Forbidden for url: https://risecannabis.com/dispensaries/new-jersey/paterson/"
+  },
+  {
+    "id": 443,
+    "name": "RISE Recreational Dispensary Mundelein",
+    "url": "https://risecannabis.com/dispensaries/illinois/mundelein/",
+    "city": "Mundelein",
+    "state": "Illinois",
+    "success": false,
+    "error": "403 Client Error: Forbidden for url: https://risecannabis.com/dispensaries/illinois/mundelein/"
+  },
+  {
+    "id": 1529,
+    "name": "Cloud Cannabis Weed Dispensary Utica",
+    "url": "https://cloudcannabis.com/utica-order-online/",
+    "city": "Utica",
+    "state": "Michigan",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Shop Our Utica Dispensary Weed Deals: Cloud Cannabis",
+      "description": "Browse our dispensary in Utica online and score great cannabis deals on flower, edibles, and vapes at one of Michigan\u2019s top dispensaries\u2013 Cloud Cannabis!",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 11,
+      "product_urls": [
+        "https://cloudcannabis.com/category-sitemap.xml"
+      ],
+      "sample_urls": [
+        "https://cloudcannabis.com/post-sitemap.xml",
+        "https://cloudcannabis.com/page-sitemap.xml",
+        "https://cloudcannabis.com/tribe_venue-sitemap.xml",
+        "https://cloudcannabis.com/tribe_organizer-sitemap.xml",
+        "https://cloudcannabis.com/tribe_events-sitemap.xml",
+        "https://cloudcannabis.com/tribe_event_series-sitemap.xml",
+        "https://cloudcannabis.com/category-sitemap.xml",
+        "https://cloudcannabis.com/post_tag-sitemap.xml",
+        "https://cloudcannabis.com/tribe_events_cat-sitemap.xml",
+        "https://cloudcannabis.com/author-sitemap.xml",
+        "https://cloudcannabis.com/tec_recurring_events-sitemap.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie",
+      "weedmaps"
+    ],
+    "products": {
+      "flower": 67,
+      "edibles": 54,
+      "concentrates": 63,
+      "vapes": 57,
+      "pre_rolls": 51,
+      "tinctures": 37,
+      "topicals": 36,
+      "accessories": 36
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering"
+    ],
+    "menu_links": [
+      {
+        "url": "https://cloudcannabis.com/order-online/",
+        "text": "Order Online"
+      },
+      {
+        "url": "https://cloudcannabis.com/ann-arbor-order-online/",
+        "text": "Ann Arbor"
+      },
+      {
+        "url": "https://cloudcannabis.com/cedar-springs-order-online/",
+        "text": "Cedar Springs"
+      },
+      {
+        "url": "https://cloudcannabis.com/detroit-order-online/",
+        "text": "Detroit"
+      },
+      {
+        "url": "https://cloudcannabis.com/gaylord-order-online/",
+        "text": "Gaylord"
+      },
+      {
+        "url": "https://cloudcannabis.com/gr-28th-st-order-online/",
+        "text": "GR 28th St"
+      },
+      {
+        "url": "https://cloudcannabis.com/gr-fulton-st-order-online/",
+        "text": "GR Fulton St"
+      },
+      {
+        "url": "https://cloudcannabis.com/kalamazoo-order-online/",
+        "text": "Kalamazoo"
+      },
+      {
+        "url": "https://cloudcannabis.com/muskegon-order-online/",
+        "text": "Muskegon"
+      },
+      {
+        "url": "https://cloudcannabis.com/new-baltimore-order-online/",
+        "text": "New Baltimore"
+      }
+    ]
+  },
+  {
+    "id": 603,
+    "name": "Cookies Flamingo Las Vegas Dispensary",
+    "url": "https://cookiesdispensary.com/locations/flamingo/",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Premium Las Vegas Cannabis Dispensary | COOKIES",
+      "description": "Experience the best Las Vegas dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in Las Vegas, NV.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 20325,
+      "product_urls": [
+        "https://cookiesdispensary.com/strains/",
+        "https://cookiesdispensary.com/panama-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/",
+        "https://cookiesdispensary.com/brentwood/shop/",
+        "https://cookiesdispensary.com/broadway/shop/",
+        "https://cookiesdispensary.com/flamingo/shop/",
+        "https://cookiesdispensary.com/fresno/shop/",
+        "https://cookiesdispensary.com/hayward/shop/",
+        "https://cookiesdispensary.com/la-mesa/shop/",
+        "https://cookiesdispensary.com/merced/shop/",
+        "https://cookiesdispensary.com/modesto/shop/",
+        "https://cookiesdispensary.com/napa/shop/",
+        "https://cookiesdispensary.com/san-bernardino/shop/",
+        "https://cookiesdispensary.com/sanford/shop/",
+        "https://cookiesdispensary.com/lemonnade-union-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-p90-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-berry-dream-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-pina-colana-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-unflavored-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-pomegranate-shake-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-blue-suede-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-purple-dino-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-blue-raz-x-light-blue-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-sour-black-currant-c-bite-100mg-10ct-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-emergen-c-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-london-pound-cake-75-1-4oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-london-pound-cake-75-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-moonwalkers-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-moonwalkers-1-4oz/"
+      ],
+      "sample_urls": [
+        "https://cookiesdispensary.com/about/",
+        "https://cookiesdispensary.com/california/",
+        "https://cookiesdispensary.com/california/dispensary-near-burbank-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-fairview/",
+        "https://cookiesdispensary.com/california/dispensary-near-harder-tennyson/",
+        "https://cookiesdispensary.com/california/dispensary-near-jackson-triangle/",
+        "https://cookiesdispensary.com/california/dispensary-near-longwood-winton-grove/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-foothills/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-garin/",
+        "https://cookiesdispensary.com/california/dispensary-near-santa-clara-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-upper-b-street/",
+        "https://cookiesdispensary.com/contact/",
+        "https://cookiesdispensary.com/cookies-melrose-location-alternative/",
+        "https://cookiesdispensary.com/faqs/",
+        "https://cookiesdispensary.com/"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 35,
+      "edibles": 3,
+      "concentrates": 3,
+      "vapes": 43,
+      "pre_rolls": 15,
+      "tinctures": 3,
+      "topicals": 1
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://cookiesdispensary.com#popup",
+        "text": "Shop Products"
+      },
+      {
+        "url": "https://cookiesdispensary.com/la-mesa/shop/",
+        "text": "Shop"
+      },
+      {
+        "url": "https://cookiesdispensary.com/shop/",
+        "text": "Shop"
+      }
+    ]
+  },
+  {
+    "id": 1253,
+    "name": "Maggie's Farm",
+    "url": "https://www.maggiesfarmmarijuana.com/locations/manitou-springs/",
+    "city": "Manitou Springs",
+    "state": "Colorado",
+    "success": false,
+    "error": "403 Client Error: Forbidden for url: https://www.maggiesfarmmarijuana.com/locations/manitou-springs/"
+  },
+  {
+    "id": 1494,
+    "name": "Lume Cannabis Dispensary Mackinaw City",
+    "url": "https://www.lume.com/",
+    "city": "Mackinaw City",
+    "state": "Michigan",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Lume Cannabis Co. - Michigan's Best Cannabis Dispensary",
+      "description": "Lume Cannabis Co. is Michigan's largest cannabis company. Click here to shop online, or find our closest dispensary to you.",
+      "keywords": "Lume, Lume Cannabis Co., Cannabis"
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 7644,
+      "product_urls": [
+        "https://www.lume.com/shop/all",
+        "https://www.lume.com/shop/effects/dream",
+        "https://www.lume.com/shop/effects/recover",
+        "https://www.lume.com/shop/effects/unwind",
+        "https://www.lume.com/shop/effects/center",
+        "https://www.lume.com/shop/effects/focus",
+        "https://www.lume.com/shop/effects/move",
+        "https://www.lume.com/shop/category",
+        "https://www.lume.com/shop/effects",
+        "https://www.lume.com/redemption-extracts-pre-rolls",
+        "https://www.lume.com/cannalicious-concentrates",
+        "https://www.lume.com/harbor-farmz-concentrates",
+        "https://www.lume.com/loco-infused-pre-rolls",
+        "https://www.lume.com/tend-harvest-cultivate-flower",
+        "https://www.lume.com/holistic-industries-flower",
+        "https://www.lume.com/freedom-green-flower-prerolls",
+        "https://www.lume.com/bubble-hash-infused-pre-rolls",
+        "https://www.lume.com/most-potent-strongest-weed-strains-2023",
+        "https://www.lume.com/in-store-only-flower-specials",
+        "https://www.lume.com/jeeter-infused-pre-rolls",
+        "https://www.lume.com/cali-blaze-carts-pre-rolls",
+        "https://www.lume.com/classic-roots-flower",
+        "https://www.lume.com/ritual-concentrates",
+        "https://www.lume.com/ampd-infused-flower",
+        "https://www.lume.com/shop/category",
+        "https://www.lume.com/the-best-edible-for-energy-and-focus",
+        "https://www.lume.com/infused-pre-rolls",
+        "https://www.lume.com/most-potent-weed-strains-2022",
+        "https://www.lume.com/shop/effects",
+        "https://www.lume.com/the-best-edible-for-sleep"
+      ],
+      "sample_urls": [
+        "https://www.lume.com",
+        "https://www.lume.com/shop/all",
+        "https://www.lume.com/shop/effects/dream",
+        "https://www.lume.com/shop/effects/recover",
+        "https://www.lume.com/shop/effects/unwind",
+        "https://www.lume.com/shop/effects/center",
+        "https://www.lume.com/shop/effects/focus",
+        "https://www.lume.com/shop/effects/move",
+        "https://www.lume.com/shop/category",
+        "https://www.lume.com/shop/effects",
+        "https://www.lume.com/about",
+        "https://www.lume.com/amplified",
+        "https://www.lume.com/locations",
+        "https://www.lume.com/media",
+        "https://www.lume.com/sitemap"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 194,
+      "edibles": 55,
+      "concentrates": 86,
+      "vapes": 122,
+      "pre_rolls": 52,
+      "tinctures": 21,
+      "topicals": 62,
+      "accessories": 23
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://www.lume.com/shop/all",
+        "text": "Shop All"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/flower",
+        "text": "Flower"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/vaporizers",
+        "text": "Carts"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/edibles",
+        "text": "Edibles"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/pre-rolls",
+        "text": "Pre-rolls"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/concentrates",
+        "text": "Concentrates"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/edibles?filters=%2CSubcategory%255Etree%255EDRINKS",
+        "text": "Beverages"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/accessories",
+        "text": "Accessories"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/tinctures",
+        "text": "Tinctures"
+      },
+      {
+        "url": "https://www.lume.com/shop/category/topicals",
+        "text": "Topicals"
+      }
+    ]
+  },
+  {
+    "id": 1845,
+    "name": "Cookies Modesto Dispensary",
+    "url": "https://cookiesdispensary.com/locations/modesto/",
+    "city": "Modesto",
+    "state": "California",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Premium Modesto Cannabis Dispensary | COOKIES",
+      "description": "Experience the best Modesto dispensary with premium fire cannabis today. Get ready for your next session the top-shelf dispensary in Modesto, CA.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 20325,
+      "product_urls": [
+        "https://cookiesdispensary.com/strains/",
+        "https://cookiesdispensary.com/panama-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/",
+        "https://cookiesdispensary.com/brentwood/shop/",
+        "https://cookiesdispensary.com/broadway/shop/",
+        "https://cookiesdispensary.com/flamingo/shop/",
+        "https://cookiesdispensary.com/fresno/shop/",
+        "https://cookiesdispensary.com/hayward/shop/",
+        "https://cookiesdispensary.com/la-mesa/shop/",
+        "https://cookiesdispensary.com/merced/shop/",
+        "https://cookiesdispensary.com/modesto/shop/",
+        "https://cookiesdispensary.com/napa/shop/",
+        "https://cookiesdispensary.com/san-bernardino/shop/",
+        "https://cookiesdispensary.com/sanford/shop/",
+        "https://cookiesdispensary.com/lemonnade-union-city/shop/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-p90-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-berry-dream-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-pina-colana-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/haus-unflavored-distillate-syringe-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-pomegranate-shake-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-blue-suede-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/blueprint-cannabis-co-purple-dino-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-blue-raz-x-light-blue-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-sour-black-currant-c-bite-100mg-10ct-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-emergen-c-rso-1g/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-london-pound-cake-75-1-4oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-london-pound-cake-75-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-moonwalkers-1-8oz/",
+        "https://cookiesdispensary.com/port-charlotte/shop/cookies-moonwalkers-1-4oz/"
+      ],
+      "sample_urls": [
+        "https://cookiesdispensary.com/about/",
+        "https://cookiesdispensary.com/california/",
+        "https://cookiesdispensary.com/california/dispensary-near-burbank-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-fairview/",
+        "https://cookiesdispensary.com/california/dispensary-near-harder-tennyson/",
+        "https://cookiesdispensary.com/california/dispensary-near-jackson-triangle/",
+        "https://cookiesdispensary.com/california/dispensary-near-longwood-winton-grove/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-foothills/",
+        "https://cookiesdispensary.com/california/dispensary-near-mission-garin/",
+        "https://cookiesdispensary.com/california/dispensary-near-santa-clara-neighborhood/",
+        "https://cookiesdispensary.com/california/dispensary-near-upper-b-street/",
+        "https://cookiesdispensary.com/contact/",
+        "https://cookiesdispensary.com/cookies-melrose-location-alternative/",
+        "https://cookiesdispensary.com/faqs/",
+        "https://cookiesdispensary.com/"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 33,
+      "edibles": 2,
+      "concentrates": 8,
+      "vapes": 44,
+      "pre_rolls": 12,
+      "tinctures": 3,
+      "topicals": 1
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://cookiesdispensary.com#popup",
+        "text": "Shop Products"
+      },
+      {
+        "url": "https://cookiesdispensary.com/la-mesa/shop/",
+        "text": "Shop"
+      },
+      {
+        "url": "https://www.shopvintagefairemall.com/",
+        "text": "Visit Vintage Faire Mall"
+      },
+      {
+        "url": "https://cookiesdispensary.com/shop/",
+        "text": "Shop"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "JARS Cannabis Mesa",
+    "url": "https://jarscannabis.com/",
+    "city": "Mesa",
+    "state": "Arizona",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "JARS Cannabis | Best Recreational Cannabis Dispensary",
+      "description": "JARS Cannabis - Best dispensary for premium recreational cannabis. Explore the widest selection at affordable prices in Michigan, Colorado, and Arizona.",
+      "keywords": "online store, ecommerce, shopping"
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 17639,
+      "product_urls": [
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures",
+        "https://jarscannabis.com/category/cbd",
+        "https://jarscannabis.com/category/accessories",
+        "https://jarscannabis.com/category/clones",
+        "https://jarscannabis.com/category/apparel",
+        "https://jarscannabis.com/product/007-up",
+        "https://jarscannabis.com/product/05-malibu-live-rosin-cartridge",
+        "https://jarscannabis.com/product/1-1-1-blackberry-lemonade-pearls-cbn-cbd-thc-sleepy-indica",
+        "https://jarscannabis.com/product/1-1-1-cbd-cbn-thc-chocolate-chip-cookies",
+        "https://jarscannabis.com/product/1-1-1-cbg-cbd-thc-formula-transdermal-compound",
+        "https://jarscannabis.com/product/1-1-1-clementine-shine-cbg-thcv-thc-gummies",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-27369",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-pips-cbd-cbn-thc-sleepy-indica-84320",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-22572",
+        "https://jarscannabis.com/product/1-1-1-dark-chocolate-w-vanilla-bean-sea-salt-cbd-cbn-thc-98852",
+        "https://jarscannabis.com/product/1-1-1-pm-tablets",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-1501",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-19335",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-27565",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-41723",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-43511",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-46831",
+        "https://jarscannabis.com/product/1-1-1-recovery-cannabis-cream-60859"
+      ],
+      "sample_urls": [
+        "https://jarscannabis.com/",
+        "https://jarscannabis.com/team",
+        "https://jarscannabis.com/editorial-policy",
+        "https://jarscannabis.com/category/flower",
+        "https://jarscannabis.com/category/pre-rolls",
+        "https://jarscannabis.com/category/vaporizers",
+        "https://jarscannabis.com/category/concentrates",
+        "https://jarscannabis.com/category/edibles",
+        "https://jarscannabis.com/category/topicals",
+        "https://jarscannabis.com/category/tinctures",
+        "https://jarscannabis.com/category/cbd",
+        "https://jarscannabis.com/category/accessories",
+        "https://jarscannabis.com/category/clones",
+        "https://jarscannabis.com/category/apparel",
+        "https://jarscannabis.com/product/007-up"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 20,
+      "edibles": 2,
+      "concentrates": 4,
+      "vapes": 20,
+      "tinctures": 1
+    },
+    "services": [
+      "delivery",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": []
+  },
+  {
+    "id": 386,
+    "name": "Earth's Healing South",
+    "url": "https://earthshealing.org/",
+    "city": "Tucson",
+    "state": "Arizona",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Tucson Dispensary | Earth's Healing | Recreational Marijuana & Weed Dispensary North and South Tucson, AZ | Weed Shop South Tucson, AZ & Catalina Foothills, AZ | Marijuana Dispensary Downtown Tucson, AZ | Earth's Healing Dispensary",
+      "description": "Earth's Healing Tucson dispensary is a local Recreational Marijuana, Quality Cannabis & weed shop in Tucson, AZ. Call for a Dispensary Near Me!",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 11,
+      "product_urls": [
+        "https://earthshealing.org/shop_product-sitemap.xml",
+        "https://earthshealing.org/category-sitemap.xml",
+        "https://earthshealing.org/fusion_tb_category-sitemap.xml",
+        "https://earthshealing.org/faq_category-sitemap.xml",
+        "https://earthshealing.org/element_category-sitemap.xml"
+      ],
+      "sample_urls": [
+        "https://earthshealing.org/post-sitemap.xml",
+        "https://earthshealing.org/page-sitemap.xml",
+        "https://earthshealing.org/brand-sitemap.xml",
+        "https://earthshealing.org/shop_product-sitemap.xml",
+        "https://earthshealing.org/test-sitemap.xml",
+        "https://earthshealing.org/wpm-testimonial-sitemap.xml",
+        "https://earthshealing.org/category-sitemap.xml",
+        "https://earthshealing.org/fusion_tb_category-sitemap.xml",
+        "https://earthshealing.org/faq_category-sitemap.xml",
+        "https://earthshealing.org/element_category-sitemap.xml",
+        "https://earthshealing.org/author-sitemap.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 30,
+      "edibles": 18,
+      "concentrates": 23,
+      "vapes": 12,
+      "pre_rolls": 14,
+      "tinctures": 1,
+      "topicals": 3,
+      "accessories": 3
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://earthshealing.org/delivery-menu/",
+        "text": "RECREATIONAL & MEDICAL DELIVERY AVAILABL"
+      },
+      {
+        "url": "https://earthshealing.org/menu-north/",
+        "text": "North Menu"
+      },
+      {
+        "url": "https://earthshealing.org/menu-south/",
+        "text": "South Menu"
+      },
+      {
+        "url": "https://earthshealing.org/products/",
+        "text": "Products"
+      },
+      {
+        "url": "https://earthshealing.org/products/flower/",
+        "text": "Flower"
+      },
+      {
+        "url": "https://earthshealing.org/products/pre-rolls/",
+        "text": "Pre-Rolls"
+      },
+      {
+        "url": "https://earthshealing.org/products/vapes/",
+        "text": "Vapes"
+      },
+      {
+        "url": "https://earthshealing.org/products/concentrates/",
+        "text": "Concentrates"
+      },
+      {
+        "url": "https://earthshealing.org/products/edibles/",
+        "text": "Edibles"
+      },
+      {
+        "url": "https://earthshealing.org/products/topicals/",
+        "text": "Topicals"
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "name": "Cookies Chicago Dispensary",
+    "url": "https://www.cookieschicago.co/",
+    "city": "Chicago",
+    "state": "Illinois",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "Chicago Dispensary with Fire Strains | COOKIES CHICAGO",
+      "description": "Cookies Chicago dispensary has the most fire strains and cannabis in the market. Experience the difference with Cookies dispensary in Chicago, IL today.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 766,
+      "product_urls": [
+        "https://cookieschicago.co/shop/",
+        "https://cookieschicago.co/strains/",
+        "https://cookieschicago.co/shop/p90-1-8oz/",
+        "https://cookieschicago.co/shop/berry-dream-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/pina-colana-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/strawberry-banana-smoothie-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/unflavored-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/pomegranate-shake-1-8oz/",
+        "https://cookieschicago.co/shop/blue-suede-rso-1g/",
+        "https://cookieschicago.co/shop/purple-dino-1-8oz/",
+        "https://cookieschicago.co/shop/blue-raz-x-light-blue-rso-1g/",
+        "https://cookieschicago.co/shop/sour-black-currant-c-bite-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/emergen-c-rso-1g/",
+        "https://cookieschicago.co/shop/london-pound-cake-75-1-4oz/",
+        "https://cookieschicago.co/shop/london-pound-cake-75-1-8oz/",
+        "https://cookieschicago.co/shop/moonwalkers-1-8oz/",
+        "https://cookieschicago.co/shop/moonwalkers-1-4oz/",
+        "https://cookieschicago.co/shop/blueberry-banana-1-4oz/",
+        "https://cookieschicago.co/shop/sour-apple-c-bite-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/golden-berry-distillate-syringe-1g/",
+        "https://cookieschicago.co/shop/scorpius-1g/",
+        "https://cookieschicago.co/shop/triple-scoop-1-8oz/",
+        "https://cookieschicago.co/shop/triple-scoop-1-4oz/",
+        "https://cookieschicago.co/shop/sour-raspberry-c-bite-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/sour-pom-lime-c-bite-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/sour-grapefruit-100mg-10ct-1g/",
+        "https://cookieschicago.co/shop/blue-raz-1-4oz/",
+        "https://cookieschicago.co/shop/blue-raz-1-8oz/",
+        "https://cookieschicago.co/shop/blue-raz-1g/",
+        "https://cookieschicago.co/shop/tahitian-lime-live-resin-all-in-one-5g/"
+      ],
+      "sample_urls": [
+        "https://cookieschicago.co/about/",
+        "https://cookieschicago.co/areas/",
+        "https://cookieschicago.co/areas/best-dispensary-near-chicago-union-station/",
+        "https://cookieschicago.co/areas/best-dispensary-near-millennium-park/",
+        "https://cookieschicago.co/areas/best-dispensary-near-navy-pier-in-chicago/",
+        "https://cookieschicago.co/areas/dispensary-near-chicago-theater/",
+        "https://cookieschicago.co/areas/closest-recreational-dispensary-to-wrigley-field/",
+        "https://cookieschicago.co/areas/dispensary-near-chicago-river-north/",
+        "https://cookieschicago.co/areas/dispensary-near-grant-park-chicago/",
+        "https://cookieschicago.co/areas/dispensary-near-oak-park-il/",
+        "https://cookieschicago.co/areas/dispensary-near-soldier-field-chicago/",
+        "https://cookieschicago.co/areas/dispensary-near-united-center/",
+        "https://cookieschicago.co/areas/dispensary-near-fulton-market-district/",
+        "https://cookieschicago.co/areas/dispensary-near-noble-square/",
+        "https://cookieschicago.co/areas/dispensary-near-the-fulton-river-district/"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 39,
+      "edibles": 7,
+      "concentrates": 6,
+      "vapes": 49,
+      "pre_rolls": 16,
+      "tinctures": 1,
+      "topicals": 1,
+      "accessories": 5
+    },
+    "services": [
+      "delivery",
+      "curbside",
+      "online_ordering",
+      "medical",
+      "recreational"
+    ],
+    "menu_links": [
+      {
+        "url": "https://www.cookieschicago.co#popup",
+        "text": "Shop Products"
+      },
+      {
+        "url": "https://www.cookieschicago.co/locations/cookies-chicago-clinton/",
+        "text": "Store Info"
+      },
+      {
+        "url": "https://www.cookieschicago.co/shop/",
+        "text": "Shop"
+      },
+      {
+        "url": "https://www.cookieschicago.co/specials/",
+        "text": "Shop Now"
+      },
+      {
+        "url": "https://www.cookieschicago.co/shop/?category=apparel",
+        "text": "Cookies-branded clothing"
+      },
+      {
+        "url": "https://www.cookieschicago.co/shop/?category=accessories",
+        "text": "accessories"
+      },
+      {
+        "url": "https://cookieschicago.co/shop/",
+        "text": "Shop"
+      },
+      {
+        "url": "https://cookieschicago.co/locations/cookies-chicago-clinton/",
+        "text": "Store Info"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Mint Cannabis - Tempe",
+    "url": "https://mintdeals.com/tempe-az/",
+    "city": "Guadalupe",
+    "state": "Arizona",
+    "success": true,
+    "error": null,
+    "meta": {
+      "title": "TEMPE DISPENSARY * MINT CANNABIS DISPENSARY * 24HR DISPENSARY AZ * BEST DISPENSARY TEMPE * MINT TEMPE * DISPENSARY NEAR ME IN TEMPE",
+      "description": "The Mint Dispensary in Tempe, AZ - Tempe dispensary. Discover Mint Cannabis Dispensary, your premier 24HR dispensary in Tempe, AZ. Find the best dispensary in Tempe for all your needs, including Mint Tempe. We are conveniently located for anyone searching for a \"dispensary near me in Tempe,\" offering a wide selection of cannabis edibles, vape pens, flowers, concentrates and expert cannabis guidance's around the clock.",
+      "keywords": null
+    },
+    "sitemap": {
+      "found": true,
+      "total_urls": 6,
+      "product_urls": [
+        "https://mintdeals.com/wp-sitemap-taxonomies-category-1.xml"
+      ],
+      "sample_urls": [
+        "https://mintdeals.com/wp-sitemap-posts-post-1.xml",
+        "https://mintdeals.com/wp-sitemap-posts-page-1.xml",
+        "https://mintdeals.com/wp-sitemap-taxonomies-category-1.xml",
+        "https://mintdeals.com/wp-sitemap-taxonomies-post_tag-1.xml",
+        "https://mintdeals.com/wp-sitemap-taxonomies-post_format-1.xml",
+        "https://mintdeals.com/wp-sitemap-taxonomies-tribe_events_cat-1.xml"
+      ]
+    },
+    "platforms": [
+      "dutchie"
+    ],
+    "products": {
+      "flower": 9,
+      "edibles": 10,
+      "concentrates": 6,
+      "vapes": 8
+    },
+    "services": [
+      "online_ordering",
+      "medical"
+    ],
+    "menu_links": [
+      {
+        "url": "https://mintdeals.com/location/tempe-az/menu",
+        "text": "All Products"
+      }
+    ]
+  }
+]

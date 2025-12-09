@@ -86,6 +86,20 @@ router.get('/sitemap-brands.xml', async (req, res) => {
   }
 });
 
+// Tags sitemap (best-edibles, best-flower, etc. for each state)
+router.get('/sitemap-tags.xml', async (req, res) => {
+  try {
+    const generator = new SitemapGenerator(process.env.BASE_URL);
+    const xml = await generator.generateTagsSitemap();
+
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  } catch (error) {
+    console.error('Error generating tags sitemap:', error);
+    res.status(500).send('Error generating sitemap');
+  }
+});
+
 // HTML sitemap page (for users)
 router.get('/sitemap', async (req, res) => {
   try {
