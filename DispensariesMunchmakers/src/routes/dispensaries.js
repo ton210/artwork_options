@@ -56,6 +56,27 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
     const clientIP = getClientIP(req);
     const canVote = await Vote.canVote(dispensary.id, clientIP);
 
+    // Get rankings for this dispensary (county and state)
+    const rankingsResult = await db.query(`
+      SELECT r.location_type, r.rank,
+             CASE WHEN r.location_type = 'county' THEN c.name
+                  WHEN r.location_type = 'state' THEN s.name END as location_name,
+             CASE WHEN r.location_type = 'county' THEN (SELECT COUNT(*) FROM dispensaries d2 WHERE d2.county_id = r.location_id AND d2.is_active = true)
+                  WHEN r.location_type = 'state' THEN (SELECT COUNT(*) FROM dispensaries d2 JOIN counties c2 ON d2.county_id = c2.id WHERE c2.state_id = r.location_id AND d2.is_active = true) END as total_in_location
+      FROM rankings r
+      LEFT JOIN counties c ON r.location_type = 'county' AND r.location_id = c.id
+      LEFT JOIN states s ON r.location_type = 'state' AND r.location_id = s.id
+      WHERE r.dispensary_id = $1
+      ORDER BY r.location_type
+    `, [dispensary.id]);
+    const rankings = rankingsResult.rows;
+
+    // Get tags for this dispensary
+    const tagsResult = await db.query(`
+      SELECT tag FROM dispensary_tags WHERE dispensary_id = $1 ORDER BY tag
+    `, [dispensary.id]);
+    const tags = tagsResult.rows.map(t => TAG_DISPLAY_NAMES[t.tag] || t.tag);
+
     // Generate schema.org structured data
     const baseUrl = process.env.BASE_URL || 'https://bestdispensaries.munchmakers.com';
     const schemas = {
@@ -74,6 +95,8 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
       votes,
       recentVotes,
       canVote,
+      rankings,
+      tags,
       schemas,
       baseUrl,
       meta: {

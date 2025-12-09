@@ -168,6 +168,45 @@ router.get('/', async (req, res) => {
       LIMIT 10
     `);
 
+    // Get top dispensaries last 24 hours (US visitors)
+    const topDispensaries24h = await db.query(`
+      SELECT
+        d.name,
+        d.city,
+        s.abbreviation as state_abbr,
+        d.slug,
+        COUNT(pv.id) as view_count,
+        COUNT(DISTINCT pv.ip_hash) as unique_visitors
+      FROM dispensaries d
+      JOIN page_views pv ON d.id = pv.dispensary_id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      WHERE pv.created_at >= NOW() - INTERVAL '24 hours'
+        AND (pv.country = 'US' OR pv.country IS NULL)
+      GROUP BY d.id, d.name, d.city, s.abbreviation, d.slug
+      ORDER BY view_count DESC
+      LIMIT 10
+    `);
+
+    // Get top states last 24 hours (US visitors)
+    const topStates24h = await db.query(`
+      SELECT
+        s.name as state_name,
+        s.slug as state_slug,
+        COUNT(pv.id) as view_count,
+        COUNT(DISTINCT pv.ip_hash) as unique_visitors
+      FROM page_views pv
+      JOIN dispensaries d ON pv.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE pv.created_at >= NOW() - INTERVAL '24 hours'
+        AND (pv.country = 'US' OR pv.country IS NULL)
+        AND pv.dispensary_id IS NOT NULL
+      GROUP BY s.id, s.name, s.slug
+      ORDER BY view_count DESC
+      LIMIT 10
+    `);
+
     // Get recent scrape logs
     const scrapeLogs = await db.query(`
       SELECT * FROM scrape_logs
@@ -188,6 +227,8 @@ router.get('/', async (req, res) => {
       dailyStats: dailyStats.rows,
       topPages: topPages.rows,
       topDispensaries: topDispensaries.rows,
+      topDispensaries24h: topDispensaries24h.rows,
+      topStates24h: topStates24h.rows,
       trafficByCountry: trafficByCountry.rows,
       scrapeLogs: scrapeLogs.rows,
       recentLeads: recentLeads.rows

@@ -79,6 +79,27 @@
                 </div>
               <% } %>
 
+              <!-- Rankings -->
+              <% if (rankings && rankings.length > 0) { %>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <% rankings.forEach(r => { %>
+                    <span class="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
+                      #<%= r.rank %> in <%= r.location_name %><% if (r.location_type === 'county') { %> County<% } %>
+                      <span class="ml-1 text-green-600 text-xs">(of <%= r.total_in_location %>)</span>
+                    </span>
+                  <% }); %>
+                </div>
+              <% } %>
+
+              <!-- Tags -->
+              <% if (tags && tags.length > 0) { %>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <% tags.forEach(tag => { %>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"><%= tag %></span>
+                  <% }); %>
+                </div>
+              <% } %>
+
               <div class="space-y-2 text-gray-700">
                 <div class="flex items-center">
                   <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,21 +128,29 @@
                   </div>
                 <% } %>
 
-                <% if (dispensary.hours && typeof dispensary.hours === 'object' && dispensary.hours.weekday_text) { %>
+                <%
+                  // Parse hours if it's a string
+                  let hoursData = dispensary.hours;
+                  if (typeof hoursData === 'string') {
+                    try { hoursData = JSON.parse(hoursData); } catch(e) { hoursData = null; }
+                  }
+                  const hasValidHours = hoursData && typeof hoursData === 'object' && Array.isArray(hoursData.weekday_text);
+                %>
+                <% if (hasValidHours) { %>
                   <div class="mt-4 pt-4 border-t border-gray-200">
                     <div class="flex items-center mb-2">
                       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
                       <span class="font-semibold">Hours</span>
-                      <% if (dispensary.hours.open_now === true) { %>
+                      <% if (hoursData.open_now === true) { %>
                         <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded">OPEN NOW</span>
-                      <% } else if (dispensary.hours.open_now === false) { %>
+                      <% } else if (hoursData.open_now === false) { %>
                         <span class="ml-2 px-2 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded">CLOSED</span>
                       <% } %>
                     </div>
                     <div class="text-sm text-gray-600 ml-7">
-                      <% dispensary.hours.weekday_text.forEach(dayHours => { %>
+                      <% hoursData.weekday_text.forEach(dayHours => { %>
                         <div><%= dayHours %></div>
                       <% }); %>
                     </div>

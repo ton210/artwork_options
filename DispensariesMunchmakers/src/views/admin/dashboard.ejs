@@ -113,6 +113,70 @@
         </div>
       </div>
 
+      <!-- Last 24 Hours Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <!-- Top Dispensaries 24h -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Top Dispensaries (Last 24 Hours)</h2>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b">
+                <th class="pb-2">Dispensary</th>
+                <th class="pb-2">Views</th>
+                <th class="pb-2">Unique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (topDispensaries24h || []).forEach(disp => { %>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="py-2">
+                    <a href="/dispensary/<%= disp.slug %>" class="text-blue-600 hover:underline font-medium" target="_blank">
+                      <%= disp.name %>
+                    </a>
+                    <div class="text-xs text-gray-500"><%= disp.city %>, <%= disp.state_abbr %></div>
+                  </td>
+                  <td class="py-2"><%= disp.view_count %></td>
+                  <td class="py-2"><%= disp.unique_visitors %></td>
+                </tr>
+              <% }); %>
+              <% if (!topDispensaries24h || topDispensaries24h.length === 0) { %>
+                <tr><td colspan="3" class="py-2 text-gray-500">No data in the last 24 hours</td></tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Top States 24h -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Top States (Last 24 Hours)</h2>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b">
+                <th class="pb-2">State</th>
+                <th class="pb-2">Views</th>
+                <th class="pb-2">Unique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (topStates24h || []).forEach(state => { %>
+                <tr class="border-b hover:bg-gray-50">
+                  <td class="py-2">
+                    <a href="/dispensaries/<%= state.state_slug %>" class="text-blue-600 hover:underline font-medium" target="_blank">
+                      <%= state.state_name %>
+                    </a>
+                  </td>
+                  <td class="py-2"><%= state.view_count %></td>
+                  <td class="py-2"><%= state.unique_visitors %></td>
+                </tr>
+              <% }); %>
+              <% if (!topStates24h || topStates24h.length === 0) { %>
+                <tr><td colspan="3" class="py-2 text-gray-500">No data in the last 24 hours</td></tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <!-- Top Pages & Dispensaries -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <!-- Top Pages -->
