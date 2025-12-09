@@ -129,30 +129,40 @@
                 <% } %>
 
                 <%
-                  // Parse hours if it's a string
-                  let hoursData = dispensary.hours;
-                  if (typeof hoursData === 'string') {
-                    try { hoursData = JSON.parse(hoursData); } catch(e) { hoursData = null; }
+                  // Parse hours - handle both string and object formats
+                  let hoursObj = dispensary.hours;
+                  if (typeof hoursObj === 'string') {
+                    try { hoursObj = JSON.parse(hoursObj); } catch(e) { hoursObj = null; }
                   }
-                  const hasValidHours = hoursData && typeof hoursData === 'object' && Array.isArray(hoursData.weekday_text);
+                  // Get weekday_text array
+                  let weekdayTexts = null;
+                  let isOpenNow = null;
+                  if (hoursObj && typeof hoursObj === 'object') {
+                    if (Array.isArray(hoursObj.weekday_text)) {
+                      weekdayTexts = hoursObj.weekday_text;
+                    }
+                    if (typeof hoursObj.open_now === 'boolean') {
+                      isOpenNow = hoursObj.open_now;
+                    }
+                  }
                 %>
-                <% if (hasValidHours) { %>
+                <% if (weekdayTexts && weekdayTexts.length > 0) { %>
                   <div class="mt-4 pt-4 border-t border-gray-200">
                     <div class="flex items-center mb-2">
                       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
                       <span class="font-semibold">Hours</span>
-                      <% if (hoursData.open_now === true) { %>
+                      <% if (isOpenNow === true) { %>
                         <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded">OPEN NOW</span>
-                      <% } else if (hoursData.open_now === false) { %>
+                      <% } else if (isOpenNow === false) { %>
                         <span class="ml-2 px-2 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded">CLOSED</span>
                       <% } %>
                     </div>
                     <div class="text-sm text-gray-600 ml-7">
-                      <% hoursData.weekday_text.forEach(dayHours => { %>
-                        <div><%= dayHours %></div>
-                      <% }); %>
+                      <% for (let i = 0; i < weekdayTexts.length; i++) { %>
+                        <div><%= weekdayTexts[i] %></div>
+                      <% } %>
                     </div>
                   </div>
                 <% } %>
