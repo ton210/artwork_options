@@ -453,6 +453,134 @@ router.get('/:state', async (req, res) => {
   }
 });
 
+// City rankings page (e.g., /dispensaries/california/city/los-angeles)
+router.get('/:state/city/:city', async (req, res) => {
+  try {
+    const { state: stateSlug, city: citySlug } = req.params;
+
+    // Get state
+    const state = await State.findBySlug(stateSlug);
+    if (!state) {
+      return res.status(404).render('404', {
+        title: 'State Not Found',
+        message: 'The state you are looking for does not exist.'
+      });
+    }
+
+    // Convert slug back to city name (e.g., "los-angeles" -> "Los Angeles")
+    const cityName = citySlug
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    // Get dispensaries in this city
+    const result = await db.query(`
+      SELECT d.*, c.name as county_name, c.slug as county_slug,
+             s.name as state_name, s.slug as state_slug, s.abbreviation as state_abbr,
+             COALESCE(d.google_rating, 0) as google_rating,
+             COALESCE(d.google_review_count, 0) as google_review_count
+      FROM dispensaries d
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE LOWER(d.city) = LOWER($1)
+        AND s.id = $2
+        AND d.is_active = true
+      ORDER BY d.google_review_count DESC, d.google_rating DESC
+      LIMIT 100
+    `, [cityName, state.id]);
+
+    if (result.rows.length === 0) {
+      return res.status(404).render('404', {
+        title: 'City Not Found',
+        message: `No dispensaries found in ${cityName}, ${state.name}.`
+      });
+    }
+
+    const dispensaries = result.rows;
+    const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+    const canonicalUrl = `${baseUrl}/dispensaries/${stateSlug}/city/${citySlug}`;
+
+    // Calculate average rating
+    const avgRating = dispensaries.length > 0
+      ? (dispensaries.reduce((sum, d) => sum + (d.google_rating || 0), 0) / dispensaries.length).toFixed(1)
+      : 0;
+
+    // Get other cities in this state
+    const otherCitiesResult = await db.query(`
+      SELECT DISTINCT d.city, COUNT(*) as count
+      FROM dispensaries d
+      JOIN counties c ON d.county_id = c.id
+      WHERE c.state_id = $1
+        AND d.is_active = true
+        AND d.city IS NOT NULL
+        AND d.city <> ''
+        AND LOWER(d.city) <> LOWER($2)
+      GROUP BY d.city
+      HAVING COUNT(*) >= 3
+      ORDER BY COUNT(*) DESC
+      LIMIT 10
+    `, [state.id, cityName]);
+
+    // Generate schema
+    const schemas = {
+      itemList: {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'name': `Best Dispensaries in ${cityName}, ${state.abbreviation}`,
+        'numberOfItems': dispensaries.length,
+        'itemListElement': dispensaries.slice(0, 10).map((d, i) => ({
+          '@type': 'ListItem',
+          'position': i + 1,
+          'item': {
+            '@type': 'LocalBusiness',
+            'name': d.name,
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': d.address_street,
+              'addressLocality': d.city,
+              'addressRegion': d.state_abbr
+            },
+            ...(d.google_rating && {
+              'aggregateRating': {
+                '@type': 'AggregateRating',
+                'ratingValue': d.google_rating,
+                'reviewCount': d.google_review_count || 0
+              }
+            }),
+            'url': `${baseUrl}/dispensary/${d.slug}`
+          }
+        }))
+      },
+      breadcrumb: SchemaGenerator.generateBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: state.name, url: `/dispensaries/${stateSlug}` },
+        { name: cityName, url: null }
+      ], baseUrl)
+    };
+
+    res.render('city-rankings', {
+      title: `Best Dispensaries in ${cityName}, ${state.abbreviation} (2026) | Top ${dispensaries.length} Ranked`,
+      dispensaries,
+      cityName,
+      citySlug,
+      state,
+      avgRating,
+      otherCities: otherCitiesResult.rows,
+      schemas,
+      baseUrl,
+      canonicalUrl,
+      meta: {
+        description: `Find the best cannabis dispensaries in ${cityName}, ${state.name}. Top ${dispensaries.length} dispensaries ranked by customer reviews, ratings, and quality. Updated 2026.`,
+        keywords: `dispensaries ${cityName}, cannabis dispensary ${cityName} ${state.abbreviation}, weed dispensary ${cityName}, marijuana ${cityName}`
+      }
+    });
+
+  } catch (error) {
+    console.error('Error loading city page:', error);
+    res.status(500).send('Error loading city page');
+  }
+});
+
 // County rankings page
 router.get('/:state/:county', async (req, res) => {
   try {

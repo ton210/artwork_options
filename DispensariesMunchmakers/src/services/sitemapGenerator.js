@@ -56,6 +56,10 @@ class SitemapGenerator {
     <loc>${this.baseUrl}/sitemap-tags.xml</loc>
     <lastmod>${this.formatDate(new Date())}</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>${this.baseUrl}/sitemap-cities.xml</loc>
+    <lastmod>${this.formatDate(new Date())}</lastmod>
+  </sitemap>
 </sitemapindex>`;
 
     return xml;
@@ -189,6 +193,35 @@ class SitemapGenerator {
         ));
       }
     }
+
+    return this.wrapUrlset(urls.join(''));
+  }
+
+  async generateCitiesSitemap() {
+    // Get all cities with 3+ dispensaries
+    const cities = await db.query(`
+      SELECT d.city, s.slug as state_slug, COUNT(*) as cnt
+      FROM dispensaries d
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE d.city IS NOT NULL AND d.city <> '' AND d.is_active = true
+      GROUP BY d.city, s.slug
+      HAVING COUNT(*) >= 3
+      ORDER BY COUNT(*) DESC
+    `);
+
+    const urls = cities.rows.map(city => {
+      const citySlug = city.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+      // Higher priority for cities with more dispensaries
+      const priority = city.cnt >= 20 ? '0.8' : city.cnt >= 10 ? '0.7' : '0.6';
+
+      return this.createUrl(
+        `/dispensaries/${city.state_slug}/city/${citySlug}`,
+        new Date(),
+        'weekly',
+        priority
+      );
+    });
 
     return this.wrapUrlset(urls.join(''));
   }

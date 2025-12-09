@@ -100,6 +100,20 @@ router.get('/sitemap-tags.xml', async (req, res) => {
   }
 });
 
+// Cities sitemap (cities with 3+ dispensaries)
+router.get('/sitemap-cities.xml', async (req, res) => {
+  try {
+    const generator = new SitemapGenerator(process.env.BASE_URL);
+    const xml = await generator.generateCitiesSitemap();
+
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  } catch (error) {
+    console.error('Error generating cities sitemap:', error);
+    res.status(500).send('Error generating sitemap');
+  }
+});
+
 // HTML sitemap page (for users)
 router.get('/sitemap', async (req, res) => {
   try {
