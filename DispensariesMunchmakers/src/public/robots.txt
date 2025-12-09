@@ -13,10 +13,13 @@ Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://bestdispensaries.munchmakers.com/sitemap.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-main.xml
 Sitemap: https://bestdispensaries.munchmakers.com/sitemap-states.xml
 Sitemap: https://bestdispensaries.munchmakers.com/sitemap-counties.xml
 Sitemap: https://bestdispensaries.munchmakers.com/sitemap-dispensaries.xml
 Sitemap: https://bestdispensaries.munchmakers.com/sitemap-brands.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-tags.xml
+Sitemap: https://bestdispensaries.munchmakers.com/sitemap-cities.xml
 
 # Block bad bots
 User-agent: AhrefsBot
