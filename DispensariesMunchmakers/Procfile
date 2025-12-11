@@ -1,2 +1,2 @@
-web: node src/server.js
-worker: node src/worker.js
+web: cd DispensariesMunchmakers && node src/server.js
+worker: cd DispensariesMunchmakers && node src/worker.js
