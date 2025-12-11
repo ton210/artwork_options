@@ -194,6 +194,102 @@
           </div>
         </div>
 
+        <% if (stateDetails) { %>
+        <!-- Cannabis Laws & Regulations -->
+        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg shadow-lg p-4 sm:p-6 mb-8">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4 text-gray-900">
+            Cannabis Laws in <%= state.name %>
+          </h2>
+          <div class="prose max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+            <p class="text-base sm:text-lg font-semibold text-green-800">
+              <span class="inline-block px-3 py-1 bg-green-100 rounded-full text-sm mr-2">
+                <%= stateDetails.legalStatus %>
+              </span>
+              <% if (stateDetails.legalStatus.includes('Recreational')) { %>
+                Legalized for recreational use <%= stateDetails.recreationalLegalizedYear ? 'in ' + stateDetails.recreationalLegalizedYear : '' %>
+              <% } else { %>
+                Medical marijuana only <%= stateDetails.medicalLegalizedYear ? '(legalized ' + stateDetails.medicalLegalizedYear + ')' : '' %>
+              <% } %>
+            </p>
+
+            <p><%= stateDetails.description %></p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="bg-white rounded-lg p-4">
+                <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+                  <span class="text-lg mr-2">🛒</span>
+                  Purchase Limits
+                </h3>
+                <p class="text-sm text-gray-700"><%= stateDetails.purchaseLimits %></p>
+              </div>
+
+              <div class="bg-white rounded-lg p-4">
+                <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+                  <span class="text-lg mr-2">👜</span>
+                  Possession Limits
+                </h3>
+                <p class="text-sm text-gray-700"><%= stateDetails.possessionLimits %></p>
+              </div>
+
+              <div class="bg-white rounded-lg p-4">
+                <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+                  <span class="text-lg mr-2">🌱</span>
+                  Home Cultivation
+                </h3>
+                <p class="text-sm text-gray-700">
+                  <% if (stateDetails.homegrowAllowed) { %>
+                    <span class="text-green-600 font-semibold">Allowed</span>
+                    <%= stateDetails.homegrowLimit ? ' - ' + stateDetails.homegrowLimit : '' %>
+                  <% } else { %>
+                    <span class="text-red-600 font-semibold">Not Permitted</span>
+                  <% } %>
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-4">
+                <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+                  <span class="text-lg mr-2">🎂</span>
+                  Age Requirement
+                </h3>
+                <p class="text-sm text-gray-700"><%= stateDetails.ageRequirement %></p>
+              </div>
+            </div>
+
+            <% if (stateDetails.qualifyingConditions && stateDetails.qualifyingConditions.length > 0) { %>
+            <div class="bg-white rounded-lg p-4 mt-4">
+              <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+                <span class="text-lg mr-2">⚕️</span>
+                Qualifying Medical Conditions
+              </h3>
+              <p class="text-sm text-gray-700 mb-2">Medical marijuana patients with the following conditions may access cannabis in <%= state.name %>:</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                <% stateDetails.qualifyingConditions.forEach(condition => { %>
+                  <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">
+                    <%= condition %>
+                  </span>
+                <% }); %>
+              </div>
+            </div>
+            <% } %>
+
+            <div class="bg-white rounded-lg p-4 mt-4">
+              <h3 class="font-bold text-gray-900 mb-2 flex items-center">
+                <span class="text-lg mr-2">📍</span>
+                Where You Can Consume
+              </h3>
+              <p class="text-sm text-gray-700"><%= stateDetails.consumptionRules %></p>
+            </div>
+
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+              <p class="text-xs text-yellow-800">
+                <strong>Important:</strong> Laws are subject to change. Always verify current regulations with official state sources.
+                Cannabis remains illegal under federal law.
+              </p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+
         <!-- About Cannabis in State -->
         <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
           <h2 class="text-xl sm:text-2xl font-bold mb-4">About Cannabis Dispensaries in <%= state.name %></h2>

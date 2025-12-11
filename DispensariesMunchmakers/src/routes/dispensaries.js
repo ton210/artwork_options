@@ -7,6 +7,12 @@ const Vote = require('../models/Vote');
 const { getClientIP } = require('../middleware/analytics');
 const SchemaGenerator = require('../utils/schemaGenerator');
 const db = require('../config/database');
+const fs = require('fs');
+const path = require('path');
+
+// Load state information
+const stateInfoPath = path.join(__dirname, '../../data/state-info.json');
+const stateInfo = JSON.parse(fs.readFileSync(stateInfoPath, 'utf8'));
 
 // Tag display names mapping
 const TAG_DISPLAY_NAMES = {
@@ -433,6 +439,9 @@ router.get('/:state', async (req, res) => {
     // Get stats
     const stats = await State.getStats(state.id);
 
+    // Get state-specific cannabis information
+    const stateDetails = stateInfo[state.name] || null;
+
     res.render('state', {
       title: showAll ?
         `All ${rankings.length} Dispensaries in ${state.name} (2026) | Complete Rankings` :
@@ -442,6 +451,8 @@ router.get('/:state', async (req, res) => {
       rankings,
       stats,
       showAll,
+      stateDetails,
+      MUNCHMAKERS_URL: process.env.MUNCHMAKERS_URL || 'https://munchmakers.com',
       meta: {
         description: `Find the top-rated cannabis dispensaries in ${state.name}. User-voted rankings based on Google reviews, ratings, and community feedback.`,
         keywords: `${state.name} dispensary, cannabis ${state.name}, marijuana dispensary ${state.name}, weed dispensary ${state.name}`

@@ -1,8 +1,18 @@
 [
   {
+    "name": "Alabama",
+    "abbreviation": "AL",
+    "slug": "alabama"
+  },
+  {
     "name": "Alaska",
     "abbreviation": "AK",
     "slug": "alaska"
+  },
+  {
+    "name": "Arkansas",
+    "abbreviation": "AR",
+    "slug": "arkansas"
   },
   {
     "name": "Arizona",
@@ -30,9 +40,29 @@
     "slug": "delaware"
   },
   {
+    "name": "Florida",
+    "abbreviation": "FL",
+    "slug": "florida"
+  },
+  {
+    "name": "Hawaii",
+    "abbreviation": "HI",
+    "slug": "hawaii"
+  },
+  {
     "name": "Illinois",
     "abbreviation": "IL",
     "slug": "illinois"
+  },
+  {
+    "name": "Kentucky",
+    "abbreviation": "KY",
+    "slug": "kentucky"
+  },
+  {
+    "name": "Louisiana",
+    "abbreviation": "LA",
+    "slug": "louisiana"
   },
   {
     "name": "Maine",
@@ -60,6 +90,11 @@
     "slug": "minnesota"
   },
   {
+    "name": "Mississippi",
+    "abbreviation": "MS",
+    "slug": "mississippi"
+  },
+  {
     "name": "Missouri",
     "abbreviation": "MO",
     "slug": "missouri"
@@ -73,6 +108,11 @@
     "name": "Nevada",
     "abbreviation": "NV",
     "slug": "nevada"
+  },
+  {
+    "name": "New Hampshire",
+    "abbreviation": "NH",
+    "slug": "new-hampshire"
   },
   {
     "name": "New Jersey",
@@ -90,9 +130,19 @@
     "slug": "new-york"
   },
   {
+    "name": "North Dakota",
+    "abbreviation": "ND",
+    "slug": "north-dakota"
+  },
+  {
     "name": "Ohio",
     "abbreviation": "OH",
     "slug": "ohio"
+  },
+  {
+    "name": "Oklahoma",
+    "abbreviation": "OK",
+    "slug": "oklahoma"
   },
   {
     "name": "Oregon",
@@ -100,9 +150,24 @@
     "slug": "oregon"
   },
   {
+    "name": "Pennsylvania",
+    "abbreviation": "PA",
+    "slug": "pennsylvania"
+  },
+  {
     "name": "Rhode Island",
     "abbreviation": "RI",
     "slug": "rhode-island"
+  },
+  {
+    "name": "South Dakota",
+    "abbreviation": "SD",
+    "slug": "south-dakota"
+  },
+  {
+    "name": "Utah",
+    "abbreviation": "UT",
+    "slug": "utah"
   },
   {
     "name": "Vermont",
@@ -118,6 +183,11 @@
     "name": "Washington",
     "abbreviation": "WA",
     "slug": "washington"
+  },
+  {
+    "name": "West Virginia",
+    "abbreviation": "WV",
+    "slug": "west-virginia"
   },
   {
     "name": "Washington D.C.",
