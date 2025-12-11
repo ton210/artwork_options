@@ -3,7 +3,25 @@ const slugify = require('slugify');
 
 class Dispensary {
   static async create(data) {
-    const slug = slugify(data.name, { lower: true, strict: true }) + '-' + data.city?.toLowerCase().replace(/\s+/g, '-');
+    let baseSlug = slugify(data.name, { lower: true, strict: true }) + '-' + data.city?.toLowerCase().replace(/\s+/g, '-');
+    let slug = baseSlug;
+
+    // Check for duplicate slugs and append number if needed
+    let counter = 2;
+    while (true) {
+      const existingSlug = await db.query(
+        'SELECT id FROM dispensaries WHERE slug = $1',
+        [slug]
+      );
+
+      if (existingSlug.rows.length === 0) {
+        break; // Slug is unique
+      }
+
+      // Slug exists, try with counter
+      slug = `${baseSlug}-${counter}`;
+      counter++;
+    }
 
     const query = `
       INSERT INTO dispensaries (
@@ -116,10 +134,20 @@ class Dispensary {
     const values = [];
     let paramCount = 1;
 
+    // JSON fields that need to be stringified
+    const jsonFields = ['photos', 'hours', 'external_listings'];
+
     Object.keys(data).forEach(key => {
       if (data[key] !== undefined) {
         fields.push(`${key} = $${paramCount}`);
-        values.push(data[key]);
+
+        // Stringify JSON fields
+        if (jsonFields.includes(key) && typeof data[key] === 'object') {
+          values.push(JSON.stringify(data[key]));
+        } else {
+          values.push(data[key]);
+        }
+
         paramCount++;
       }
     });

@@ -168,6 +168,45 @@ router.get('/', async (req, res) => {
       LIMIT 10
     `);
 
+    // Get top dispensaries last 24 hours (US visitors)
+    const topDispensaries24h = await db.query(`
+      SELECT
+        d.name,
+        d.city,
+        s.abbreviation as state_abbr,
+        d.slug,
+        COUNT(pv.id) as view_count,
+        COUNT(DISTINCT pv.ip_hash) as unique_visitors
+      FROM dispensaries d
+      JOIN page_views pv ON d.id = pv.dispensary_id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      WHERE pv.created_at >= NOW() - INTERVAL '24 hours'
+        AND (pv.country = 'US' OR pv.country IS NULL)
+      GROUP BY d.id, d.name, d.city, s.abbreviation, d.slug
+      ORDER BY view_count DESC
+      LIMIT 10
+    `);
+
+    // Get top states last 24 hours (US visitors)
+    const topStates24h = await db.query(`
+      SELECT
+        s.name as state_name,
+        s.slug as state_slug,
+        COUNT(pv.id) as view_count,
+        COUNT(DISTINCT pv.ip_hash) as unique_visitors
+      FROM page_views pv
+      JOIN dispensaries d ON pv.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE pv.created_at >= NOW() - INTERVAL '24 hours'
+        AND (pv.country = 'US' OR pv.country IS NULL)
+        AND pv.dispensary_id IS NOT NULL
+      GROUP BY s.id, s.name, s.slug
+      ORDER BY view_count DESC
+      LIMIT 10
+    `);
+
     // Get recent scrape logs
     const scrapeLogs = await db.query(`
       SELECT * FROM scrape_logs
@@ -182,15 +221,50 @@ router.get('/', async (req, res) => {
       LIMIT 5
     `);
 
+    // Get click stats
+    const clickStats = await db.query(`
+      SELECT
+        COUNT(*) FILTER (WHERE DATE(created_at) = CURRENT_DATE) as clicks_today,
+        COUNT(*) FILTER (WHERE DATE(created_at) = CURRENT_DATE AND event_type = 'website') as website_clicks_today,
+        COUNT(*) FILTER (WHERE DATE(created_at) = CURRENT_DATE AND event_type = 'phone') as phone_clicks_today,
+        COUNT(*) FILTER (WHERE created_at >= CURRENT_DATE - INTERVAL '7 days') as clicks_week,
+        COUNT(*) FILTER (WHERE created_at >= CURRENT_DATE - INTERVAL '30 days') as clicks_month
+      FROM click_events
+    `);
+
+    // Get top dispensaries by clicks (last 7 days)
+    const topClickedDispensaries = await db.query(`
+      SELECT
+        d.name,
+        d.city,
+        s.abbreviation as state_abbr,
+        d.slug,
+        COUNT(*) FILTER (WHERE ce.event_type = 'website') as website_clicks,
+        COUNT(*) FILTER (WHERE ce.event_type = 'phone') as phone_clicks,
+        COUNT(*) as total_clicks
+      FROM click_events ce
+      JOIN dispensaries d ON ce.dispensary_id = d.id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      WHERE ce.created_at >= CURRENT_DATE - INTERVAL '7 days'
+      GROUP BY d.id, d.name, d.city, s.abbreviation, d.slug
+      ORDER BY total_clicks DESC
+      LIMIT 10
+    `);
+
     res.render('admin/dashboard', {
       title: 'Admin Dashboard - Dispensary Rankings',
       stats: stats.rows[0],
       dailyStats: dailyStats.rows,
       topPages: topPages.rows,
       topDispensaries: topDispensaries.rows,
+      topDispensaries24h: topDispensaries24h.rows,
+      topStates24h: topStates24h.rows,
       trafficByCountry: trafficByCountry.rows,
       scrapeLogs: scrapeLogs.rows,
-      recentLeads: recentLeads.rows
+      recentLeads: recentLeads.rows,
+      clickStats: clickStats.rows[0],
+      topClickedDispensaries: topClickedDispensaries.rows
     });
 
   } catch (error) {

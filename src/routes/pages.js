@@ -49,6 +49,54 @@ router.get('/terms', (req, res) => {
   });
 });
 
+// Guide: What Makes a Great Dispensary
+router.get('/guides/what-makes-great-dispensary', (req, res) => {
+  res.render('pages/what-makes-great-dispensary', {
+    title: 'What Makes a Great Dispensary? | Expert Guide 2026',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Discover the key factors that make a cannabis dispensary exceptional: product quality, knowledgeable staff, atmosphere, pricing, and customer service.',
+      keywords: 'best dispensary, what makes good dispensary, cannabis dispensary quality, dispensary customer service, budtender knowledge'
+    }
+  });
+});
+
+// Guide: First-Time Visitor
+router.get('/guides/first-time-visitor', (req, res) => {
+  res.render('pages/first-time-visitor', {
+    title: 'First-Time Dispensary Visitor Guide | What to Expect 2026',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Complete guide for first-time dispensary visitors: what to bring, what to expect, how to order, payment methods, and tips for a smooth experience.',
+      keywords: 'first time dispensary, dispensary first visit, what to bring to dispensary, dispensary guide, cannabis dispensary tips'
+    }
+  });
+});
+
+// Guide: How to Choose a Dispensary
+router.get('/guides/how-to-choose', (req, res) => {
+  res.render('pages/how-to-choose', {
+    title: 'How to Choose a Cannabis Dispensary | Complete Selection Guide 2026',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Expert guide to choosing the right cannabis dispensary: compare prices, quality, location, service, and find the perfect match for your needs.',
+      keywords: 'choose dispensary, best dispensary near me, compare dispensaries, find dispensary, cannabis dispensary selection'
+    }
+  });
+});
+
+// Guide: Dispensary Etiquette
+router.get('/guides/dispensary-etiquette', (req, res) => {
+  res.render('pages/dispensary-etiquette', {
+    title: 'Cannabis Dispensary Etiquette Guide | Do\'s and Don\'ts 2026',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Complete dispensary etiquette guide: proper behavior, what to avoid, tipping guidelines, and how to be a respectful cannabis customer.',
+      keywords: 'dispensary etiquette, cannabis etiquette, dispensary rules, budtender tips, dispensary behavior, marijuana dispensary manners'
+    }
+  });
+});
+
 // Login page
 router.get('/login', (req, res) => {
   res.render('login', {

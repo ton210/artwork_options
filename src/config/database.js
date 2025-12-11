@@ -1,9 +1,13 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
+// Enable SSL for Heroku databases (even in development)
+const isHerokuDb = process.env.DATABASE_URL && process.env.DATABASE_URL.includes('amazonaws.com');
+const useSSL = process.env.NODE_ENV === 'production' || isHerokuDb;
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production' ? {
+  ssl: useSSL ? {
     rejectUnauthorized: false
   } : false,
   max: 20,

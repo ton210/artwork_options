@@ -229,7 +229,87 @@ function getMapStyles() {
   ];
 }
 
+// Get user's current location using browser geolocation API
+function getUserLocation() {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject(new Error('Geolocation is not supported by your browser'));
+      return;
+    }
+
+    // Check if we have cached location (within last 5 minutes)
+    const cached = localStorage.getItem('userLocation');
+    if (cached) {
+      try {
+        const { lat, lng, timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < 300000) { // 5 minutes
+          resolve({ lat, lng });
+          return;
+        }
+      } catch (e) {
+        localStorage.removeItem('userLocation');
+      }
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const location = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        // Cache the location
+        localStorage.setItem('userLocation', JSON.stringify({
+          ...location,
+          timestamp: Date.now()
+        }));
+        resolve(location);
+      },
+      (error) => {
+        let message;
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            message = 'Location access was denied. Please enable location services in your browser settings.';
+            break;
+          case error.POSITION_UNAVAILABLE:
+            message = 'Location information is unavailable.';
+            break;
+          case error.TIMEOUT:
+            message = 'Location request timed out.';
+            break;
+          default:
+            message = 'An unknown error occurred while getting location.';
+        }
+        reject(new Error(message));
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 300000 // Cache position for 5 minutes
+      }
+    );
+  });
+}
+
+// Calculate distance between two points using Haversine formula (returns miles)
+function calculateDistance(lat1, lng1, lat2, lng2) {
+  const R = 3959; // Earth's radius in miles
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function toRad(deg) {
+  return deg * (Math.PI / 180);
+}
+
 // Make functions globally available
 window.initCountyMap = initCountyMap;
 window.initStateMap = initStateMap;
 window.initDispensaryMap = initDispensaryMap;
+window.getUserLocation = getUserLocation;
+window.calculateDistance = calculateDistance;

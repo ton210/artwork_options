@@ -52,6 +52,14 @@ class SitemapGenerator {
     <loc>${this.baseUrl}/sitemap-brands.xml</loc>
     <lastmod>${this.formatDate(new Date())}</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>${this.baseUrl}/sitemap-tags.xml</loc>
+    <lastmod>${this.formatDate(new Date())}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${this.baseUrl}/sitemap-cities.xml</loc>
+    <lastmod>${this.formatDate(new Date())}</lastmod>
+  </sitemap>
 </sitemapindex>`;
 
     return xml;
@@ -153,6 +161,63 @@ class SitemapGenerator {
       return this.createUrl(
         `/brands/${brand.slug}`,
         brand.updated_at,
+        'weekly',
+        priority
+      );
+    });
+
+    return this.wrapUrlset(urls.join(''));
+  }
+
+  async generateTagsSitemap() {
+    // All valid tag slugs
+    const tags = [
+      'edibles', 'flower', 'vapes', 'concentrates', 'pre-rolls',
+      'tinctures', 'topicals', 'delivery', 'curbside-pickup',
+      'recreational', 'medical', 'online-ordering'
+    ];
+
+    // Get all states
+    const states = await db.query('SELECT slug FROM states ORDER BY name');
+
+    const urls = [];
+
+    // Generate URLs for each state + tag combination
+    for (const state of states.rows) {
+      for (const tag of tags) {
+        urls.push(this.createUrl(
+          `/dispensaries/${state.slug}/best-${tag}`,
+          new Date(),
+          'weekly',
+          '0.6'
+        ));
+      }
+    }
+
+    return this.wrapUrlset(urls.join(''));
+  }
+
+  async generateCitiesSitemap() {
+    // Get all cities with 3+ dispensaries
+    const cities = await db.query(`
+      SELECT d.city, s.slug as state_slug, COUNT(*) as cnt
+      FROM dispensaries d
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE d.city IS NOT NULL AND d.city <> '' AND d.is_active = true
+      GROUP BY d.city, s.slug
+      HAVING COUNT(*) >= 3
+      ORDER BY COUNT(*) DESC
+    `);
+
+    const urls = cities.rows.map(city => {
+      const citySlug = city.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+      // Higher priority for cities with more dispensaries
+      const priority = city.cnt >= 20 ? '0.8' : city.cnt >= 10 ? '0.7' : '0.6';
+
+      return this.createUrl(
+        `/dispensaries/${city.state_slug}/city/${citySlug}`,
+        new Date(),
         'weekly',
         priority
       );
