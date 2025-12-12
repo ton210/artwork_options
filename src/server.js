@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const path = require('path');
 const { getRedisClient } = require('./config/redis');
 const { trackPageView } = require('./middleware/analytics');
+const { autoTranslateMiddleware } = require('./middleware/autoTranslate');
+const { detectLanguage } = require('./middleware/language');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -95,6 +97,10 @@ app.use((req, res, next) => {
 
 // Analytics tracking middleware
 app.use(trackPageView);
+
+// Language detection and auto-translation middleware
+app.use(detectLanguage);
+app.use(autoTranslateMiddleware);
 
 // Make environment variables available to views
 app.use((req, res, next) => {
