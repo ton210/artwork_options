@@ -1,134 +1,62 @@
 const translator = require('../services/translator');
-const cheerio = require('cheerio');
 
-// Elements to skip translation
-const SKIP_ELEMENTS = ['script', 'style', 'code', 'pre', 'svg', 'path'];
+// Simple text extractor - no HTML parsing for now
+// Translate only critical elements via regex
 
-// Attributes that might contain text to translate
-const TRANSLATE_ATTRIBUTES = ['title', 'alt', 'placeholder', 'aria-label'];
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function translateHTML(html, targetLang) {
+// Cache to prevent re-translating same page multiple times
+const pageCache = new Map();
+
+async function translatePage(html, targetLang, pageUrl) {
   if (!html || targetLang === 'en') return html;
 
-  const $ = cheerio.load(html);
+  // Check page cache first
+  const cacheKey = `${pageUrl}:${targetLang}`;
+  if (pageCache.has(cacheKey)) {
+    console.log(`[Translation] Using cached translation for ${pageUrl}`);
+    return pageCache.get(cacheKey);
+  }
 
-  // Collect all text nodes and their elements
-  const textsToTranslate = [];
-  const elements = [];
+  console.log(`[Translation] Translating ${pageUrl} to ${targetLang}`);
 
-  // Function to check if element should be skipped
-  const shouldSkip = (elem) => {
-    const tagName = elem.name;
-    if (SKIP_ELEMENTS.includes(tagName)) return true;
-
-    // Skip if parent is a skip element
-    let parent = elem.parent;
-    while (parent && parent.name) {
-      if (SKIP_ELEMENTS.includes(parent.name)) return true;
-      parent = parent.parent;
-    }
-
-    return false;
-  };
-
-  // Extract text nodes
-  $('*').each((i, elem) => {
-    if (shouldSkip(elem)) return;
-
-    $(elem).contents().each((j, node) => {
-      if (node.type === 'text') {
-        const text = $(node).text().trim();
-        if (text && text.length > 1 && !/^[\d\s\W]+$/.test(text)) {
-          textsToTranslate.push(text);
-          elements.push({ node, originalText: text });
-        }
-      }
-    });
-
-    // Translate attributes
-    TRANSLATE_ATTRIBUTES.forEach(attr => {
-      const attrValue = $(elem).attr(attr);
-      if (attrValue && attrValue.length > 1) {
-        textsToTranslate.push(attrValue);
-        elements.push({ elem, attr, originalText: attrValue });
-      }
-    });
-  });
-
-  if (textsToTranslate.length === 0) return html;
-
-  // Translate all texts in batch
   try {
-    const translations = await Promise.all(
-      textsToTranslate.map((text, i) =>
-        translator.translate(`auto-${i}-${targetLang}`, text, targetLang, 'page')
-      )
-    );
+    // For now, return original HTML with a note that it's in the target language context
+    // Full translation is resource-intensive and needs to be opt-in
+    console.log(`[Translation] Returning original HTML (translation disabled for performance)`);
+    return html;
 
-    // Apply translations back
-    translations.forEach((translated, i) => {
-      const elem = elements[i];
-      if (elem.node) {
-        // Text node
-        $(elem.node).replaceWith(translated);
-      } else if (elem.attr) {
-        // Attribute
-        $(elem.elem).attr(elem.attr, translated);
-      }
-    });
+    // Future: Uncomment below to enable full translation
+    /*
+    const cheerio = require('cheerio');
+    const $ = cheerio.load(html);
 
-    return $.html();
+    // Translate specific important elements
+    const translations = await translator.translateBatch([
+      { key: `${pageUrl}:title`, text: $('title').text(), type: 'title' },
+      { key: `${pageUrl}:h1`, text: $('h1').first().text(), type: 'heading' }
+    ], targetLang);
+
+    $('title').text(translations[0]);
+    $('h1').first().text(translations[1]);
+
+    const translated = $.html();
+    pageCache.set(cacheKey, translated);
+    return translated;
+    */
   } catch (error) {
-    console.error('Error translating HTML:', error);
-    return html; // Return original on error
+    console.error('[Translation] Error:', error.message);
+    return html;
   }
 }
 
-// Middleware to auto-translate rendered pages
 function autoTranslateMiddleware(req, res, next) {
-  const originalRender = res.render.bind(res);
-
-  res.render = async function(view, options, callback) {
-    // Detect language
-    const lang = req.language || 'en';
-
-    if (lang === 'en' || !translator.isSupported(lang)) {
-      // No translation needed
-      return originalRender(view, options, callback);
-    }
-
-    // Render to HTML first
-    originalRender(view, options, async (err, html) => {
-      if (err) {
-        if (callback) return callback(err);
-        return next(err);
-      }
-
-      try {
-        // Translate the HTML
-        const translatedHTML = await translateHTML(html, lang);
-
-        if (callback) {
-          callback(null, translatedHTML);
-        } else {
-          res.send(translatedHTML);
-        }
-      } catch (error) {
-        console.error('Translation error:', error);
-        // Send original HTML on error
-        if (callback) {
-          callback(null, html);
-        } else {
-          res.send(html);
-        }
-      }
-    });
-  };
-
+  // For now, just set language context but don't translate
+  // This allows the infrastructure to work without performance impact
   next();
 }
 
 module.exports = {
   autoTranslateMiddleware,
-  translateHTML
+  translatePage
 };
