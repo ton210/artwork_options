@@ -8,7 +8,7 @@ const morgan = require('morgan');
 const path = require('path');
 const { getRedisClient } = require('./config/redis');
 const { trackPageView } = require('./middleware/analytics');
-const { autoTranslateMiddleware } = require('./middleware/autoTranslate');
+const { serveTranslatedPage } = require('./middleware/serveTranslated');
 const { detectLanguage } = require('./middleware/language');
 
 const app = express();
@@ -122,9 +122,11 @@ const languageRoutes = require('./routes/language');
 // Language routes FIRST (catch /es/, /fr/, etc. and rewrite)
 app.use('/', languageRoutes);
 
-// Then language detection and translation middleware
+// Then language detection
 app.use(detectLanguage);
-app.use(autoTranslateMiddleware);
+
+// Then serve pre-translated cached pages (if available)
+app.use(serveTranslatedPage);
 
 // Then normal routes
 app.use('/', indexRoutes);
