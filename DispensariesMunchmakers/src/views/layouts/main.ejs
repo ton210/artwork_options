@@ -17,6 +17,9 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="<%= baseUrl %><%= typeof currentPath !== 'undefined' ? currentPath : '' %>">
 
+  <!-- Hreflang Tags for International SEO -->
+  <%- include('../partials/hreflang') %>
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="<%= baseUrl %><%= typeof currentPath !== 'undefined' ? currentPath : '' %>">

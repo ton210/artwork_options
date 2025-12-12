@@ -1,0 +1,46 @@
+import { App } from '../types';
+
+export const apps: App[] = [
+  {
+    id: 'algoboost',
+    name: 'Algoboost.io',
+    tagline: 'Master Your Marketing Attribution',
+    description: 'Seamless pixel integration for over 44 marketing pixels across BigCommerce and Shopify platforms. Track, manage, and optimize your marketing campaigns with ease.',
+    platforms: ['BigCommerce', 'Shopify'],
+    features: [
+      'Support for 44+ marketing pixels',
+      'Easy one-click pixel installation',
+      'Server-side tracking for accuracy',
+      'Privacy compliance (GDPR, CCPA)',
+      'Multi-pixel management dashboard',
+      'Real-time tracking verification',
+      'Automatic updates and maintenance',
+      'Priority support for merchants',
+    ],
+    website: 'https://algoboost.io',
+    image: '/images/apps/algoboost-hero.png',
+    screenshots: ['/images/apps/algoboost-dashboard.png'],
+    path: '/apps/algoboost',
+  },
+  {
+    id: 'celebrationapp',
+    name: 'CelebrationApp.Pro',
+    tagline: 'Gamify Your Shopify Store',
+    description: 'Turn shopping into an experience! CelebrationApp.Pro adds interactive gamification elements to your Shopify store, increasing engagement and boosting conversion rates.',
+    platforms: ['Shopify'],
+    features: [
+      'Interactive celebration animations',
+      'Gamification mechanics to drive purchases',
+      'Customizable celebration triggers',
+      'Mobile-optimized experiences',
+      'Conversion rate optimization',
+      'Engagement analytics dashboard',
+      'Easy setup - no coding required',
+      'Works with all Shopify themes',
+    ],
+    appStoreUrl: 'https://apps.shopify.com/celebrationapp',
+    image: '/images/apps/celebration-hero.png',
+    screenshots: ['/images/apps/celebration-dashboard.png'],
+    path: '/apps/celebrationapp',
+  },
+];

@@ -1,0 +1,27 @@
+<!-- Hreflang tags for SEO -->
+<%
+const baseUrl = baseUrl || 'https://bestdispensaries.munchmakers.com';
+const currentPath = typeof req !== 'undefined' ? req.path : '';
+const cleanPath = currentPath.replace(/^\/(es|fr|de|nl|pt)\//, '/');
+%>
+
+<!-- Default English version -->
+<link rel="alternate" hreflang="en" href="<%= baseUrl %><%= cleanPath %>" />
+
+<!-- Spanish version -->
+<link rel="alternate" hreflang="es" href="<%= baseUrl %>/es<%= cleanPath %>" />
+
+<!-- French version -->
+<link rel="alternate" hreflang="fr" href="<%= baseUrl %>/fr<%= cleanPath %>" />
+
+<!-- German version -->
+<link rel="alternate" hreflang="de" href="<%= baseUrl %>/de<%= cleanPath %>" />
+
+<!-- Dutch version -->
+<link rel="alternate" hreflang="nl" href="<%= baseUrl %>/nl<%= cleanPath %>" />
+
+<!-- Portuguese version -->
+<link rel="alternate" hreflang="pt" href="<%= baseUrl %>/pt<%= cleanPath %>" />
+
+<!-- x-default for international users -->
+<link rel="alternate" hreflang="x-default" href="<%= baseUrl %><%= cleanPath %>" />
