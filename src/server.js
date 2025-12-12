@@ -119,13 +119,14 @@ const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 const languageRoutes = require('./routes/language');
 
-// Language detection and translation middleware (must be AFTER routes are loaded)
+// Language routes FIRST (catch /es/, /fr/, etc. and rewrite)
+app.use('/', languageRoutes);
+
+// Then language detection and translation middleware
 app.use(detectLanguage);
 app.use(autoTranslateMiddleware);
 
-// Language routes (must be before other routes to catch /es/, /fr/, etc.)
-app.use('/', languageRoutes);
-
+// Then normal routes
 app.use('/', indexRoutes);
 app.use('/dispensaries', dispensaryRoutes);
 app.use('/dispensary', dispensaryRoutes); // Alternative singular route
