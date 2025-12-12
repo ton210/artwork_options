@@ -98,10 +98,6 @@ app.use((req, res, next) => {
 // Analytics tracking middleware
 app.use(trackPageView);
 
-// Language detection and auto-translation middleware
-app.use(detectLanguage);
-app.use(autoTranslateMiddleware);
-
 // Make environment variables available to views
 app.use((req, res, next) => {
   res.locals.MUNCHMAKERS_URL = process.env.MUNCHMAKERS_SITE_URL || 'https://munchmakers.com';
@@ -122,6 +118,10 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 const languageRoutes = require('./routes/language');
+
+// Language detection and translation middleware (must be AFTER routes are loaded)
+app.use(detectLanguage);
+app.use(autoTranslateMiddleware);
 
 // Language routes (must be before other routes to catch /es/, /fr/, etc.)
 app.use('/', languageRoutes);
