@@ -105,11 +105,7 @@ async function trackPageView(req, res, next) {
       const country = getCountryFromRequest(req);
       const urlPath = req.path;
 
-      // Only track US visitors (skip non-US traffic)
-      if (country !== 'US') {
-        return next();
-      }
-
+      // Track all visitors from all countries (bots already filtered above)
       let dispensaryId = null;
 
       // If it's a dispensary page, get the dispensary ID
