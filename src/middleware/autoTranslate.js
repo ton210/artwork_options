@@ -8,23 +8,33 @@ async function translateKeyElements(html, targetLang, pageUrl) {
 
   const cacheKey = `${pageUrl}:${targetLang}`;
   if (pageCache.has(cacheKey)) {
+    console.log(`[TRANSLATE] Using cache for ${pageUrl}`);
     return pageCache.get(cacheKey);
   }
 
   console.log(`[TRANSLATE] ${pageUrl} -> ${targetLang}`);
 
   try {
-    // Use regex to find and replace key content (faster than cheerio)
     let translated = html;
 
-    // Translate key phrases with caching
+    // STEP 1: Rewrite all internal URLs to include language prefix
+    console.log(`[TRANSLATE] Rewriting URLs for ${targetLang}`);
+
+    // Rewrite href attributes for internal links
+    translated = translated.replace(/href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/)/g, `href="/${targetLang}/`);
+
+    // Rewrite action attributes for forms
+    translated = translated.replace(/action="\/(?!\/|http|es\/|fr\/|de\/|nl\/|pt\/)/g, `action="/${targetLang}/`);
+
+    console.log(`[TRANSLATE] URLs rewritten`);
+
+    // STEP 2: Translate key phrases
     const translations = [
       ['Top Dispensaries', 'top-dispensaries'],
       ['Find the best cannabis dispensaries', 'find-best'],
       ['Browse by State', 'browse-state'],
       ['United States', 'us'],
       ['Canada', 'canada'],
-      ['dispensaries', 'dispensaries-word'],
       ['View Rankings', 'view-rankings'],
       ['About', 'about'],
       ['Contact', 'contact'],
@@ -40,14 +50,22 @@ async function translateKeyElements(html, targetLang, pageUrl) {
       ['Best Dispensaries', 'best-disp']
     ];
 
+    let translatedCount = 0;
     for (const [english, key] of translations) {
-      const translatedText = await translator.translate(`${key}-${targetLang}`, english, targetLang);
-      // Replace all occurrences
-      const regex = new RegExp(english, 'g');
-      translated = translated.replace(regex, translatedText);
-
-      await delay(50); // Rate limit
+      try {
+        const translatedText = await translator.translate(`${key}-${targetLang}`, english, targetLang);
+        if (translatedText && translatedText !== english) {
+          const regex = new RegExp(english, 'gi');
+          translated = translated.replace(regex, translatedText);
+          translatedCount++;
+        }
+        await delay(50);
+      } catch (err) {
+        console.error(`[TRANSLATE] Failed to translate "${english}":`, err.message);
+      }
     }
+
+    console.log(`[TRANSLATE] Translated ${translatedCount} phrases`);
 
     pageCache.set(cacheKey, translated);
     console.log(`[TRANSLATE] Complete - cached`);
