@@ -13,12 +13,14 @@ function detectLanguage(req, res, next) {
     // Remove language from path for routing
     req.originalPath = req.path;
     req.path = '/' + urlParts.slice(1).join('/');
+    console.log(`[LANGUAGE] Detected ${firstPart} from URL: ${req.originalPath}`);
   } else {
     // Check cookie
     const cookieLang = req.cookies?.language;
     if (cookieLang && translator.isSupported(cookieLang)) {
       req.language = cookieLang;
       req.languageName = translator.getLanguageName(cookieLang);
+      console.log(`[LANGUAGE] Detected ${cookieLang} from cookie`);
     } else {
       // Default to English
       req.language = 'en';

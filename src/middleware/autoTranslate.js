@@ -65,16 +65,23 @@ function autoTranslateMiddleware(req, res, next) {
   res.render = function(view, options, callback) {
     const lang = req.language || 'en';
 
+    console.log(`[RENDER] View: ${view}, Language: ${lang}, Path: ${req.path}`);
+
     if (lang === 'en' || !translator.isSupported(lang)) {
+      console.log(`[RENDER] Skipping translation (English or unsupported)`);
       return originalRender(view, options, callback);
     }
 
     if (req.path.startsWith('/admin') || req.path.startsWith('/api')) {
+      console.log(`[RENDER] Skipping translation (admin/api)`);
       return originalRender(view, options, callback);
     }
 
+    console.log(`[RENDER] Will translate to ${lang}`);
+
     originalRender(view, options, async (err, html) => {
       if (err) {
+        console.error('[RENDER] Error:', err);
         if (callback) return callback(err);
         return next(err);
       }
