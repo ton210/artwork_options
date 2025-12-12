@@ -19,8 +19,11 @@
   <section class="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl font-bold mb-4">Top Dispensaries 2026</h1>
-      <p class="text-2xl text-green-50 mb-8">
-        Find the best cannabis dispensaries in your state, rated by the community
+      <p class="text-2xl text-green-50 mb-4">
+        Find the best cannabis dispensaries across North America
+      </p>
+      <p class="text-lg text-green-100 mb-8">
+        🇺🇸 United States & 🇨🇦 Canada - Rated by the community
       </p>
       <div class="flex justify-center gap-8 text-center">
         <div>
@@ -29,23 +32,29 @@
         </div>
         <div>
           <div class="text-4xl font-bold"><%= stats.total_states || 0 %></div>
-          <div class="text-green-100">Legal States</div>
+          <div class="text-green-100">Jurisdictions</div>
         </div>
         <div>
           <div class="text-4xl font-bold"><%= stats.total_counties || 0 %></div>
-          <div class="text-green-100">Counties</div>
+          <div class="text-green-100">Locations</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- States Grid -->
-  <section id="states" class="py-16">
+  <!-- United States Section -->
+  <section id="us-states" class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Browse by State</h2>
+      <div class="flex items-center justify-center mb-8">
+        <div class="text-4xl mr-4">🇺🇸</div>
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900">United States</h2>
+          <p class="text-gray-600"><%= usCount || 0 %> dispensaries across <%= usStates.length %> states</p>
+        </div>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <% states.forEach(state => { %>
+        <% usStates.forEach(state => { %>
           <a href="/dispensaries/<%= state.slug %>"
              class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-gray-200">
             <div class="flex justify-between items-start">
@@ -57,6 +66,39 @@
             </div>
             <div class="mt-4">
               <span class="text-green-600 font-medium hover:text-green-700">
+                View Rankings →
+              </span>
+            </div>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Canada Section -->
+  <section id="canada-provinces" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center mb-8">
+        <div class="text-4xl mr-4">🇨🇦</div>
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900">Canada</h2>
+          <p class="text-gray-600"><%= canadaCount || 0 %> dispensaries across <%= canadianProvinces.length %> provinces</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% canadianProvinces.forEach(province => { %>
+          <a href="/dispensaries/<%= province.slug %>"
+             class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border-2 border-red-200">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold text-gray-900"><%= province.name %></h3>
+                <p class="text-gray-600 mt-1"><%= province.dispensary_count || 0 %> dispensaries</p>
+              </div>
+              <div class="text-2xl"><%= province.abbreviation %></div>
+            </div>
+            <div class="mt-4">
+              <span class="text-red-600 font-medium hover:text-red-700">
                 View Rankings →
               </span>
             </div>

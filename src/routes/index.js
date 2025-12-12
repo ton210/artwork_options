@@ -7,7 +7,7 @@ const db = require('../config/database');
 router.get('/', async (req, res) => {
   try {
     // Get all states with dispensary counts
-    const states = await db.query(`
+    const allStates = await db.query(`
       SELECT s.*, COUNT(DISTINCT d.id) as dispensary_count
       FROM states s
       LEFT JOIN counties c ON s.id = c.state_id
@@ -15,6 +15,13 @@ router.get('/', async (req, res) => {
       GROUP BY s.id
       ORDER BY s.name ASC
     `);
+
+    // Separate US states from Canadian provinces
+    // Canadian provinces have abbreviations: AB, BC, MB, NB, NL, NT, NS, NU, ON, PE, QC, SK, YT
+    const canadianAbbrs = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
+
+    const usStates = allStates.rows.filter(s => !canadianAbbrs.includes(s.abbreviation));
+    const canadianProvinces = allStates.rows.filter(s => canadianAbbrs.includes(s.abbreviation));
 
     // Get overall stats
     const stats = await db.query(`
@@ -28,13 +35,34 @@ router.get('/', async (req, res) => {
       LEFT JOIN dispensaries d ON c.id = d.county_id AND d.is_active = true
     `);
 
+    // Get US-specific stats
+    const usStats = await db.query(`
+      SELECT COUNT(DISTINCT d.id) as count
+      FROM states s
+      LEFT JOIN counties c ON s.id = c.state_id
+      LEFT JOIN dispensaries d ON c.id = d.county_id AND d.is_active = true
+      WHERE s.abbreviation NOT IN ('AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT')
+    `);
+
+    // Get Canada-specific stats
+    const canadaStats = await db.query(`
+      SELECT COUNT(DISTINCT d.id) as count
+      FROM states s
+      LEFT JOIN counties c ON s.id = c.state_id
+      LEFT JOIN dispensaries d ON c.id = d.county_id AND d.is_active = true
+      WHERE s.abbreviation IN ('AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT')
+    `);
+
     res.render('home', {
-      title: 'Top Dispensaries 2026 - Find the Best Cannabis Dispensaries',
-      states: states.rows,
+      title: 'Top Dispensaries 2026 - Find the Best Cannabis Dispensaries in US & Canada',
+      usStates,
+      canadianProvinces,
       stats: stats.rows[0],
+      usCount: usStats.rows[0].count,
+      canadaCount: canadaStats.rows[0].count,
       meta: {
-        description: 'Discover the top-rated cannabis dispensaries across 24+ legal states. User-voted rankings based on reviews, ratings, and community feedback.',
-        keywords: 'cannabis dispensary, marijuana dispensary, weed dispensary, top dispensaries, dispensary rankings'
+        description: 'Discover the top-rated cannabis dispensaries across the United States and Canada. User-voted rankings based on reviews, ratings, and community feedback.',
+        keywords: 'cannabis dispensary, marijuana dispensary, weed dispensary, top dispensaries, dispensary rankings, Canada dispensaries'
       }
     });
   } catch (error) {
