@@ -1,62 +1,107 @@
 const translator = require('../services/translator');
 
-// Simple text extractor - no HTML parsing for now
-// Translate only critical elements via regex
-
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-// Cache to prevent re-translating same page multiple times
 const pageCache = new Map();
 
-async function translatePage(html, targetLang, pageUrl) {
+async function translateKeyElements(html, targetLang, pageUrl) {
   if (!html || targetLang === 'en') return html;
 
-  // Check page cache first
   const cacheKey = `${pageUrl}:${targetLang}`;
   if (pageCache.has(cacheKey)) {
-    console.log(`[Translation] Using cached translation for ${pageUrl}`);
     return pageCache.get(cacheKey);
   }
 
-  console.log(`[Translation] Translating ${pageUrl} to ${targetLang}`);
+  console.log(`[TRANSLATE] ${pageUrl} -> ${targetLang}`);
 
   try {
-    // For now, return original HTML with a note that it's in the target language context
-    // Full translation is resource-intensive and needs to be opt-in
-    console.log(`[Translation] Returning original HTML (translation disabled for performance)`);
-    return html;
+    // Use regex to find and replace key content (faster than cheerio)
+    let translated = html;
 
-    // Future: Uncomment below to enable full translation
-    /*
-    const cheerio = require('cheerio');
-    const $ = cheerio.load(html);
+    // Translate key phrases with caching
+    const translations = [
+      ['Top Dispensaries', 'top-dispensaries'],
+      ['Find the best cannabis dispensaries', 'find-best'],
+      ['Browse by State', 'browse-state'],
+      ['United States', 'us'],
+      ['Canada', 'canada'],
+      ['dispensaries', 'dispensaries-word'],
+      ['View Rankings', 'view-rankings'],
+      ['About', 'about'],
+      ['Contact', 'contact'],
+      ['Popular States', 'popular-states'],
+      ['Dispensary Guides', 'guides'],
+      ['What Makes a Great Dispensary', 'great-disp'],
+      ['First-Time Visitor Guide', 'first-time'],
+      ['How to Choose a Dispensary', 'how-choose'],
+      ['Dispensary Etiquette', 'etiquette'],
+      ['All rights reserved', 'rights'],
+      ['Cannabis Laws', 'cannabis-laws'],
+      ['Browse by County', 'browse-county'],
+      ['Best Dispensaries', 'best-disp']
+    ];
 
-    // Translate specific important elements
-    const translations = await translator.translateBatch([
-      { key: `${pageUrl}:title`, text: $('title').text(), type: 'title' },
-      { key: `${pageUrl}:h1`, text: $('h1').first().text(), type: 'heading' }
-    ], targetLang);
+    for (const [english, key] of translations) {
+      const translatedText = await translator.translate(`${key}-${targetLang}`, english, targetLang);
+      // Replace all occurrences
+      const regex = new RegExp(english, 'g');
+      translated = translated.replace(regex, translatedText);
 
-    $('title').text(translations[0]);
-    $('h1').first().text(translations[1]);
+      await delay(50); // Rate limit
+    }
 
-    const translated = $.html();
     pageCache.set(cacheKey, translated);
+    console.log(`[TRANSLATE] Complete - cached`);
     return translated;
-    */
+
   } catch (error) {
-    console.error('[Translation] Error:', error.message);
+    console.error('[TRANSLATE] Error:', error.message);
     return html;
   }
 }
 
 function autoTranslateMiddleware(req, res, next) {
-  // For now, just set language context but don't translate
-  // This allows the infrastructure to work without performance impact
+  const originalRender = res.render.bind(res);
+
+  res.render = function(view, options, callback) {
+    const lang = req.language || 'en';
+
+    if (lang === 'en' || !translator.isSupported(lang)) {
+      return originalRender(view, options, callback);
+    }
+
+    if (req.path.startsWith('/admin') || req.path.startsWith('/api')) {
+      return originalRender(view, options, callback);
+    }
+
+    originalRender(view, options, async (err, html) => {
+      if (err) {
+        if (callback) return callback(err);
+        return next(err);
+      }
+
+      try {
+        const translatedHTML = await translateKeyElements(html, lang, req.path);
+
+        if (callback) {
+          callback(null, translatedHTML);
+        } else {
+          res.send(translatedHTML);
+        }
+      } catch (error) {
+        console.error('[TRANSLATE] Fatal:', error);
+        if (callback) {
+          callback(null, html);
+        } else {
+          res.send(html);
+        }
+      }
+    });
+  };
+
   next();
 }
 
 module.exports = {
   autoTranslateMiddleware,
-  translatePage
+  translateKeyElements
 };
