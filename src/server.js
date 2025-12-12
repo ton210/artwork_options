@@ -115,6 +115,10 @@ const reviewRoutes = require('./routes/reviews');
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
+const languageRoutes = require('./routes/language');
+
+// Language routes (must be before other routes to catch /es/, /fr/, etc.)
+app.use('/', languageRoutes);
 
 app.use('/', indexRoutes);
 app.use('/dispensaries', dispensaryRoutes);
