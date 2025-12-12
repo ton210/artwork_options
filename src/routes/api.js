@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const Vote = require('../models/Vote');
+const Dispensary = require('../models/Dispensary');
 const { trackClickEvent, getClientIP } = require('../middleware/analytics');
 const { voteLimiter, apiLimiter } = require('../middleware/rateLimiter');
 
@@ -25,6 +26,15 @@ router.post('/vote',
       const { dispensaryId, voteType } = req.body;
       const clientIP = getClientIP(req);
       const sessionId = req.session?.id || req.sessionID || null;
+
+      // Validate dispensary exists
+      const dispensary = await Dispensary.findById(parseInt(dispensaryId));
+      if (!dispensary) {
+        return res.status(404).json({
+          success: false,
+          message: 'Dispensary not found'
+        });
+      }
 
       // Check if user can vote
       const canVote = await Vote.canVote(dispensaryId, clientIP);
