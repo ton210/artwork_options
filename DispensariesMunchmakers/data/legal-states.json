@@ -193,5 +193,83 @@
     "name": "Washington D.C.",
     "abbreviation": "DC",
     "slug": "washington-dc"
+  },
+  {
+    "name": "Alberta",
+    "abbreviation": "AB",
+    "slug": "alberta",
+    "country": "Canada"
+  },
+  {
+    "name": "British Columbia",
+    "abbreviation": "BC",
+    "slug": "british-columbia",
+    "country": "Canada"
+  },
+  {
+    "name": "Manitoba",
+    "abbreviation": "MB",
+    "slug": "manitoba",
+    "country": "Canada"
+  },
+  {
+    "name": "New Brunswick",
+    "abbreviation": "NB",
+    "slug": "new-brunswick",
+    "country": "Canada"
+  },
+  {
+    "name": "Newfoundland and Labrador",
+    "abbreviation": "NL",
+    "slug": "newfoundland-and-labrador",
+    "country": "Canada"
+  },
+  {
+    "name": "Northwest Territories",
+    "abbreviation": "NT",
+    "slug": "northwest-territories",
+    "country": "Canada"
+  },
+  {
+    "name": "Nova Scotia",
+    "abbreviation": "NS",
+    "slug": "nova-scotia",
+    "country": "Canada"
+  },
+  {
+    "name": "Nunavut",
+    "abbreviation": "NU",
+    "slug": "nunavut",
+    "country": "Canada"
+  },
+  {
+    "name": "Ontario",
+    "abbreviation": "ON",
+    "slug": "ontario",
+    "country": "Canada"
+  },
+  {
+    "name": "Prince Edward Island",
+    "abbreviation": "PE",
+    "slug": "prince-edward-island",
+    "country": "Canada"
+  },
+  {
+    "name": "Quebec",
+    "abbreviation": "QC",
+    "slug": "quebec",
+    "country": "Canada"
+  },
+  {
+    "name": "Saskatchewan",
+    "abbreviation": "SK",
+    "slug": "saskatchewan",
+    "country": "Canada"
+  },
+  {
+    "name": "Yukon",
+    "abbreviation": "YT",
+    "slug": "yukon",
+    "country": "Canada"
   }
 ]
