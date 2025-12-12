@@ -78,12 +78,14 @@ async function translateKeyElements(html, targetLang, pageUrl) {
 }
 
 function autoTranslateMiddleware(req, res, next) {
+  console.log(`[AUTO-TRANSLATE-MW] Path: ${req.path}, req.language: ${req.language || 'undefined'}`);
+
   const originalRender = res.render.bind(res);
 
   res.render = function(view, options, callback) {
     const lang = req.language || 'en';
 
-    console.log(`[RENDER] View: ${view}, Language: ${lang}, Path: ${req.path}`);
+    console.log(`[RENDER] View: ${view}, Language: ${lang}, Path: ${req.path}, HasLanguage: ${!!req.language}`);
 
     if (lang === 'en' || !translator.isSupported(lang)) {
       console.log(`[RENDER] Skipping translation (English or unsupported)`);
