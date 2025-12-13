@@ -2,29 +2,35 @@ const translator = require('../services/translator');
 
 // Detect language from URL or cookies
 function detectLanguage(req, res, next) {
-  // Check for language in URL (e.g., /es/dispensaries/california)
-  const urlParts = req.path.split('/').filter(p => p);
-  const firstPart = urlParts[0];
-
-  // Check if first part is a language code
-  if (firstPart && translator.isSupported(firstPart)) {
-    req.language = firstPart;
-    req.languageName = translator.getLanguageName(firstPart);
-    // Remove language from path for routing
-    req.originalPath = req.path;
-    req.path = '/' + urlParts.slice(1).join('/');
-    console.log(`[LANGUAGE] Detected ${firstPart} from URL: ${req.originalPath}`);
+  // Check if language was already set by language routes middleware
+  if (req.language && translator.isSupported(req.language)) {
+    req.languageName = translator.getLanguageName(req.language);
+    console.log(`[LANGUAGE] Using ${req.language} from language routes`);
   } else {
-    // Check cookie
-    const cookieLang = req.cookies?.language;
-    if (cookieLang && translator.isSupported(cookieLang)) {
-      req.language = cookieLang;
-      req.languageName = translator.getLanguageName(cookieLang);
-      console.log(`[LANGUAGE] Detected ${cookieLang} from cookie`);
+    // Check for language in URL (e.g., /es/dispensaries/california)
+    const urlParts = req.path.split('/').filter(p => p);
+    const firstPart = urlParts[0];
+
+    // Check if first part is a language code
+    if (firstPart && translator.isSupported(firstPart)) {
+      req.language = firstPart;
+      req.languageName = translator.getLanguageName(firstPart);
+      // Remove language from path for routing
+      req.originalPath = req.path;
+      req.path = '/' + urlParts.slice(1).join('/');
+      console.log(`[LANGUAGE] Detected ${firstPart} from URL: ${req.originalPath}`);
     } else {
-      // Default to English
-      req.language = 'en';
-      req.languageName = 'English';
+      // Check cookie
+      const cookieLang = req.cookies?.language;
+      if (cookieLang && translator.isSupported(cookieLang)) {
+        req.language = cookieLang;
+        req.languageName = translator.getLanguageName(cookieLang);
+        console.log(`[LANGUAGE] Detected ${cookieLang} from cookie`);
+      } else {
+        // Default to English
+        req.language = 'en';
+        req.languageName = 'English';
+      }
     }
   }
 

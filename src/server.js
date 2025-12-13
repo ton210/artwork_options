@@ -5,11 +5,13 @@ const RedisStore = require('connect-redis').default;
 const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const { getRedisClient } = require('./config/redis');
 const { trackPageView } = require('./middleware/analytics');
 const { serveTranslatedPage } = require('./middleware/serveTranslated');
 const { detectLanguage } = require('./middleware/language');
+const { autoTranslateMiddleware } = require('./middleware/autoTranslate');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -32,6 +34,9 @@ app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 // Body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Cookie parsing
+app.use(cookieParser());
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -127,6 +132,9 @@ app.use(detectLanguage);
 
 // Then serve pre-translated cached pages (if available)
 app.use(serveTranslatedPage);
+
+// Then auto-translate middleware (translates on-the-fly if not cached)
+app.use(autoTranslateMiddleware);
 
 // Then normal routes
 app.use('/', indexRoutes);
