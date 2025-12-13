@@ -66,8 +66,11 @@ async function translateAndCachePage(url, targetLang) {
       await delay(100); // Rate limit
     }
 
-    // Rewrite URLs to include language prefix
-    html = html.replace(/href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/)/g, `href="/${targetLang}/`);
+    // Rewrite URLs to include language prefix (exclude static assets)
+    html = html.replace(
+      /href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/|[^"]*\.(ico|svg|png|jpg|jpeg|gif|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot)($|\?))/gi,
+      `href="/${targetLang}/`
+    );
 
     // Save to database
     await db.query(
