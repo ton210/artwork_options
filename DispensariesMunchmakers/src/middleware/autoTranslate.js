@@ -34,7 +34,18 @@ async function translateKeyElements(html, targetLang, pageUrl) {
 
     console.log(`[TRANSLATE] URLs rewritten`);
 
-    // STEP 2: Translate key phrases
+    // STEP 2: Protect URLs from translation by replacing them with placeholders
+    const urlPlaceholders = [];
+    const urlRegex = /(href|src|action)="([^"]*)"/gi;
+    translated = translated.replace(urlRegex, (match, attr, url) => {
+      const placeholder = `___URL_PLACEHOLDER_${urlPlaceholders.length}___`;
+      urlPlaceholders.push({ attr, url, placeholder });
+      return `${attr}="${placeholder}"`;
+    });
+
+    console.log(`[TRANSLATE] Protected ${urlPlaceholders.length} URLs from translation`);
+
+    // STEP 3: Translate key phrases
     const translations = [
       ['Top Dispensaries', 'top-dispensaries'],
       ['Find the best cannabis dispensaries', 'find-best'],
@@ -70,6 +81,14 @@ async function translateKeyElements(html, targetLang, pageUrl) {
         console.error(`[TRANSLATE] Failed to translate "${english}":`, err.message);
       }
     }
+
+    // STEP 4: Restore protected URLs
+    urlPlaceholders.forEach(({ attr, url, placeholder }) => {
+      const placeholderRegex = new RegExp(placeholder, 'g');
+      translated = translated.replace(placeholderRegex, url);
+    });
+
+    console.log(`[TRANSLATE] Restored ${urlPlaceholders.length} protected URLs`);
 
     console.log(`[TRANSLATE] Translated ${translatedCount} phrases`);
 
