@@ -20,15 +20,15 @@ async function translateKeyElements(html, targetLang, pageUrl) {
     // STEP 1: Rewrite all internal URLs to include language prefix
     console.log(`[TRANSLATE] Rewriting URLs for ${targetLang}`);
 
-    // Rewrite href attributes for internal links (exclude static assets)
+    // Rewrite href attributes for internal links (exclude static assets by checking for file extensions)
     translated = translated.replace(
-      /href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/|[^"]*\.(ico|svg|png|jpg|jpeg|gif|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot)($|\?))/gi,
+      /href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/)(?!.*\.[a-z0-9]{2,5}")/gi,
       `href="/${targetLang}/`
     );
 
     // Rewrite action attributes for forms (exclude static assets)
     translated = translated.replace(
-      /action="\/(?!\/|http|es\/|fr\/|de\/|nl\/|pt\/|[^"]*\.(ico|svg|png|jpg|jpeg|gif|css|js|json|xml|txt|pdf)($|\?))/gi,
+      /action="\/(?!\/|http|es\/|fr\/|de\/|nl\/|pt\/)(?!.*\.[a-z0-9]{2,5}")/gi,
       `action="/${targetLang}/`
     );
 

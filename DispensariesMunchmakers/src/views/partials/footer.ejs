@@ -125,37 +125,19 @@
     <div class="border-t border-gray-800 mt-8 pt-8">
       <!-- Language Switcher -->
       <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-3 text-sm">
+        <div class="inline-flex flex-wrap justify-center items-center gap-3 text-sm">
           <span class="text-gray-400">🌐 Language:</span>
-          <a href="<%= typeof req !== 'undefined' ? req.path.replace(/^\/(es|fr|de|nl|pt)/, '') : '/' %>"
-             class="<%= !currentLanguage || currentLanguage === 'en' ? 'text-white font-semibold' : 'text-gray-400 hover:text-white' %>">
-            English
-          </a>
+          <a href="/" class="text-gray-400 hover:text-white">English</a>
           <span class="text-gray-600">|</span>
-          <a href="/es<%= typeof req !== 'undefined' ? req.path.replace(/^\/(es|fr|de|nl|pt)/, '') : '/' %>"
-             class="<%= currentLanguage === 'es' ? 'text-white font-semibold' : 'text-gray-400 hover:text-white' %>">
-            Español
-          </a>
+          <a href="/es" class="text-gray-400 hover:text-white">Español</a>
           <span class="text-gray-600">|</span>
-          <a href="/fr<%= typeof req !== 'undefined' ? req.path.replace(/^\/(es|fr|de|nl|pt)/, '') : '/' %>"
-             class="<%= currentLanguage === 'fr' ? 'text-white font-semibold' : 'text-gray-400 hover:text-white' %>">
-            Français
-          </a>
+          <a href="/fr" class="text-gray-400 hover:text-white">Français</a>
           <span class="text-gray-600">|</span>
-          <a href="/de<%= typeof req !== 'undefined' ? req.path.replace(/^\/(es|fr|de|nl|pt)/, '') : '/' %>"
-             class="<%= currentLanguage === 'de' ? 'text-white font-semibold' : 'text-gray-400 hover:text-white' %>">
-            Deutsch
-          </a>
+          <a href="/de" class="text-gray-400 hover:text-white">Deutsch</a>
           <span class="text-gray-600">|</span>
-          <a href="/nl<%= typeof req !== 'undefined' ? req.path.replace(/^\/(es|fr|de|nl|pt)/, '') : '/' %>"
-             class="<%= currentLanguage === 'nl' ? 'text-white font-semibold' : 'text-gray-400 hover:text-white' %>">
-            Nederlands
-          </a>
+          <a href="/nl" class="text-gray-400 hover:text-white">Nederlands</a>
           <span class="text-gray-600">|</span>
-          <a href="/pt<%= typeof req !== 'undefined' ? req.path.replace(/^\/(es|fr|de|nl|pt)/, '') : '/' %>"
-             class="<%= currentLanguage === 'pt' ? 'text-white font-semibold' : 'text-gray-400 hover:text-white' %>">
-            Português
-          </a>
+          <a href="/pt" class="text-gray-400 hover:text-white">Português</a>
         </div>
       </div>
 

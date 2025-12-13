@@ -66,9 +66,9 @@ async function translateAndCachePage(url, targetLang) {
       await delay(100); // Rate limit
     }
 
-    // Rewrite URLs to include language prefix (exclude static assets)
+    // Rewrite URLs to include language prefix (exclude static assets by checking for file extensions)
     html = html.replace(
-      /href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/|[^"]*\.(ico|svg|png|jpg|jpeg|gif|css|js|json|xml|txt|pdf|woff|woff2|ttf|eot)($|\?))/gi,
+      /href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/)(?!.*\.[a-z0-9]{2,5}")/gi,
       `href="/${targetLang}/`
     );
 
