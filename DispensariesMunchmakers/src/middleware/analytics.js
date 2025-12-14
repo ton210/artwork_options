@@ -53,6 +53,9 @@ const BOT_PATTERNS = [
 
 // Paths to exclude from tracking
 const EXCLUDED_PATHS = [
+  '/admin',           // Exclude all admin pages
+  '/auth',            // Exclude auth pages (/auth/me, /auth/login, etc.)
+  '/ip',              // Exclude IP lookup page
   '/sitemap.xml',
   '/sitemap',
   '/robots.txt',

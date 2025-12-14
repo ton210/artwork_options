@@ -136,15 +136,12 @@
                   }
                   // Get weekday_text array
                   let weekdayTexts = null;
-                  let isOpenNow = null;
                   if (hoursObj && typeof hoursObj === 'object') {
                     if (Array.isArray(hoursObj.weekday_text)) {
                       weekdayTexts = hoursObj.weekday_text;
                     }
-                    if (typeof hoursObj.open_now === 'boolean') {
-                      isOpenNow = hoursObj.open_now;
-                    }
                   }
+                  // isOpenNow is now calculated server-side in real-time
                 %>
                 <% if (weekdayTexts && weekdayTexts.length > 0) { %>
                   <div class="mt-4 pt-4 border-t border-gray-200">

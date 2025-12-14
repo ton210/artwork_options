@@ -6,6 +6,7 @@ const Ranking = require('../models/Ranking');
 const Vote = require('../models/Vote');
 const { getClientIP } = require('../middleware/analytics');
 const SchemaGenerator = require('../utils/schemaGenerator');
+const { isCurrentlyOpen } = require('../utils/hoursCalculator');
 const db = require('../config/database');
 const fs = require('fs');
 const path = require('path');
@@ -83,6 +84,13 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
     `, [dispensary.id]);
     const tags = tagsResult.rows.map(t => TAG_DISPLAY_NAMES[t.tag] || t.tag);
 
+    // Calculate if currently open (real-time based on hours)
+    let hoursData = dispensary.hours;
+    if (typeof hoursData === 'string') {
+      try { hoursData = JSON.parse(hoursData); } catch(e) { hoursData = null; }
+    }
+    const isOpenNow = isCurrentlyOpen(hoursData);
+
     // Generate schema.org structured data
     const baseUrl = process.env.BASE_URL || 'https://bestdispensaries.munchmakers.com';
     const schemas = {
@@ -105,6 +113,7 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
       tags,
       schemas,
       baseUrl,
+      isOpenNow,
       meta: {
         description: `${dispensary.name} in ${dispensary.city}, ${dispensary.state_abbr}. ${dispensary.google_rating ? dispensary.google_rating + ' stars' : ''} ${dispensary.google_review_count ? '(' + dispensary.google_review_count + ' reviews)' : ''}. Address, hours, phone, and reviews.`,
         keywords: `${dispensary.name}, ${dispensary.city} dispensary, cannabis ${dispensary.city}, marijuana dispensary ${dispensary.state_abbr}`
