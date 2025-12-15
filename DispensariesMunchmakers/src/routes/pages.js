@@ -49,6 +49,18 @@ router.get('/terms', (req, res) => {
   });
 });
 
+// Cookie Policy
+router.get('/cookies', (req, res) => {
+  res.render('pages/cookies', {
+    title: 'Cookie Policy - Top Dispensaries 2026',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Cookie policy for Top Dispensaries 2026. Learn about the cookies we use and how to manage your cookie preferences.',
+      keywords: 'cookie policy, cookies, gdpr, privacy, cookie consent'
+    }
+  });
+});
+
 // Guide: What Makes a Great Dispensary
 router.get('/guides/what-makes-great-dispensary', (req, res) => {
   res.render('pages/what-makes-great-dispensary', {
