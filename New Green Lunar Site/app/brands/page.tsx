@@ -9,7 +9,7 @@ import { brands } from '@/lib/data/brands';
 
 export const metadata: Metadata = {
   title: 'Our Brands',
-  description: 'Explore the successful eCommerce brands owned and operated by Green Lunar LLC - Qstomize, MunchMakers, and SequinSwag.',
+  description: 'Explore the successful eCommerce brands owned and operated by Green Lunar LLC - MunchMakers and SequinSwag.',
 };
 
 export default function BrandsPage() {

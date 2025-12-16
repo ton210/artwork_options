@@ -1,7 +1,7 @@
 export const COMPANY_INFO = {
   name: 'Green Lunar LLC',
   tagline: 'ecommerce expeditions',
-  description: 'We own and operate successful eCommerce brands (Qstomize, MunchMakers, SequinSwag) and help businesses build theirs with custom B2B stores, marketing consulting, and app development.',
+  description: 'We own and operate successful eCommerce brands (MunchMakers, SequinSwag) and help businesses build theirs with custom B2B stores, marketing consulting, and app development.',
   email: 'contact@greenlunar.com',
   linkedIn: 'https://www.linkedin.com/company/green-lunar',
 };

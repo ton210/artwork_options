@@ -11,17 +11,6 @@ export interface Brand {
 
 export const brands: Brand[] = [
   {
-    id: 'qstomize',
-    name: 'Qstomize',
-    description: 'Since 2017, Qstomize has shipped millions of personalized products to customers across 80+ countries.',
-    fullDescription: `Since 2017, Qstomize has shipped millions of personalized products to customers across 80+ countries. Featured on major late-night shows and sold by thousands of retail brands, Qstomize specializes in consumer-focused personalized goods, powered by our proprietary dashboard and custom-built design tool.
-
-From custom apparel to personalized gifts, Qstomize makes it easy for businesses and consumers to create unique products that stand out.`,
-    website: 'https://www.qstomize.com',
-    established: '2017',
-    stats: 'Millions of products shipped to 80+ countries',
-  },
-  {
     id: 'munchmakers',
     name: 'MunchMakers',
     description: 'The premier custom smoke accessories provider, trusted by thousands of cannabis businesses worldwide.',

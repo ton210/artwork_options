@@ -18,7 +18,7 @@ export default function HeroSection() {
             <span className="text-brand-green">eCommerce Brands</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-slide-up">
-            From Qstomize to MunchMakers to SequinSwag—we own successful eCommerce brands
+            From MunchMakers to SequinSwag—we own successful eCommerce brands
             and help businesses build theirs with custom solutions and expert consulting
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
