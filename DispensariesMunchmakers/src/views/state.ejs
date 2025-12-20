@@ -155,30 +155,19 @@
         </div>
 
         <!-- Browse by Category -->
+        <% if (availableTags && availableTags.length > 0) { %>
         <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
           <h2 class="text-xl sm:text-2xl font-bold mb-4">Best Dispensaries by Category</h2>
           <p class="text-gray-600 mb-4 text-sm sm:text-base">Find top-rated dispensaries in <%= state.name %> specializing in:</p>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
-            <a href="/dispensaries/<%= state.slug %>/best-edibles" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Edibles</div>
+            <% availableTags.forEach(tag => { %>
+            <a href="/dispensaries/<%= state.slug %>/best-<%= tag.slug %>" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best <%= tag.display %></div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-flower" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Flower</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-vapes" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Vapes</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-concentrates" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Concentrates</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-pre-rolls" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Pre-Rolls</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-delivery" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Delivery</div>
-            </a>
+            <% }); %>
           </div>
         </div>
+        <% } %>
 
         <!-- Counties in State -->
         <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">

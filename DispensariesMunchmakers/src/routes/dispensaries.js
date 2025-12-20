@@ -451,6 +451,24 @@ router.get('/:state', async (req, res) => {
     // Get state-specific cannabis information
     const stateDetails = stateInfo[state.name] || null;
 
+    // Get available tags for this state (with at least MIN_DISPENSARIES_FOR_TAG_PAGE dispensaries)
+    const availableTagsResult = await db.query(`
+      SELECT dt.tag, COUNT(DISTINCT d.id) as count
+      FROM dispensary_tags dt
+      JOIN dispensaries d ON dt.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      WHERE c.state_id = $1 AND d.is_active = true
+      GROUP BY dt.tag
+      HAVING COUNT(DISTINCT d.id) >= $2
+      ORDER BY count DESC
+    `, [state.id, MIN_DISPENSARIES_FOR_TAG_PAGE]);
+
+    const availableTags = availableTagsResult.rows.map(t => ({
+      slug: t.tag,
+      display: TAG_DISPLAY_NAMES[t.tag] || t.tag,
+      count: t.count
+    })).filter(t => TAG_DISPLAY_NAMES[t.slug]); // Only include valid tags
+
     res.render('state', {
       title: showAll ?
         `All ${rankings.length} Dispensaries in ${state.name} (2026) | Complete Rankings` :
@@ -461,6 +479,7 @@ router.get('/:state', async (req, res) => {
       stats,
       showAll,
       stateDetails,
+      availableTags,
       MUNCHMAKERS_URL: process.env.MUNCHMAKERS_URL || 'https://munchmakers.com',
       meta: {
         description: `Find the top-rated cannabis dispensaries in ${state.name}. User-voted rankings based on Google reviews, ratings, and community feedback.`,

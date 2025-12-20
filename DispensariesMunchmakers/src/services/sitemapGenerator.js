@@ -183,25 +183,31 @@ class SitemapGenerator {
   }
 
   async generateTagsSitemap() {
-    // All valid tag slugs
-    const tags = [
-      'edibles', 'flower', 'vapes', 'concentrates', 'pre-rolls',
-      'tinctures', 'topicals', 'delivery', 'curbside-pickup',
-      'recreational', 'medical', 'online-ordering'
-    ];
+    // Minimum dispensaries required (must match MIN_DISPENSARIES_FOR_TAG_PAGE in routes/dispensaries.js)
+    const MIN_DISPENSARIES = 3;
 
-    // Get all states
-    const states = await db.query('SELECT slug FROM states ORDER BY name');
+    // Query for valid state/tag combinations that have enough dispensaries
+    const validCombinations = await db.query(`
+      SELECT s.slug as state_slug, dt.tag, COUNT(DISTINCT d.id) as count
+      FROM dispensary_tags dt
+      JOIN dispensaries d ON dt.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE d.is_active = true
+      GROUP BY s.slug, dt.tag
+      HAVING COUNT(DISTINCT d.id) >= $1
+      ORDER BY s.slug, dt.tag
+    `, [MIN_DISPENSARIES]);
 
     const urls = [];
 
-    // Generate URLs for each state + tag combination in all languages
-    for (const state of states.rows) {
-      for (const tag of tags) {
-        for (const lang of this.languages) {
-          const url = lang === 'en' ? `/dispensaries/${state.slug}/best-${tag}` : `/${lang}/dispensaries/${state.slug}/best-${tag}`;
-          urls.push(this.createUrl(url, new Date(), 'weekly', '0.6'));
-        }
+    // Generate URLs only for valid state/tag combinations
+    for (const combo of validCombinations.rows) {
+      for (const lang of this.languages) {
+        const url = lang === 'en'
+          ? `/dispensaries/${combo.state_slug}/best-${combo.tag}`
+          : `/${lang}/dispensaries/${combo.state_slug}/best-${combo.tag}`;
+        urls.push(this.createUrl(url, new Date(), 'weekly', '0.6'));
       }
     }
 
