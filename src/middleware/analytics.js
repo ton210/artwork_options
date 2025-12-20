@@ -61,7 +61,10 @@ const EXCLUDED_PATHS = [
   '/manifest.json',
   '/.well-known',
   '/health',
-  '/ping'
+  '/ping',
+  '/auth/me',
+  '/admin',
+  '/ip'
 ];
 
 function hashIP(ip) {
