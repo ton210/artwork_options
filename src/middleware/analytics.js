@@ -67,6 +67,14 @@ const EXCLUDED_PATHS = [
   '/ip'
 ];
 
+// Patterns that indicate malformed/invalid URLs (e.g., from browser bugs extracting CSS)
+const INVALID_URL_PATTERNS = [
+  /linear-gradient/i,
+  /rgb\(/i,
+  /rgba\(/i,
+  /url\(/i
+];
+
 function hashIP(ip) {
   return crypto.createHash('sha256').update(ip).digest('hex');
 }
@@ -87,12 +95,17 @@ function isExcludedPath(path) {
   return EXCLUDED_PATHS.some(excluded => path.startsWith(excluded));
 }
 
+function isInvalidUrl(path) {
+  return INVALID_URL_PATTERNS.some(pattern => pattern.test(path));
+}
+
 async function trackPageView(req, res, next) {
   // Track page views for real visitors only
   if (req.method === 'GET' &&
       !req.path.startsWith('/api/') &&
       !req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|json|xml|txt|woff|woff2|ttf|eot|map)$/) &&
-      !isExcludedPath(req.path)) {
+      !isExcludedPath(req.path) &&
+      !isInvalidUrl(req.path)) {
 
     const userAgent = req.get('User-Agent') || '';
     const isBotVisit = isBot(userAgent);
