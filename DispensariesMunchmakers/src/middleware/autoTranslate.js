@@ -20,9 +20,10 @@ async function translateKeyElements(html, targetLang, pageUrl) {
     // STEP 1: Rewrite all internal URLs to include language prefix
     console.log(`[TRANSLATE] Rewriting URLs for ${targetLang}`);
 
-    // Rewrite href attributes for internal links (exclude static assets by checking for file extensions)
+    // Rewrite href attributes for internal links (exclude static assets and language switcher links)
+    // Excludes: //, http, #, language prefixes with slash (es/, fr/), bare language codes (/es", /fr"), and root path (/")
     translated = translated.replace(
-      /href="\/(?!\/|http|#|es\/|fr\/|de\/|nl\/|pt\/)(?!.*\.[a-z0-9]{2,5}")/gi,
+      /href="\/(?!\/|http|#|"|es\/|fr\/|de\/|nl\/|pt\/|es"|fr"|de"|nl"|pt")(?!.*\.[a-z0-9]{2,5}")/gi,
       `href="/${targetLang}/`
     );
 
