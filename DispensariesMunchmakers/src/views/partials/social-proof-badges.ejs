@@ -1,8 +1,5 @@
-<%
-// Display social proof badges for a dispensary in a listing
-// Usage: <%- include('partials/social-proof-badges', { dispensary }) %>
-// Expects dispensary.socialProof object with: isTrending, isPopular, views24h, viewsWeek
-%>
+<!-- Social proof badges for dispensary listing -->
+<!-- Expects dispensary.socialProof object with: isTrending, isPopular, views24h, viewsWeek -->
 <% if (dispensary.socialProof) { %>
   <div class="flex flex-wrap gap-1.5 mt-2">
     <% if (dispensary.socialProof.isTrending) { %>
