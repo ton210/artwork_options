@@ -8,6 +8,7 @@ const { getClientIP } = require('../middleware/analytics');
 const SchemaGenerator = require('../utils/schemaGenerator');
 const { isCurrentlyOpen } = require('../utils/hoursCalculator');
 const SocialProof = require('../utils/socialProof');
+const { ensurePhotosOnR2 } = require('../utils/photoMigration');
 const db = require('../config/database');
 const fs = require('fs');
 const path = require('path');
@@ -55,6 +56,9 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
         baseUrl: process.env.BASE_URL || 'http://localhost:3000'
       });
     }
+
+    // Migrate photos to R2 in background (doesn't block page render)
+    ensurePhotosOnR2(dispensary);
 
     // Get vote counts
     const votes = await Vote.getVoteCounts(dispensary.id);
