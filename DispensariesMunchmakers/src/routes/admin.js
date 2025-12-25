@@ -221,6 +221,36 @@ router.get('/', async (req, res) => {
       LIMIT 5
     `);
 
+    // Get recent reviews
+    const recentReviews = await db.query(`
+      SELECT
+        r.*,
+        d.name as dispensary_name,
+        d.slug as dispensary_slug,
+        s.abbreviation as state_abbr
+      FROM reviews r
+      JOIN dispensaries d ON r.dispensary_id = d.id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      ORDER BY r.created_at DESC
+      LIMIT 10
+    `);
+
+    // Get recent votes
+    const recentVotes = await db.query(`
+      SELECT
+        v.*,
+        d.name as dispensary_name,
+        d.slug as dispensary_slug,
+        s.abbreviation as state_abbr
+      FROM votes v
+      JOIN dispensaries d ON v.dispensary_id = d.id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      ORDER BY v.created_at DESC
+      LIMIT 20
+    `);
+
     // Get click stats
     const clickStats = await db.query(`
       SELECT
@@ -263,6 +293,8 @@ router.get('/', async (req, res) => {
       trafficByCountry: trafficByCountry.rows,
       scrapeLogs: scrapeLogs.rows,
       recentLeads: recentLeads.rows,
+      recentReviews: recentReviews.rows,
+      recentVotes: recentVotes.rows,
       clickStats: clickStats.rows[0],
       topClickedDispensaries: topClickedDispensaries.rows
     });

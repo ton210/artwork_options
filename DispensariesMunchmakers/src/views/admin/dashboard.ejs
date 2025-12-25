@@ -367,6 +367,70 @@
         </div>
       </div>
     </div>
+
+    <!-- Recent Reviews & Votes Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <!-- Recent Reviews -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold mb-4">Recent User Reviews</h2>
+        <div class="space-y-4">
+          <% (recentReviews || []).forEach(review => { %>
+            <div class="border-b pb-4">
+              <div class="flex items-start justify-between mb-2">
+                <div>
+                  <a href="/dispensary/<%= review.dispensary_slug %>" class="font-semibold text-blue-600 hover:underline" target="_blank">
+                    <%= review.dispensary_name %>
+                  </a>
+                  <div class="text-xs text-gray-500"><%= review.state_abbr %></div>
+                </div>
+                <div class="text-yellow-500"><%= '★'.repeat(review.rating) %><%='☆'.repeat(5-review.rating) %></div>
+              </div>
+              <div class="text-sm text-gray-700 mb-2">
+                "<%= review.review_text.substring(0, 100) %><%= review.review_text.length > 100 ? '...' : '' %>"
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-500">
+                <span><strong><%= review.author_name %></strong></span>
+                <span><%= new Date(review.created_at).toLocaleString() %></span>
+                <span class="<%= review.is_approved ? 'text-green-600' : 'text-orange-600' %>">
+                  <%= review.is_approved ? '✓ Approved' : '⏳ Pending' %>
+                </span>
+              </div>
+            </div>
+          <% }); %>
+          <% if (!recentReviews || recentReviews.length === 0) { %>
+            <div class="text-gray-500 text-center py-4">No reviews yet</div>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- Recent Votes -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold mb-4">Recent Votes</h2>
+        <div class="space-y-2 max-h-96 overflow-y-auto">
+          <% (recentVotes || []).forEach(vote => { %>
+            <div class="flex items-center justify-between border-b pb-2">
+              <div class="flex-1">
+                <a href="/dispensary/<%= vote.dispensary_slug %>" class="text-sm font-medium text-blue-600 hover:underline" target="_blank">
+                  <%= vote.dispensary_name %>
+                </a>
+                <div class="text-xs text-gray-500"><%= vote.state_abbr %></div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="<%= vote.vote_type === 1 ? 'text-green-600' : 'text-red-600' %> font-bold text-lg">
+                  <%= vote.vote_type === 1 ? '👍' : '👎' %>
+                </span>
+                <span class="text-xs text-gray-500">
+                  <%= new Date(vote.created_at).toLocaleTimeString() %>
+                </span>
+              </div>
+            </div>
+          <% }); %>
+          <% if (!recentVotes || recentVotes.length === 0) { %>
+            <div class="text-gray-500 text-center py-4">No votes yet</div>
+          <% } %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
