@@ -204,8 +204,12 @@ class SocialProof {
    */
   static async getTrendingDispensaries(locationType, locationId, limit = 10) {
     const locationJoin = locationType === 'state'
-      ? 'JOIN counties c ON d.county_id = c.id WHERE c.state_id = $1'
-      : 'WHERE d.county_id = $1';
+      ? 'JOIN counties c ON d.county_id = c.id'
+      : '';
+
+    const locationWhere = locationType === 'state'
+      ? 'c.state_id = $1'
+      : 'd.county_id = $1';
 
     const result = await db.query(`
       SELECT
@@ -216,9 +220,10 @@ class SocialProof {
         MAX(pv.created_at) as last_viewed_at
       FROM dispensaries d
       ${locationJoin}
-        AND d.is_active = true
       LEFT JOIN page_views pv ON d.id = pv.dispensary_id
         AND pv.created_at >= NOW() - INTERVAL '24 hours'
+      WHERE ${locationWhere}
+        AND d.is_active = true
       GROUP BY d.id, d.name, d.slug
       HAVING COUNT(DISTINCT pv.ip_hash) >= 5
       ORDER BY views_24h DESC
@@ -241,8 +246,12 @@ class SocialProof {
    */
   static async getPopularDispensaries(locationType, locationId, limit = 10) {
     const locationJoin = locationType === 'state'
-      ? 'JOIN counties c ON d.county_id = c.id WHERE c.state_id = $1'
-      : 'WHERE d.county_id = $1';
+      ? 'JOIN counties c ON d.county_id = c.id'
+      : '';
+
+    const locationWhere = locationType === 'state'
+      ? 'c.state_id = $1'
+      : 'd.county_id = $1';
 
     const result = await db.query(`
       SELECT
@@ -252,9 +261,10 @@ class SocialProof {
         COUNT(DISTINCT pv.ip_hash) as views_week
       FROM dispensaries d
       ${locationJoin}
-        AND d.is_active = true
       LEFT JOIN page_views pv ON d.id = pv.dispensary_id
         AND pv.created_at >= CURRENT_DATE - INTERVAL '7 days'
+      WHERE ${locationWhere}
+        AND d.is_active = true
       GROUP BY d.id, d.name, d.slug
       HAVING COUNT(DISTINCT pv.ip_hash) >= 10
       ORDER BY views_week DESC
@@ -307,14 +317,16 @@ class SocialProof {
    * @returns {object} Overall stats
    */
   static async getLocationStats(locationType = 'global', locationId = null) {
-    let locationFilter = '';
+    let locationJoin = '';
+    let locationWhere = 'd.is_active = true';
     const params = [];
 
     if (locationType === 'state' && locationId) {
-      locationFilter = 'JOIN counties c ON d.county_id = c.id WHERE c.state_id = $1';
+      locationJoin = 'JOIN counties c ON d.county_id = c.id';
+      locationWhere = 'c.state_id = $1 AND d.is_active = true';
       params.push(locationId);
     } else if (locationType === 'county' && locationId) {
-      locationFilter = 'WHERE d.county_id = $1';
+      locationWhere = 'd.county_id = $1 AND d.is_active = true';
       params.push(locationId);
     }
 
@@ -324,9 +336,9 @@ class SocialProof {
         COUNT(DISTINCT pv.ip_hash) FILTER (WHERE pv.created_at >= CURRENT_DATE - INTERVAL '7 days') as views_week,
         COUNT(DISTINCT pv.dispensary_id) FILTER (WHERE pv.created_at >= CURRENT_DATE) as active_today
       FROM dispensaries d
-      ${locationFilter}
+      ${locationJoin}
       LEFT JOIN page_views pv ON d.id = pv.dispensary_id
-        AND d.is_active = true
+      WHERE ${locationWhere}
     `, params);
 
     return {
