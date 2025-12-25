@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Review = require('../models/Review');
+const axios = require('axios');
 
 // Rate limiting middleware
 const rateLimit = {};
@@ -32,8 +33,28 @@ function recordReview(ip) {
  */
 router.post('/submit', async (req, res) => {
   try {
-    const { dispensaryId, authorName, authorEmail, rating, reviewText } = req.body;
+    const { dispensaryId, authorName, authorEmail, rating, reviewText, recaptchaToken } = req.body;
     const ipAddress = req.ip || req.connection.remoteAddress;
+
+    // Verify reCAPTCHA
+    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'YOUR_SECRET_KEY_HERE') {
+      try {
+        const verifyResponse = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
+          params: {
+            secret: process.env.RECAPTCHA_SECRET_KEY,
+            response: recaptchaToken,
+            remoteip: ipAddress
+          }
+        });
+
+        if (!verifyResponse.data.success) {
+          return res.status(400).json({ error: 'reCAPTCHA verification failed. Please try again.' });
+        }
+      } catch (error) {
+        console.error('reCAPTCHA verification error:', error);
+        return res.status(500).json({ error: 'Error verifying reCAPTCHA' });
+      }
+    }
 
     // Validation
     if (!dispensaryId || !authorName || !rating || !reviewText) {

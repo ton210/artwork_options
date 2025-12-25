@@ -3,6 +3,9 @@
 
   <div id="review-eligibility-message" class="hidden mb-4"></div>
 
+  <!-- reCAPTCHA Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <form id="review-form" class="space-y-4">
     <!-- Star Rating -->
     <div>
@@ -70,6 +73,11 @@
         <span id="char-counter">0 / 1000 characters</span>
         <span id="char-minimum" class="text-red-500 hidden">Minimum 50 characters required</span>
       </div>
+    </div>
+
+    <!-- reCAPTCHA -->
+    <div>
+      <div class="g-recaptcha" data-sitekey="6Lcc5TYsAAAAADRpPU3QhEib2x7Fr6Rz-NI8r0sg"></div>
     </div>
 
     <!-- Submit Button -->
@@ -175,6 +183,13 @@
       return;
     }
 
+    // Check reCAPTCHA
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+      showMessage('Please complete the reCAPTCHA verification', 'error');
+      return;
+    }
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
@@ -189,7 +204,8 @@
           authorName: document.getElementById('author-name').value,
           authorEmail: document.getElementById('author-email').value || null,
           rating: selectedRating,
-          reviewText: reviewText.value
+          reviewText: reviewText.value,
+          recaptchaToken: recaptchaResponse
         })
       });
 
