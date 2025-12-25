@@ -25,6 +25,22 @@ function isCurrentlyOpen(hoursData, timezone = 'America/Los_Angeles') {
 
 function isOpenFromPeriods(periods, timezone) {
   try {
+    // Check if open 24/7 (single period with no close or close = open on next day)
+    if (periods.length === 1 && periods[0].open) {
+      const period = periods[0];
+
+      // 24/7 indicator: no close time, or open time is 0000 and close doesn't exist
+      if (!period.close) {
+        return true;
+      }
+
+      // 24/7 indicator: opens at 0000 (midnight) with no close or closes at 0000 next day
+      if (period.open.time === '0000' &&
+          (!period.close || period.close.time === '0000')) {
+        return true;
+      }
+    }
+
     // Get current time in the dispensary's timezone
     const now = new Date();
     const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
@@ -32,6 +48,22 @@ function isOpenFromPeriods(periods, timezone) {
 
     // Find today's periods
     const todaysPeriods = periods.filter(period => period.open && period.open.day === currentDay);
+
+    // Also check if we're in a period that started yesterday and closes today
+    const yesterdayDay = (currentDay === 0) ? 6 : currentDay - 1;
+    const yesterdayPeriods = periods.filter(period =>
+      period.open && period.open.day === yesterdayDay &&
+      period.close && period.close.day === currentDay
+    );
+
+    // Check yesterday's overnight periods first
+    for (const period of yesterdayPeriods) {
+      const closeTime = parseInt(period.close.time);
+      // We're before the close time (early morning hours)
+      if (currentTime < closeTime) {
+        return true;
+      }
+    }
 
     if (todaysPeriods.length === 0) {
       // No periods for today = closed
@@ -41,16 +73,27 @@ function isOpenFromPeriods(periods, timezone) {
     // Check if current time falls within any open period
     for (const period of todaysPeriods) {
       const openTime = parseInt(period.open.time); // e.g., "0900" -> 900
-      const closeTime = period.close ? parseInt(period.close.time) : 2359;
+
+      // No close time = open 24 hours
+      if (!period.close) {
+        return true;
+      }
+
+      const closeTime = parseInt(period.close.time);
 
       // Handle overnight periods (close time on next day)
-      if (period.close && period.close.day !== currentDay) {
-        // If close is on next day, we're open until midnight
+      if (period.close.day !== currentDay) {
+        // If close is on next day, we're open from open time until midnight
         if (currentTime >= openTime) {
           return true;
         }
       } else {
-        // Normal same-day period
+        // Same-day period: check if we're between open and close
+        // Special case: if open and close are both 0000, it means 24 hours
+        if (openTime === 0 && closeTime === 0) {
+          return true;
+        }
+
         if (currentTime >= openTime && currentTime < closeTime) {
           return true;
         }
