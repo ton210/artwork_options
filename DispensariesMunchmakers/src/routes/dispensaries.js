@@ -89,6 +89,15 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
     `, [dispensary.id]);
     const tags = tagsResult.rows.map(t => TAG_DISPLAY_NAMES[t.tag] || t.tag);
 
+    // Get user reviews for schema.org
+    const userReviews = await db.query(`
+      SELECT author_name, rating, review_text, created_at
+      FROM reviews
+      WHERE dispensary_id = $1 AND is_approved = true
+      ORDER BY created_at DESC
+      LIMIT 10
+    `, [dispensary.id]);
+
     // Calculate if currently open (real-time based on hours)
     let hoursData = dispensary.hours;
     if (typeof hoursData === 'string') {
@@ -116,7 +125,11 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
         { name: dispensary.state_name, url: `/dispensaries/${dispensary.state_slug}` },
         { name: dispensary.city, url: `/dispensaries/${dispensary.state_slug}/${dispensary.county_slug}` },
         { name: dispensary.name, url: null }
-      ], baseUrl)
+      ], baseUrl),
+      // Add individual review schemas
+      reviews: userReviews.rows.map(review =>
+        SchemaGenerator.generateReviewSchema(review, dispensary, baseUrl)
+      )
     };
 
     res.render('dispensary', {

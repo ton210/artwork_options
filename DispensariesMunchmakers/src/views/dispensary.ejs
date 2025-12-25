@@ -24,6 +24,11 @@
   <% if (schemas) { %>
     <script type="application/ld+json"><%- JSON.stringify(schemas.business) %></script>
     <script type="application/ld+json"><%- JSON.stringify(schemas.breadcrumb) %></script>
+    <% if (schemas.reviews && schemas.reviews.length > 0) { %>
+      <% schemas.reviews.forEach(reviewSchema => { %>
+        <script type="application/ld+json"><%- JSON.stringify(reviewSchema) %></script>
+      <% }); %>
+    <% } %>
   <% } %>
 </head>
 <body class="bg-gray-50">
