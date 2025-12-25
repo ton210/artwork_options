@@ -13,7 +13,7 @@
 
   <!-- Google Maps -->
   <script src="/js/map.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= typeof GOOGLE_API_KEY !== 'undefined' ? GOOGLE_API_KEY : 'AIzaSyCd_kX94LwunGDgupq3eIj9p-RJ3YVi4Tw' %>"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= typeof GOOGLE_API_KEY !== 'undefined' ? GOOGLE_API_KEY : process.env.GOOGLE_PLACES_API_KEY %>"></script>
 </head>
 <body class="bg-gray-50">
   <%- include('partials/header') %>
