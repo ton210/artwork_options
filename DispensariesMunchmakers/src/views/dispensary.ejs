@@ -219,12 +219,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Reviews List (2/3 width) -->
         <div class="lg:col-span-2">
-          <%- include('partials/reviewList') %>
+          <%- include('partials/reviewList', { dispensary }) %>
         </div>
 
         <!-- Review Form (1/3 width) -->
         <div class="lg:col-span-1">
-          <%- include('partials/reviewForm') %>
+          <%- include('partials/reviewForm', { dispensary }) %>
         </div>
       </div>
     </div>

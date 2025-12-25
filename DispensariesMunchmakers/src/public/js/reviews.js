@@ -1,6 +1,14 @@
 // Reviews functionality for dispensary pages
 (function() {
-  const dispensaryId = window.location.pathname.split('/').pop();
+  // Get dispensary ID from data attribute on reviews section
+  const reviewsSection = document.getElementById('reviews-section');
+  const dispensaryId = reviewsSection ? reviewsSection.dataset.dispensaryId : null;
+
+  if (!dispensaryId) {
+    console.warn('No dispensary ID found for reviews');
+    return;
+  }
+
   let currentSort = 'recent';
   let currentOffset = 0;
   const LIMIT = 10;
@@ -197,8 +205,8 @@
   }
 
   function setupStarRating() {
-    const stars = document.querySelectorAll('.star-rating .star');
-    const ratingInput = document.getElementById('rating-input');
+    const stars = document.querySelectorAll('.star-btn');
+    const ratingInput = document.getElementById('rating-value');
 
     stars.forEach(star => {
       star.addEventListener('click', function() {
