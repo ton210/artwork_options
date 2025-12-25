@@ -13,10 +13,14 @@
   let currentOffset = 0;
   const LIMIT = 10;
 
-  // Initialize reviews on page load
+  // Initialize reviews on page load (only once)
+  let initialized = false;
   document.addEventListener('DOMContentLoaded', function() {
-    loadReviews();
-    setupEventListeners();
+    if (!initialized) {
+      initialized = true;
+      loadReviews();
+      setupEventListeners();
+    }
   });
 
   function setupEventListeners() {
