@@ -36,8 +36,8 @@ router.post('/submit', async (req, res) => {
     const { dispensaryId, authorName, authorEmail, rating, reviewText, recaptchaToken } = req.body;
     const ipAddress = req.ip || req.connection.remoteAddress;
 
-    // Verify reCAPTCHA
-    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && process.env.RECAPTCHA_SECRET_KEY !== 'YOUR_SECRET_KEY_HERE') {
+    // Verify reCAPTCHA v3
+    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
       try {
         const verifyResponse = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
           params: {
@@ -47,12 +47,20 @@ router.post('/submit', async (req, res) => {
           }
         });
 
-        if (!verifyResponse.data.success) {
-          return res.status(400).json({ error: 'reCAPTCHA verification failed. Please try again.' });
+        // reCAPTCHA v3 returns a score (0.0 to 1.0)
+        // 0.0 is very likely a bot, 1.0 is very likely a good interaction
+        if (!verifyResponse.data.success || verifyResponse.data.score < 0.5) {
+          console.log('reCAPTCHA failed:', verifyResponse.data);
+          return res.status(400).json({
+            error: 'Bot detection triggered. If you are human, please try again or contact support.'
+          });
         }
+
+        console.log('reCAPTCHA verified with score:', verifyResponse.data.score);
       } catch (error) {
         console.error('reCAPTCHA verification error:', error);
-        return res.status(500).json({ error: 'Error verifying reCAPTCHA' });
+        // Don't block reviews if reCAPTCHA service is down
+        console.warn('Proceeding without reCAPTCHA verification due to error');
       }
     }
 
