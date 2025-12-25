@@ -168,6 +168,9 @@
           </div>
         </div>
 
+        <!-- Social Proof -->
+        <%- include('partials/social-proof', { socialProof }) %>
+
         <!-- Vote Widget -->
         <%- include('partials/voteWidget', { dispensary, canVote, votes }) %>
 
@@ -272,6 +275,9 @@
       });
     });
   </script>
+
+  <!-- Reviews functionality -->
+  <script src="/js/reviews.js"></script>
 </body>
 </html>
  

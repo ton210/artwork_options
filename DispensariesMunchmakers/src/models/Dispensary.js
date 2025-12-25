@@ -3,25 +3,123 @@ const slugify = require('slugify');
 
 class Dispensary {
   static async create(data) {
-    let baseSlug = slugify(data.name, { lower: true, strict: true }) + '-' + data.city?.toLowerCase().replace(/\s+/g, '-');
-    let slug = baseSlug;
+    // Use a transaction to prevent race conditions
+    const client = await db.pool.connect();
 
-    // Check for duplicate slugs and append number if needed
-    let counter = 2;
-    while (true) {
-      const existingSlug = await db.query(
-        'SELECT id FROM dispensaries WHERE slug = $1',
-        [slug]
+    try {
+      await client.query('BEGIN');
+
+      // Check if this dispensary already exists by google_place_id
+      const existing = await client.query(
+        'SELECT id, slug FROM dispensaries WHERE google_place_id = $1',
+        [data.google_place_id]
       );
 
-      if (existingSlug.rows.length === 0) {
-        break; // Slug is unique
+      let slug;
+
+      if (existing.rows.length > 0) {
+        // Dispensary exists, keep the existing slug to avoid duplicates
+        slug = existing.rows[0].slug;
+      } else {
+        // New dispensary, generate a unique slug
+        let baseSlug = slugify(data.name, { lower: true, strict: true }) + '-' + data.city?.toLowerCase().replace(/\s+/g, '-');
+        slug = baseSlug;
+
+        // Check for duplicate slugs and append number if needed
+        let counter = 2;
+        while (true) {
+          const existingSlug = await client.query(
+            'SELECT id FROM dispensaries WHERE slug = $1',
+            [slug]
+          );
+
+          if (existingSlug.rows.length === 0) {
+            break; // Slug is unique
+          }
+
+          // Slug exists, try with counter
+          slug = `${baseSlug}-${counter}`;
+          counter++;
+        }
       }
 
-      // Slug exists, try with counter
-      slug = `${baseSlug}-${counter}`;
-      counter++;
+      const query = `
+        INSERT INTO dispensaries (
+          google_place_id, name, slug, address_street, city, county_id,
+          zip, lat, lng, phone, website, logo_url, photos, hours,
+          google_rating, google_review_count, external_listings,
+          license_number, data_completeness_score
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)
+        ON CONFLICT (google_place_id) DO UPDATE SET
+          name = EXCLUDED.name,
+          slug = dispensaries.slug,
+          address_street = EXCLUDED.address_street,
+          city = EXCLUDED.city,
+          county_id = EXCLUDED.county_id,
+          zip = EXCLUDED.zip,
+          lat = EXCLUDED.lat,
+          lng = EXCLUDED.lng,
+          phone = EXCLUDED.phone,
+          website = EXCLUDED.website,
+          logo_url = EXCLUDED.logo_url,
+          photos = EXCLUDED.photos,
+          hours = EXCLUDED.hours,
+          google_rating = EXCLUDED.google_rating,
+          google_review_count = EXCLUDED.google_review_count,
+          external_listings = EXCLUDED.external_listings,
+          data_completeness_score = EXCLUDED.data_completeness_score,
+          updated_at = NOW()
+        RETURNING *
+      `;
+
+      const values = [
+        data.google_place_id,
+        data.name,
+        slug,
+        data.address_street,
+        data.city,
+        data.county_id,
+        data.zip,
+        data.lat,
+        data.lng,
+        data.phone,
+        data.website,
+        data.logo_url,
+        JSON.stringify(data.photos || []),
+        JSON.stringify(data.hours || {}),
+        data.google_rating,
+        data.google_review_count || 0,
+        JSON.stringify(data.external_listings || {}),
+        data.license_number,
+        data.data_completeness_score || 0
+      ];
+
+      const result = await client.query(query, values);
+      await client.query('COMMIT');
+
+      return result.rows[0];
+    } catch (error) {
+      await client.query('ROLLBACK');
+
+      // If it's a unique constraint violation on slug, retry with a different approach
+      if (error.code === '23505' && error.constraint === 'dispensaries_slug_key') {
+        console.error('Slug constraint violation, retrying with timestamp suffix...');
+
+        // Release this client and retry with timestamp-based slug
+        client.release();
+        return this.createWithTimestampSlug(data);
+      }
+
+      throw error;
+    } finally {
+      client.release();
     }
+  }
+
+  // Fallback method for edge cases where slug conflicts still occur
+  static async createWithTimestampSlug(data) {
+    let baseSlug = slugify(data.name, { lower: true, strict: true }) + '-' + data.city?.toLowerCase().replace(/\s+/g, '-');
+    let slug = `${baseSlug}-${Date.now()}`;
 
     const query = `
       INSERT INTO dispensaries (
@@ -32,6 +130,7 @@ class Dispensary {
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)
       ON CONFLICT (google_place_id) DO UPDATE SET
         name = EXCLUDED.name,
+        slug = dispensaries.slug,
         address_street = EXCLUDED.address_street,
         city = EXCLUDED.city,
         county_id = EXCLUDED.county_id,

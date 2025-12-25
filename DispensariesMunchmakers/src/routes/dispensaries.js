@@ -7,6 +7,7 @@ const Vote = require('../models/Vote');
 const { getClientIP } = require('../middleware/analytics');
 const SchemaGenerator = require('../utils/schemaGenerator');
 const { isCurrentlyOpen } = require('../utils/hoursCalculator');
+const SocialProof = require('../utils/socialProof');
 const db = require('../config/database');
 const fs = require('fs');
 const path = require('path');
@@ -91,6 +92,17 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
     }
     const isOpenNow = isCurrentlyOpen(hoursData);
 
+    // Get state ID for trending calculation
+    const stateResult = await db.query('SELECT state_id FROM counties WHERE id = $1', [dispensary.county_id]);
+    const stateId = stateResult.rows[0]?.state_id;
+
+    // Get social proof data
+    const socialProof = await SocialProof.getSocialProofData(
+      dispensary.id,
+      stateId,
+      dispensary.county_id
+    );
+
     // Generate schema.org structured data
     const baseUrl = process.env.BASE_URL || 'https://bestdispensaries.munchmakers.com';
     const schemas = {
@@ -114,6 +126,7 @@ router.get('/:slug([a-z0-9]+-[a-z0-9-]+)', async (req, res, next) => {
       schemas,
       baseUrl,
       isOpenNow,
+      socialProof,
       meta: {
         description: `${dispensary.name} in ${dispensary.city}, ${dispensary.state_abbr}. ${dispensary.google_rating ? dispensary.google_rating + ' stars' : ''} ${dispensary.google_review_count ? '(' + dispensary.google_review_count + ' reviews)' : ''}. Address, hours, phone, and reviews.`,
         keywords: `${dispensary.name}, ${dispensary.city} dispensary, cannabis ${dispensary.city}, marijuana dispensary ${dispensary.state_abbr}`
@@ -433,7 +446,10 @@ router.get('/:state', async (req, res) => {
     const limit = showAll ? 1000 : 10;
 
     // Get dispensaries for state
-    const rankings = await Ranking.getByLocation('state', state.id, limit);
+    let rankings = await Ranking.getByLocation('state', state.id, limit);
+
+    // Enrich with social proof badges
+    rankings = await SocialProof.enrichDispensariesWithBadges(rankings, 'state', state.id);
 
     // Get vote counts for each dispensary
     for (const ranking of rankings) {
@@ -444,6 +460,9 @@ router.get('/:state', async (req, res) => {
       const clientIP = getClientIP(req);
       ranking.canVote = await Vote.canVote(ranking.dispensary_id, clientIP);
     }
+
+    // Get location stats for social proof
+    const locationStats = await SocialProof.getLocationStats('state', state.id);
 
     // Get stats
     const stats = await State.getStats(state.id);
@@ -480,6 +499,7 @@ router.get('/:state', async (req, res) => {
       showAll,
       stateDetails,
       availableTags,
+      locationStats,
       MUNCHMAKERS_URL: process.env.MUNCHMAKERS_URL || 'https://munchmakers.com',
       meta: {
         description: `Find the top-rated cannabis dispensaries in ${state.name}. User-voted rankings based on Google reviews, ratings, and community feedback.`,
@@ -637,7 +657,10 @@ router.get('/:state/:county', async (req, res) => {
     const limit = showAll ? 1000 : 50;
 
     // Get top dispensaries for county
-    const rankings = await Ranking.getByLocation('county', county.id, limit);
+    let rankings = await Ranking.getByLocation('county', county.id, limit);
+
+    // Enrich with social proof badges
+    rankings = await SocialProof.enrichDispensariesWithBadges(rankings, 'county', county.id);
 
     // Get vote counts for each dispensary
     for (const ranking of rankings) {
@@ -648,6 +671,9 @@ router.get('/:state/:county', async (req, res) => {
       const clientIP = getClientIP(req);
       ranking.canVote = await Vote.canVote(ranking.dispensary_id, clientIP);
     }
+
+    // Get location stats for social proof
+    const locationStats = await SocialProof.getLocationStats('county', county.id);
 
     // Get stats
     const stats = await County.getStats(county.id);
@@ -669,6 +695,7 @@ router.get('/:state/:county', async (req, res) => {
       otherCounties,
       nearbyCounties,
       showAll,
+      locationStats,
       mapEnabled: true,
       GOOGLE_API_KEY: process.env.GOOGLE_PLACES_API_KEY,
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
