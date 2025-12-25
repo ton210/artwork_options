@@ -64,6 +64,30 @@
         </div>
       </div>
 
+      <!-- Engagement Stats Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-green-500">
+          <div class="text-gray-500 text-sm mb-1">Total Reviews (All Time)</div>
+          <div class="text-3xl font-bold text-green-600"><%= stats.reviews_all_time || 0 %></div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">
+          <div class="text-gray-500 text-sm mb-1">Votes (Last 30 Days)</div>
+          <div class="text-3xl font-bold text-blue-600"><%= stats.votes_30days || 0 %></div>
+          <div class="text-xs text-gray-500 mt-1">(<%= stats.votes_all_time || 0 %> all time)</div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-purple-500">
+          <div class="text-gray-500 text-sm mb-1">Total Votes (All Time)</div>
+          <div class="text-3xl font-bold text-purple-600"><%= stats.votes_all_time || 0 %></div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6 border-l-4 border-orange-500">
+          <div class="text-gray-500 text-sm mb-1">Total Clicks (All Time)</div>
+          <div class="text-3xl font-bold text-orange-600"><%= stats.clicks_all_time || 0 %></div>
+        </div>
+      </div>
+
       <!-- Click Stats Row -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div class="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">

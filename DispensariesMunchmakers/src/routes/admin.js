@@ -97,6 +97,8 @@ router.get('/', async (req, res) => {
       SELECT
         (SELECT COUNT(*) FROM dispensaries WHERE is_active = true) as total_dispensaries,
         (SELECT COUNT(*) FROM votes WHERE DATE(created_at) = CURRENT_DATE) as votes_today,
+        (SELECT COUNT(*) FROM votes WHERE created_at >= CURRENT_DATE - INTERVAL '30 days') as votes_30days,
+        (SELECT COUNT(*) FROM votes) as votes_all_time,
         (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE AND (country = 'US' OR country IS NULL)) as views_today_us,
         (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE) as views_today_all,
         (SELECT COUNT(*) FROM leads WHERE is_contacted = false) as uncontacted_leads,
@@ -104,6 +106,8 @@ router.get('/', async (req, res) => {
         (SELECT COUNT(*) FROM counties) as total_counties,
         (SELECT COUNT(*) FROM users) as total_users,
         (SELECT COUNT(*) FROM reviews WHERE is_approved = true) as total_reviews,
+        (SELECT COUNT(*) FROM reviews) as reviews_all_time,
+        (SELECT COUNT(*) FROM click_events) as clicks_all_time,
         (SELECT COUNT(*) FROM business_claims WHERE is_approved = false) as pending_claims
     `);
 
