@@ -1,6 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
+// Tools page
+router.get('/tools', (req, res) => {
+  res.render('pages/tools', {
+    title: 'Cannabis Tools & Calculators - Dosage, Strain Finder, Savings',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Free cannabis tools and calculators: edibles dosage calculator, strain finder quiz, savings calculator, and terpene matcher. Make smarter dispensary choices.',
+      keywords: 'cannabis calculator, dosage calculator, strain finder, cannabis tools, edibles dosage, terpene guide'
+    }
+  });
+});
+
 // Contact page
 router.get('/contact', (req, res) => {
   res.render('pages/contact', {

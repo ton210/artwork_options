@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../partials/favicon') %>
+  <%- include('../partials/analytics') %>
+  <title>Cannabis Tools & Calculators - Dosage, Strain Finder, Savings</title>
+  <meta name="description" content="Free cannabis tools: dosage calculator, strain finder quiz, savings calculator, and more. Make smarter dispensary choices with our interactive tools.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50">
+  <%- include('../partials/header') %>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Cannabis Tools & Calculators</h1>
+      <p class="text-xl text-gray-600">Make smarter choices with our free interactive tools</p>
+    </div>
+
+    <!-- Tool Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+      <!-- Dosage Calculator -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="text-4xl mb-4 text-center">💊</div>
+        <h2 class="text-2xl font-bold mb-4 text-center">Edibles Dosage Calculator</h2>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">Experience Level</label>
+            <select id="experience" class="w-full px-4 py-2 border rounded-lg">
+              <option value="beginner">Beginner (Never tried or 1-2 times)</option>
+              <option value="occasional">Occasional (Few times per month)</option>
+              <option value="regular">Regular (Weekly user)</option>
+              <option value="experienced">Experienced (Daily user)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Body Weight (lbs)</label>
+            <input type="number" id="weight" value="150" min="80" max="400" class="w-full px-4 py-2 border rounded-lg">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Desired Effect</label>
+            <select id="effect" class="w-full px-4 py-2 border rounded-lg">
+              <option value="mild">Mild (Relaxation, slight buzz)</option>
+              <option value="moderate">Moderate (Clear high, functional)</option>
+              <option value="strong">Strong (Intense experience)</option>
+            </select>
+          </div>
+          <button onclick="calculateDosage()" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700">
+            Calculate Recommended Dosage
+          </button>
+          <div id="dosage-result" class="hidden mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div class="font-bold text-lg mb-2">Recommended Dosage:</div>
+            <div id="dosage-amount" class="text-3xl font-bold text-green-600 mb-2"></div>
+            <div id="dosage-advice" class="text-sm text-gray-700"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strain Finder Quiz -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="text-4xl mb-4 text-center">🌿</div>
+        <h2 class="text-2xl font-bold mb-4 text-center">Strain Finder Quiz</h2>
+        <div id="quiz-container" class="space-y-4">
+          <div id="quiz-question-1">
+            <label class="block text-sm font-medium mb-2">When do you plan to use cannabis?</label>
+            <select id="time-of-use" class="w-full px-4 py-2 border rounded-lg">
+              <option value="morning">Morning/Daytime</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening/Night</option>
+              <option value="anytime">Anytime</option>
+            </select>
+          </div>
+          <div id="quiz-question-2">
+            <label class="block text-sm font-medium mb-2">What's your primary goal?</label>
+            <select id="goal" class="w-full px-4 py-2 border rounded-lg">
+              <option value="relax">Relaxation & Stress Relief</option>
+              <option value="sleep">Better Sleep</option>
+              <option value="pain">Pain Management</option>
+              <option value="energy">Energy & Focus</option>
+              <option value="creative">Creativity</option>
+              <option value="social">Social & Fun</option>
+            </select>
+          </div>
+          <div id="quiz-question-3">
+            <label class="block text-sm font-medium mb-2">Preferred intensity?</label>
+            <select id="intensity" class="w-full px-4 py-2 border rounded-lg">
+              <option value="mild">Mild & Functional</option>
+              <option value="moderate">Moderate</option>
+              <option value="strong">Strong & Immersive</option>
+            </select>
+          </div>
+          <button onclick="findStrain()" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700">
+            Find My Perfect Strain
+          </button>
+          <div id="strain-result" class="hidden mt-4 p-6 bg-green-50 border border-green-200 rounded-lg">
+            <div class="font-bold text-lg mb-3">Recommended for You:</div>
+            <div id="strain-recommendation"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Savings Calculator -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="text-4xl mb-4 text-center">💰</div>
+        <h2 class="text-2xl font-bold mb-4 text-center">Dispensary Savings Calculator</h2>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">Weekly Cannabis Budget ($)</label>
+            <input type="number" id="weekly-budget" value="50" min="10" max="1000" class="w-full px-4 py-2 border rounded-lg">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Average Discount Available (%)</label>
+            <input type="number" id="discount-percent" value="15" min="0" max="50" class="w-full px-4 py-2 border rounded-lg">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Loyalty Points Cashback (%)</label>
+            <input type="number" id="loyalty-percent" value="5" min="0" max="20" class="w-full px-4 py-2 border rounded-lg">
+          </div>
+          <button onclick="calculateSavings()" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700">
+            Calculate My Savings
+          </button>
+          <div id="savings-result" class="hidden mt-4 p-6 bg-purple-50 border border-purple-200 rounded-lg">
+            <div class="space-y-3">
+              <div>
+                <div class="text-sm text-gray-600">Annual Spending:</div>
+                <div id="annual-spending" class="text-2xl font-bold"></div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">Potential Annual Savings:</div>
+                <div id="annual-savings" class="text-3xl font-bold text-green-600"></div>
+              </div>
+              <div class="text-sm text-gray-700 border-t pt-3" id="savings-breakdown"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terpene Matcher -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="text-4xl mb-4 text-center">🧬</div>
+        <h2 class="text-2xl font-bold mb-4 text-center">Terpene Profile Matcher</h2>
+        <div class="space-y-4">
+          <p class="text-sm text-gray-600 mb-4">Select your desired effects and we'll tell you which terpenes to look for:</p>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="terpene-effect" value="relaxation" class="rounded">
+              <span>Relaxation & Calm</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="terpene-effect" value="energy" class="rounded">
+              <span>Energy & Focus</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="terpene-effect" value="pain" class="rounded">
+              <span>Pain Relief</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="terpene-effect" value="sleep" class="rounded">
+              <span>Sleep Aid</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="terpene-effect" value="mood" class="rounded">
+              <span>Mood Enhancement</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="terpene-effect" value="appetite" class="rounded">
+              <span>Appetite Suppression</span>
+            </label>
+          </div>
+          <button onclick="matchTerpenes()" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700">
+            Find My Terpenes
+          </button>
+          <div id="terpene-result" class="hidden mt-4 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+            <div class="font-bold text-lg mb-3">Look for these terpenes:</div>
+            <div id="terpene-list" class="space-y-2"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg p-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Find Your Perfect Dispensary?</h2>
+      <p class="text-xl mb-6">Browse thousands of rated dispensaries across North America</p>
+      <a href="/" class="inline-block bg-white text-green-600 font-bold px-8 py-3 rounded-lg hover:bg-green-50 transition">
+        Browse Dispensaries →
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Dosage Calculator
+    function calculateDosage() {
+      const experience = document.getElementById('experience').value;
+      const weight = parseInt(document.getElementById('weight').value);
+      const effect = document.getElementById('effect').value;
+
+      const baseDosages = {
+        beginner: { mild: 2.5, moderate: 5, strong: 7.5 },
+        occasional: { mild: 5, moderate: 10, strong: 15 },
+        regular: { mild: 10, moderate: 20, strong: 30 },
+        experienced: { mild: 20, moderate: 40, strong: 60 }
+      };
+
+      let dosage = baseDosages[experience][effect];
+
+      // Adjust for weight (slight adjustment)
+      if (weight < 120) dosage *= 0.8;
+      if (weight > 200) dosage *= 1.2;
+
+      dosage = Math.round(dosage * 10) / 10;
+
+      document.getElementById('dosage-amount').textContent = dosage + ' mg THC';
+      document.getElementById('dosage-advice').textContent =
+        experience === 'beginner'
+          ? '⚠️ Start with half this dose and wait 2 hours before taking more. You can always take more, but you can\\'t take less!'
+          : effect === 'strong'
+          ? '⚠️ This is a high dose. Make sure you\\'re in a comfortable environment with no responsibilities.'
+          : '✅ This dosage should provide a pleasant experience. Wait 1-2 hours for full effects.';
+
+      document.getElementById('dosage-result').classList.remove('hidden');
+    }
+
+    // Strain Finder
+    function findStrain() {
+      const timeOfUse = document.getElementById('time-of-use').value;
+      const goal = document.getElementById('goal').value;
+      const intensity = document.getElementById('intensity').value;
+
+      const recommendations = {
+        'morning-energy': { type: 'Sativa', strains: ['Sour Diesel', 'Green Crack', 'Durban Poison'], desc: 'Energizing sativas perfect for daytime' },
+        'morning-creative': { type: 'Sativa', strains: ['Jack Herer', 'Super Lemon Haze', 'Tangie'], desc: 'Uplifting strains for creativity' },
+        'evening-relax': { type: 'Indica', strains: ['Granddaddy Purple', 'Bubba Kush', 'Purple Punch'], desc: 'Relaxing indicas for evening' },
+        'evening-sleep': { type: 'Indica', strains: ['Northern Lights', 'God\\'s Gift', 'Tahoe OG'], desc: 'Sedating strains for sleep' },
+        'anytime-pain': { type: 'Hybrid', strains: ['Blue Dream', 'ACDC', 'Harlequin'], desc: 'Balanced strains for pain relief' },
+        'anytime-social': { type: 'Hybrid', strains: ['Wedding Cake', 'Gelato', 'Girl Scout Cookies'], desc: 'Social, uplifting hybrids' }
+      };
+
+      let key = (timeOfUse === 'morning' || timeOfUse === 'afternoon') && (goal === 'energy' || goal === 'creative')
+        ? 'morning-' + goal
+        : (timeOfUse === 'evening' || timeOfUse === 'night') && (goal === 'relax' || goal === 'sleep')
+        ? 'evening-' + goal
+        : 'anytime-' + goal;
+
+      if (!recommendations[key]) {
+        key = goal === 'energy' || goal === 'creative' ? 'morning-energy' : 'evening-relax';
+      }
+
+      const rec = recommendations[key] || recommendations['anytime-social'];
+
+      document.getElementById('strain-recommendation').innerHTML = `
+        <div class="mb-3">
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">${rec.type}</span>
+        </div>
+        <div class="font-bold text-xl mb-2">Try These Strains:</div>
+        <ul class="space-y-2 mb-3">
+          ${rec.strains.map(s => '<li class="flex items-center gap-2"><span class="text-green-600">✓</span><span class="font-medium">' + s + '</span></li>').join('')}
+        </ul>
+        <p class="text-sm text-gray-600">${rec.desc}</p>
+        <a href="/" class="inline-block mt-4 text-blue-600 hover:underline font-medium">Find dispensaries with these strains →</a>
+      `;
+
+      document.getElementById('strain-result').classList.remove('hidden');
+    }
+
+    // Savings Calculator
+    function calculateSavings() {
+      const weeklyBudget = parseFloat(document.getElementById('weekly-budget').value);
+      const discountPercent = parseFloat(document.getElementById('discount-percent').value);
+      const loyaltyPercent = parseFloat(document.getElementById('loyalty-percent').value);
+
+      const annualSpending = weeklyBudget * 52;
+      const discountSavings = annualSpending * (discountPercent / 100);
+      const loyaltySavings = annualSpending * (loyaltyPercent / 100);
+      const totalSavings = discountSavings + loyaltySavings;
+
+      document.getElementById('annual-spending').textContent = '$' + annualSpending.toLocaleString();
+      document.getElementById('annual-savings').textContent = '$' + Math.round(totalSavings).toLocaleString();
+      document.getElementById('savings-breakdown').innerHTML = `
+        💚 Discounts: $${Math.round(discountSavings).toLocaleString()} <br>
+        🎁 Loyalty Points: $${Math.round(loyaltySavings).toLocaleString()} <br>
+        <strong>That's ${Math.round((totalSavings/annualSpending)*100)}% savings!</strong>
+      `;
+
+      document.getElementById('savings-result').classList.remove('hidden');
+    }
+
+    // Terpene Matcher
+    function matchTerpenes() {
+      const terpeneMap = {
+        relaxation: [{ name: 'Linalool', desc: 'Lavender scent, calming' }, { name: 'Myrcene', desc: 'Earthy, sedating' }],
+        energy: [{ name: 'Limonene', desc: 'Citrus scent, uplifting' }, { name: 'Pinene', desc: 'Pine scent, alertness' }],
+        pain: [{ name: 'Caryophyllene', desc: 'Peppery, anti-inflammatory' }, { name: 'Myrcene', desc: 'Pain relief' }],
+        sleep: [{ name: 'Myrcene', desc: 'Sedating, sleep aid' }, { name: 'Linalool', desc: 'Calming, reduces anxiety' }],
+        mood: [{ name: 'Limonene', desc: 'Mood elevation, stress relief' }, { name: 'Pinene', desc: 'Mental clarity' }],
+        appetite: [{ name: 'Humulene', desc: 'Appetite suppressant' }, { name: 'THCV', desc: 'Energizing, reduces hunger' }]
+      };
+
+      const selected = Array.from(document.querySelectorAll('.terpene-effect:checked')).map(cb => cb.value);
+
+      if (selected.length === 0) {
+        alert('Please select at least one desired effect');
+        return;
+      }
+
+      const terpenes = new Map();
+      selected.forEach(effect => {
+        (terpeneMap[effect] || []).forEach(terp => {
+          if (!terpenes.has(terp.name)) {
+            terpenes.set(terp.name, terp);
+          }
+        });
+      });
+
+      document.getElementById('terpene-list').innerHTML = Array.from(terpenes.values()).map(terp => `
+        <div class="flex items-start gap-3 p-3 bg-white rounded border">
+          <div class="text-2xl">🌿</div>
+          <div>
+            <div class="font-bold text-lg">${terp.name}</div>
+            <div class="text-sm text-gray-600">${terp.desc}</div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('terpene-result').classList.remove('hidden');
+    }
+  </script>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>
