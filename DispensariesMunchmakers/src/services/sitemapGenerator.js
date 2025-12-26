@@ -78,6 +78,10 @@ class SitemapGenerator {
     // Main pages in all languages
     const mainPages = [
       { path: '/brands', changefreq: 'daily', priority: '0.9' },
+      { path: '/blog', changefreq: 'daily', priority: '0.9' },
+      { path: '/tools', changefreq: 'weekly', priority: '0.8' },
+      { path: '/faq', changefreq: 'monthly', priority: '0.7' },
+      { path: '/near-me', changefreq: 'weekly', priority: '0.8' },
       { path: '/contact', changefreq: 'monthly', priority: '0.3' },
       { path: '/claim', changefreq: 'monthly', priority: '0.4' },
       { path: '/privacy', changefreq: 'yearly', priority: '0.2' },
