@@ -7,6 +7,27 @@
   <%- include('../partials/analytics') %>
   <title>Cannabis Tools & Calculators - Complete Suite</title>
   <meta name="description" content="Professional cannabis tools: dosage calculator, strain finder, dispensary comparison, onset timer, medical card ROI, tolerance break planner, and more.">
+
+  <!-- SEO Enhancements -->
+  <link rel="canonical" href="<%= baseUrl %>/tools">
+  <meta property="og:title" content="10 Free Cannabis Calculators - Professional Tools Suite">
+  <meta property="og:description" content="Science-backed cannabis tools for dosing, strain selection, savings, ROI, tolerance breaks & more. Used by thousands. 100% free!">
+  <meta property="og:url" content="<%= baseUrl %>/tools">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Cannabis Tools & Calculators",
+    "url": "<%= baseUrl %>/tools",
+    "applicationCategory": "HealthApplication",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "featureList": ["Dosage Calculator", "Strain Finder", "Savings Calculator", "Medical ROI", "Tolerance Planner", "Onset Timer"]
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
