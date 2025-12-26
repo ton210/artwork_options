@@ -3,12 +3,13 @@ const router = express.Router();
 
 // Tools page
 router.get('/tools', (req, res) => {
-  res.render('pages/tools', {
-    title: 'Cannabis Tools & Calculators - Dosage, Strain Finder, Savings',
+  res.render('pages/tools-enhanced', {
+    title: 'Cannabis Tools & Calculators - Complete Professional Suite',
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    MUNCHMAKERS_URL: process.env.MUNCHMAKERS_SITE_URL || 'https://munchmakers.com',
     meta: {
-      description: 'Free cannabis tools and calculators: edibles dosage calculator, strain finder quiz, savings calculator, and terpene matcher. Make smarter dispensary choices.',
-      keywords: 'cannabis calculator, dosage calculator, strain finder, cannabis tools, edibles dosage, terpene guide'
+      description: 'Professional cannabis tools: advanced dosage calculator, strain finder, dispensary comparison, onset timer, medical card ROI, tolerance break planner, savings calculator, and more. All free!',
+      keywords: 'cannabis calculator, dosage calculator, strain finder, dispensary comparison, medical card roi, tolerance break, cannabis tools, edibles timing, terpene guide'
     }
   });
 });
