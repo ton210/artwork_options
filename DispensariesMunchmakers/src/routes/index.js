@@ -3,6 +3,8 @@ const router = express.Router();
 const { State } = require('../models/State');
 const SocialProof = require('../utils/socialProof');
 const db = require('../config/database');
+const Vote = require('../models/Vote');
+const Review = require('../models/Review');
 
 // Homepage
 router.get('/', async (req, res) => {
@@ -79,6 +81,12 @@ router.get('/', async (req, res) => {
       WHERE s.abbreviation IN ('AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT')
     `);
 
+    // Get recent voting activity (last 24 hours)
+    const recentVotes = await Vote.getDispensariesWithRecentVotes(5);
+
+    // Get recent approved reviews (last 3)
+    const recentReviews = await Review.getRecentApprovedReviews(3);
+
     res.render('home', {
       title: 'Top Dispensaries 2026 - Find the Best Cannabis Dispensaries in US & Canada',
       usStates,
@@ -88,6 +96,8 @@ router.get('/', async (req, res) => {
       canadaCount: canadaStats.rows[0].count,
       globalStats,
       trendingToday: trendingToday.rows,
+      recentVotes,
+      recentReviews,
       meta: {
         description: 'Discover the top-rated cannabis dispensaries across the United States and Canada. User-voted rankings based on reviews, ratings, and community feedback.',
         keywords: 'cannabis dispensary, marijuana dispensary, weed dispensary, top dispensaries, dispensary rankings, Canada dispensaries'
