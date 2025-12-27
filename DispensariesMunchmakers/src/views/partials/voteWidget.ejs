@@ -1,7 +1,9 @@
 <%
   // Handle both ranking objects (dispensary_id) and direct dispensary objects (id)
+  // Debug: dispensary object has id=<%= dispensary.id %>, dispensary_id=<%= dispensary.dispensary_id %>
   const actualDispensaryId = dispensary.dispensary_id || dispensary.id;
 %>
+<!-- DEBUG: id=<%= dispensary.id %> dispensary_id=<%= dispensary.dispensary_id %> actualId=<%= actualDispensaryId %> -->
 <div class="vote-widget inline-flex items-center gap-2 bg-white rounded-lg shadow border border-gray-200 p-2"
      data-dispensary-id="<%= actualDispensaryId %>">
   <button onclick="vote(<%= actualDispensaryId %>, 1)"
@@ -36,6 +38,7 @@
 
 <script>
 async function vote(dispensaryId, voteType) {
+  console.log('Voting for dispensary ID:', dispensaryId, 'voteType:', voteType);
   try {
     const response = await fetch('/api/vote', {
       method: 'POST',
@@ -44,6 +47,7 @@ async function vote(dispensaryId, voteType) {
     });
 
     const data = await response.json();
+    console.log('Vote response:', data);
 
     if (data.success) {
       // Update vote count
@@ -60,6 +64,7 @@ async function vote(dispensaryId, voteType) {
       // Show success message
       alert('Vote recorded! Thanks for your input.');
     } else {
+      console.error('Vote failed:', data.message, 'dispensaryId:', dispensaryId);
       alert(data.message || 'Unable to vote at this time.');
     }
   } catch (error) {

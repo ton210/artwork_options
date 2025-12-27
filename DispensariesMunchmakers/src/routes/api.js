@@ -20,6 +20,7 @@ router.post('/vote',
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
+        console.log('Vote validation errors:', errors.array(), 'body:', req.body);
         return res.status(400).json({ success: false, errors: errors.array() });
       }
 
@@ -27,9 +28,13 @@ router.post('/vote',
       const clientIP = getClientIP(req);
       const sessionId = req.session?.id || req.sessionID || null;
 
+      console.log('Vote request received - dispensaryId:', dispensaryId, 'type:', typeof dispensaryId, 'voteType:', voteType);
+
       // Validate dispensary exists
       const dispensary = await Dispensary.findById(parseInt(dispensaryId));
+      console.log('Dispensary lookup result:', dispensary ? `Found: ${dispensary.name}` : 'NOT FOUND');
       if (!dispensary) {
+        console.error('Dispensary not found for ID:', dispensaryId);
         return res.status(404).json({
           success: false,
           message: 'Dispensary not found'
