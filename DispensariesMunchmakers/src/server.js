@@ -127,11 +127,14 @@ const leadRoutes = require('./routes/leads');
 const languageRoutes = require('./routes/language');
 
 // API routes FIRST - before any language/translation middleware
+console.log('Registering API routes...');
 app.use('/api', apiRoutes);
+console.log('API routes registered at /api');
 app.use('/api/reviews', reviewRoutes);
 app.use('/auth', authRoutes);
 app.use('/admin', adminRoutes);
 app.use('/leads', leadRoutes);
+console.log('All API/Auth routes registered');
 
 // Language routes (catch /es/, /fr/, etc. and rewrite)
 app.use('/', languageRoutes);
