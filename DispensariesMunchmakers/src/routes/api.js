@@ -6,6 +6,18 @@ const Dispensary = require('../models/Dispensary');
 const { trackClickEvent, getClientIP } = require('../middleware/analytics');
 const { voteLimiter, apiLimiter } = require('../middleware/rateLimiter');
 
+// Debug: Log all requests to /api/*
+router.use((req, res, next) => {
+  console.log(`[API] ${req.method} ${req.path} - Body:`, JSON.stringify(req.body));
+  next();
+});
+
+// Test endpoint to verify API is working
+router.get('/test', (req, res) => {
+  console.log('[API] Test endpoint hit');
+  res.json({ success: true, message: 'API is working' });
+});
+
 // Apply general API rate limiting
 router.use(apiLimiter);
 
