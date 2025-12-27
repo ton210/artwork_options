@@ -16,6 +16,9 @@ const { autoTranslateMiddleware } = require('./middleware/autoTranslate');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Trust proxy - required for rate limiting behind Heroku's proxy
+app.set('trust proxy', 1);
+
 // View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -125,6 +128,8 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 const languageRoutes = require('./routes/language');
+
+console.log('All route modules loaded successfully');
 
 // API routes FIRST - before any language/translation middleware
 console.log('Registering API routes...');
