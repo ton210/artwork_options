@@ -1,7 +1,8 @@
 <%
-  // Handle both ranking objects (dispensary_id) and direct dispensary objects (id)
-  // Debug: dispensary object has id=<%= dispensary.id %>, dispensary_id=<%= dispensary.dispensary_id %>
+  // Fix: Handle both ranking objects (dispensary_id) and direct dispensary objects (id)
+  // v2 - force redeploy
   const actualDispensaryId = dispensary.dispensary_id || dispensary.id;
+  console.log('Vote widget: id=' + dispensary.id + ', dispensary_id=' + dispensary.dispensary_id + ', using=' + actualDispensaryId);
 %>
 <!-- DEBUG: id=<%= dispensary.id %> dispensary_id=<%= dispensary.dispensary_id %> actualId=<%= actualDispensaryId %> -->
 <div class="vote-widget inline-flex items-center gap-2 bg-white rounded-lg shadow border border-gray-200 p-2"
