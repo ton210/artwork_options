@@ -132,7 +132,7 @@ const languageRoutes = require('./routes/language');
 
 console.log('All route modules loaded successfully');
 
-// API routes FIRST - before any language/translation middleware
+// API routes FIRST - before any language/translation middleware (CRITICAL: must be before other routes)
 console.log('Registering API routes...');
 app.use('/api', apiRoutes);
 console.log('API routes registered at /api');
