@@ -82,7 +82,7 @@ router.get('/', async (req, res) => {
     `);
 
     // Get recent voting activity (last 24 hours)
-    const recentVotes = await Vote.getDispensariesWithRecentVotes(5);
+    const recentVotes = await Vote.getDispensariesWithRecentVotes(12);
 
     // Get recent approved reviews (last 3)
     const recentReviews = await Review.getRecentApprovedReviews(3);
