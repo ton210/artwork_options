@@ -53,6 +53,9 @@ const BOT_PATTERNS = [
 
 // Paths to exclude from tracking
 const EXCLUDED_PATHS = [
+  '/admin',           // Exclude all admin pages
+  '/auth',            // Exclude auth pages (/auth/me, /auth/login, etc.)
+  '/ip',              // Exclude IP lookup page
   '/sitemap.xml',
   '/sitemap',
   '/robots.txt',
@@ -61,18 +64,7 @@ const EXCLUDED_PATHS = [
   '/manifest.json',
   '/.well-known',
   '/health',
-  '/ping',
-  '/auth/me',
-  '/admin',
-  '/ip'
-];
-
-// Patterns that indicate malformed/invalid URLs (e.g., from browser bugs extracting CSS)
-const INVALID_URL_PATTERNS = [
-  /linear-gradient/i,
-  /rgb\(/i,
-  /rgba\(/i,
-  /url\(/i
+  '/ping'
 ];
 
 function hashIP(ip) {
@@ -95,17 +87,12 @@ function isExcludedPath(path) {
   return EXCLUDED_PATHS.some(excluded => path.startsWith(excluded));
 }
 
-function isInvalidUrl(path) {
-  return INVALID_URL_PATTERNS.some(pattern => pattern.test(path));
-}
-
 async function trackPageView(req, res, next) {
   // Track page views for real visitors only
   if (req.method === 'GET' &&
       !req.path.startsWith('/api/') &&
       !req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|json|xml|txt|woff|woff2|ttf|eot|map)$/) &&
-      !isExcludedPath(req.path) &&
-      !isInvalidUrl(req.path)) {
+      !isExcludedPath(req.path)) {
 
     const userAgent = req.get('User-Agent') || '';
     const isBotVisit = isBot(userAgent);
@@ -198,3 +185,4 @@ module.exports = {
   isBot,
   BOT_PATTERNS
 };
+ 

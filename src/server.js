@@ -1,3 +1,4 @@
+console.log('=== SERVER STARTING v167 TEST ===');
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
@@ -15,6 +16,9 @@ const { autoTranslateMiddleware } = require('./middleware/autoTranslate');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Trust proxy - required for rate limiting behind Heroku's proxy
+app.set('trust proxy', 1);
 
 // View engine setup
 app.set('view engine', 'ejs');
@@ -115,6 +119,8 @@ app.use((req, res, next) => {
 const indexRoutes = require('./routes/index');
 const dispensaryRoutes = require('./routes/dispensaries');
 const brandsRoutes = require('./routes/brands');
+const blogRoutes = require('./routes/blog');
+const faqRoutes = require('./routes/faq');
 const pagesRoutes = require('./routes/pages');
 const sitemapRoutes = require('./routes/sitemap');
 const apiRoutes = require('./routes/api');
@@ -124,13 +130,17 @@ const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 const languageRoutes = require('./routes/language');
 
-// CRITICAL: API routes MUST come FIRST - before any routes that use '/' path
-// Otherwise catch-all routes will intercept API calls resulting in 404 errors
+console.log('All route modules loaded successfully');
+
+// API routes FIRST - before any language/translation middleware (CRITICAL: must be before other routes)
+console.log('Registering API routes...');
 app.use('/api', apiRoutes);
+console.log('API routes registered at /api');
 app.use('/api/reviews', reviewRoutes);
 app.use('/auth', authRoutes);
 app.use('/admin', adminRoutes);
 app.use('/leads', leadRoutes);
+console.log('All API/Auth routes registered');
 
 // Language routes (catch /es/, /fr/, etc. and rewrite)
 app.use('/', languageRoutes);
@@ -149,6 +159,8 @@ app.use('/', indexRoutes);
 app.use('/dispensaries', dispensaryRoutes);
 app.use('/dispensary', dispensaryRoutes); // Alternative singular route
 app.use('/brands', brandsRoutes);
+app.use('/blog', blogRoutes);
+app.use('/faq', faqRoutes);
 app.use('/', pagesRoutes);
 app.use('/', sitemapRoutes);
 

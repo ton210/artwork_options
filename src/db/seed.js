@@ -42,7 +42,21 @@ const stateCounties = {
   'Virginia': ['Fairfax', 'Prince William', 'Virginia Beach', 'Loudoun', 'Chesterfield', 'Henrico', 'Norfolk', 'Chesapeake', 'Richmond', 'Newport News', 'Alexandria', 'Hampton'],
   'Washington': ['King', 'Pierce', 'Snohomish', 'Spokane', 'Clark', 'Thurston', 'Kitsap', 'Yakima', 'Whatcom', 'Benton'],
   'Washington D.C.': ['Washington'],
-  'West Virginia': ['Kanawha', 'Berkeley', 'Monongalia', 'Cabell', 'Wood', 'Raleigh', 'Harrison']
+  'West Virginia': ['Kanawha', 'Berkeley', 'Monongalia', 'Cabell', 'Wood', 'Raleigh', 'Harrison'],
+  // Canadian Provinces (using major cities as "counties")
+  'Alberta': ['Calgary', 'Edmonton', 'Red Deer', 'Lethbridge', 'St. Albert', 'Medicine Hat', 'Grande Prairie', 'Airdrie'],
+  'British Columbia': ['Vancouver', 'Victoria', 'Kelowna', 'Abbotsford', 'Surrey', 'Burnaby', 'Richmond', 'Coquitlam', 'Saanich', 'Delta', 'Kamloops', 'Nanaimo', 'Prince George'],
+  'Manitoba': ['Winnipeg', 'Brandon', 'Steinbach', 'Thompson', 'Portage la Prairie'],
+  'New Brunswick': ['Moncton', 'Saint John', 'Fredericton', 'Dieppe', 'Miramichi'],
+  'Newfoundland and Labrador': ['St. John\'s', 'Mount Pearl', 'Corner Brook', 'Conception Bay South'],
+  'Northwest Territories': ['Yellowknife', 'Hay River', 'Inuvik'],
+  'Nova Scotia': ['Halifax', 'Cape Breton', 'Dartmouth', 'Truro', 'New Glasgow'],
+  'Nunavut': ['Iqaluit', 'Rankin Inlet', 'Arviat'],
+  'Ontario': ['Toronto', 'Ottawa', 'Mississauga', 'Hamilton', 'Brampton', 'London', 'Markham', 'Vaughan', 'Kitchener', 'Windsor', 'Waterloo', 'Barrie', 'Guelph', 'Cambridge', 'Oshawa', 'Kingston'],
+  'Prince Edward Island': ['Charlottetown', 'Summerside', 'Stratford'],
+  'Quebec': ['Montreal', 'Quebec City', 'Laval', 'Gatineau', 'Longueuil', 'Sherbrooke', 'Saguenay', 'Trois-Rivières'],
+  'Saskatchewan': ['Saskatoon', 'Regina', 'Prince Albert', 'Moose Jaw', 'Swift Current'],
+  'Yukon': ['Whitehorse', 'Dawson City', 'Watson Lake']
 };
 
 async function seedDatabase() {

@@ -1,6 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+// Tools page
+router.get('/tools', (req, res) => {
+  res.render('pages/tools-enhanced', {
+    title: 'Cannabis Tools & Calculators - Complete Professional Suite',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    MUNCHMAKERS_URL: process.env.MUNCHMAKERS_SITE_URL || 'https://munchmakers.com',
+    meta: {
+      description: 'Professional cannabis tools: advanced dosage calculator, strain finder, dispensary comparison, onset timer, medical card ROI, tolerance break planner, savings calculator, and more. All free!',
+      keywords: 'cannabis calculator, dosage calculator, strain finder, dispensary comparison, medical card roi, tolerance break, cannabis tools, edibles timing, terpene guide'
+    }
+  });
+});
+
 // Contact page
 router.get('/contact', (req, res) => {
   res.render('pages/contact', {
@@ -45,6 +58,18 @@ router.get('/terms', (req, res) => {
     meta: {
       description: 'Terms of service for using Top Dispensaries 2026 ranking platform.',
       keywords: 'terms of service, user agreement, terms and conditions'
+    }
+  });
+});
+
+// Cookie Policy
+router.get('/cookies', (req, res) => {
+  res.render('pages/cookies', {
+    title: 'Cookie Policy - Top Dispensaries 2026',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    meta: {
+      description: 'Cookie policy for Top Dispensaries 2026. Learn about the cookies we use and how to manage your cookie preferences.',
+      keywords: 'cookie policy, cookies, gdpr, privacy, cookie consent'
     }
   });
 });

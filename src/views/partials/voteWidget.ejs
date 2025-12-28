@@ -1,6 +1,13 @@
+<%
+  // Fix: Handle both ranking objects (dispensary_id) and direct dispensary objects (id)
+  // v2 - force redeploy
+  const actualDispensaryId = dispensary.dispensary_id || dispensary.id;
+  console.log('Vote widget: id=' + dispensary.id + ', dispensary_id=' + dispensary.dispensary_id + ', using=' + actualDispensaryId);
+%>
+<!-- DEBUG: id=<%= dispensary.id %> dispensary_id=<%= dispensary.dispensary_id %> actualId=<%= actualDispensaryId %> -->
 <div class="vote-widget inline-flex items-center gap-2 bg-white rounded-lg shadow border border-gray-200 p-2"
-     data-dispensary-id="<%= dispensary.id %>">
-  <button onclick="vote(<%= dispensary.id %>, 1)"
+     data-dispensary-id="<%= actualDispensaryId %>">
+  <button onclick="vote(<%= actualDispensaryId %>, 1)"
           class="upvote-btn px-3 py-2 rounded hover:bg-green-50 transition <%= canVote ? '' : 'opacity-50 cursor-not-allowed' %>"
           <%= canVote ? '' : 'disabled' %>>
     <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -9,13 +16,13 @@
   </button>
 
   <div class="text-center min-w-[60px]">
-    <div class="vote-count font-bold text-lg" id="vote-count-<%= dispensary.id %>">
+    <div class="vote-count font-bold text-lg" id="vote-count-<%= actualDispensaryId %>">
       <%= votes.net_votes || 0 %>
     </div>
     <div class="text-xs text-gray-500">votes</div>
   </div>
 
-  <button onclick="vote(<%= dispensary.id %>, -1)"
+  <button onclick="vote(<%= actualDispensaryId %>, -1)"
           class="downvote-btn px-3 py-2 rounded hover:bg-red-50 transition <%= canVote ? '' : 'opacity-50 cursor-not-allowed' %>"
           <%= canVote ? '' : 'disabled' %>>
     <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,6 +39,7 @@
 
 <script>
 async function vote(dispensaryId, voteType) {
+  console.log('Voting for dispensary ID:', dispensaryId, 'voteType:', voteType);
   try {
     const response = await fetch('/api/vote', {
       method: 'POST',
@@ -40,6 +48,7 @@ async function vote(dispensaryId, voteType) {
     });
 
     const data = await response.json();
+    console.log('Vote response:', data);
 
     if (data.success) {
       // Update vote count
@@ -56,6 +65,7 @@ async function vote(dispensaryId, voteType) {
       // Show success message
       alert('Vote recorded! Thanks for your input.');
     } else {
+      console.error('Vote failed:', data.message, 'dispensaryId:', dispensaryId);
       alert(data.message || 'Unable to vote at this time.');
     }
   } catch (error) {

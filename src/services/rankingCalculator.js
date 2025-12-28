@@ -5,14 +5,16 @@ const Vote = require('../models/Vote');
 class RankingCalculator {
   constructor() {
     // Weights for composite score (must sum to 100)
+    // Heavily favor user engagement over Google data
     this.weights = {
-      googleRating: 25,
-      reviewVolume: 15,
-      externalListings: 10,
-      userVotes: 20,
-      pageViews: 10,
-      dataCompleteness: 10,
-      engagement: 10
+      googleRating: 15,          // Reduced from 25
+      reviewVolume: 10,           // Reduced from 15 (Google reviews)
+      externalListings: 5,        // Reduced from 10
+      userVotes: 30,              // Increased from 20
+      userReviews: 20,            // NEW - Real user reviews
+      pageViews: 8,               // Reduced from 10
+      dataCompleteness: 5,        // Reduced from 10
+      engagement: 7               // Reduced from 10
     };
   }
 
@@ -24,6 +26,7 @@ class RankingCalculator {
       reviewVolume: await this.normalizeReviewVolume(dispensary.google_review_count, dispensary.county_id, stateId),
       externalListings: this.calculateExternalListingsScore(dispensary.external_listings),
       userVotes: await this.calculateVoteScore(dispensary.id, dispensary.county_id, stateId),
+      userReviews: await this.calculateUserReviewScore(dispensary.id, dispensary.county_id, stateId),
       pageViews: await this.calculatePageViewScore(dispensary.id, dispensary.county_id, stateId),
       dataCompleteness: dispensary.data_completeness_score || 0,
       engagement: await this.calculateEngagementScore(dispensary.id)
@@ -207,6 +210,60 @@ class RankingCalculator {
       return Math.min((clickCount / 10) * 100, 100);
     } catch (error) {
       console.error('Error calculating engagement score:', error);
+      return 0;
+    }
+  }
+
+  async calculateUserReviewScore(dispensaryId, countyId, stateId) {
+    try {
+      // Get user reviews for this dispensary
+      const reviewsResult = await db.query(
+        `SELECT COUNT(*) as review_count, AVG(rating) as avg_rating
+         FROM reviews
+         WHERE dispensary_id = $1 AND is_approved = true`,
+        [dispensaryId]
+      );
+
+      const reviewCount = parseInt(reviewsResult.rows[0].review_count) || 0;
+      const avgRating = parseFloat(reviewsResult.rows[0].avg_rating) || 0;
+
+      if (reviewCount === 0) return 0;
+
+      // Get max user reviews in location for normalization
+      let query, params;
+      if (countyId) {
+        query = `SELECT d.id, COUNT(r.id) as review_count
+                 FROM dispensaries d
+                 LEFT JOIN reviews r ON d.id = r.dispensary_id AND r.is_approved = true
+                 WHERE d.county_id = $1 AND d.is_active = true
+                 GROUP BY d.id
+                 ORDER BY review_count DESC
+                 LIMIT 1`;
+        params = [countyId];
+      } else if (stateId) {
+        query = `SELECT d.id, COUNT(r.id) as review_count
+                 FROM dispensaries d
+                 JOIN counties c ON d.county_id = c.id
+                 LEFT JOIN reviews r ON d.id = r.dispensary_id AND r.is_approved = true
+                 WHERE c.state_id = $1 AND d.is_active = true
+                 GROUP BY d.id
+                 ORDER BY review_count DESC
+                 LIMIT 1`;
+        params = [stateId];
+      } else {
+        return 0;
+      }
+
+      const maxResult = await db.query(query, params);
+      const maxReviews = maxResult.rows[0]?.review_count || 1;
+
+      // Score calculation: 60% based on volume, 40% based on rating
+      const volumeScore = (reviewCount / Math.max(maxReviews, 1)) * 60;
+      const ratingScore = ((avgRating - 1) / 4) * 40; // Normalize 1-5 to 0-40
+
+      return Math.min(volumeScore + ratingScore, 100);
+    } catch (error) {
+      console.error('Error calculating user review score:', error);
       return 0;
     }
   }

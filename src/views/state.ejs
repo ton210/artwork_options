@@ -49,6 +49,38 @@
           <div><%= Number(stats.avg_rating || 0).toFixed(1) %> avg rating</div>
         </div>
 
+        <!-- Location Stats Banner -->
+        <% if (locationStats && (locationStats.viewsToday > 0 || locationStats.viewsWeek > 0)) { %>
+          <div class="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div class="flex flex-wrap items-center gap-4 text-sm">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                <span class="font-semibold text-gray-700">Live Activity:</span>
+              </div>
+              <% if (locationStats.viewsToday > 0) { %>
+                <div class="text-gray-700">
+                  <span class="font-bold text-green-700"><%= locationStats.viewsToday %></span>
+                  <span>visitors today</span>
+                </div>
+              <% } %>
+              <% if (locationStats.viewsWeek > 0) { %>
+                <div class="text-gray-700">
+                  <span class="font-bold text-blue-700"><%= locationStats.viewsWeek %></span>
+                  <span>this week</span>
+                </div>
+              <% } %>
+              <% if (locationStats.activeToday > 0) { %>
+                <div class="text-gray-700">
+                  <span class="font-bold text-purple-700"><%= locationStats.activeToday %></span>
+                  <span>dispensaries viewed today</span>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+
         <% if (showAll) { %>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <p class="text-sm">
@@ -118,7 +150,10 @@
                     </div>
                   </div>
 
-                  <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+                  <!-- Social Proof Badges -->
+                  <%- include('partials/social-proof-badges', { dispensary }) %>
+
+                  <div class="flex flex-wrap items-center gap-3 sm:gap-4 mt-3">
                     <%- include('partials/voteWidget', {
                       dispensary: dispensary,
                       votes: dispensary.votes,
@@ -155,30 +190,19 @@
         </div>
 
         <!-- Browse by Category -->
+        <% if (availableTags && availableTags.length > 0) { %>
         <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
           <h2 class="text-xl sm:text-2xl font-bold mb-4">Best Dispensaries by Category</h2>
           <p class="text-gray-600 mb-4 text-sm sm:text-base">Find top-rated dispensaries in <%= state.name %> specializing in:</p>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
-            <a href="/dispensaries/<%= state.slug %>/best-edibles" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Edibles</div>
+            <% availableTags.forEach(tag => { %>
+            <a href="/dispensaries/<%= state.slug %>/best-<%= tag.slug %>" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
+              <div class="font-semibold text-sm sm:text-base">Best <%= tag.display %></div>
             </a>
-            <a href="/dispensaries/<%= state.slug %>/best-flower" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Flower</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-vapes" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Vapes</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-concentrates" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Concentrates</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-pre-rolls" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Pre-Rolls</div>
-            </a>
-            <a href="/dispensaries/<%= state.slug %>/best-delivery" class="block p-2 sm:p-3 bg-green-50 rounded hover:bg-green-100 hover:text-green-700 transition">
-              <div class="font-semibold text-sm sm:text-base">Best Delivery</div>
-            </a>
+            <% }); %>
           </div>
         </div>
+        <% } %>
 
         <!-- Counties in State -->
         <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-8">
@@ -406,7 +430,6 @@
 
       <!-- Sidebar -->
       <div class="lg:col-span-1">
-        <%- include('partials/munchmakersAd') %>
       </div>
     </div>
   </div>

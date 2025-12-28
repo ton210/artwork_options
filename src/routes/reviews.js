@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Review = require('../models/Review');
+const axios = require('axios');
 
 // Rate limiting middleware
 const rateLimit = {};
@@ -32,8 +33,36 @@ function recordReview(ip) {
  */
 router.post('/submit', async (req, res) => {
   try {
-    const { dispensaryId, authorName, authorEmail, rating, reviewText } = req.body;
+    const { dispensaryId, authorName, authorEmail, rating, reviewText, recaptchaToken } = req.body;
     const ipAddress = req.ip || req.connection.remoteAddress;
+
+    // Verify reCAPTCHA v3
+    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY) {
+      try {
+        const verifyResponse = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
+          params: {
+            secret: process.env.RECAPTCHA_SECRET_KEY,
+            response: recaptchaToken,
+            remoteip: ipAddress
+          }
+        });
+
+        // reCAPTCHA v3 returns a score (0.0 to 1.0)
+        // 0.0 is very likely a bot, 1.0 is very likely a good interaction
+        if (!verifyResponse.data.success || verifyResponse.data.score < 0.5) {
+          console.log('reCAPTCHA failed:', verifyResponse.data);
+          return res.status(400).json({
+            error: 'Bot detection triggered. If you are human, please try again or contact support.'
+          });
+        }
+
+        console.log('reCAPTCHA verified with score:', verifyResponse.data.score);
+      } catch (error) {
+        console.error('reCAPTCHA verification error:', error);
+        // Don't block reviews if reCAPTCHA service is down
+        console.warn('Proceeding without reCAPTCHA verification due to error');
+      }
+    }
 
     // Validation
     if (!dispensaryId || !authorName || !rating || !reviewText) {

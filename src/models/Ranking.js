@@ -34,7 +34,7 @@ class Ranking {
 
   static async getByLocation(locationType, locationId, limit = 100) {
     const result = await db.query(
-      `SELECT r.*, d.name, d.slug, d.logo_url, d.address_street, d.city,
+      `SELECT r.*, d.id as dispensary_id, d.name, d.slug, d.logo_url, d.address_street, d.city,
               d.google_rating, d.google_review_count, d.phone, d.website
        FROM rankings r
        JOIN dispensaries d ON r.dispensary_id = d.id

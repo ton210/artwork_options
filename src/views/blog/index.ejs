@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../partials/favicon') %>
+  <%- include('../partials/analytics') %>
+  <title><%= title %></title>
+  <meta name="description" content="<%= meta.description %>">
+  <meta name="keywords" content="<%= meta.keywords %>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50">
+  <%- include('../partials/header') %>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Cannabis Dispensary Blog</h1>
+      <p class="text-xl text-gray-600">Expert guides, tips, and industry news for cannabis consumers</p>
+    </div>
+
+    <!-- Categories -->
+    <% if (categories && categories.length > 0) { %>
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <a href="/blog" class="<%= !currentCategory ? 'bg-green-600 text-white' : 'bg-white text-gray-700' %> px-4 py-2 rounded-full hover:shadow-md transition">
+          All Posts
+        </a>
+        <% categories.forEach(cat => { %>
+          <a href="/blog?category=<%= cat.category %>"
+             class="<%= currentCategory === cat.category ? 'bg-green-600 text-white' : 'bg-white text-gray-700' %> px-4 py-2 rounded-full hover:shadow-md transition">
+            <%= cat.category %> (<%= cat.count %>)
+          </a>
+        <% }); %>
+      </div>
+    <% } %>
+
+    <!-- Blog Posts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <% posts.forEach(post => { %>
+        <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+          <% if (post.featured_image) { %>
+            <img src="<%= post.featured_image %>" alt="<%= post.title %>" class="w-full h-48 object-cover">
+          <% } else { %>
+            <div class="w-full h-48 bg-gradient-to-r from-green-400 to-blue-500"></div>
+          <% } %>
+          <div class="p-6">
+            <div class="text-sm text-green-600 font-semibold mb-2"><%= post.category %></div>
+            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+              <a href="/blog/<%= post.slug %>" class="hover:text-green-600"><%= post.title %></a>
+            </h2>
+            <p class="text-gray-600 mb-4 line-clamp-3"><%= post.excerpt %></p>
+            <div class="flex items-center justify-between text-sm text-gray-500">
+              <span><%= new Date(post.created_at).toLocaleDateString() %></span>
+              <span><%= post.view_count %> views</span>
+            </div>
+          </div>
+        </article>
+      <% }); %>
+    </div>
+
+    <!-- Pagination -->
+    <% if (totalPages > 1) { %>
+      <div class="flex justify-center gap-2">
+        <% if (currentPage > 1) { %>
+          <a href="?page=<%= currentPage - 1 %><%= currentCategory ? '&category=' + currentCategory : '' %>"
+             class="px-4 py-2 bg-white rounded-lg hover:bg-gray-100 transition">← Previous</a>
+        <% } %>
+
+        <% for (let i = 1; i <= totalPages; i++) { %>
+          <% if (i === currentPage) { %>
+            <span class="px-4 py-2 bg-green-600 text-white rounded-lg"><%= i %></span>
+          <% } else if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 2) { %>
+            <a href="?page=<%= i %><%= currentCategory ? '&category=' + currentCategory : '' %>"
+               class="px-4 py-2 bg-white rounded-lg hover:bg-gray-100 transition"><%= i %></a>
+          <% } else if (i === currentPage - 3 || i === currentPage + 3) { %>
+            <span class="px-4 py-2">...</span>
+          <% } %>
+        <% } %>
+
+        <% if (currentPage < totalPages) { %>
+          <a href="?page=<%= currentPage + 1 %><%= currentCategory ? '&category=' + currentCategory : '' %>"
+             class="px-4 py-2 bg-white rounded-lg hover:bg-gray-100 transition">Next →</a>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

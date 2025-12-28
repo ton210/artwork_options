@@ -236,6 +236,40 @@ class Review {
 
     return false;
   }
+
+  /**
+   * Get the most recent approved reviews with dispensary details
+   * @param {number} limit - Number of results (default 3)
+   * @returns {array} Recent reviews with dispensary info
+   */
+  static async getRecentApprovedReviews(limit = 3) {
+    const result = await db.query(`
+      SELECT
+        r.id,
+        r.author_name,
+        r.rating,
+        r.review_text,
+        r.created_at,
+        r.is_verified,
+        d.id as dispensary_id,
+        d.name as dispensary_name,
+        d.slug as dispensary_slug,
+        d.city as dispensary_city,
+        d.logo_url as dispensary_logo,
+        s.abbreviation as state_abbr,
+        s.slug as state_slug
+      FROM reviews r
+      JOIN dispensaries d ON r.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE r.is_approved = true
+        AND d.is_active = true
+      ORDER BY r.created_at DESC
+      LIMIT $1
+    `, [limit]);
+
+    return result.rows;
+  }
 }
 
 module.exports = Review;

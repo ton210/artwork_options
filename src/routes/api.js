@@ -6,6 +6,18 @@ const Dispensary = require('../models/Dispensary');
 const { trackClickEvent, getClientIP } = require('../middleware/analytics');
 const { voteLimiter, apiLimiter } = require('../middleware/rateLimiter');
 
+// Debug: Log all requests to /api/*
+router.use((req, res, next) => {
+  console.log(`[API] ${req.method} ${req.path} - Body:`, JSON.stringify(req.body));
+  next();
+});
+
+// Test endpoint to verify API is working
+router.get('/test', (req, res) => {
+  console.log('[API] Test endpoint hit');
+  res.json({ success: true, message: 'API is working' });
+});
+
 // Apply general API rate limiting
 router.use(apiLimiter);
 
@@ -20,6 +32,7 @@ router.post('/vote',
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
+        console.log('Vote validation errors:', errors.array(), 'body:', req.body);
         return res.status(400).json({ success: false, errors: errors.array() });
       }
 
@@ -27,9 +40,13 @@ router.post('/vote',
       const clientIP = getClientIP(req);
       const sessionId = req.session?.id || req.sessionID || null;
 
+      console.log('Vote request received - dispensaryId:', dispensaryId, 'type:', typeof dispensaryId, 'voteType:', voteType);
+
       // Validate dispensary exists
       const dispensary = await Dispensary.findById(parseInt(dispensaryId));
+      console.log('Dispensary lookup result:', dispensary ? `Found: ${dispensary.name}` : 'NOT FOUND');
       if (!dispensary) {
+        console.error('Dispensary not found for ID:', dispensaryId);
         return res.status(404).json({
           success: false,
           message: 'Dispensary not found'

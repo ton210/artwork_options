@@ -22,7 +22,15 @@ class DispensaryScraper {
 
       let allResults = [];
       let nextPageToken = null;
-      const location = `${county.name} County, ${county.state_abbr}`;
+
+      // Check if this is a Canadian province
+      const canadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
+      const isCanada = canadianProvinces.includes(county.state_abbr);
+
+      // Add ", Canada" to location for Canadian provinces to ensure we get Canadian results
+      const location = isCanada
+        ? `${county.name} County, ${county.state_abbr}, Canada`
+        : `${county.name} County, ${county.state_abbr}`;
 
       // Initial search
       const { results, nextPageToken: token } = await googlePlaces.searchDispensaries(location);
@@ -57,8 +65,14 @@ class DispensaryScraper {
         const details = await googlePlaces.getPlaceDetails(place.place_id);
         const addressInfo = googlePlaces.parseAddressComponents(details.address_components);
 
-        // Skip if not in USA
-        if (addressInfo.country !== 'United States') {
+        // Check if this is a Canadian province
+        const canadianProvinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
+        const isCanada = canadianProvinces.includes(county.state_abbr);
+
+        // Skip if not in the expected country (USA or Canada)
+        const expectedCountry = isCanada ? 'Canada' : 'United States';
+        if (addressInfo.country !== expectedCountry) {
+          console.log(`  Skipping - not in ${expectedCountry}: ${details.name} (${addressInfo.country})`);
           continue;
         }
 

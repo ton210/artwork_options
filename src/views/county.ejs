@@ -13,7 +13,7 @@
 
   <!-- Google Maps -->
   <script src="/js/map.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= typeof GOOGLE_API_KEY !== 'undefined' ? GOOGLE_API_KEY : 'AIzaSyCd_kX94LwunGDgupq3eIj9p-RJ3YVi4Tw' %>"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= typeof GOOGLE_API_KEY !== 'undefined' ? GOOGLE_API_KEY : process.env.GOOGLE_PLACES_API_KEY %>"></script>
 </head>
 <body class="bg-gray-50">
   <%- include('partials/header') %>
@@ -50,6 +50,38 @@
           <div>•</div>
           <div>📊 <%= stats.dispensary_count || 0 %> dispensaries</div>
         </div>
+
+        <!-- Location Stats Banner -->
+        <% if (locationStats && (locationStats.viewsToday > 0 || locationStats.viewsWeek > 0)) { %>
+          <div class="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div class="flex flex-wrap items-center gap-4 text-sm">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                <span class="font-semibold text-gray-700">Live Activity:</span>
+              </div>
+              <% if (locationStats.viewsToday > 0) { %>
+                <div class="text-gray-700">
+                  <span class="font-bold text-green-700"><%= locationStats.viewsToday %></span>
+                  <span>visitors today</span>
+                </div>
+              <% } %>
+              <% if (locationStats.viewsWeek > 0) { %>
+                <div class="text-gray-700">
+                  <span class="font-bold text-blue-700"><%= locationStats.viewsWeek %></span>
+                  <span>this week</span>
+                </div>
+              <% } %>
+              <% if (locationStats.activeToday > 0) { %>
+                <div class="text-gray-700">
+                  <span class="font-bold text-purple-700"><%= locationStats.activeToday %></span>
+                  <span>dispensaries viewed today</span>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
 
         <% if (showAll) { %>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
@@ -106,7 +138,10 @@
                     <div class="text-green-600 font-semibold">Score: <%= dispensary.composite_score %></div>
                   </div>
 
-                  <div class="flex items-center gap-4">
+                  <!-- Social Proof Badges -->
+                  <%- include('partials/social-proof-badges', { dispensary }) %>
+
+                  <div class="flex items-center gap-4 mt-3">
                     <%- include('partials/voteWidget', {
                       dispensary: dispensary,
                       votes: dispensary.votes,

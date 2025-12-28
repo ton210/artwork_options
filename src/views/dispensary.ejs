@@ -24,6 +24,11 @@
   <% if (schemas) { %>
     <script type="application/ld+json"><%- JSON.stringify(schemas.business) %></script>
     <script type="application/ld+json"><%- JSON.stringify(schemas.breadcrumb) %></script>
+    <% if (schemas.reviews && schemas.reviews.length > 0) { %>
+      <% schemas.reviews.forEach(reviewSchema => { %>
+        <script type="application/ld+json"><%- JSON.stringify(reviewSchema) %></script>
+      <% }); %>
+    <% } %>
   <% } %>
 </head>
 <body class="bg-gray-50">
@@ -136,15 +141,12 @@
                   }
                   // Get weekday_text array
                   let weekdayTexts = null;
-                  let isOpenNow = null;
                   if (hoursObj && typeof hoursObj === 'object') {
                     if (Array.isArray(hoursObj.weekday_text)) {
                       weekdayTexts = hoursObj.weekday_text;
                     }
-                    if (typeof hoursObj.open_now === 'boolean') {
-                      isOpenNow = hoursObj.open_now;
-                    }
                   }
+                  // isOpenNow is now calculated server-side in real-time
                 %>
                 <% if (weekdayTexts && weekdayTexts.length > 0) { %>
                   <div class="mt-4 pt-4 border-t border-gray-200">
@@ -170,6 +172,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Social Proof -->
+        <%- include('partials/social-proof', { socialProof }) %>
 
         <!-- Vote Widget -->
         <%- include('partials/voteWidget', { dispensary, canVote, votes }) %>
@@ -210,7 +215,6 @@
 
       <!-- Sidebar -->
       <div class="lg:col-span-1">
-        <%- include('partials/munchmakersAd') %>
       </div>
     </div>
 
@@ -219,12 +223,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Reviews List (2/3 width) -->
         <div class="lg:col-span-2">
-          <%- include('partials/reviewList') %>
+          <%- include('partials/reviewList', { dispensary }) %>
         </div>
 
         <!-- Review Form (1/3 width) -->
         <div class="lg:col-span-1">
-          <%- include('partials/reviewForm') %>
+          <%- include('partials/reviewForm', { dispensary }) %>
         </div>
       </div>
     </div>
@@ -275,5 +279,12 @@
       });
     });
   </script>
+
+  <!-- Reviews functionality -->
+  <script src="/js/reviews.js"></script>
+
+  <!-- Gamification system -->
+  <script src="/js/gamification.js"></script>
 </body>
 </html>
+ 

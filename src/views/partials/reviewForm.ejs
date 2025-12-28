@@ -3,6 +3,9 @@
 
   <div id="review-eligibility-message" class="hidden mb-4"></div>
 
+  <!-- reCAPTCHA v3 Script -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lcc5TYsAAAAADRpPU3QhEib2x7Fr6Rz-NI8r0sg"></script>
+
   <form id="review-form" class="space-y-4">
     <!-- Star Rating -->
     <div>
@@ -176,9 +179,14 @@
     }
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    submitBtn.textContent = 'Verifying...';
 
     try {
+      // Get reCAPTCHA v3 token
+      const recaptchaToken = await grecaptcha.execute('6Lcc5TYsAAAAADRpPU3QhEib2x7Fr6Rz-NI8r0sg', {action: 'submit_review'});
+
+      submitBtn.textContent = 'Submitting...';
+
       const response = await fetch('/api/reviews/submit', {
         method: 'POST',
         headers: {
@@ -189,7 +197,8 @@
           authorName: document.getElementById('author-name').value,
           authorEmail: document.getElementById('author-email').value || null,
           rating: selectedRating,
-          reviewText: reviewText.value
+          reviewText: reviewText.value,
+          recaptchaToken: recaptchaToken
         })
       });
 

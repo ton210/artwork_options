@@ -3,6 +3,7 @@ const db = require('../config/database');
 class SitemapGenerator {
   constructor(baseUrl) {
     this.baseUrl = baseUrl || 'https://bestdispensaries.munchmakers.com';
+    this.languages = ['en', 'es', 'fr', 'de', 'nl', 'pt']; // All supported languages
   }
 
   escapeXml(str) {
@@ -68,15 +69,31 @@ class SitemapGenerator {
   async generateMainSitemap() {
     let urls = [];
 
-    // Homepage - highest priority
-    urls.push(this.createUrl('/', new Date(), 'daily', '1.0'));
+    // Homepage in all languages - highest priority
+    for (const lang of this.languages) {
+      const url = lang === 'en' ? '/' : `/${lang}/`;
+      urls.push(this.createUrl(url, new Date(), 'daily', '1.0'));
+    }
 
-    // Main pages
-    urls.push(this.createUrl('/brands', new Date(), 'daily', '0.9'));
-    urls.push(this.createUrl('/contact', new Date(), 'monthly', '0.3'));
-    urls.push(this.createUrl('/claim', new Date(), 'monthly', '0.4'));
-    urls.push(this.createUrl('/privacy', new Date(), 'yearly', '0.2'));
-    urls.push(this.createUrl('/terms', new Date(), 'yearly', '0.2'));
+    // Main pages in all languages
+    const mainPages = [
+      { path: '/brands', changefreq: 'daily', priority: '0.9' },
+      { path: '/blog', changefreq: 'daily', priority: '0.9' },
+      { path: '/tools', changefreq: 'weekly', priority: '0.8' },
+      { path: '/faq', changefreq: 'monthly', priority: '0.7' },
+      { path: '/near-me', changefreq: 'weekly', priority: '0.8' },
+      { path: '/contact', changefreq: 'monthly', priority: '0.3' },
+      { path: '/claim', changefreq: 'monthly', priority: '0.4' },
+      { path: '/privacy', changefreq: 'yearly', priority: '0.2' },
+      { path: '/terms', changefreq: 'yearly', priority: '0.2' }
+    ];
+
+    for (const page of mainPages) {
+      for (const lang of this.languages) {
+        const url = lang === 'en' ? page.path : `/${lang}${page.path}`;
+        urls.push(this.createUrl(url, new Date(), page.changefreq, page.priority));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }
@@ -86,14 +103,14 @@ class SitemapGenerator {
       'SELECT slug, name FROM states ORDER BY name'
     );
 
-    const urls = states.rows.map(state =>
-      this.createUrl(
-        `/dispensaries/${state.slug}`,
-        new Date(),
-        'daily',
-        '0.9'
-      )
-    );
+    const urls = [];
+    for (const state of states.rows) {
+      // Add state page in all languages
+      for (const lang of this.languages) {
+        const url = lang === 'en' ? `/dispensaries/${state.slug}` : `/${lang}/dispensaries/${state.slug}`;
+        urls.push(this.createUrl(url, new Date(), 'daily', '0.9'));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }
@@ -106,14 +123,14 @@ class SitemapGenerator {
       ORDER BY s.name, c.name
     `);
 
-    const urls = counties.rows.map(county =>
-      this.createUrl(
-        `/dispensaries/${county.state_slug}/${county.slug}`,
-        new Date(),
-        'weekly',
-        '0.7'
-      )
-    );
+    const urls = [];
+    for (const county of counties.rows) {
+      // Add county page in all languages
+      for (const lang of this.languages) {
+        const url = lang === 'en' ? `/dispensaries/${county.state_slug}/${county.slug}` : `/${lang}/dispensaries/${county.state_slug}/${county.slug}`;
+        urls.push(this.createUrl(url, new Date(), 'weekly', '0.7'));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }
@@ -126,7 +143,8 @@ class SitemapGenerator {
       ORDER BY d.google_review_count DESC, d.google_rating DESC
     `);
 
-    const urls = dispensaries.rows.map(dispensary => {
+    const urls = [];
+    for (const dispensary of dispensaries.rows) {
       // Higher priority for highly rated dispensaries
       let priority = '0.6';
       if (dispensary.google_rating >= 4.5 && dispensary.google_review_count > 500) {
@@ -135,13 +153,12 @@ class SitemapGenerator {
         priority = '0.7';
       }
 
-      return this.createUrl(
-        `/dispensary/${dispensary.slug}`,
-        dispensary.updated_at,
-        'weekly',
-        priority
-      );
-    });
+      // Add dispensary page in all languages
+      for (const lang of this.languages) {
+        const url = lang === 'en' ? `/dispensary/${dispensary.slug}` : `/${lang}/dispensary/${dispensary.slug}`;
+        urls.push(this.createUrl(url, dispensary.updated_at, 'weekly', priority));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }
@@ -154,43 +171,47 @@ class SitemapGenerator {
       ORDER BY b.location_count DESC
     `);
 
-    const urls = brands.rows.map(brand => {
+    const urls = [];
+    for (const brand of brands.rows) {
       // Higher priority for franchises
       const priority = brand.location_count > 3 ? '0.8' : '0.6';
 
-      return this.createUrl(
-        `/brands/${brand.slug}`,
-        brand.updated_at,
-        'weekly',
-        priority
-      );
-    });
+      // Add brand page in all languages
+      for (const lang of this.languages) {
+        const url = lang === 'en' ? `/brands/${brand.slug}` : `/${lang}/brands/${brand.slug}`;
+        urls.push(this.createUrl(url, brand.updated_at, 'weekly', priority));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }
 
   async generateTagsSitemap() {
-    // All valid tag slugs
-    const tags = [
-      'edibles', 'flower', 'vapes', 'concentrates', 'pre-rolls',
-      'tinctures', 'topicals', 'delivery', 'curbside-pickup',
-      'recreational', 'medical', 'online-ordering'
-    ];
+    // Minimum dispensaries required (must match MIN_DISPENSARIES_FOR_TAG_PAGE in routes/dispensaries.js)
+    const MIN_DISPENSARIES = 3;
 
-    // Get all states
-    const states = await db.query('SELECT slug FROM states ORDER BY name');
+    // Query for valid state/tag combinations that have enough dispensaries
+    const validCombinations = await db.query(`
+      SELECT s.slug as state_slug, dt.tag, COUNT(DISTINCT d.id) as count
+      FROM dispensary_tags dt
+      JOIN dispensaries d ON dt.dispensary_id = d.id
+      JOIN counties c ON d.county_id = c.id
+      JOIN states s ON c.state_id = s.id
+      WHERE d.is_active = true
+      GROUP BY s.slug, dt.tag
+      HAVING COUNT(DISTINCT d.id) >= $1
+      ORDER BY s.slug, dt.tag
+    `, [MIN_DISPENSARIES]);
 
     const urls = [];
 
-    // Generate URLs for each state + tag combination
-    for (const state of states.rows) {
-      for (const tag of tags) {
-        urls.push(this.createUrl(
-          `/dispensaries/${state.slug}/best-${tag}`,
-          new Date(),
-          'weekly',
-          '0.6'
-        ));
+    // Generate URLs only for valid state/tag combinations
+    for (const combo of validCombinations.rows) {
+      for (const lang of this.languages) {
+        const url = lang === 'en'
+          ? `/dispensaries/${combo.state_slug}/best-${combo.tag}`
+          : `/${lang}/dispensaries/${combo.state_slug}/best-${combo.tag}`;
+        urls.push(this.createUrl(url, new Date(), 'weekly', '0.6'));
       }
     }
 
@@ -210,18 +231,18 @@ class SitemapGenerator {
       ORDER BY COUNT(*) DESC
     `);
 
-    const urls = cities.rows.map(city => {
+    const urls = [];
+    for (const city of cities.rows) {
       const citySlug = city.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
       // Higher priority for cities with more dispensaries
       const priority = city.cnt >= 20 ? '0.8' : city.cnt >= 10 ? '0.7' : '0.6';
 
-      return this.createUrl(
-        `/dispensaries/${city.state_slug}/city/${citySlug}`,
-        new Date(),
-        'weekly',
-        priority
-      );
-    });
+      // Add city page in all languages
+      for (const lang of this.languages) {
+        const url = lang === 'en' ? `/dispensaries/${city.state_slug}/city/${citySlug}` : `/${lang}/dispensaries/${city.state_slug}/city/${citySlug}`;
+        urls.push(this.createUrl(url, new Date(), 'weekly', priority));
+      }
+    }
 
     return this.wrapUrlset(urls.join(''));
   }
@@ -264,3 +285,4 @@ ${urls}
 }
 
 module.exports = SitemapGenerator;
+ 

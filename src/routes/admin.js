@@ -97,6 +97,8 @@ router.get('/', async (req, res) => {
       SELECT
         (SELECT COUNT(*) FROM dispensaries WHERE is_active = true) as total_dispensaries,
         (SELECT COUNT(*) FROM votes WHERE DATE(created_at) = CURRENT_DATE) as votes_today,
+        (SELECT COUNT(*) FROM votes WHERE created_at >= CURRENT_DATE - INTERVAL '30 days') as votes_30days,
+        (SELECT COUNT(*) FROM votes) as votes_all_time,
         (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE AND (country = 'US' OR country IS NULL)) as views_today_us,
         (SELECT COUNT(*) FROM page_views WHERE DATE(created_at) = CURRENT_DATE) as views_today_all,
         (SELECT COUNT(*) FROM leads WHERE is_contacted = false) as uncontacted_leads,
@@ -104,6 +106,8 @@ router.get('/', async (req, res) => {
         (SELECT COUNT(*) FROM counties) as total_counties,
         (SELECT COUNT(*) FROM users) as total_users,
         (SELECT COUNT(*) FROM reviews WHERE is_approved = true) as total_reviews,
+        (SELECT COUNT(*) FROM reviews) as reviews_all_time,
+        (SELECT COUNT(*) FROM click_events) as clicks_all_time,
         (SELECT COUNT(*) FROM business_claims WHERE is_approved = false) as pending_claims
     `);
 
@@ -221,6 +225,36 @@ router.get('/', async (req, res) => {
       LIMIT 5
     `);
 
+    // Get recent reviews
+    const recentReviews = await db.query(`
+      SELECT
+        r.*,
+        d.name as dispensary_name,
+        d.slug as dispensary_slug,
+        s.abbreviation as state_abbr
+      FROM reviews r
+      JOIN dispensaries d ON r.dispensary_id = d.id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      ORDER BY r.created_at DESC
+      LIMIT 10
+    `);
+
+    // Get recent votes
+    const recentVotes = await db.query(`
+      SELECT
+        v.*,
+        d.name as dispensary_name,
+        d.slug as dispensary_slug,
+        s.abbreviation as state_abbr
+      FROM votes v
+      JOIN dispensaries d ON v.dispensary_id = d.id
+      LEFT JOIN counties c ON d.county_id = c.id
+      LEFT JOIN states s ON c.state_id = s.id
+      ORDER BY v.created_at DESC
+      LIMIT 20
+    `);
+
     // Get click stats
     const clickStats = await db.query(`
       SELECT
@@ -263,6 +297,8 @@ router.get('/', async (req, res) => {
       trafficByCountry: trafficByCountry.rows,
       scrapeLogs: scrapeLogs.rows,
       recentLeads: recentLeads.rows,
+      recentReviews: recentReviews.rows,
+      recentVotes: recentVotes.rows,
       clickStats: clickStats.rows[0],
       topClickedDispensaries: topClickedDispensaries.rows
     });

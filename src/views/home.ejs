@@ -15,32 +15,240 @@
 <body class="bg-gray-50">
   <%- include('partials/header') %>
 
+  <!-- RECENT VOTES SECTION -->
+  <% if (recentVotes && recentVotes.length > 0) { %>
+    <section class="bg-gradient-to-r from-purple-50 to-pink-50 border-b border-purple-200 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+          </svg>
+          <h2 class="text-3xl font-bold text-gray-900">Recent Votes (24h)</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <% recentVotes.forEach(dispensary => { %>
+            <a href="/dispensary/<%= dispensary.slug %>"
+               class="bg-white border-2 border-purple-200 rounded-lg p-4 hover:shadow-lg transition group">
+              <div class="flex flex-col h-full">
+                <!-- Logo -->
+                <% if (dispensary.logo_url) { %>
+                  <img src="<%= dispensary.logo_url %>"
+                       alt="<%= dispensary.name %>"
+                       class="w-16 h-16 object-cover rounded-lg mb-3 mx-auto">
+                <% } %>
+
+                <!-- Dispensary Name -->
+                <h3 class="font-bold text-gray-900 group-hover:text-purple-600 text-center mb-2 line-clamp-2">
+                  <%= dispensary.name %>
+                </h3>
+
+                <!-- Location -->
+                <div class="text-sm text-gray-600 text-center mb-3">
+                  <%= dispensary.city %>, <%= dispensary.state_abbr %>
+                </div>
+
+                <!-- Vote Counts -->
+                <div class="mt-auto space-y-2">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="flex items-center gap-1 text-green-700">
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="font-semibold"><%= dispensary.upvotes %></span>
+                    </span>
+                    <span class="flex items-center gap-1 text-red-700">
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="font-semibold"><%= dispensary.downvotes %></span>
+                    </span>
+                  </div>
+
+                  <div class="text-center pt-2 border-t border-gray-200">
+                    <span class="text-xs text-gray-500">
+                      <%= dispensary.total_recent_votes %> total vote<%= dispensary.total_recent_votes === 1 ? '' : 's' %>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+  <% } %>
+
+  <!-- RECENT REVIEWS SECTION -->
+  <% if (recentReviews && recentReviews.length > 0) { %>
+    <section class="bg-gradient-to-r from-blue-50 to-cyan-50 border-b border-blue-200 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+          </svg>
+          <h2 class="text-3xl font-bold text-gray-900">Recent Reviews</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <% recentReviews.forEach(review => { %>
+            <div class="bg-white border-2 border-blue-200 rounded-lg p-6 hover:shadow-lg transition">
+              <!-- Rating Stars -->
+              <div class="flex items-center gap-2 mb-3">
+                <div class="flex">
+                  <% for (let i = 1; i <= 5; i++) { %>
+                    <svg class="w-5 h-5 <%= i <= review.rating ? 'text-yellow-400' : 'text-gray-300' %>"
+                         fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  <% } %>
+                </div>
+                <% if (review.is_verified) { %>
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold">
+                    VERIFIED
+                  </span>
+                <% } %>
+              </div>
+
+              <!-- Review Text -->
+              <p class="text-gray-700 mb-4 line-clamp-3">
+                "<%= review.review_text %>"
+              </p>
+
+              <!-- Author & Date -->
+              <div class="text-sm text-gray-600 mb-3">
+                <span class="font-semibold"><%= review.author_name %></span>
+                <span class="mx-2">•</span>
+                <span><%= new Date(review.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
+              </div>
+
+              <!-- Dispensary Link -->
+              <a href="/dispensary/<%= review.dispensary_slug %>"
+                 class="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
+                <% if (review.dispensary_logo) { %>
+                  <img src="<%= review.dispensary_logo %>"
+                       alt="<%= review.dispensary_name %>"
+                       class="w-8 h-8 object-cover rounded">
+                <% } %>
+                <div class="flex-1">
+                  <div class="font-semibold text-sm"><%= review.dispensary_name %></div>
+                  <div class="text-xs text-gray-500"><%= review.dispensary_city %>, <%= review.state_abbr %></div>
+                </div>
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+  <% } %>
+
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-5xl font-bold mb-4">Top Dispensaries 2026</h1>
-      <p class="text-2xl text-green-50 mb-4">
+  <section class="relative bg-gradient-to-r from-green-600 to-green-700 text-white py-20 overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 opacity-20">
+      <img src="/images/homepage-hero.jpg" alt="Cannabis Dispensary" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-green-600/90 to-green-700/90"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Top Dispensaries 2026</h1>
+      <p class="text-2xl md:text-3xl text-green-50 mb-4 drop-shadow">
         Find the best cannabis dispensaries across North America
       </p>
-      <p class="text-lg text-green-100 mb-8">
+      <p class="text-xl text-green-100 mb-12 drop-shadow">
         🇺🇸 United States & 🇨🇦 Canada - Rated by the community
       </p>
-      <div class="flex justify-center gap-8 text-center">
-        <div>
-          <div class="text-4xl font-bold"><%= stats.total_dispensaries || 0 %></div>
-          <div class="text-green-100">Dispensaries</div>
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-center">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 min-w-[140px]">
+          <div class="text-4xl md:text-5xl font-bold drop-shadow"><%= stats.total_dispensaries || 0 %></div>
+          <div class="text-green-100 font-medium">Dispensaries</div>
         </div>
-        <div>
-          <div class="text-4xl font-bold"><%= stats.total_states || 0 %></div>
-          <div class="text-green-100">Jurisdictions</div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 min-w-[140px]">
+          <div class="text-4xl md:text-5xl font-bold drop-shadow"><%= stats.total_states || 0 %></div>
+          <div class="text-green-100 font-medium">Jurisdictions</div>
         </div>
-        <div>
-          <div class="text-4xl font-bold"><%= stats.total_counties || 0 %></div>
-          <div class="text-green-100">Locations</div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 min-w-[140px]">
+          <div class="text-4xl md:text-5xl font-bold drop-shadow"><%= stats.total_counties || 0 %></div>
+          <div class="text-green-100 font-medium">Locations</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Global Activity Stats -->
+  <% if (globalStats && (globalStats.viewsToday > 0 || globalStats.viewsWeek > 0)) { %>
+    <section class="bg-gradient-to-r from-blue-50 to-green-50 border-y border-blue-200 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center items-center gap-8 text-center">
+          <div class="flex items-center gap-3">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+            <div>
+              <div class="text-3xl font-bold text-green-700"><%= globalStats.viewsToday %></div>
+              <div class="text-gray-700 font-medium">Visitors Today</div>
+            </div>
+          </div>
+          <% if (globalStats.viewsWeek > 0) { %>
+            <div class="hidden sm:block text-gray-300 text-2xl">|</div>
+            <div>
+              <div class="text-3xl font-bold text-blue-700"><%= globalStats.viewsWeek %></div>
+              <div class="text-gray-700 font-medium">Visitors This Week</div>
+            </div>
+          <% } %>
+          <% if (globalStats.activeToday > 0) { %>
+            <div class="hidden sm:block text-gray-300 text-2xl">|</div>
+            <div>
+              <div class="text-3xl font-bold text-purple-700"><%= globalStats.activeToday %></div>
+              <div class="text-gray-700 font-medium">Dispensaries Viewed Today</div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+  <% } %>
+
+  <!-- Trending Today -->
+  <% if (trendingToday && trendingToday.length > 0) { %>
+    <section class="py-12 bg-white border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-8 h-8 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+          </svg>
+          <h2 class="text-3xl font-bold text-gray-900">Trending Today</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <% trendingToday.forEach(dispensary => { %>
+            <a href="/dispensary/<%= dispensary.slug %>"
+               class="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-lg p-4 hover:shadow-lg transition group">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-gray-900 group-hover:text-green-600 flex-1"><%= dispensary.name %></h3>
+                <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded-full text-xs font-bold ml-2 flex-shrink-0">
+                  TRENDING
+                </span>
+              </div>
+              <div class="text-sm text-gray-600 mb-2">
+                <%= dispensary.city %>, <%= dispensary.state_abbr %>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                <span class="font-semibold text-blue-700"><%= dispensary.views_today %></span>
+                <span class="text-gray-600">views today</span>
+              </div>
+            </a>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+  <% } %>
 
   <!-- United States Section -->
   <section id="us-states" class="py-16">
@@ -143,6 +351,78 @@
           <h3 class="text-xl font-bold mb-2">Engagement Metrics</h3>
           <p class="text-gray-600">Page views, clicks, and data completeness (40% weight)</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cannabis Education Resources -->
+  <section class="py-16 bg-gradient-to-br from-green-50 to-green-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Cannabis Education & Guides</h2>
+        <p class="text-xl text-gray-600">Learn everything about cannabis consumption, accessories, and best practices</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="https://guides.munchmakers.com/guide/how-to-roll-a-joint" target="_blank"
+           class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-green-200">
+          <div class="text-3xl mb-3">🌿</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">How to Roll a Joint</h3>
+          <p class="text-gray-600 mb-4">Step-by-step tutorial for beginners in 2026</p>
+          <span class="text-green-600 font-medium hover:text-green-700">
+            Read Guide →
+          </span>
+        </a>
+
+        <a href="https://guides.munchmakers.com/guide/best-grinders-beginners" target="_blank"
+           class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-green-200">
+          <div class="text-3xl mb-3">⚙️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Best Grinders Guide</h3>
+          <p class="text-gray-600 mb-4">Choose the perfect grinder with kief catcher</p>
+          <span class="text-green-600 font-medium hover:text-green-700">
+            Read Guide →
+          </span>
+        </a>
+
+        <a href="https://guides.munchmakers.com/guide/thc-vs-cbd-explained" target="_blank"
+           class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-green-200">
+          <div class="text-3xl mb-3">🧪</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">THC vs CBD Explained</h3>
+          <p class="text-gray-600 mb-4">Understanding cannabinoids for beginners</p>
+          <span class="text-green-600 font-medium hover:text-green-700">
+            Read Guide →
+          </span>
+        </a>
+
+        <a href="https://guides.munchmakers.com/guide/mason-jar-storage-guide" target="_blank"
+           class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-green-200">
+          <div class="text-3xl mb-3">🏺</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Cannabis Storage Guide</h3>
+          <p class="text-gray-600 mb-4">Keep your cannabis fresh and potent longer</p>
+          <span class="text-green-600 font-medium hover:text-green-700">
+            Read Guide →
+          </span>
+        </a>
+
+        <a href="https://guides.munchmakers.com/guide/how-to-use-kief-catcher" target="_blank"
+           class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-green-200">
+          <div class="text-3xl mb-3">✨</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Kief Collection Guide</h3>
+          <p class="text-gray-600 mb-4">Maximize potency with kief catcher techniques</p>
+          <span class="text-green-600 font-medium hover:text-green-700">
+            Read Guide →
+          </span>
+        </a>
+
+        <a href="https://guides.munchmakers.com" target="_blank"
+           class="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-green-600 flex flex-col justify-center items-center">
+          <div class="text-3xl mb-3">📚</div>
+          <h3 class="text-xl font-bold mb-2">View All 160+ Guides</h3>
+          <p class="text-green-100 mb-4">Complete cannabis education library</p>
+          <span class="font-semibold">
+            Explore Guides →
+          </span>
+        </a>
       </div>
     </div>
   </section>
