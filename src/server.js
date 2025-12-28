@@ -124,7 +124,15 @@ const adminRoutes = require('./routes/admin');
 const leadRoutes = require('./routes/leads');
 const languageRoutes = require('./routes/language');
 
-// Language routes FIRST (catch /es/, /fr/, etc. and rewrite)
+// CRITICAL: API routes MUST come FIRST - before any routes that use '/' path
+// Otherwise catch-all routes will intercept API calls resulting in 404 errors
+app.use('/api', apiRoutes);
+app.use('/api/reviews', reviewRoutes);
+app.use('/auth', authRoutes);
+app.use('/admin', adminRoutes);
+app.use('/leads', leadRoutes);
+
+// Language routes (catch /es/, /fr/, etc. and rewrite)
 app.use('/', languageRoutes);
 
 // Then language detection
@@ -143,11 +151,6 @@ app.use('/dispensary', dispensaryRoutes); // Alternative singular route
 app.use('/brands', brandsRoutes);
 app.use('/', pagesRoutes);
 app.use('/', sitemapRoutes);
-app.use('/api', apiRoutes);
-app.use('/api/reviews', reviewRoutes);
-app.use('/auth', authRoutes);
-app.use('/admin', adminRoutes);
-app.use('/leads', leadRoutes);
 
 // Near Me page route
 app.get('/near-me', (req, res) => {
