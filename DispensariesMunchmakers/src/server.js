@@ -1,4 +1,4 @@
-console.log('=== SERVER STARTING ===');
+console.log('=== SERVER STARTING v167 TEST ===');
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
